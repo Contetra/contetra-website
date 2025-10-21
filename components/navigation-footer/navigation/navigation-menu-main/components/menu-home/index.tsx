@@ -12,7 +12,7 @@ export const MenuHome = () => {
     <NavigationMenuItem>
       <NavigationMenuTrigger className="text-[16px]">Home</NavigationMenuTrigger>
       <NavigationMenuContent>
-        <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+        <ul className=" grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
           <li className="row-span-3">
             <NavigationMenuLink asChild>
               <Link

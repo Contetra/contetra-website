@@ -3,11 +3,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   cursor: default;
 }
-
 
 @theme inline {
   --color-background: var(--background);
@@ -50,8 +50,8 @@ html, body {
 
   --main-padding: 80px;
   --page-padding: 50px;
-   --color-contetra-blue: #120c54;
-  --color-contetra-green: #64CB9C;
+  --color-contetra-blue: #120c54;
+  --color-contetra-green: #64cb9c;
 }
 
 :root {
@@ -157,7 +157,6 @@ html.lenis body {
   transition-behavior: allow-discrete;
 }
 
-
 .bg-contetra-blue {
   background-color: var(--color-contetra-blue);
 }
@@ -170,11 +169,31 @@ html.lenis body {
   background-color: var(--color-contetra-green);
 }
 
-.mf-cursor.-magnetic .mf-cursor-inner {
-  transform: scale(1.5);
-  transition: transform 0.2s ease;
+.magnetic {
+  cursor: default;
 }
 
-.magnetic {
-  cursor: none; /* hide default cursor if you want */
+/* Ensure cursor renders above content */
+.mf-cursor,
+.mf-cursor * {
+  pointer-events: none;
+}
+.mf-cursor {
+  z-index: 9999;
+}
+
+/* Cursor grow effect */
+.mf-cursor:before {
+  background: currentColor !important;
+  border: none;
+}
+.mf-cursor.-large {
+  mix-blend-mode: exclusion;
+}
+.mf-cursor.-large:before {
+  background: #fff !important;
+}
+.mf-cursor.-lg:before,
+.mf-cursor.-large:before {
+  transform: scale(1.5) !important;
 }

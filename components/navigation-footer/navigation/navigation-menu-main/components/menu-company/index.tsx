@@ -48,7 +48,7 @@ const components: { title: string; href: string; description: string }[] = [
 export const MenuCompany = () => {
   return (
     <NavigationMenuItem>
-      <NavigationMenuTrigger>Company</NavigationMenuTrigger>
+      <NavigationMenuTrigger className="text-[16px]">Company</NavigationMenuTrigger>
       <NavigationMenuContent className="max-w-[90vw] -right-60 left-auto">
         <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
           {components.map((component) => (

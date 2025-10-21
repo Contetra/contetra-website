@@ -4,7 +4,8 @@ import "./globals.css";
 import { FooterMain } from "@/components/navigation-footer/footer/footer-main";
 import { Header } from "@/components/navigation-footer/navigation/header";
 import { ReactLenis } from "@/utils/lenis";
-import { MouseFollowerInit } from "@/components/mouse-follower/mouse-follower-init";
+import { MouseFollowerProvider } from "@/components/mouse-follower/mouse-follower-provider";
+import { PageTransition } from "./components/page-transition";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -24,14 +25,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ReactLenis root>
-        <body className={`${poppins.variable} font-poppins antialiased`}>
-          <MouseFollowerInit />
-          <Header />
-          <main className="min-h-screen ">{children}</main>
-          <FooterMain />
-        </body>
-      </ReactLenis>
+      <body suppressHydrationWarning className={`${poppins.variable} font-poppins antialiased`}>
+        <ReactLenis root>
+          <MouseFollowerProvider>
+            <PageTransition />
+            <Header />
+            <main className="min-h-screen mt-[10rem]">{children}</main>
+            <FooterMain />
+          </MouseFollowerProvider>
+        </ReactLenis>
+      </body>
     </html>
   );
 }

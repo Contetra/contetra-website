@@ -11,8 +11,9 @@ import React from "react";
 export const MenuContactUs = () => {
   return (
     <NavigationMenuItem className="hidden md:block">
-      <NavigationMenuTrigger>Need Help?</NavigationMenuTrigger>
-      <NavigationMenuContent className="max-w-[90vw] right-0 left-auto">
+      <NavigationMenuTrigger className="text-[16px]">Need Help?</NavigationMenuTrigger>
+      
+      <NavigationMenuContent className="max-w-[90vw] right-0 left-auto mt-10 bg-white">
         <ul className="grid w-[200px] gap-4">
           <li>
             <NavigationMenuLink asChild>

@@ -10,7 +10,7 @@ import React from "react";
 export const MenuResources = () => {
   return (
     <NavigationMenuItem className="hidden md:block">
-      <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+      <NavigationMenuTrigger className="text-[16px]">Resources</NavigationMenuTrigger>
       <NavigationMenuContent>
         <ul className="grid w-[200px] gap-4">
           <li>
