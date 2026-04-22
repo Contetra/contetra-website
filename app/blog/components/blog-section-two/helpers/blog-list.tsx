@@ -1,0 +1,159 @@
+"use client";
+
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { useLazyGetPostsListQuery } from "@/redux/api/postsApi";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { BlurFade } from "@/components/ui/blur-fade";
+import { Button } from "@/components/ui/button";
+import { formatDate } from "@/lib/utils";
+import { Highlighter } from "@/components/ui/highlighter";
+import { ArrowUpRight } from "lucide-react";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { updateFilter } from "@/redux/slice/blogSlice";
+import { BlogPagination } from "./blog-pagination";
+import Link from "next/link";
+
+export interface Blog {
+  id: string;
+  title: string;
+  slug: string;
+  feature_image_url: string;
+  excerpt: string;
+  created_at: string; // or Date if you parse it
+  authors: string[];
+  categories: string[];
+}
+
+export const BlogList = () => {
+  const dispatch = useAppDispatch();
+  const [trigger, { data, isLoading, isSuccess }] = useLazyGetPostsListQuery();
+
+  const filtersData = useAppSelector((state) => state.blogSlice.filtersData);
+
+  // dispatch(updateFilter({ key: "page", value: 2 }));
+  // dispatch(updateFilter({ key: "search", value: "nextjs" }));
+  // dispatch(updateFilter({ key: "sortOrder", value: "asc" }));
+
+  const blogsdata = data?.response?.data;
+
+  useEffect(() => {
+    if (isSuccess) {
+      const meta = data?.response?.meta;
+
+      if (!meta) return;
+
+      dispatch(updateFilter({ key: "totalPages", value: meta.totalPages }));
+      dispatch(updateFilter({ key: "currentPage", value: meta.page }));
+    }
+  }, [isSuccess, data?.response?.meta, dispatch]);
+
+  useEffect(() => {
+    trigger(filtersData);
+  }, [trigger, filtersData]);
+
+  const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
+
+  return (
+    <div className="flex flex-col gap-5 min-h-screen ">
+      {isLoading && (
+        <div className="grid grid-cols-4 xl:gap-4 2xl:gap-8">
+          {Array.from({ length: 12 }).map((_, index) => (
+            <Card key={index} className="w-full min-h-[450px]">
+              <CardContent className="h-[200px]">
+                <Skeleton className="h-full aspect-video w-full" />
+              </CardContent>
+              <CardHeader>
+                <Skeleton className="h-4 w-2/3" />
+                <Skeleton className="h-4 w-1/2" />
+                <Skeleton className="h-4 w-2/3" />
+                <Skeleton className="h-4 w-1/2" />
+                <Skeleton className="h-4 w-2/3" />
+                <Skeleton className="h-4 w-1/2" />
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      )}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 xl:gap-4 2xl:gap-8 min-h-[100px] items-stretch">
+        {isSuccess &&
+          blogsdata?.length > 0 &&
+          blogsdata?.map((blog: Blog, idx: number) => {
+            return (
+              <BlurFade key={blog.id} delay={0.25 + idx * 0.05} inView>
+                <Link href={`${blog?.slug}`}>
+                  <Card className=" h-[450px] md:min-h-[480px] xl:min-h-[450px] flex flex-col gap-0 relative p-0">
+                    <div className="w-full h-[200px] md:h-[220px] xl:h-[180px] 2xl:h-[200px] relative">
+                      {!loadedImages[blog.id] && (
+                        <Skeleton className="absolute inset-0 rounded-xl z-10" />
+                      )}
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_CDN_URL}${blog?.feature_image_url}`}
+                        alt="blog-banner"
+                        height={1000}
+                        width={1000}
+                        className="object-contain rounded-xl"
+                        onLoadingComplete={() =>
+                          setLoadedImages((prev) => ({
+                            ...prev,
+                            [blog.id]: true,
+                          }))
+                        }
+                      />
+                    </div>
+
+                    <div className="flex flex-col gap-5 px-3">
+                      <h3 className="text-[20px] leading-[1.2em] font-semibold text-[#333333] dark:text-[#fff] line-clamp-2">
+                        {blog?.title}
+                      </h3>
+                      <div className="flex gap-2">
+                        {blog?.categories?.map((cat) => {
+                          return (
+                            <Button
+                              key={cat}
+                              size="xs"
+                              variant="outline"
+                              className="bg-contetra-blue text-white px-2 hover:text-white cursor-pointer menularge-cursor rounded-[6px]"
+                            >
+                              {cat}
+                            </Button>
+                          );
+                        })}
+                      </div>
+                      <p className=" leading-[1.2em] text-[16px]">
+                        {blog?.excerpt?.slice(0, 100) + "..."}
+                      </p>
+                      <div className="flex justify-between">
+                        <div>
+                          <Highlighter
+                            padding={10}
+                            action="underline"
+                            color="#FF9800"
+                          >
+                            {formatDate(blog?.created_at)}
+                          </Highlighter>
+                        </div>
+                        <div className="  border-gray-300 mr-3 group cursor-pointer">
+                          <Highlighter
+                            padding={10}
+                            action="circle"
+                            color="#FF9800"
+                          >
+                            <ArrowUpRight className="transition-transform duration-300 group-hover:rotate-45 " />
+                          </Highlighter>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
+              </BlurFade>
+            );
+          })}
+      </div>
+      <div className="mr-[30px]">
+        <BlogPagination />
+      </div>
+    </div>
+  );
+};

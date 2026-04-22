@@ -6,12 +6,15 @@ import {
   NavigationMenuLink,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { SlideUpText } from "@/components/ui/slide-up-text";
 import React from "react";
 
 export const MenuContactUs = () => {
   return (
     <NavigationMenuItem className="hidden md:block">
-      <NavigationMenuTrigger className="text-[16px]">Need Help?</NavigationMenuTrigger>
+        <NavigationMenuTrigger className="menularge-cursor text-[16px]">
+        <SlideUpText>Need Help?</SlideUpText>
+      </NavigationMenuTrigger>
       
       <NavigationMenuContent className="max-w-[90vw] right-0 left-auto mt-10 bg-white">
         <ul className="grid w-[200px] gap-4">

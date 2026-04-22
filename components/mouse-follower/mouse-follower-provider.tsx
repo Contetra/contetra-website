@@ -49,7 +49,8 @@ export function MouseFollowerProvider({ children, speed }: MouseFollowerProvider
       stateDetection: {
         "-pointer": "a,button",
         "-hidden": "iframe",
-        "-large": ".enlarge-cursor"
+        "-large": ".enlarge-cursor",
+        "-menularge": ".menularge-cursor"
       },
       visible: true,
       visibleOnState: false,

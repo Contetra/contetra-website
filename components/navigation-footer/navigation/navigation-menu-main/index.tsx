@@ -7,10 +7,10 @@ import {
 } from "@/components/ui/navigation-menu";
 import { MenuContactUs } from "./components/menu-contact-us";
 import { MenuResources } from "./components/menu-resources";
-import { MenuBlog } from "./components/menu-blog";
 import { MenuServices } from "./components/menu-services";
-import { MenuCompany } from "./components/menu-company";
+import { MenuBlog } from "./components/menu-blog";
 import { MenuHome } from "./components/menu-home";
+import { MenuCompany } from "./components/menu-company";
 
 
 

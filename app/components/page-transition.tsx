@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { usePathname, useRouter } from "next/navigation";
 
+const PAGE_TRANSITION_DELAY_MS = 0;
+
 export const PageTransition = () => {
   const pathname = usePathname();
   const router = useRouter();
@@ -98,7 +100,9 @@ export const PageTransition = () => {
       mainRef.current = document.querySelector("main") as HTMLElement | null;
       if (mainRef.current) mainRef.current.style.visibility = "hidden";
       await animateIn();
-      // navigate after overlay in
+      // wait a bit longer before navigating
+      await new Promise((resolve) => setTimeout(resolve, PAGE_TRANSITION_DELAY_MS));
+      // navigate after overlay in + delay
       router.push(href);
     };
 
@@ -113,7 +117,7 @@ export const PageTransition = () => {
     <div className="pointer-events-none fixed inset-0 z-[9999]">
       <div
         ref={panelRef}
-        className="absolute inset-0 z-10 bg-[#babdad] [transform:scaleY(0)]"
+        className="absolute inset-0 z-10 bg-[#edf5fe] dark:bg-[#111] [transform:scaleY(0)]"
       />
     </div>
   );
