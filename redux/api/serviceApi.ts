@@ -29,10 +29,24 @@ export const serviceApi = createApi({
         },
       }),
     }),
+
+    postServiceEisOne: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/services/eisOne",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+
+
   }),
 });
 
 export const {
   usePostServiceTaigasOneMutation,
   usePostServiceTaigasTwoMutation,
+  usePostServiceEisOneMutation,
 } = serviceApi;

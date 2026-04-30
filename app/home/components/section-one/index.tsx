@@ -97,7 +97,7 @@ export const SectionOne = () => {
   };
 
   return (
-    <div className="flex w-full mb-[100px]">
+    <div className="flex w-full mb-[100px] px-4 sm:px-8 md:px-12 lg:px-[80px]">
         <LightRaysWrapper count={20} speed={20} />
       <div className=" w-[50%] flex flex-col gap-6 justify-end">
         <div ref={headlineContainerRef} className="flex flex-col opacity-0">

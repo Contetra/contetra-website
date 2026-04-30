@@ -38,6 +38,8 @@ import { toast } from "sonner";
 import { fireConfetti } from "@/lib/confettiFireworks";
 import { APIError } from "@/interface/api-response.types";
 import { useRouter } from "next/navigation";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
+import constants from "@/utils/constants.json";
 
 const FormSchema = z.object({
   full_name: z.string().trim().min(2, {
@@ -74,6 +76,13 @@ export const TaigasBottomSection = () => {
   const [trigger, { data: taigasData, isError, isSuccess, error, isLoading }] =
   usePostServiceTaigasTwoMutation();
 
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids
+      .technical_accounting_international_gaap_advisory_services,
+  );
+
+  const form_id = formsData?.response[0]?.id;
+
   const turnstileRef = useRef<TurnstileInstance | null>(null);
 
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -94,7 +103,7 @@ export const TaigasBottomSection = () => {
       return;
     }
     trigger({
-      body: data,
+      body: { ...data, form_id: form_id ?? "" },
       captchaToken,
     });
   }
@@ -114,9 +123,11 @@ export const TaigasBottomSection = () => {
       form.reset();
       const link = taigasData?.response?.link;
       toast.info("Redirecting to download in 5 seconds...");
-      setTimeout(() => {
-        router.push(link);
-      }, 5000);
+      if (link) {
+        setTimeout(() => {
+          window.open(link, "_blank", "noopener,noreferrer");
+        }, 5000);
+      }
     }
 
     if (taigasData && isSuccess && !taigasData?.statusCode) {

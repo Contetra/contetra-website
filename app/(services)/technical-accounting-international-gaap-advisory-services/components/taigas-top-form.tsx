@@ -23,6 +23,8 @@ import { fireConfetti } from "@/lib/confettiFireworks";
 import { APIError } from "@/interface/api-response.types";
 import { useRouter } from "next/navigation";
 import { Loader } from "lucide-react";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
+import constants from "@/utils/constants.json";
 
 const checklistItems = [
   "Real-world accounting case studies.",
@@ -59,9 +61,15 @@ export const TaigasTopForm = () => {
   const turnstileRef = useRef<TurnstileInstance | null>(null);
   const router = useRouter();
 
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids
+      .technical_accounting_international_gaap_advisory_services,
+  );
+
+  const form_id = formsData?.response[0]?.id;
 
   const [trigger, { data: taigasData, isError, isSuccess, error, isLoading }] =
-  usePostServiceTaigasOneMutation();
+    usePostServiceTaigasOneMutation();
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -83,12 +91,12 @@ export const TaigasTopForm = () => {
     }
 
     trigger({
-      body: data,
+      body: { ...data, form_id: form_id ?? "" },
       captchaToken,
     });
 
     setCaptchaError(null);
-    
+
     setCaptchaToken(null);
     turnstileRef.current?.reset();
   }
@@ -103,9 +111,11 @@ export const TaigasTopForm = () => {
       form.reset();
       const link = taigasData?.response?.link;
       toast.info("Redirecting to download in 5 seconds...");
-      setTimeout(() => {
-        router.push(link);
-      }, 5000);
+      if (link) {
+        setTimeout(() => {
+          window.open(link, "_blank", "noopener,noreferrer");
+        }, 5000);
+      }
     }
 
     if (taigasData && isSuccess && !taigasData?.statusCode) {
@@ -277,13 +287,11 @@ export const TaigasTopForm = () => {
                 </div>
               </div>
               <Button
-                    className="h-11 w-full rounded-[10px] bg-[#56B9F7] px-8 text-[14px] font-semibold text-white hover:bg-[#42aef1] sm:w-auto sm:self-start cursor-pointer"
-                    type="submit"
-                  >
-                    {isLoading && <Loader className="animate-spin" />}{" "}
-                    {"Download!"}
-                  </Button>
-              
+                className="h-11 w-full rounded-[10px] bg-[#56B9F7] px-8 text-[14px] font-semibold text-white hover:bg-[#42aef1] sm:w-auto sm:self-start cursor-pointer"
+                type="submit"
+              >
+                {isLoading && <Loader className="animate-spin" />} {"Download!"}
+              </Button>
             </div>
           </form>
         </Form>

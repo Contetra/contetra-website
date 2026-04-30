@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 import { CheckIcon, ChevronsUpDown, Loader } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -32,6 +32,11 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
+import constants from "@/utils/constants.json";
+import { usePostServiceEisOneMutation } from "@/redux/api/serviceApi";
+import { fireConfetti } from "@/lib/confettiFireworks";
+import { APIError } from "@/interface/api-response.types";
 
 const helpOptions = [
   "I am facing issues with my current ERP system.",
@@ -86,10 +91,18 @@ const formSchema = z.object({
 export const EisTopSectionRightBlock = () => {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [captchaError, setCaptchaError] = useState<string | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);
   const [currencyOpen, setCurrencyOpen] = useState(false);
   const turnstileRef = useRef<TurnstileInstance | null>(null);
+
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids.erp_implementation_solutions,
+  );
+
+  const form_id = formsData?.response[0]?.id;
+
+  const [trigger, { data: eisData, isError, isSuccess, error, isLoading }] =
+    usePostServiceEisOneMutation();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -108,31 +121,62 @@ export const EisTopSectionRightBlock = () => {
     },
   });
 
-  const setToken = (token: string) => {
-    setCaptchaToken(token);
-    setCaptchaError(null);
-  };
-
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(data: z.infer<typeof formSchema>) {
     if (!captchaToken) {
       setCaptchaError("Please verify the captcha");
       return;
     }
 
-    setIsSubmitting(true);
-
-    await new Promise((resolve) => setTimeout(resolve, 800));
-
-    console.log("ERP review form data", values);
-    toast.info(
-      "ERP form UI is ready. Connect the API endpoint to enable live submissions."
-    );
+    trigger({
+      body: { ...data, form_id: form_id ?? "" },
+      captchaToken,
+    });
 
     setCaptchaError(null);
+
     setCaptchaToken(null);
     turnstileRef.current?.reset();
-    setIsSubmitting(false);
   }
+
+  useEffect(() => {
+    if (eisData && isSuccess && eisData?.statusCode) {
+      toast.success(eisData?.response?.message);
+      fireConfetti();
+      setCaptchaError(null);
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+      form.reset();
+      const link = eisData?.response?.link;
+      toast.info("Redirecting to download in 5 seconds...");
+      if (link) {
+        setTimeout(() => {
+          window.open(link, "_blank", "noopener,noreferrer");
+        }, 5000);
+      }
+    }
+
+    if (eisData && isSuccess && !eisData?.statusCode) {
+      toast.error(eisData?.response?.message || "Something went wrong");
+    }
+
+    if (isError) {
+      setCaptchaError("Captcha verification failed. Please try again.");
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+
+      if ((error as APIError)?.data) {
+        const apiError = error as APIError;
+        const errorMessage =
+          apiError?.data?.response?.message || "Something went wrong";
+        toast.error(errorMessage);
+      }
+    }
+  }, [isSuccess, eisData, isError, error, trigger, form]);
+
+  const setToken = (token: string) => {
+    setCaptchaToken(token);
+    setCaptchaError(null);
+  };
 
   return (
     <div className="min-w-0 w-full px-1 py-2 sm:px-2 sm:py-4">
@@ -302,7 +346,7 @@ export const EisTopSectionRightBlock = () => {
                               role="combobox"
                               className={cn(
                                 "h-11 w-full justify-between rounded-[14px] border-[#E6EAF0] bg-white px-3 text-left text-sm font-normal leading-[1.4em] text-[#111827] shadow-xs hover:bg-white dark:border-[#344155] dark:bg-[#0F172A] dark:text-[#E5E7EB] dark:hover:bg-[#0F172A]",
-                                !field.value && "text-muted-foreground"
+                                !field.value && "text-muted-foreground",
                               )}
                               ref={field.ref}
                               onBlur={field.onBlur}
@@ -343,7 +387,7 @@ export const EisTopSectionRightBlock = () => {
                                         "ml-auto h-4 w-4",
                                         option === field.value
                                           ? "opacity-100"
-                                          : "opacity-0"
+                                          : "opacity-0",
                                       )}
                                     />
                                   </CommandItem>
@@ -398,7 +442,7 @@ export const EisTopSectionRightBlock = () => {
                               role="combobox"
                               className={cn(
                                 "h-11 w-full justify-between rounded-[14px] border-[#E6EAF0] bg-white px-3 text-left text-sm font-normal leading-[1.4em] text-[#111827] shadow-xs hover:bg-white dark:border-[#344155] dark:bg-[#0F172A] dark:text-[#E5E7EB] dark:hover:bg-[#0F172A]",
-                                !field.value && "text-muted-foreground"
+                                !field.value && "text-muted-foreground",
                               )}
                               ref={field.ref}
                               onBlur={field.onBlur}
@@ -439,7 +483,7 @@ export const EisTopSectionRightBlock = () => {
                                         "ml-auto h-4 w-4",
                                         option === field.value
                                           ? "opacity-100"
-                                          : "opacity-0"
+                                          : "opacity-0",
                                       )}
                                     />
                                   </CommandItem>
@@ -477,7 +521,7 @@ export const EisTopSectionRightBlock = () => {
                   className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] xl:w-auto xl:min-w-[220px]"
                   type="submit"
                 >
-                  {isSubmitting ? <Loader className="animate-spin" /> : null}
+                  {isLoading ? <Loader className="animate-spin" /> : null}
                   Book A ERP Review Call
                 </Button>
               </div>

@@ -3,6 +3,7 @@ import { postsApi } from "@/redux/api/postsApi";
 import { ebookApi } from "@/redux/api/ebookApi";
 import { serviceApi } from "@/redux/api/serviceApi";
 import blogSliceReducer from "@/redux/slice/blogSlice";
+import { commonApi } from "@/redux/api/commonApi";
 
 export const store = () => {
   return configureStore({
@@ -10,11 +11,12 @@ export const store = () => {
       [postsApi.reducerPath]: postsApi.reducer,
       [ebookApi.reducerPath]: ebookApi.reducer,
       [serviceApi.reducerPath]: serviceApi.reducer,
+      [commonApi.reducerPath]: commonApi.reducer,
       blogSlice: blogSliceReducer,
     },
 
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat([postsApi.middleware, ebookApi.middleware, serviceApi.middleware]),
+      getDefaultMiddleware().concat([postsApi.middleware, ebookApi.middleware, serviceApi.middleware, commonApi.middleware]),
   });
 };
 
