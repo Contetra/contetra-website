@@ -1,7 +1,9 @@
 node_modules
 .git
-.next
-dist
-build
+.gitignore
+Dockerfile
+docker-compose.yml
 .env
 *.log
+dist (optional for FE)
+.next/cache
