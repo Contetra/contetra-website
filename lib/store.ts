@@ -1,0 +1,25 @@
+import { configureStore } from "@reduxjs/toolkit";
+import { postsApi } from "@/redux/api/postsApi";
+import { ebookApi } from "@/redux/api/ebookApi";
+import { serviceApi } from "@/redux/api/serviceApi";
+import blogSliceReducer from "@/redux/slice/blogSlice";
+import { commonApi } from "@/redux/api/commonApi";
+
+export const store = () => {
+  return configureStore({
+    reducer: {
+      [postsApi.reducerPath]: postsApi.reducer,
+      [ebookApi.reducerPath]: ebookApi.reducer,
+      [serviceApi.reducerPath]: serviceApi.reducer,
+      [commonApi.reducerPath]: commonApi.reducer,
+      blogSlice: blogSliceReducer,
+    },
+
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware().concat([postsApi.middleware, ebookApi.middleware, serviceApi.middleware, commonApi.middleware]),
+  });
+};
+
+export type AppStore = ReturnType<typeof store>;
+export type RootState = ReturnType<AppStore["getState"]>;
+export type AppDispatch = AppStore["dispatch"];
