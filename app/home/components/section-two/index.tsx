@@ -86,7 +86,7 @@ export function SectionTwo() {
     <section className="w-full bg-background text-foreground">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 py-10 sm:gap-10 sm:px-6 sm:py-12 md:gap-12 md:py-16 lg:gap-14 lg:px-8 lg:py-20">
         <header className="flex w-full max-w-4xl flex-col items-center gap-3 text-center sm:gap-4 md:gap-5">
-          <h2 className="text-balance text-2xl font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-[2.5rem] lg:leading-tight">
+          <h2 className="text-balance text-[30px] font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-[2.5rem] lg:leading-tight">
             <span className="text-contetra-blue dark:text-zinc-100">
               Contetra&apos;s Finance{" "}
             </span>
