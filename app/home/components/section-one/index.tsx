@@ -48,12 +48,12 @@ export const SectionOne = () => {
   const renderAnimatedLine = (
     text: string,
     colorClass: string,
-    tag: "h1" | "h2"
+    tag: "h1" | "h2",
   ) => {
     const words = text.split(" ");
     const HeadingTag = tag;
     return (
-      <HeadingTag className={`${colorClass} font-medium text-[50px]`}>
+      <HeadingTag className={`${colorClass} font-medium text-[35px] lg:text-[50px]`}>
         {words.map((word, index) => (
           <span
             key={`${word}-${index}`}
@@ -97,41 +97,43 @@ export const SectionOne = () => {
   };
 
   return (
-    <div className="flex w-full mb-[100px] px-4 sm:px-8 md:px-12 lg:px-[80px]">
-        <LightRaysWrapper count={20} speed={20} />
-      <div className=" w-[50%] flex flex-col gap-6 justify-end">
+    <div className="flex w-full gap-10 lg:gap-0 flex-col lg:flex-row mb-[100px] px-4 sm:px-8 md:px-12 lg:px-[80px]">
+      <LightRaysWrapper count={20} speed={20} />
+      <div className=" w-full lg:w-[50%] flex flex-col gap-6 justify-end">
         <div ref={headlineContainerRef} className="flex flex-col opacity-0">
-          <div className=" text-[50px] flex flex-col">
+          <div className=" text-[20px] flex flex-col">
             <div className=" inline-block -mb-3">
               {renderAnimatedLine(lineOne, "text-contetra-blue", "h1")}
             </div>
             {renderAnimatedLine(lineTwo, "text-contetra-green", "h2")}
           </div>
 
-          <p className="text-[18px] font-[400] leading-[1.2em] mt-2">
+          <p className="text-[16px] lg:text-[18px] font-[400] leading-[1.2em] mt-2">
             {renderAnimatedWords("When it comes to business finance,")}{" "}
             <b>{renderAnimatedWords("there’s no one-size fits all.")}</b>
-            <br />
+            <br className="hidden lg:block" />
             {renderAnimatedWords(
-              "Let us help you get the competitive advantage you need – whether it’s"
+              "Let us help you get the competitive advantage you need – whether it’s",
             )}
-            <br />
+            <br className="hidden lg:block" />
             {renderAnimatedWords(
-              "creating financial statements that make more sense for a global"
+              "creating financial statements that make more sense for a global",
             )}
-            <br />
+            <br className="hidden lg:block" />
             {renderAnimatedWords(
-              "world, or finance strategy that drives your business to new heights."
+              "world, or finance strategy that drives your business to new heights.",
             )}
           </p>
         </div>
-
       </div>
 
-      <div className="relative z-10 w-[50%] flex justify-center">
-        <div className="w-[50%] flex justify-center">
+      <div className="relative z-10 w-full lg:w-[50%] flex justify-center">
+        <div className="w-[80%] lg:w-[50%] flex justify-center">
           {/* <Image className="w-full" src={MainImage} alt="MainImage" /> */}
-          <PixelImage src={`${process.env.NEXT_PUBLIC_CDN_URL}/pages/home-page/Home-page-1st-banner-image.png`} grid="8x8" />
+          <PixelImage
+            src={`${process.env.NEXT_PUBLIC_CDN_URL}/pages/home-page/Home-page-1st-banner-image.png`}
+            grid="8x8"
+          />
         </div>
       </div>
     </div>
