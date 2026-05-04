@@ -41,7 +41,27 @@ export const serviceApi = createApi({
       }),
     }),
 
+    postServiceEisTwo: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/services/eisTwo",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
 
+    postServiceSbfmsOne: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/services/sbfmsOne",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
   }),
 });
 
@@ -49,4 +69,6 @@ export const {
   usePostServiceTaigasOneMutation,
   usePostServiceTaigasTwoMutation,
   usePostServiceEisOneMutation,
+  usePostServiceEisTwoMutation,
+  usePostServiceSbfmsOneMutation,
 } = serviceApi;
