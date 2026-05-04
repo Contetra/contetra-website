@@ -53,7 +53,7 @@ export const SectionOne = () => {
     const words = text.split(" ");
     const HeadingTag = tag;
     return (
-      <HeadingTag className={`${colorClass} font-medium text-[35px] lg:text-[45px] leading-[1em]`}>
+      <HeadingTag className={`${colorClass} font-medium text-[35px] lg:text-[38px] xl:text-[38px] 2xl:text-[45px] leading-[1em]`}>
         {words.map((word, index) => (
           <span
             key={`${word}-${index}`}
