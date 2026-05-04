@@ -10,8 +10,8 @@ export const SectionOne = () => {
   const wordRefs = useRef<HTMLSpanElement[]>([]);
 
   // Headline lines to animate
-  const lineOne = useMemo(() => "Financial Advisory", []);
-  const lineTwo = useMemo(() => "for the bottom line.", []);
+  const lineOne = useMemo(() => "Finance Transformation Consulting for", []);
+  const lineTwo = useMemo(() => "CFOs and Growing Businesses.", []);
 
   // Reset refs array length before render
   wordRefs.current = [];
@@ -53,11 +53,11 @@ export const SectionOne = () => {
     const words = text.split(" ");
     const HeadingTag = tag;
     return (
-      <HeadingTag className={`${colorClass} font-medium text-[35px] lg:text-[50px]`}>
+      <HeadingTag className={`${colorClass} font-medium text-[35px] lg:text-[45px] leading-[1em]`}>
         {words.map((word, index) => (
           <span
             key={`${word}-${index}`}
-            className="overflow-hidden inline-block mr-2 align-top"
+            className=" inline-block mr-2 align-top"
           >
             <span
               className="inline-block will-change-transform enlarge-cursor"
@@ -99,16 +99,16 @@ export const SectionOne = () => {
   return (
     <div className="flex w-full gap-10 lg:gap-0 flex-col lg:flex-row mb-[100px] px-4 sm:px-8 md:px-12 lg:px-[80px]">
       <LightRaysWrapper count={20} speed={20} />
-      <div className=" w-full lg:w-[50%] flex flex-col gap-6 justify-end">
+      <div className=" w-full lg:w-[60%] flex flex-col gap-6 justify-end">
         <div ref={headlineContainerRef} className="flex flex-col opacity-0">
           <div className=" text-[20px] flex flex-col">
-            <div className=" inline-block -mb-3">
+            <div className=" inline-block mb-2">
               {renderAnimatedLine(lineOne, "text-contetra-blue", "h1")}
             </div>
             {renderAnimatedLine(lineTwo, "text-contetra-green", "h2")}
           </div>
 
-          <p className="text-[16px] lg:text-[18px] font-[400] leading-[1.2em] mt-2">
+          <p className="text-[16px] lg:text-[18px] font-[400] leading-[1.2em] mt-6">
             {renderAnimatedWords("When it comes to business finance,")}{" "}
             <b>{renderAnimatedWords("there’s no one-size fits all.")}</b>
             <br className="hidden lg:block" />
@@ -127,7 +127,7 @@ export const SectionOne = () => {
         </div>
       </div>
 
-      <div className="relative z-10 w-full lg:w-[50%] flex justify-center">
+      <div className="relative z-10 w-full lg:w-[40%] flex justify-center">
         <div className="w-[80%] lg:w-[50%] flex justify-center">
           {/* <Image className="w-full" src={MainImage} alt="MainImage" /> */}
           <PixelImage

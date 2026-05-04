@@ -11,6 +11,8 @@ declare global {
   }
 }
 
+const CURSOR_MIN_WIDTH_MQ = "(min-width: 1280px)";
+
 type MouseFollowerProviderProps = {
   children: React.ReactNode;
   speed?: number;
@@ -22,14 +24,9 @@ export function MouseFollowerProvider({ children, speed }: MouseFollowerProvider
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    if (window.__mouseFollower) {
-      cursorRef.current = window.__mouseFollower;
-      return;
-    }
+    const mql = window.matchMedia(CURSOR_MIN_WIDTH_MQ);
 
-    MouseFollower.registerGSAP(gsap);
-
-    const options: MouseFollowerOptions = {
+    const buildOptions = (): MouseFollowerOptions => ({
       el: null,
       container: document.body,
       className: "mf-cursor",
@@ -68,17 +65,36 @@ export function MouseFollowerProvider({ children, speed }: MouseFollowerProvider
       hideOnLeave: true,
       hideTimeout: 300,
       hideMediaTimeout: 300,
+    });
+
+    const getOrCreate = (): MouseFollower => {
+      if (window.__mouseFollower) {
+        cursorRef.current = window.__mouseFollower;
+        return window.__mouseFollower;
+      }
+      MouseFollower.registerGSAP(gsap);
+      const instance = new MouseFollower(buildOptions());
+      window.__mouseFollower = instance;
+      cursorRef.current = instance;
+      return instance;
     };
 
-    const instance = new MouseFollower(options);
+    const applyViewport = () => {
+      if (mql.matches) {
+        getOrCreate().show();
+      } else {
+        window.__mouseFollower?.hide();
+      }
+    };
 
-    window.__mouseFollower = instance;
-    cursorRef.current = instance;
+    applyViewport();
+    mql.addEventListener("change", applyViewport);
 
     return () => {
+      mql.removeEventListener("change", applyViewport);
       if (process.env.NODE_ENV === "production") {
         try {
-          instance.destroy();
+          cursorRef.current?.destroy();
           window.__mouseFollower = undefined;
         } catch {}
       }

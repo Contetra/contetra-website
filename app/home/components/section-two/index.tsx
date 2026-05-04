@@ -4,7 +4,7 @@ const ICON_BASE = "https://contetra.b-cdn.net/pages/home-page";
 
 const cards = [
   {
-    title: "Technical Accounting",
+    title: "Technical Accounting Advisory Services",
     icon: `${ICON_BASE}/home-icon-1.png`,
     items: [
       "Ind AS, IFRS & US GAAP Advisory.",
@@ -16,7 +16,7 @@ const cards = [
     ],
   },
   {
-    title: "ERP Implementation",
+    title: "End-to-end ERP Implementation Services",
     icon: `${ICON_BASE}/home-icon-2.png`,
     items: [
       "End-to-End ERP Implementation.",
@@ -28,7 +28,7 @@ const cards = [
     ],
   },
   {
-    title: "FPA",
+    title: "Financial Planning and Analysis Services",
     icon: `${ICON_BASE}/home-icon-3.png`,
     items: [
       "Strategic Financial Management Solutions.",
@@ -40,7 +40,7 @@ const cards = [
     ],
   },
   {
-    title: "Finance Automation",
+    title: "Finance Process Automation Services",
     icon: `${ICON_BASE}/home-icon-4.png`,
     items: [
       "MCA Struck Off Companies Check",
@@ -55,7 +55,7 @@ const cards = [
     ],
   },
   {
-    title: "IPO Readiness",
+    title: "IPO Readiness and Financial Transformation Services",
     icon: `${ICON_BASE}/home-icon-5.png`,
     items: [
       "IPO Readiness Services.",
@@ -68,7 +68,7 @@ const cards = [
     ],
   },
   {
-    title: "GCC/ Shared Service",
+    title: "Global capability center and shared services consulting",
     icon: `${ICON_BASE}/home-icon-6.png`,
     items: [
       "Offshore Accounting Services in India.",
@@ -88,9 +88,11 @@ export function SectionTwo() {
         <header className="flex w-full max-w-4xl flex-col items-center gap-3 text-center sm:gap-4 md:gap-5">
           <h2 className="text-balance text-[30px] font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-[2.5rem] lg:leading-tight">
             <span className="text-contetra-blue dark:text-zinc-100">
-              Contetra&apos;s Finance{" "}
+              End-to-End Finance Transformation {""}
             </span>
-            <span className="text-contetra-green">Transformation Suite</span>
+            <span className="text-contetra-green">
+            Services for CFOs & Growing Businesses
+            </span>
           </h2>
           <p className="max-w-prose text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">
             Partner with Contetra for{" "}
