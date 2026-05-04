@@ -37,7 +37,7 @@ export const SERVICE_NAV_ITEMS: ServiceNavItem[] = [
   },
   {
     title: "Financial Recruitment Consultants",
-    href: "/",
+    href: "/financial-recruitment-consultants",
     description:
       "We provide financial recruitment consultants to help you find the right talent for your business.",
   },

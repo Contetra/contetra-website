@@ -3,15 +3,15 @@ import { Header } from "@/components/navigation/navigation/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Corporate Finance Training for Teams & Business Leaders | Contetra`,
-  description: `Upskill your teams with practical corporate finance training on accounting, ERP, and decision-making frameworks.`,
-  keywords: `finance training for employees, finance training for companies, business finance training services, corporate training programs for finance teams, professional finance training services, corporate training services India, finance training company India`,
+  title: `Finance Transformation Consultant | IFRS | ERP | Contetra`,
+  description: `Contetra helps CFOs and growing businesses with IFRS advisory, ERP implementation, FP&A strategy, and IPO readiness. Serving 100+ clients globally.`,
+  keywords: `Business management consultant in mumbai, finance business consultant, finance consulting services, finance advisory services, business financial management solutions`,
   alternates: {
     canonical: "https://contetra.com/",
   },
   openGraph: {
-    title: `Corporate Finance Training for Teams & Leaders in Mumbai`,
-    description: `Upskill your teams with practical finance training on accounting, ERP, and decision-making frameworks.`,
+    title: `Finance Transformation & ERP Consulting for Growing Businesses`,
+    description: `Build financial clarity, control, and growth with Contetra’s CFO-led consulting, ERP implementation, and FP&A solutions.`,
   },
 };
 
