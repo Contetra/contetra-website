@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 import { ChevronDown, Loader, Smile } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -25,6 +25,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
+import { usePostServiceOasOneMutation } from "@/redux/api/serviceApi";
+import constants from "@/utils/constants.json";
+import { fireConfetti } from "@/lib/confettiFireworks";
+import { APIError } from "@/interface/api-response.types";
 
 /** Replace or extend items as needed */
 export const oasMiddleAccordionItems = [
@@ -83,8 +88,16 @@ const formSchema = z.object({
 function OasMiddleSectionRightForm() {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [captchaError, setCaptchaError] = useState<string | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const turnstileRef = useRef<TurnstileInstance | null>(null);
+
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids.offshore_accounting_services,
+  );
+
+  const form_id = formsData?.response[0]?.id;
+
+  const [trigger, { data: oasData, isError, isSuccess, error, isLoading }] =
+    usePostServiceOasOneMutation();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -100,30 +113,62 @@ function OasMiddleSectionRightForm() {
     },
   });
 
-  const setToken = (token: string) => {
-    setCaptchaToken(token);
-    setCaptchaError(null);
-  };
-
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(data: z.infer<typeof formSchema>) {
     if (!captchaToken) {
       setCaptchaError("Please verify the captcha");
       return;
     }
 
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
-
-    console.log("Offshore accounting lead form", values);
-    toast.info(
-      "Form UI is ready. Connect the API endpoint to enable live submissions."
-    );
+    trigger({
+      body: { ...data, form_id: form_id ?? "" },
+      captchaToken,
+    });
 
     setCaptchaError(null);
+
     setCaptchaToken(null);
     turnstileRef.current?.reset();
-    setIsSubmitting(false);
   }
+
+  useEffect(() => {
+    if (oasData && isSuccess && oasData?.statusCode) {
+      toast.success(oasData?.response?.message);
+      fireConfetti();
+      setCaptchaError(null);
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+      form.reset();
+      const link = oasData?.response?.link;
+      toast.info("Redirecting to download in 5 seconds...");
+      if (link) {
+        setTimeout(() => {
+          window.open(link, "_blank", "noopener,noreferrer");
+        }, 5000);
+      }
+    }
+
+    if (oasData && isSuccess && !oasData?.statusCode) {
+      toast.error(oasData?.response?.message || "Something went wrong");
+    }
+
+    if (isError) {
+      setCaptchaError("Captcha verification failed. Please try again.");
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+
+      if ((error as APIError)?.data) {
+        const apiError = error as APIError;
+        const errorMessage =
+          apiError?.data?.response?.message || "Something went wrong";
+        toast.error(errorMessage);
+      }
+    }
+  }, [isSuccess, oasData, isError, error, trigger, form]);
+
+  const setToken = (token: string) => {
+    setCaptchaToken(token);
+    setCaptchaError(null);
+  };
 
   const fieldClass =
     "h-11 rounded-[14px] border-[#E6EAF0] bg-white text-sm dark:border-[#344155] dark:bg-[#0F172A]";
@@ -147,7 +192,7 @@ function OasMiddleSectionRightForm() {
                 className={cn(
                   "block leading-[1.2] sm:leading-[1.22]",
                   "font-semibold text-[#B87333] dark:text-[#E8B86D]",
-                  "underline decoration-wavy decoration-[#C4A574] decoration-[1.5px] underline-offset-[4px] sm:decoration-2 sm:underline-offset-[5px]"
+                  "underline decoration-wavy decoration-[#C4A574] decoration-[1.5px] underline-offset-[4px] sm:decoration-2 sm:underline-offset-[5px]",
                 )}
               >
                 about your requirements
@@ -221,7 +266,9 @@ function OasMiddleSectionRightForm() {
                     name="designation"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className={labelClass}>Designation</FormLabel>
+                        <FormLabel className={labelClass}>
+                          Designation
+                        </FormLabel>
                         <FormControl>
                           <Input className={fieldClass} {...field} />
                         </FormControl>
@@ -234,7 +281,9 @@ function OasMiddleSectionRightForm() {
                     name="phone_number"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className={labelClass}>Your Number</FormLabel>
+                        <FormLabel className={labelClass}>
+                          Your Number
+                        </FormLabel>
                         <FormControl>
                           <Input className={fieldClass} {...field} />
                         </FormControl>
@@ -274,17 +323,20 @@ function OasMiddleSectionRightForm() {
                   </div>
 
                   <Button
-                    className="h-12 w-full rounded-[12px] bg-[#0a0a3c] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#08082f] dark:bg-[#0a0a3c] dark:hover:bg-[#12125a]"
+                    className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] xl:w-auto xl:min-w-[220px]"
                     type="submit"
                   >
-                    {isSubmitting ? (
-                      <Loader className="mr-2 size-4 animate-spin" />
-                    ) : null}
+                    {isLoading ? <Loader className="animate-spin" /> : null}
                     <span className="inline-flex items-center justify-center gap-2">
                       Can&apos;t wait to hear from you
-                      <Smile className="size-4 shrink-0 text-white" strokeWidth={2} />
+                      <Smile
+                        className="size-4 shrink-0 text-white"
+                        strokeWidth={2}
+                      />
                     </span>
                   </Button>
+
+                
                 </div>
               </form>
             </Form>
@@ -347,13 +399,13 @@ export function OasMiddleSectionOne() {
                       "hover:no-underline [&>svg:last-child]:hidden",
                       "border-0",
                       "data-[state=closed]:rounded-lg data-[state=closed]:bg-[#F0F1F4] data-[state=closed]:text-neutral-900",
-                      "data-[state=open]:rounded-b-none data-[state=open]:rounded-t-lg data-[state=open]:bg-[#0a0a3c] data-[state=open]:text-white"
+                      "data-[state=open]:rounded-b-none data-[state=open]:rounded-t-lg data-[state=open]:bg-[#0a0a3c] data-[state=open]:text-white",
                     )}
                   >
                     <span
                       className={cn(
                         "size-3 shrink-0 self-center rounded-full border-2 border-neutral-900 bg-transparent",
-                        "group-data-[state=open]:border-0 group-data-[state=open]:bg-[#5eead4]"
+                        "group-data-[state=open]:border-0 group-data-[state=open]:bg-[#5eead4]",
                       )}
                       aria-hidden
                     />
@@ -365,7 +417,7 @@ export function OasMiddleSectionOne() {
                   </AccordionTrigger>
                   <AccordionContent
                     className={cn(
-                      "rounded-b-lg border-0 bg-white px-3 pt-2 pb-3 text-[13.5px] leading-relaxed text-neutral-900 shadow-none sm:px-5 sm:pb-4 sm:text-[14.5px] md:text-[15px]"
+                      "rounded-b-lg border-0 bg-white px-3 pt-2 pb-3 text-[13.5px] leading-relaxed text-neutral-900 shadow-none sm:px-5 sm:pb-4 sm:text-[14.5px] md:text-[15px]",
                     )}
                   >
                     {item.content}

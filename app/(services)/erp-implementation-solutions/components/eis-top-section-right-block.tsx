@@ -91,9 +91,9 @@ const formSchema = z.object({
 export const EisTopSectionRightBlock = () => {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [captchaError, setCaptchaError] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance | null>(null);
   const [helpOpen, setHelpOpen] = useState(false);
   const [currencyOpen, setCurrencyOpen] = useState(false);
-  const turnstileRef = useRef<TurnstileInstance | null>(null);
 
   const { data: formsData } = useGetFormsQuery(
     constants.form_type_ids.erp_implementation_solutions,

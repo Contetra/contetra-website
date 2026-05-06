@@ -2,6 +2,12 @@
   "form_type_ids": {
     "technical_accounting_international_gaap_advisory_services": "25936040-25da-46bf-a733-4813871937c9",
     "erp_implementation_solutions": "723344a5-eada-4355-a0ff-a7c60765cda4",
-    "strategic_business_financial_management_solutions": ""
+    "strategic_business_financial_management_solutions": "",
+    "strike_that": "0d1a5ff3-feb1-46bc-94fd-d6f64de057ea",
+    "offshore_accounting_services": "6efa032a-d4dc-4e3d-9eb3-1cde8ca0127a",
+    "corporate_training": "73d837ca-81ab-49f2-b0a0-45c1b0d8afa8",
+    "ipo_readiness": "d257b853-bd08-4ca1-ad33-f594915e4856",
+    "business_insights_into_ifrs_16" : "1dc34c04-0970-4c76-97e4-6271bb23d85e",
+    "interview_prep_guide_for_careers_in_financial_reporting" : "a3439be2-47ab-4ca6-a755-d27e36343429"
   }
 }

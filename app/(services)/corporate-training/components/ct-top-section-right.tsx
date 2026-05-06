@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -17,6 +17,12 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import { usePostServiceCtOneMutation } from "@/redux/api/serviceApi";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
+import constants from "@/utils/constants.json";
+import { fireConfetti } from "@/lib/confettiFireworks";
+import { APIError } from "@/interface/api-response.types";
+import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 
 const trainingOptions = ["Virtual", "In-person Trainings"] as const;
 
@@ -53,7 +59,9 @@ const formSchema = z.object({
 });
 
 export const CtTopSectionRight = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [captchaError, setCaptchaError] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -69,15 +77,72 @@ export const CtTopSectionRight = () => {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 700));
-    console.log("Corporate training form data", values);
-    toast.info(
-      "Corporate training form UI is ready. Connect the API endpoint to enable live submissions."
-    );
-    setIsSubmitting(false);
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids.corporate_training,
+  );
+
+  const form_id = formsData?.response[0]?.id;
+
+  const [trigger, { data: ctData, isError, isSuccess, error, isLoading }] =
+    usePostServiceCtOneMutation();
+
+  function onSubmit(data: z.infer<typeof formSchema>) {
+    if (!captchaToken) {
+      setCaptchaError("Please verify the captcha");
+      return;
+    }
+
+    trigger({
+      body: { ...data, form_id: form_id ?? "" },
+      captchaToken,
+    });
+
+    setCaptchaError(null);
+
+    setCaptchaToken(null);
+    turnstileRef.current?.reset();
   }
+
+  useEffect(() => {
+    if (ctData && isSuccess && ctData?.statusCode) {
+      toast.success(ctData?.response?.message);
+      fireConfetti();
+      setCaptchaError(null);
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+      form.reset();
+      const link = ctData?.response?.link;
+      toast.info("Redirecting to download in 5 seconds...");
+      if (link) {
+        setTimeout(() => {
+          window.open(link, "_blank", "noopener,noreferrer");
+        }, 5000);
+      }
+    }
+
+    if (ctData && isSuccess && !ctData?.statusCode) {
+      toast.error(ctData?.response?.message || "Something went wrong");
+    }
+
+    if (isError) {
+      setCaptchaError("Captcha verification failed. Please try again.");
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+
+      if ((error as APIError)?.data) {
+        const apiError = error as APIError;
+        const errorMessage =
+          apiError?.data?.response?.message || "Something went wrong";
+        toast.error(errorMessage);
+      }
+    }
+  }, [isSuccess, ctData, isError, error, trigger, form]);
+
+  const setToken = (token: string) => {
+    setCaptchaToken(token);
+    setCaptchaError(null);
+  };
+
 
   return (
     <div className="min-w-0 w-full px-1 py-2 sm:px-2 sm:py-4">
@@ -255,13 +320,30 @@ export const CtTopSectionRight = () => {
               )}
             />
 
-            <Button
-              className="mt-1 h-11 w-fit rounded-[10px] bg-[#92E3B5] px-8 text-[14px] font-semibold text-[#1B145F] hover:bg-[#7fd9a6]"
-              type="submit"
-            >
-              {isSubmitting ? <Loader className="animate-spin" /> : null}
-              Submit
-            </Button>
+            <div className="mt-0 flex flex-row gap-10 sm:mt-1 sm:gap-4">
+              {captchaError ? (
+                <p className="text-sm leading-[1.4em] text-red-500">
+                  {captchaError}
+                </p>
+              ) : null}
+              <div className="w-full overflow-x-auto">
+                <div className="origin-left scale-[0.88] sm:scale-[0.95] lg:scale-100">
+                  <Turnstile
+                    ref={turnstileRef}
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    onSuccess={setToken}
+                  />
+                </div>
+              </div>
+
+              <Button
+                className="h-12 w-full rounded-[12px] bg-contetra-green px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] xl:w-auto xl:min-w-[220px]"
+                type="submit"
+              >
+                {isLoading ? <Loader className="animate-spin" /> : null}
+                Submit
+              </Button>
+            </div>
           </form>
         </Form>
       </div>

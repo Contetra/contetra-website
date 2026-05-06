@@ -62,6 +62,61 @@ export const serviceApi = createApi({
         },
       }),
     }),
+
+    postServiceSt: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/services/st",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+
+    postServiceOasOne: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/services/oasOne",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+
+    postServiceOasTwo: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/services/oasTwo",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+
+    postServiceCtOne: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/services/ctOne",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+
+    postServiceIr: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/services/ir",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
   }),
 });
 
@@ -71,4 +126,9 @@ export const {
   usePostServiceEisOneMutation,
   usePostServiceEisTwoMutation,
   usePostServiceSbfmsOneMutation,
+  usePostServiceStMutation,
+  usePostServiceOasOneMutation,
+  usePostServiceOasTwoMutation,
+  usePostServiceCtOneMutation,
+  usePostServiceIrMutation,
 } = serviceApi;

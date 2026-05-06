@@ -17,10 +17,15 @@ export function StBottomSection() {
             <ArrowLeft className="h-9 w-9 stroke-[2.5]" />
           </button>
 
-          <div className="w-full max-w-[760px] rounded-[4px] bg-[#0F0D67] px-4 py-3 text-center text-[13px] font-semibold leading-[1.3] text-white shadow-[0_8px_18px_rgba(15,13,103,0.25)] sm:text-[16px]">
+          <a
+            href="/2022/12/21/how-raw-pressery-struck-off-this-mca-disclosure/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full max-w-[760px] rounded-[4px] bg-[#0F0D67] px-4 py-3 text-center text-[13px] font-semibold leading-[1.3] text-white shadow-[0_8px_18px_rgba(15,13,103,0.25)] sm:text-[16px]"
+          >
             How We Managed to Save 100s of Man-hours for a Cold Pressed Juice
             Company Resulting in Timely Audit Closure?
-          </div>
+          </a>
 
           <button
             type="button"

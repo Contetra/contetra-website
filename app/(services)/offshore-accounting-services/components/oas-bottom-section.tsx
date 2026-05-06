@@ -2,8 +2,8 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
-import { CheckIcon, ChevronsUpDown, Loader } from "lucide-react";
-import { useRef, useState } from "react";
+import { CheckIcon, ChevronsUpDown, Loader, Smile } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -32,6 +32,11 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
+import { usePostServiceOasTwoMutation } from "@/redux/api/serviceApi";
+import constants from "@/utils/constants.json";
+import { fireConfetti } from "@/lib/confettiFireworks";
+import { APIError } from "@/interface/api-response.types";
 
 const helpOptions = [
   "Looking to outsource the finance function?",
@@ -75,9 +80,17 @@ const comboboxTriggerClass =
 export function OasBottomSection() {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [captchaError, setCaptchaError] = useState<string | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);
   const turnstileRef = useRef<TurnstileInstance | null>(null);
+
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids.offshore_accounting_services,
+  );
+
+  const form_id = formsData?.response[0]?.id;
+
+  const [trigger, { data: oasData, isError, isSuccess, error, isLoading }] =
+    usePostServiceOasTwoMutation();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -93,30 +106,62 @@ export function OasBottomSection() {
     },
   });
 
-  const setToken = (token: string) => {
-    setCaptchaToken(token);
-    setCaptchaError(null);
-  };
-
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(data: z.infer<typeof formSchema>) {
     if (!captchaToken) {
       setCaptchaError("Please verify the captcha");
       return;
     }
 
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
-
-    console.log("OAS bottom inquiry form", values);
-    toast.info(
-      "Form UI is ready. Connect the API endpoint to enable live submissions."
-    );
+    trigger({
+      body: { ...data, form_id: form_id ?? "" },
+      captchaToken,
+    });
 
     setCaptchaError(null);
+
     setCaptchaToken(null);
     turnstileRef.current?.reset();
-    setIsSubmitting(false);
   }
+
+  useEffect(() => {
+    if (oasData && isSuccess && oasData?.statusCode) {
+      toast.success(oasData?.response?.message);
+      fireConfetti();
+      setCaptchaError(null);
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+      form.reset();
+      const link = oasData?.response?.link;
+      toast.info("Redirecting to download in 5 seconds...");
+      if (link) {
+        setTimeout(() => {
+          window.open(link, "_blank", "noopener,noreferrer");
+        }, 5000);
+      }
+    }
+
+    if (oasData && isSuccess && !oasData?.statusCode) {
+      toast.error(oasData?.response?.message || "Something went wrong");
+    }
+
+    if (isError) {
+      setCaptchaError("Captcha verification failed. Please try again.");
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+
+      if ((error as APIError)?.data) {
+        const apiError = error as APIError;
+        const errorMessage =
+          apiError?.data?.response?.message || "Something went wrong";
+        toast.error(errorMessage);
+      }
+    }
+  }, [isSuccess, oasData, isError, error, trigger, form]);
+
+  const setToken = (token: string) => {
+    setCaptchaToken(token);
+    setCaptchaError(null);
+  };
 
   return (
     <section
@@ -124,7 +169,7 @@ export function OasBottomSection() {
         "w-full bg-[#f0f4f8]",
         "box-border px-[10px] py-10 sm:px-4 sm:py-12 md:px-8 md:py-14 lg:py-16",
         "xl:px-14 xl:py-16 2xl:px-[80px] 2xl:py-20",
-        "dark:bg-slate-900/50"
+        "dark:bg-slate-900/50",
       )}
     >
       <div className="mx-auto w-full max-w-[640px] lg:max-w-[720px]">
@@ -161,7 +206,11 @@ export function OasBottomSection() {
                     what&apos;s your name?
                   </FormLabel>
                   <FormControl>
-                    <Input className={fieldClass} autoComplete="name" {...field} />
+                    <Input
+                      className={fieldClass}
+                      autoComplete="name"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -221,10 +270,7 @@ export function OasBottomSection() {
                       align="start"
                       className="w-[min(var(--radix-popover-trigger-width),calc(100vw-2rem))] overflow-hidden p-0 sm:w-[var(--radix-popover-trigger-width)]"
                     >
-                      <div
-                        className="h-1 w-full bg-[#3b82f6]"
-                        aria-hidden
-                      />
+                      <div className="h-1 w-full bg-[#3b82f6]" aria-hidden />
                       <Command>
                         <CommandInput
                           placeholder="Search..."
@@ -353,13 +399,17 @@ export function OasBottomSection() {
                   </div>
                 </div>
                 <Button
+                  className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] xl:w-auto xl:min-w-[220px]"
                   type="submit"
-                  className="mx-auto h-11 w-full max-w-[200px] shrink-0 rounded-[12px] bg-[#0a0a3c] px-8 text-[14px] font-semibold text-white hover:bg-[#08082f] sm:mx-0 sm:ml-auto sm:w-auto dark:bg-[#0a0a3c] dark:hover:bg-[#12125a]"
                 >
-                  {isSubmitting ? (
-                    <Loader className="size-4 animate-spin" aria-hidden />
-                  ) : null}
-                  Submit
+                  {isLoading ? <Loader className="animate-spin" /> : null}
+                  <span className="inline-flex items-center justify-center gap-2">
+                    Can&apos;t wait to hear from you
+                    <Smile
+                      className="size-4 shrink-0 text-white"
+                      strokeWidth={2}
+                    />
+                  </span>
                 </Button>
               </div>
             </div>

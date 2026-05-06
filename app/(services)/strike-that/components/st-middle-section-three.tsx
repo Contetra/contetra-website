@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -15,6 +15,15 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
+import constants from "@/utils/constants.json";
+import { usePostServiceStMutation } from "@/redux/api/serviceApi";
+import { APIError } from "@/interface/api-response.types";
+import { toast } from "sonner";
+import { fireConfetti } from "@/lib/confettiFireworks";
+import { Loader } from "lucide-react";
+
 
 const STRIKE_THAT_LOGO =
   "https://contetra.b-cdn.net/pages/services/st/Strike-that.png";
@@ -48,7 +57,18 @@ const formSchema = z.object({
 });
 
 export function StMiddleSectionThree() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [captchaError, setCaptchaError] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance | null>(null);
+
+  const [trigger, { data: stData, isError, isSuccess, error, isLoading }] =
+  usePostServiceStMutation();
+
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids.strike_that,
+  );
+
+  const form_id = formsData?.response[0]?.id;
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -67,16 +87,68 @@ export function StMiddleSectionThree() {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    console.log("Strike That form data", values);
-    setIsSubmitting(false);
-    form.reset();
+  function onSubmit(data: z.infer<typeof formSchema>) {
+    if (!captchaToken) {
+      setCaptchaError("Please verify the captcha");
+      return;
+    }
+
+    trigger({
+      body: { ...data, form_id: form_id ?? "" },
+      captchaToken,
+    });
+
+    setCaptchaError(null);
+
+    setCaptchaToken(null);
+    turnstileRef.current?.reset();
   }
 
+  useEffect(() => {
+    if (stData && isSuccess && stData?.statusCode) {
+      toast.success(stData?.response?.message);
+      fireConfetti();
+      setCaptchaError(null);
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+      form.reset();
+      const link = stData?.response?.link;
+      toast.info("Redirecting to download in 5 seconds...");
+      if (link) {
+        setTimeout(() => {
+          window.open(link, "_blank", "noopener,noreferrer");
+        }, 5000);
+      }
+    }
+
+    if (stData && isSuccess && !stData?.statusCode) {
+      toast.error(stData?.response?.message || "Something went wrong");
+    }
+
+    if (isError) {
+      setCaptchaError("Captcha verification failed. Please try again.");
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+
+      if ((error as APIError)?.data) {
+        const apiError = error as APIError;
+        const errorMessage =
+          apiError?.data?.response?.message || "Something went wrong";
+        toast.error(errorMessage);
+      }
+    }
+  }, [isSuccess, stData, isError, error, trigger, form]);
+
+  const setToken = (token: string) => {
+    setCaptchaToken(token);
+    setCaptchaError(null);
+  };
+
   return (
-    <section className="w-full px-4 py-12 sm:px-6 md:px-8 md:py-16">
+    <section
+      id="strike-that-contact"
+      className="w-full px-4 py-12 sm:px-6 md:px-8 md:py-16"
+    >
       <div className="mx-auto w-full max-w-[1180px]">
         <div className="text-center">
           <h2 className="flex flex-wrap items-center justify-center gap-2 text-[24px] font-semibold leading-[1.1] text-[#112B62] sm:text-[40px]">
@@ -278,16 +350,29 @@ export function StMiddleSectionThree() {
               />
 
               <div className="flex flex-col gap-5 pt-2 md:flex-row md:items-center md:justify-between">
-                <div className="flex h-[56px] w-[230px] items-center gap-3 rounded-[2px] border border-[#D8DDE6] bg-[#F9F9F9] px-4 text-sm text-[#1D1D1D]">
-                  <span className="h-[22px] w-[22px] border border-[#6F7784]" />
-                  <span>I&apos;m not a robot</span>
+              <div className="flex w-full min-w-0 flex-col gap-2 xl:w-auto">
+                  {captchaError ? (
+                    <p className="text-sm leading-[1.4em] text-red-500">
+                      {captchaError}
+                    </p>
+                  ) : null}
+                  <div className="w-full overflow-x-auto xl:overflow-visible">
+                    <div className="origin-left scale-[0.88] sm:scale-[0.95] lg:scale-100">
+                      <Turnstile
+                        ref={turnstileRef}
+                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                        onSuccess={setToken}
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 <Button
+                  className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] xl:w-auto xl:min-w-[220px]"
                   type="submit"
-                  className="mx-auto h-[48px] w-full max-w-[230px] rounded-full bg-[#153773] text-base font-bold text-white hover:bg-[#102C5F]"
                 >
-                  {isSubmitting ? "SUBMITTING..." : "SUBMIT"}
+                  {isLoading ? <Loader className="animate-spin" /> : null}
+                  Submit
                 </Button>
               </div>
             </form>
