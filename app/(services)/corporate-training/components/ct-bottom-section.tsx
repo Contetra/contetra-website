@@ -1,10 +1,9 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 import { Loader } from "lucide-react";
 import Lottie from "lottie-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -20,6 +19,12 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import { usePostServiceCtOneMutation } from "@/redux/api/serviceApi";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
+import constants from "@/utils/constants.json";
+import { fireConfetti } from "@/lib/confettiFireworks";
+import { APIError } from "@/interface/api-response.types";
+import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 
 const trainingOptions = ["Virtual", "In-person Trainings"] as const;
 
@@ -61,7 +66,6 @@ const formSchema = z.object({
 export const CtBottomSection = () => {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [captchaError, setCaptchaError] = useState<string | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const turnstileRef = useRef<TurnstileInstance | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -78,30 +82,71 @@ export const CtBottomSection = () => {
     },
   });
 
-  const setToken = (token: string) => {
-    setCaptchaToken(token);
-    setCaptchaError(null);
-  };
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids.corporate_training,
+  );
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  const form_id = formsData?.response[0]?.id;
+
+  const [trigger, { data: ctData, isError, isSuccess, error, isLoading }] =
+    usePostServiceCtOneMutation();
+
+  function onSubmit(data: z.infer<typeof formSchema>) {
     if (!captchaToken) {
       setCaptchaError("Please verify the captcha");
       return;
     }
 
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
-
-    console.log("Corporate training bottom form", values);
-    toast.info(
-      "Form is ready. Connect the API endpoint to enable live submissions."
-    );
+    trigger({
+      body: { ...data, form_id: form_id ?? "" },
+      captchaToken,
+    });
 
     setCaptchaError(null);
+
     setCaptchaToken(null);
     turnstileRef.current?.reset();
-    setIsSubmitting(false);
   }
+
+  useEffect(() => {
+    if (ctData && isSuccess && ctData?.statusCode) {
+      toast.success(ctData?.response?.message);
+      fireConfetti();
+      setCaptchaError(null);
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+      form.reset();
+      const link = ctData?.response?.link;
+      toast.info("Redirecting to download in 5 seconds...");
+      if (link) {
+        setTimeout(() => {
+          window.open(link, "_blank", "noopener,noreferrer");
+        }, 5000);
+      }
+    }
+
+    if (ctData && isSuccess && !ctData?.statusCode) {
+      toast.error(ctData?.response?.message || "Something went wrong");
+    }
+
+    if (isError) {
+      setCaptchaError("Captcha verification failed. Please try again.");
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+
+      if ((error as APIError)?.data) {
+        const apiError = error as APIError;
+        const errorMessage =
+          apiError?.data?.response?.message || "Something went wrong";
+        toast.error(errorMessage);
+      }
+    }
+  }, [isSuccess, ctData, isError, error, trigger, form]);
+
+  const setToken = (token: string) => {
+    setCaptchaToken(token);
+    setCaptchaError(null);
+  };
 
   return (
     <section className="w-full bg-[#E0EFE7] px-[10px] py-10 sm:px-4 sm:py-12 md:px-8 md:py-14 xl:px-14 2xl:px-[80px] dark:bg-[#111827]">
@@ -325,12 +370,10 @@ export const CtBottomSection = () => {
                   </div>
 
                   <Button
-                    className="h-11 w-full shrink-0 rounded-[10px] bg-[#1B1345] px-8 text-[14px] font-semibold text-white hover:bg-[#151045] sm:w-auto dark:bg-[#221971] dark:hover:bg-[#181253]"
+                    className="h-12 w-full rounded-[12px] bg-contetra-green px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] xl:w-auto xl:min-w-[220px]"
                     type="submit"
                   >
-                    {isSubmitting ? (
-                      <Loader className="mr-2 inline h-4 w-4 animate-spin" />
-                    ) : null}
+                    {isLoading ? <Loader className="animate-spin" /> : null}
                     Submit
                   </Button>
                 </div>

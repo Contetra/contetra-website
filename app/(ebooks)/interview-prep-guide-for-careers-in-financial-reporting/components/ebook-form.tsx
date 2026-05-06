@@ -22,6 +22,8 @@ import { APIError } from "@/interface/api-response.types";
 import { useRouter } from "next/navigation";
 import { Loader } from "lucide-react";
 import { Highlighter } from "@/components/ui/highlighter";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
+import constants from "@/utils/constants.json";
 
 const FormSchema = z.object({
   full_name: z
@@ -68,6 +70,12 @@ export const EbookForm = () => {
   const router = useRouter();
   const [captchaError, setCaptchaError] = useState<string | null>(null);
 
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids.interview_prep_guide_for_careers_in_financial_reporting,
+  );
+
+  const form_id = formsData?.response[0]?.id;
+
   const turnstileRef = useRef<TurnstileInstance | null>(null);
 
   const [trigger, { data: ipgfcifrData, isError, isSuccess, error, isLoading }] =
@@ -90,7 +98,7 @@ export const EbookForm = () => {
       return;
     }
     trigger({
-      body: data,
+      body: { ...data, form_id: form_id ?? "" },
       captchaToken,
     });
   }

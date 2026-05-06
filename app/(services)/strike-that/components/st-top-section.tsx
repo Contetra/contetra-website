@@ -59,7 +59,7 @@ export function StTopSection() {
             size="lg"
             className="mt-7 h-auto rounded-full bg-[#D85B47] px-6 py-3 text-sm font-bold text-white shadow-none transition hover:bg-[#BF4A38] sm:mt-8 sm:px-8 sm:text-[15px]"
           >
-            <Link href="#strike-that-details">Download Sample Report</Link>
+            <Link href="#strike-that-contact">Download Sample Report</Link>
           </Button>
         </div>
       </div>
