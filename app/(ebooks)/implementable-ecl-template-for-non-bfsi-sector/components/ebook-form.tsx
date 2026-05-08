@@ -22,6 +22,8 @@ import { APIError } from "@/interface/api-response.types";
 import { useRouter } from "next/navigation";
 import { Loader } from "lucide-react";
 import { Highlighter } from "@/components/ui/highlighter";
+import constants from "@/utils/constants.json";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
 
 const FormSchema = z.object({
   full_name: z
@@ -75,6 +77,12 @@ export const EbookForm = () => {
     { data: ietfnbsData, isError, isSuccess, error, isLoading },
   ] = usePostEbookIetfnbsMutation();
 
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids.implementable_ecl_template_for_non_bfsi_sector,
+  );
+
+  const form_id = formsData?.response[0]?.id;
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     mode: "onChange",
@@ -92,7 +100,7 @@ export const EbookForm = () => {
       return;
     }
     trigger({
-      body: data,
+      body: { ...data, form_id: form_id ?? "" },
       captchaToken,
     });
   }

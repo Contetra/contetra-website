@@ -22,6 +22,8 @@ import { APIError } from "@/interface/api-response.types";
 import { useRouter } from "next/navigation";
 import { Loader } from "lucide-react";
 import { Highlighter } from "@/components/ui/highlighter";
+import constants from "@/utils/constants.json";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
 
 const FormSchema = z.object({
   full_name: z
@@ -70,6 +72,12 @@ export const EbookForm = () => {
 
   const turnstileRef = useRef<TurnstileInstance | null>(null);
 
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids.top_20_questions_your_fy_22_23_business_plan_must_answer,
+  );
+
+  const form_id = formsData?.response[0]?.id;
+
   const [trigger, { data: ttqyfbpaData, isError, isSuccess, error, isLoading }] =
     usePostEbookTtqyfbpaMutation();
 
@@ -90,7 +98,7 @@ export const EbookForm = () => {
       return;
     }
     trigger({
-      body: data,
+      body: { ...data, form_id: form_id ?? "" },
       captchaToken,
     });
   }
@@ -110,7 +118,9 @@ export const EbookForm = () => {
       form.reset();
       const link = ttqyfbpaData?.response?.link;
       toast.info("Redirecting to download in 5 seconds...");
+      console.log("link",link)
       setTimeout(() => {
+        console.log("link",link)
         router.push(link);
       }, 5000);
     }

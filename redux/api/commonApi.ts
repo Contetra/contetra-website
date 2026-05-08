@@ -14,7 +14,19 @@ export const commonApi = createApi({
           ? `/common-rest/forms?formid=${encodeURIComponent(formid)}`
           : `/common-rest/forms`,
     }),
+
+    postContactUs: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/common-rest/contact-us",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+
   }),
 });
 
-export const { useGetFormsQuery } = commonApi;
+export const { useGetFormsQuery, usePostContactUsMutation } = commonApi;

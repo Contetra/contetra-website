@@ -85,6 +85,110 @@ export const ebookApi = createApi({
       }),
     }),
 
+    postEbookUrgtcss: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/urgtcss",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+
+    postEbookBiiin: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/biiin",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+
+    postEbookMcanae: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/mcanae",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+    postEbookYeccfbo: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/yeccfbo",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+    postEbookBgc: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/bgc",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+
+    postEbookEiu: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/eiu",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+    postEbookRdtwc: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/rdtwc",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+    postEbookHtoycacgag: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/htoycacgag",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+    postEbookEastipate: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/eastipate",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+    postEbookTcgtcecstsobe: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/tcgtcecstsobe",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+
 
   }),
 });
@@ -97,4 +201,14 @@ export const {
   usePostEbookTyfftoaMutation,
   usePostEbookDecgMutation,
   usePostEbookSbbgMutation,
+  usePostEbookUrgtcssMutation,
+  usePostEbookBiiinMutation,
+  usePostEbookMcanaeMutation,
+  usePostEbookYeccfboMutation,
+  usePostEbookBgcMutation,
+  usePostEbookEiuMutation,
+  usePostEbookRdtwcMutation,
+  usePostEbookHtoycacgagMutation,
+  usePostEbookEastipateMutation,
+  usePostEbookTcgtcecstsobeMutation
 } = ebookApi;

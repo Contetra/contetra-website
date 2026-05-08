@@ -100,7 +100,7 @@ const secondRow = reviews.slice(reviews.length / 2);
 const ReviewCard = ({ img }: { img: string }) => {
   return (
     <figure className="relative w-[80px] xl:w-[100px] aspect-[3/2] flex justify-center items-center my-[5px] xl:my-[10px] mx-3">
-      <Image src={img} alt="logo" fill className="object-contain" />
+      <Image priority src={img} alt="logo" fill className="object-contain" />
     </figure>
   );
 };

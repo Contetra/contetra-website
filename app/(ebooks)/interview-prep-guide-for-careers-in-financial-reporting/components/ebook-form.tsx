@@ -81,6 +81,7 @@ export const EbookForm = () => {
   const [trigger, { data: ipgfcifrData, isError, isSuccess, error, isLoading }] =
     usePostEbookIpgfcifrMutation();
 
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     mode: "onChange",

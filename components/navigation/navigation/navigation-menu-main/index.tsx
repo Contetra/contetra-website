@@ -5,10 +5,11 @@ import {
   NavigationMenu,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { MenuContactUs } from "./components/menu-contact-us";
 import { MenuServices } from "./components/menu-services";
 import { MenuBlog } from "./components/menu-blog";
 import { MenuHome } from "./components/menu-home";
+import { MenuContactUs } from "./components/menu-contact-us";
+import { MenuResources } from "./components/menu-resources";
 
 
 
@@ -23,7 +24,7 @@ export function NavigationMenuMain() {
         {/* <MenuCompany /> */}
         <MenuServices />
         <MenuBlog />
-        {/* <MenuResources /> */}
+        <MenuResources />
         <MenuContactUs />
         
       </NavigationMenuList>

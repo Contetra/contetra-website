@@ -9,7 +9,7 @@ import { OasTopSection } from "./components/oas-top-section";
 
 export default function OffshoreAccountingServices() {
   return (
-    <section className="mt-[90px] flex min-h-screen w-full flex-col gap-10 md:mt-[80px]">
+    <section className="mt-[60px] flex min-h-screen w-full flex-col gap-10 md:mt-[60px]">
       <OasTopSection />
       <OasMiddleSectionOne />
       <LogoCarousel />

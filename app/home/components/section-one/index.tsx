@@ -1,13 +1,15 @@
 "use client";
 
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
-import { PixelImage } from "@/components/ui/pixel-image";
+import Image from "next/image";
 import { LightRaysWrapper } from "@/components/reusable/LightRaysWrapper";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const SectionOne = () => {
   const headlineContainerRef = useRef<HTMLDivElement | null>(null);
   const wordRefs = useRef<HTMLSpanElement[]>([]);
+  const [isHeadlineReady, setIsHeadlineReady] = useState(false);
 
   // Headline lines to animate
   const lineOne = useMemo(() => "Finance Transformation Consulting for", []);
@@ -19,7 +21,10 @@ export const SectionOne = () => {
   useEffect(() => {
     if (!headlineContainerRef.current || wordRefs.current.length === 0) return;
 
-    const timeline = gsap.timeline({ defaults: { ease: "power4.out" } });
+    const timeline = gsap.timeline({
+      defaults: { ease: "power4.out" },
+      onStart: () => setIsHeadlineReady(true),
+    });
 
     // Prepare words first, then reveal container to avoid initial flash
     gsap.set(wordRefs.current, {
@@ -40,7 +45,12 @@ export const SectionOne = () => {
       stagger: 0.05,
     });
 
+    const fallback = window.setTimeout(() => {
+      setIsHeadlineReady(true);
+    }, 1200);
+
     return () => {
+      window.clearTimeout(fallback);
       timeline.kill();
     };
   }, []);
@@ -100,7 +110,18 @@ export const SectionOne = () => {
     <div className="flex w-full gap-10 lg:gap-0 flex-col lg:flex-row mb-[100px] px-4 sm:px-8 md:px-12 lg:px-[80px]">
       <LightRaysWrapper count={20} speed={20} />
       <div className=" w-full lg:w-[60%] flex flex-col gap-6 justify-end">
-        <div ref={headlineContainerRef} className="flex flex-col opacity-0">
+        <div className="relative">
+          {!isHeadlineReady ? (
+            <div className="absolute inset-0 z-20 space-y-4">
+              <Skeleton className="h-10 w-[90%] rounded-md bg-[#E7EEF8]" />
+              <Skeleton className="h-10 w-[75%] rounded-md bg-[#E7EEF8]" />
+              <Skeleton className="mt-6 h-4 w-full rounded-md bg-[#E7EEF8]" />
+              <Skeleton className="h-4 w-[95%] rounded-md bg-[#E7EEF8]" />
+              <Skeleton className="h-4 w-[82%] rounded-md bg-[#E7EEF8]" />
+            </div>
+          ) : null}
+
+          <div ref={headlineContainerRef} className="flex flex-col opacity-0">
           <div className=" text-[20px] flex flex-col">
             <div className=" inline-block mb-2">
               {renderAnimatedLine(lineOne, "text-contetra-blue", "h1")}
@@ -125,14 +146,19 @@ export const SectionOne = () => {
             )}
           </p>
         </div>
+        </div>
       </div>
 
       <div className="relative z-10 w-full lg:w-[40%] flex justify-center">
-        <div className="w-[80%] lg:w-[50%] flex justify-center">
-          {/* <Image className="w-full" src={MainImage} alt="MainImage" /> */}
-          <PixelImage
+        <div className="w-[80%] sm:w-[50%] lg:w-[50%] flex justify-center">
+          <Image
+            className="h-auto w-full"
             src={`${process.env.NEXT_PUBLIC_CDN_URL}/pages/home-page/Home-page-1st-banner-image.png`}
-            grid="8x8"
+            alt="Finance transformation visual"
+            width={520}
+            height={620}
+            priority
+            unoptimized
           />
         </div>
       </div>
