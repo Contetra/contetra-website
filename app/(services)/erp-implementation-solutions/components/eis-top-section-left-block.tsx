@@ -27,10 +27,9 @@ export const EisTopSectionLeftBlock = () => {
   return (
     <div className="min-w-0 w-full px-1 py-2 sm:px-2 sm:py-4">
       <h1 className="w-full text-[28px] font-semibold leading-[1.2] text-[#111111] dark:text-white sm:text-[34px] lg:text-[38px]">
-        No more <span className="text-[#57B6F7]">&quot;ERP&quot;</span>{" "}
-        Implementation
-        <br />
-        fatigue.
+        <span className="text-[#57B6F7]">&quot;ERP&quot;</span>{" "}
+        Implementation Consulting Services for Finance-Led Businesses
+        
       </h1>
 
       <p className="mt-5 max-w-[690px] text-[15px] leading-[1.4em] text-[#222222] dark:text-[#E5E7EB] sm:mt-6 sm:text-[16px]">
@@ -40,10 +39,9 @@ export const EisTopSectionLeftBlock = () => {
         what to check in the product demo?
       </p>
 
-      <p className="mt-7 max-w-[690px] text-[16px] font-semibold italic leading-[1.4em] text-[#7BB8E6] dark:text-[#8CCAF2] sm:mt-8 sm:text-[18px]">
-        We&apos;ll take the stress out of project managing your ERP system
-        implementation by:
-      </p>
+      <h2 className="mt-7 max-w-[690px] text-[16px] font-semibold italic leading-[1.4em] text-[#7BB8E6] dark:text-[#8CCAF2] sm:mt-8 sm:text-[18px]">
+      How Our ERP Functional Consultants Manage Your Implementation End-to-End
+      </h2>
 
       <div className="mt-7 flex w-full max-w-[720px] flex-col gap-5 sm:mt-8">
         {erpSupportItems.map((item) => (

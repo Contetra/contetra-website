@@ -49,49 +49,49 @@ export const EbooksSectionTwo = () => {
     },
     {
       title: "Business Insights into IFRS 9",
-      link: "",
+      link: "/business-insights-into-ifrs-9",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/Business-insights-into-IFRS-9.png`,
     },
     {
       title: "MSME Collection Advantage: New Amendment Explained!",
-      link: "",
+      link: "/msme-collection-advantage-new-amendment-explained",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/MSME-Collection-Advantage-New-Amendment-Explained.png`,
     },
     {
       title: "Year-end Closure Checklist for Business Owners",
-      link: "",
+      link: "/year-end-closure-checklist-for-business-owners",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/Year-end-Closure-Checklist-for-Business-Owners.png`,
     },
     {
       title: "Business Growth & Compliance",
-      link: "",
+      link: "/business-growth-compliance",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/Business-Growth-Compliance.png`,
     },
     {
       title: "ERP Success: The Essential Blueprint",
-      link: "",
+      link: "/erp-implementation-unveiled",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/ERP-Implementation-Decoded.png`,
     },
     {
       title: "Roi-Driven Trainings With Contetra",
-      link: "",
+      link: "/roi-driven-trainings-with-contetra",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/ROI-Driven-Trainings-with-Contetra.png`,
     },
     {
       title:
         "HOW TO OPTIMISE YOUR CUSTOMERS: A Comprehensive Guide Achieve 10X Growth",
-      link: "",
+      link: "/how-to-optimise-your-customers-a-comprehensive-guide-achieve-10x-growth",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/How-to-optimise-your-customers-a-Comprehensive-Guide-to-Achieve-10X-Growth.png`,
     },
     {
       title: "8 Actionable Strategies to Improve Profit After Tax - Ebook",
-      link: "",
+      link: "/8-actionable-strategies-to-improve-profit-after-tax-ebook",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/8-Actionable-Strategies-to-Improve-Profit-After-Tax.png`,
     },
     {
       title:
         "The CFO's guide to Controlling ERP Costs:6 Strategies to Stay on Budget - Ebook",
-      link: "",
+      link: "/the-cfos-guide-to-controlling-erp-costs6-strategies-to-stay-on-budget-ebook",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/The-CFOs-guide-to-Controlling-ERP-Costs-6-Strategies-to-Stay-on-Budget.png`,
     },
     {

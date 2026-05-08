@@ -18,13 +18,7 @@ export const MenuResources = () => {
         <ul className="grid w-[200px] gap-4">
           <li>
             <NavigationMenuLink asChild>
-              <Link href="#">Components</Link>
-            </NavigationMenuLink>
-            <NavigationMenuLink asChild>
-              <Link href="#">Documentation</Link>
-            </NavigationMenuLink>
-            <NavigationMenuLink asChild>
-              <Link href="#">Blocks</Link>
+              <Link href="/ebooks">Ebooks</Link>
             </NavigationMenuLink>
           </li>
         </ul>

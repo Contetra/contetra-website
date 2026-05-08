@@ -35,6 +35,8 @@ import { toast } from "sonner";
 import { APIError } from "@/interface/api-response.types";
 import { CheckIcon, ChevronsUpDown, Loader } from "lucide-react";
 import { Highlighter } from "@/components/ui/highlighter";
+import constants from "@/utils/constants.json";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
 
 const CURRENCY_OPTIONS = [
   "INR",
@@ -128,6 +130,12 @@ export const EbookForm = () => {
   const [trigger, { data: sbbgData, isError, isSuccess, error, isLoading }] =
     usePostEbookSbbgMutation();
 
+    const { data: formsData } = useGetFormsQuery(
+      constants.form_type_ids.strategic_business_budget_guide,
+    );
+  
+    const form_id = formsData?.response[0]?.id;
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     mode: "onChange",
@@ -149,7 +157,7 @@ export const EbookForm = () => {
       return;
     }
     trigger({
-      body: data,
+      body: { ...data, form_id: form_id ?? "" },
       captchaToken,
     });
   }

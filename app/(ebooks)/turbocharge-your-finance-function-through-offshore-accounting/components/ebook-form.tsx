@@ -22,6 +22,8 @@ import { APIError } from "@/interface/api-response.types";
 import { useRouter } from "next/navigation";
 import { Loader } from "lucide-react";
 import { Highlighter } from "@/components/ui/highlighter";
+import constants from "@/utils/constants.json";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
 
 const FormSchema = z.object({
   full_name: z
@@ -97,6 +99,12 @@ export const EbookForm = () => {
   const [trigger, { data: tyfftoaData, isError, isSuccess, error, isLoading }] =
     usePostEbookTyfftoaMutation();
 
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids.turbocharge_your_finance_function_through_offshore_accounting,
+  );
+  
+  const form_id = formsData?.response[0]?.id;
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     mode: "onChange",
@@ -116,7 +124,7 @@ export const EbookForm = () => {
       return;
     }
     trigger({
-      body: data,
+      body: { ...data, form_id: form_id ?? "" },
       captchaToken,
     });
   }

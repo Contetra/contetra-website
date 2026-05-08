@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -20,6 +21,11 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      {
+        source: "/disclaimer",
+        destination: "/terms-and-conditions",
+        permanent: true,
+      },
       {
         source: "/business-insights-into-ifrs-16-3",
         destination: "/business-insights-into-ifrs-16",

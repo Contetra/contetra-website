@@ -29,12 +29,14 @@ import {
 } from "@/components/ui/popover";
 import { fireConfetti } from "@/lib/confettiFireworks";
 import { cn } from "@/lib/utils";
-import { usePostEbookSbbgMutation } from "@/redux/api/ebookApi";
+import { usePostEbookUrgtcssMutation } from "@/redux/api/ebookApi";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { APIError } from "@/interface/api-response.types";
 import { CheckIcon, ChevronsUpDown, Loader } from "lucide-react";
 import { Highlighter } from "@/components/ui/highlighter";
+import constants from "@/utils/constants.json";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
 
 const CURRENCY_OPTIONS = [
   "INR",
@@ -125,8 +127,14 @@ export const EbookForm = () => {
 
   const turnstileRef = useRef<TurnstileInstance | null>(null);
 
-  const [trigger, { data: sbbgData, isError, isSuccess, error, isLoading }] =
-    usePostEbookSbbgMutation();
+  const [trigger, { data: urgtcssData, isError, isSuccess, error, isLoading }] =
+  usePostEbookUrgtcssMutation();
+
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids.unlocking_200_revenue_growth_the_chhabi_success_story,
+  );
+
+  const form_id = formsData?.response[0]?.id;
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -149,7 +157,7 @@ export const EbookForm = () => {
       return;
     }
     trigger({
-      body: data,
+      body: { ...data, form_id: form_id ?? "" },
       captchaToken,
     });
   }
@@ -160,14 +168,14 @@ export const EbookForm = () => {
   };
 
   useEffect(() => {
-    if (sbbgData && isSuccess && sbbgData?.statusCode) {
-      toast.success(sbbgData?.response?.message);
+    if (urgtcssData && isSuccess && urgtcssData?.statusCode) {
+      toast.success(urgtcssData?.response?.message);
       fireConfetti();
       setCaptchaError(null);
       turnstileRef.current?.reset();
       setCaptchaToken(null);
       form.reset();
-      const link = sbbgData?.response?.link;
+      const link = urgtcssData?.response?.link;
       toast.info("Opening download in a new tab in 5 seconds...");
       if (link) {
         setTimeout(() => {
@@ -176,8 +184,8 @@ export const EbookForm = () => {
       }
     }
 
-    if (sbbgData && isSuccess && !sbbgData?.statusCode) {
-      toast.error(sbbgData?.response?.message || "Something went wrong");
+    if (urgtcssData && isSuccess && !urgtcssData?.statusCode) {
+      toast.error(urgtcssData?.response?.message || "Something went wrong");
     }
 
     if (isError) {
@@ -192,14 +200,14 @@ export const EbookForm = () => {
         toast.error(errorMessage);
       }
     }
-  }, [isSuccess, sbbgData, isError, error, trigger, form]);
+  }, [isSuccess, urgtcssData, isError, error, trigger, form]);
 
   return (
     <div className="w-full md:w-[50%] flex justify-center items-start flex-col gap-10">
       <div className="">
         <Highlighter padding={10} action="underline" color="#FF9800">
           <h1 className="text-[25px] xl:text-[30px] font-medium leading-[1.2em]">
-            Download our Budgeting Guide
+          Unlocking 200% Revenue Growth: <br/> The CHHABI Success Story
           </h1>
         </Highlighter>
       </div>

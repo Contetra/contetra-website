@@ -27,20 +27,20 @@ const servicesLinks = [
   },
   {
     label: "MCA - Struck off companies",
-    href: "#",
+    href: "/strike-that",
   },
 ] as const;
 
 const companyLinks = [
-  { label: "About Us", href: "/team" },
+  // { label: "About Us", href: "/team" },
   { label: "Ebooks", href: "/ebooks" },
-  { label: "Webinar", href: "#" },
-  { label: "Contact Us", href: "#" },
+  // { label: "Webinar", href: "#" },
+  { label: "Contact Us", href: "/contact-us" },
 ] as const;
 
 const furtherLinks = [
-  { label: "Terms & Conditions", href: "#" },
-  { label: "Privacy Policy", href: "#" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ] as const;
 
 const socialLinks = [
