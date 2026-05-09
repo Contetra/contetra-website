@@ -94,7 +94,7 @@ export function SectionTwo() {
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 py-10 sm:gap-10 sm:px-6 sm:py-12 md:gap-12 md:py-16 lg:gap-14 lg:px-8 lg:py-20">
         <header className="flex w-full max-w-4xl flex-col items-center gap-3 text-center sm:gap-4 md:gap-5">
           <h2 className="text-balance text-[30px] font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-[2.5rem] lg:leading-tight">
-            <span className="text-contetra-blue dark:text-zinc-100">
+            <span className="text-contetra-blue dark:!text-zinc-100">
               End-to-End Finance Transformation {""}
             </span>
             <span className="text-contetra-green">
@@ -141,10 +141,10 @@ export function SectionTwo() {
                       className="h-6 w-6 object-contain transition-[filter] duration-300 group-hover:brightness-0 group-hover:invert motion-reduce:transition-none sm:h-7 sm:w-7"
                     />
                   </div>
-                  <h3 className="text-base font-bold text-contetra-blue transition-colors duration-300 group-hover:text-white dark:text-zinc-100 dark:group-hover:text-white md:text-lg lg:text-xl">
+                  <h3 className="text-base font-bold text-contetra-blue transition-colors duration-300 group-hover:!text-white dark:!text-zinc-100 dark:!group-hover:text-white md:text-lg lg:text-xl">
                     {card.title}
                   </h3>
-                  <ul className="list-disc space-y-1.5 pl-4 text-xs leading-relaxed text-muted-foreground transition-colors duration-300 marker:text-muted-foreground group-hover:text-white group-hover:marker:text-white sm:text-sm md:text-[0.9375rem] dark:text-zinc-400 dark:marker:text-zinc-500">
+                  <ul className="list-disc space-y-1.5 pl-4 text-xs leading-relaxed text-muted-foreground transition-colors duration-300 marker:text-muted-foreground group-hover:!text-white group-hover:!marker:!text-white sm:text-sm md:text-[0.9375rem] dark:!text-zinc-400 dark:!marker:!text-zinc-500">
                     {card.items.map((item) => (
                       <li key={item}>{item}</li>
                     ))}

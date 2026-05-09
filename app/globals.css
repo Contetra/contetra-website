@@ -22,12 +22,35 @@ html {
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
+    margin-bottom: 30px;
+    margin-top: 15px;
     background: #008AD2;
     border-radius: 6px;
     color: white;
     font-size: 22px;
     font-weight: 500;
   }
+
+@media (max-width: 640px) {
+  .custom-box {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.4em;
+  }
+}
+
+
+
+
+
+
+
+
 
 @theme inline {
   --color-background: var(--background);

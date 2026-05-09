@@ -15,7 +15,6 @@ export default function Page() {
 
   const blogData = blogContent?.response?.blog;
   const relatedBlogs = blogContent?.response?.relatedBlogs;
-  console.log("blogContent", blogContent?.response?.relatedBlogs);
 
   const paramArray = Array.isArray(params.params) ? params.params : [];
   const [year, month, day, slugPart] = paramArray;

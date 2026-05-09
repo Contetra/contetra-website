@@ -41,6 +41,16 @@ const nextConfig: NextConfig = {
         destination: "/top-20-questions-your-fy-22-23-business-plan-must-answer",
         permanent: true,
       },
+      {
+        source: "/revamping-revenue-unveiling-asc-606-implications-on-acquisition-memo-2",
+        destination: "/revamping-revenue-unveiling-asc-606-implications-on-acquisition-memo",
+        permanent: true,
+      },
+      {
+        source: "/your-financial-playbook-fy-2025-26-edition-2",
+        destination: "/your-financial-playbook-fy-2025-26-edition",
+        permanent: true,
+      },
     ];
   },
 };

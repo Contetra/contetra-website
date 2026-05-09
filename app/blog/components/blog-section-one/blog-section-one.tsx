@@ -58,12 +58,14 @@ export const BlogSectionOne = () => {
             </Link>
 
             <h2 className=" text-[25px] font-semibold leading-[1.2em] relative">
-              <SparklesText
-                sparklesCount={5}
-                className=" md:text-[20px] xl:text-[25px] font-semibold leading-[1.2em] md:line-clamp-1 xl:line-clamp-2"
-              >
-                {blogData?.title}
-              </SparklesText>
+              <Link href={`${blogData?.slug}`}>
+                <SparklesText
+                  sparklesCount={5}
+                  className=" md:text-[20px] xl:text-[25px] font-semibold leading-[1.2em] md:line-clamp-1 xl:line-clamp-2"
+                >
+                  {blogData?.title}
+                </SparklesText>
+              </Link>
             </h2>
             <div className="flex justify-start items-center gap-3">
               <div className="flex gap-1 items-center justify-center">
