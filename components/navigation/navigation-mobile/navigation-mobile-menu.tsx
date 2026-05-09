@@ -23,26 +23,13 @@ import { cn } from "@/lib/utils";
 
 import { SERVICE_NAV_ITEMS } from "./service-links";
 
-const BLOG_LINKS = [
-  { href: "/blog", title: "Blog", description: "Articles and updates from contetra." },
-  { href: "/blog", title: "Introduction", description: "Re-usable components and patterns." },
-  { href: "/docs/installation", title: "Installation", description: "How to install and structure your app." },
-  { href: "/docs/primitives/typography", title: "Typography", description: "Styles for headings, paragraphs, and lists." },
-] as const;
-
-const HELP_LINKS = [
-  { href: "#", label: "Backlog" },
-  { href: "#", label: "To Do" },
-  { href: "#", label: "Done" },
-] as const;
-
 function NavRow({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <DrawerClose asChild>
       <Link
         href={href}
         className={cn(
-          "text-foreground hover:bg-muted/60 flex rounded-md px-3 py-3 text-base font-medium transition-colors"
+          "text-foreground hover:bg-muted/60 dark:hover:bg-zinc-800/70 flex rounded-md px-3 py-3 text-base font-medium transition-colors"
         )}
       >
         {children}
@@ -64,17 +51,17 @@ export function NavigationMobile() {
       <Drawer direction="right" open={open} onOpenChange={setOpen}>
         <DrawerTrigger
           type="button"
-          className="ring-offset-background border-input bg-background hover:bg-muted/50 inline-flex size-10 items-center justify-center rounded-md border transition-colors focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+          className="ring-offset-background border-input bg-background hover:bg-muted/50 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:hover:bg-zinc-800 inline-flex size-10 items-center justify-center rounded-md border transition-colors focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
           aria-label="Open menu"
         >
           <MenuIcon className="size-5" />
         </DrawerTrigger>
         <DrawerContent
           className={cn(
-            "flex h-dvh max-h-dvh min-h-0 !w-[95vw] max-w-none flex-col gap-0 border-l p-0 sm:!max-w-none"
+            "flex h-dvh max-h-dvh min-h-0 !w-[95vw] max-w-none flex-col gap-0 border-l bg-white text-foreground dark:bg-[#0F0F12] dark:text-zinc-100 dark:border-zinc-700 p-0 sm:!max-w-none"
           )}
         >
-          <DrawerHeader className="border-border relative shrink-0 space-y-0 border-b py-4 pl-6 pr-14 text-left">
+          <DrawerHeader className="border-border relative shrink-0 space-y-0 border-b py-4 pl-6 pr-14 text-left dark:border-zinc-700">
             <DrawerTitle className="text-lg">Menu</DrawerTitle>
             <DrawerClose
               type="button"
@@ -89,7 +76,7 @@ export function NavigationMobile() {
 
             <Accordion type="multiple" className="w-full px-1">
               <AccordionItem value="services">
-                <AccordionTrigger className="text-base font-medium hover:no-underline">
+                <AccordionTrigger className="text-base font-medium text-foreground dark:text-zinc-100 hover:no-underline">
                   Services
                 </AccordionTrigger>
                 <AccordionContent className="pl-1">
@@ -99,7 +86,7 @@ export function NavigationMobile() {
                         <DrawerClose asChild>
                           <Link
                             href={item.href}
-                            className="text-muted-foreground hover:text-foreground block rounded-md py-2 pr-2 text-sm leading-snug transition-colors"
+                            className="text-muted-foreground hover:text-foreground dark:text-zinc-400 dark:hover:text-zinc-100 block rounded-md py-2 pr-2 text-sm leading-snug transition-colors"
                           >
                             {item.title}
                           </Link>
@@ -110,51 +97,29 @@ export function NavigationMobile() {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="blog">
-                <AccordionTrigger className="text-base font-medium hover:no-underline">
-                  Blog
+              <AccordionItem value="resources">
+                <AccordionTrigger className="text-base font-medium text-foreground dark:text-zinc-100 hover:no-underline">
+                  Resources
                 </AccordionTrigger>
                 <AccordionContent className="pl-1">
                   <ul className="flex flex-col gap-1 border-l border-border/60 pl-3">
-                    {BLOG_LINKS.map((item) => (
-                      <li key={item.title}>
-                        <DrawerClose asChild>
-                          <Link
-                            href={item.href}
-                            className="text-muted-foreground hover:text-foreground block rounded-md py-2 pr-2 text-sm transition-colors"
-                          >
-                            <span className="text-foreground font-medium">{item.title}</span>
-                            <span className="mt-0.5 block text-xs leading-snug">{item.description}</span>
-                          </Link>
-                        </DrawerClose>
-                      </li>
-                    ))}
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="help">
-                <AccordionTrigger className="text-base font-medium hover:no-underline">
-                  Need Help?
-                </AccordionTrigger>
-                <AccordionContent className="pl-1">
-                  <ul className="flex flex-col gap-1 border-l border-border/60 pl-3">
-                    {HELP_LINKS.map((item) => (
-                      <li key={item.label}>
-                        <DrawerClose asChild>
-                          <Link
-                            href={item.href}
-                            className="text-muted-foreground hover:text-foreground block rounded-md py-2 pr-2 text-sm transition-colors"
-                          >
-                            {item.label}
-                          </Link>
-                        </DrawerClose>
-                      </li>
-                    ))}
+                    <li>
+                      <DrawerClose asChild>
+                        <Link
+                          href="/ebooks"
+                          className="text-muted-foreground hover:text-foreground dark:text-zinc-400 dark:hover:text-zinc-100 block rounded-md py-2 pr-2 text-sm transition-colors"
+                        >
+                          Ebooks
+                        </Link>
+                      </DrawerClose>
+                    </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
+
+            <NavRow href="/blog">Blog</NavRow>
+            <NavRow href="/contact-us">Contact Us</NavRow>
           </nav>
         </DrawerContent>
       </Drawer>

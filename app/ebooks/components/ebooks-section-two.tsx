@@ -96,23 +96,23 @@ export const EbooksSectionTwo = () => {
     },
     {
       title: "Business Insights into Revenue Recognition",
-      link: "",
+      link: "/business-insights-into-revenue-recognition",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/business-insights-into-revenue-recognition.png`,
     },
     {
       title: "Period closure checklist",
-      link: "",
+      link: "/period-closure-checklist",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/Period-closure-checklist.png`,
     },
     {
       title:
         "Revamping Revenue unveiling ASC 606 Implications on Acquisition memo",
-      link: "",
+      link: "/revamping-revenue-unveiling-asc-606-implications-on-acquisition-memo",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/revamping-Revenue-unveiling-ASC-606-Implications-on-Acquisition-memo.png`,
     },
     {
       title: "Your Financial Playbook fy 2025-26 edition",
-      link: "",
+      link: "/your-financial-playbook-fy-2025-26-edition",
       image: `${process.env.NEXT_PUBLIC_CDN_URL}/ebooks/images/Your-Financial-Playbook-fy-2025-26-edition-cover-page.png`,
     },
   ];

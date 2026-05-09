@@ -29,7 +29,7 @@ import {
 } from "@/components/ui/popover";
 import { fireConfetti } from "@/lib/confettiFireworks";
 import { cn } from "@/lib/utils";
-import {  usePostEbookTcgtcecstsobeMutation } from "@/redux/api/ebookApi";
+import { usePostEbookTcgtcecstsobeMutation } from "@/redux/api/ebookApi";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { APIError } from "@/interface/api-response.types";
@@ -127,11 +127,14 @@ export const EbookForm = () => {
 
   const turnstileRef = useRef<TurnstileInstance | null>(null);
 
-  const [trigger, { data: tcgtcecstsobeData, isError, isSuccess, error, isLoading }] =
-  usePostEbookTcgtcecstsobeMutation();
+  const [
+    trigger,
+    { data: tcgtcecstsobeData, isError, isSuccess, error, isLoading },
+  ] = usePostEbookTcgtcecstsobeMutation();
 
   const { data: formsData } = useGetFormsQuery(
-    constants.form_type_ids.the_cfos_guide_to_controlling_erp_costs6_strategies_to_stay_on_budget,
+    constants.form_type_ids
+      .the_cfos_guide_to_controlling_erp_costs6_strategies_to_stay_on_budget,
   );
 
   const form_id = formsData?.response[0]?.id;
@@ -185,7 +188,9 @@ export const EbookForm = () => {
     }
 
     if (tcgtcecstsobeData && isSuccess && !tcgtcecstsobeData?.statusCode) {
-      toast.error(tcgtcecstsobeData?.response?.message || "Something went wrong");
+      toast.error(
+        tcgtcecstsobeData?.response?.message || "Something went wrong",
+      );
     }
 
     if (isError) {
@@ -207,7 +212,8 @@ export const EbookForm = () => {
       <div className="">
         <Highlighter padding={10} action="underline" color="#FF9800">
           <h1 className="text-[25px] xl:text-[30px] font-medium leading-[1.2em]">
-            Year-end Closure Checklist for <br />Business Owners
+            The CFO&apos;s guide to Controlling ERP Costs:<br />6 Strategies to Stay on
+            Budget
           </h1>
         </Highlighter>
       </div>

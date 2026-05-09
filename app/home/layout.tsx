@@ -1,5 +1,6 @@
 import { FooterMain } from "@/components/navigation/footer/footer-main";
 import { Header } from "@/components/navigation/navigation/header";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,8 +21,18 @@ export default function HomeLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Contetra Home",
+    url: "https://contetra.com/",
+    description:
+      "Contetra helps CFOs and growing businesses with IFRS advisory, ERP implementation, FP&A strategy, and IPO readiness.",
+  };
+
   return (
     <section className="flex flex-col justify-between ">
+      <JsonLd data={homeSchema} />
       <Header />
       {children}
       <FooterMain />

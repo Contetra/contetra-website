@@ -1,5 +1,6 @@
 import { FooterMain } from "@/components/navigation/footer/footer-main";
 import { Header } from "@/components/navigation/navigation/header";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,8 +21,20 @@ export default function LayoutServices({
 }: {
   children: React.ReactNode;
 }) {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: String(metadata.title ?? "Service"),
+    provider: {
+      "@type": "Organization",
+      name: "Contetra",
+      url: "https://contetra.com/",
+    },
+  };
+
   return (
     <section className="min-h-screen">
+      <JsonLd data={serviceSchema} />
       <Header />
       {children}
       <FooterMain />

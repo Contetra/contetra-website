@@ -124,7 +124,7 @@ export const SectionOne = () => {
           <div ref={headlineContainerRef} className="flex flex-col opacity-0">
           <div className=" text-[20px] flex flex-col">
             <div className=" inline-block mb-2">
-              {renderAnimatedLine(lineOne, "text-contetra-blue", "h1")}
+              {renderAnimatedLine(lineOne, "text-contetra-blue dark:!text-zinc-100", "h1")}
             </div>
             {renderAnimatedLine(lineTwo, "text-contetra-green", "h2")}
           </div>

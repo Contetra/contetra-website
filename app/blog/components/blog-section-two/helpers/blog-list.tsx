@@ -151,7 +151,7 @@ export const BlogList = () => {
             );
           })}
       </div>
-      <div className="mr-[30px]">
+      <div className="mr-[30px] mb-[50px]">
         <BlogPagination />
       </div>
     </div>

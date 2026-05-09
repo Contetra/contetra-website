@@ -188,6 +188,46 @@ export const ebookApi = createApi({
         },
       }),
     }),
+    postEbookBiirr: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/biirr",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+    postEbookPcc: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/pcc",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+    postEbookRruasioam: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/rruasioam",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+    postEbookYfpfe: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/ebook/yfpfe",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
 
 
   }),
@@ -210,5 +250,9 @@ export const {
   usePostEbookRdtwcMutation,
   usePostEbookHtoycacgagMutation,
   usePostEbookEastipateMutation,
-  usePostEbookTcgtcecstsobeMutation
+  usePostEbookTcgtcecstsobeMutation,
+  usePostEbookBiirrMutation,
+  usePostEbookPccMutation,
+  usePostEbookRruasioamMutation,
+  usePostEbookYfpfeMutation,
 } = ebookApi;

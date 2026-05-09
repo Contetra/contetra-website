@@ -33,7 +33,7 @@ export function BlogFilters() {
     filters.categories.length > 0;
 
   return (
-    <div className="flex w-full flex-col md:flex-row justify-start gap-5">
+    <div className="flex w-full flex-col xl:flex-row justify-start gap-5">
       <div className=" w-full md:w-[50%] flex flex-col md:flex-row gap-3">
         <Input
           className=" md:w-[50%] xl:w-[40%]"
