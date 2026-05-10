@@ -38,6 +38,40 @@ function resolveApiBaseUrlForFetch(): string | null {
   return withoutTrailingSlash;
 }
 
+/**
+ * Blog list for sitemap (server-only). Optional override so local dev can use
+ * production API when NEXT_PUBLIC_API_URL points at localhost.
+ * Example: SITEMAP_API_BASE_URL=https://contetra.co.in/api
+ */
+function resolveBlogListApiBase(): string | null {
+  const explicit =
+    process.env.SITEMAP_API_BASE_URL?.trim() ??
+    process.env.NEXT_PUBLIC_SITEMAP_API_BASE?.trim();
+  if (explicit) {
+    return explicit.replace(/\/+$/, "");
+  }
+  return resolveApiBaseUrlForFetch();
+}
+
+function normalizeBlogSlugToRoute(slug: string): string | null {
+  let pathPart = slug.trim().replace(/\/+$/, "");
+  if (!pathPart) return null;
+
+  if (/^https?:\/\//i.test(pathPart)) {
+    try {
+      pathPart = new URL(pathPart).pathname.replace(/\/+$/, "");
+    } catch {
+      return null;
+    }
+  }
+
+  if (!pathPart.startsWith("/")) {
+    pathPart = `/${pathPart}`;
+  }
+
+  return pathPart;
+}
+
 async function collectPageRoutes(
   dirPath: string,
   routeSegments: string[] = []
@@ -78,25 +112,52 @@ async function collectPageRoutes(
 }
 
 async function getBlogPostRoutes(): Promise<BlogRouteItem[]> {
-  const apiBaseUrl = resolveApiBaseUrlForFetch();
+  const apiBaseUrl = resolveBlogListApiBase();
   if (!apiBaseUrl) return [];
 
   try {
     const blogAllUrl = `${apiBaseUrl}/posts/blog-all`.replace(/([^:]\/)\/+/g, "$1");
+
+    const logSitemapFetch =
+      process.env.NODE_ENV === "development" ||
+      process.env.DEBUG_SITEMAP === "1";
+    if (logSitemapFetch) {
+      console.log("[sitemap] blog list API base:", apiBaseUrl);
+      console.log("[sitemap] blog list full URL:", blogAllUrl);
+    }
+
     const blogsRes = await fetch(blogAllUrl, {
       next: { revalidate: 3600 },
     });
+
+    if (!blogsRes.ok) {
+      if (logSitemapFetch) {
+        console.log(
+          "[sitemap] blog-all response not OK:",
+          blogsRes.status,
+          blogsRes.statusText
+        );
+      }
+      return [];
+    }
+
     const blogsJson = await blogsRes.json();
-    const blogsData =
-      blogsJson?.response?.data ?? blogsJson?.response ?? blogsJson?.data ?? [];
+    const raw = blogsJson?.response;
+    const blogsData = Array.isArray(raw)
+      ? raw
+      : Array.isArray(raw?.data)
+        ? raw.data
+        : Array.isArray(blogsJson?.data)
+          ? blogsJson.data
+          : [];
 
     return blogsData
       .map((post: { slug?: string; updated_at?: string }) => {
-        const slug = post?.slug?.replace(/\/$/, "");
-        if (!slug) return null;
+        const route = post?.slug ? normalizeBlogSlugToRoute(post.slug) : null;
+        if (!route) return null;
 
         return {
-          route: slug,
+          route,
           lastModified: post.updated_at ? new Date(post.updated_at) : undefined,
         };
       })
