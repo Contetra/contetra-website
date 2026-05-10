@@ -8,10 +8,12 @@ import { FrcMiddleSectionSix } from "./components/frc-middle-section-six";
 import { FrcMiddleSectionSeven } from "./components/frc-middle-section-seven";
 import { FrcMiddleSectionHowHelp } from "./components/frc-middle-section-how-help";
 import { FrcBottomSection } from "./components/frc-bottom-section";
+import { FrcTestSection } from "./components/frc-test-section";
 
 export default function FinancialRecruitmentConsultantsPage() {
   return (
     <section className="mt-[90px] flex min-h-screen w-full flex-col gap-10 md:mt-[80px]">
+      <FrcTestSection />
       <FrcTopSection />
       <FrcMiddleSectionOne />
       <FrcMiddleSectionTwo />
