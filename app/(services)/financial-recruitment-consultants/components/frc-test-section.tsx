@@ -9,6 +9,7 @@ const FRC_IMG_TEAM =
 export const FrcTestSection = () => {
   const NAVY = "#1a1640";
   const TEAL = "#50a085";
+  console.log(TEAL)
   return (
     <div className=" min-h-screen flex flex-col mt-[80px] ">
       <div className="flex max-w-6xl flex-row flex-wrap items-center justify-start gap-10 md:flex-nowrap px-[80px] ml-[80px]">
