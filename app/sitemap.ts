@@ -69,7 +69,18 @@ function normalizeBlogSlugToRoute(slug: string): string | null {
     pathPart = `/${pathPart}`;
   }
 
-  return pathPart;
+  if (pathPart.startsWith("/blog/") || pathPart === "/blog") {
+    return pathPart.replace(/\/+$/, "") || "/blog";
+  }
+
+  const dated = pathPart.match(/^\/(\d{4})\/(\d{2})\/(\d{2})\/(.+)$/);
+  if (dated) {
+    const tail = dated[4].replace(/\/+$/, "");
+    return tail ? `/blog/${tail}` : null;
+  }
+
+  const tail = pathPart.replace(/^\/+/, "");
+  return tail ? `/blog/${tail}` : null;
 }
 
 async function collectPageRoutes(

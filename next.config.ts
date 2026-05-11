@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug',
+        destination: '/blog/:slug',
+        permanent: true, // 301 redirect — good for SEO
+      },
+      {
         source: "/disclaimer",
         destination: "/terms-and-conditions",
         permanent: true,

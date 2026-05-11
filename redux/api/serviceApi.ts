@@ -128,6 +128,17 @@ export const serviceApi = createApi({
         },
       }),
     }),
+
+    postServiceSbfms: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/services/sbfms",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
   }),
 });
 
@@ -143,4 +154,5 @@ export const {
   usePostServiceCtOneMutation,
   usePostServiceIrMutation,
   usePostServiceFrcOneMutation,
+  usePostServiceSbfmsMutation,
 } = serviceApi;

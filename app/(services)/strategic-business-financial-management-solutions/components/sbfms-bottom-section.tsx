@@ -44,7 +44,7 @@ import { cn } from "@/lib/utils";
 import { APIError } from "@/interface/api-response.types";
 import { fireConfetti } from "@/lib/confettiFireworks";
 import { useGetFormsQuery } from "@/redux/api/commonApi";
-import { usePostServiceSbfmsOneMutation } from "@/redux/api/serviceApi";
+import { usePostServiceSbfmsMutation } from "@/redux/api/serviceApi";
 import constants from "@/utils/constants.json";
 import { toast } from "sonner";
 import { useSbfmsReviewSheet } from "./sbfms-review-sheet-provider";
@@ -284,7 +284,7 @@ export function SbfmsBottomSection() {
   const form_id = formsData?.response?.[0]?.id ?? "";
 
   const [trigger, { data: submitData, isError, isSuccess, error, isLoading }] =
-    usePostServiceSbfmsOneMutation();
+  usePostServiceSbfmsMutation();
 
   const form = useForm<SbfmsFormValues>({
     resolver: zodResolver(sbfmsFormSchema),
@@ -340,9 +340,16 @@ export function SbfmsBottomSection() {
       toast.success(
         submitData?.response?.message ?? "Thank you — we will be in touch.",
       );
+      toast.info("Redirecting to calendly in 5 seconds...");
       fireConfetti();
       resetWizard();
       setSheetOpen(false);
+      const link = 'https://calendly.com/contetraprivatelimited/book-call-for-business-finance-review-meeting'
+      if (link) {
+        setTimeout(() => {
+          window.open(link, "_blank", "noopener,noreferrer");
+        }, 5000);
+      }
     }
     if (submitData && isSuccess && !submitData?.statusCode) {
       toast.error(submitData?.response?.message ?? "Something went wrong");

@@ -40,7 +40,10 @@ export const postsApi = createApi({
     }),
 
     getBlogData: builder.query({
-      query: (post) => `/posts/posts-data?slug=${post?.slug}`,
+      query: (post) => {
+        const slug = (post?.slug as string | undefined) ?? "";
+        return `/posts/posts-data?slug=${encodeURIComponent(slug)}`;
+      },
     }),
 
     getCategories: builder.query({

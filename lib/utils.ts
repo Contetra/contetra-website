@@ -24,3 +24,15 @@ export const truncateLabel = (label: string) => {
   return label;
 };
 
+/** Public URL path for a blog post under `/blog/...`. */
+export function slugToBlogPostHref(slug: string | undefined | null): string {
+  if (!slug?.trim()) return "/blog";
+  const t = slug.trim();
+  if (/^https?:\/\//i.test(t)) return t;
+  let p = t.replace(/^\/+|\/+$/g, "");
+  if (p.toLowerCase().startsWith("blog/")) {
+    p = p.slice(5);
+  }
+  return `/blog/${p}`;
+}
+

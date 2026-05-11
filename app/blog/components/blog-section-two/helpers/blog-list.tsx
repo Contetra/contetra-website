@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Button } from "@/components/ui/button";
-import { formatDate } from "@/lib/utils";
+import { formatDate, slugToBlogPostHref } from "@/lib/utils";
 import { Highlighter } from "@/components/ui/highlighter";
 import { ArrowUpRight } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
@@ -58,13 +58,16 @@ export const BlogList = () => {
   return (
     <div className="flex flex-col gap-5 min-h-screen ">
       {isLoading && (
-        <div className="grid grid-cols-4 xl:gap-4 2xl:gap-8">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 xl:gap-4 2xl:gap-8">
           {Array.from({ length: 12 }).map((_, index) => (
-            <Card key={index} className="w-full min-h-[450px]">
-              <CardContent className="h-[200px]">
-                <Skeleton className="h-full aspect-video w-full" />
+            <Card
+              key={index}
+              className="flex h-[450px] w-full min-h-0 flex-col gap-0 p-0 md:min-h-[480px] xl:min-h-[450px]"
+            >
+              <CardContent className="h-[200px] shrink-0 p-0 md:h-[220px] xl:h-[180px] 2xl:h-[200px]">
+                <Skeleton className="h-full w-full rounded-xl" />
               </CardContent>
-              <CardHeader>
+              <CardHeader className="space-y-2 px-3 pb-3 pt-4">
                 <Skeleton className="h-4 w-2/3" />
                 <Skeleton className="h-4 w-1/2" />
                 <Skeleton className="h-4 w-2/3" />
@@ -82,7 +85,7 @@ export const BlogList = () => {
           blogsdata?.map((blog: Blog, idx: number) => {
             return (
               <BlurFade key={blog.id} delay={0.25 + idx * 0.05} inView>
-                <Link href={`${blog?.slug}`}>
+                <Link href={slugToBlogPostHref(blog?.slug)}>
                   <Card className=" h-[450px] md:min-h-[480px] xl:min-h-[450px] flex flex-col gap-0 relative p-0">
                     <div className="w-full h-[200px] md:h-[220px] xl:h-[180px] 2xl:h-[200px] relative">
                       {!loadedImages[blog.id] && (

@@ -16,7 +16,9 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const paramArray = Array.isArray(resolvedParams.params)
     ? resolvedParams.params
-    : [];
+    : typeof resolvedParams.params === "string"
+      ? [resolvedParams.params]
+      : [];
   const slug = paramArray.join("/");
 
   if (!slug) {
@@ -28,14 +30,17 @@ export async function generateMetadata({
     };
   }
 
+  const apiSlug = `/${slug}/`;
+  const blogPostPath = `/blog/${slug}`;
+  const canonicalFromSlug = `https://contetra.com${blogPostPath}/`;
+
   try {
     const blogDataResponse = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/posts/posts-data?slug=/${slug}/`,
+      `${process.env.NEXT_PUBLIC_API_URL}/posts/posts-data?slug=${encodeURIComponent(apiSlug)}`,
       { next: { revalidate: 60 } }
     ).then((res) => res.json());
 
     const blog = blogDataResponse?.response?.blog;
-    const canonicalFromSlug = `https://contetra.com/${slug}/`;
 
     return {
       title: blog?.title || "Blog",
@@ -51,7 +56,7 @@ export async function generateMetadata({
     return {
       title: "Blog",
       alternates: {
-        canonical: `https://contetra.com/${slug}/`,
+        canonical: canonicalFromSlug,
       },
     };
   }
@@ -67,11 +72,14 @@ export default async function LayoutSubPages({
   }>;
 }) {
   const resolvedParams = await params;
-  const slug = Array.isArray(resolvedParams.params)
-    ? resolvedParams.params.join("/")
-    : "";
+  const paramArray = Array.isArray(resolvedParams.params)
+    ? resolvedParams.params
+    : typeof resolvedParams.params === "string"
+      ? [resolvedParams.params]
+      : [];
+  const slug = paramArray.join("/");
   const canonicalUrl = slug
-    ? `https://contetra.com/${slug}/`
+    ? `https://contetra.com/blog/${slug}/`
     : "https://contetra.com/blog/";
   const blogPostingSchema = {
     "@context": "https://schema.org",

@@ -1,7 +1,7 @@
 "use client";
 
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import { formatDate } from "@/lib/utils";
+import { formatDate, slugToBlogPostHref } from "@/lib/utils";
 import { useGetLatestBlogQuery } from "@/redux/api/postsApi";
 import { Calendar, User } from "lucide-react";
 import Image from "next/image";
@@ -35,7 +35,7 @@ export const BlogSectionOne = () => {
       ) : (
         <div className=" bg-white dark:bg-[#111] rounded-xl md:w-[730px] xl:w-[1050px] md:h-[200px] xl:min-h-[280px] shadow-[0_0_10px_rgba(118,118,118,0.2)] z-1 flex gap-3">
           <div className=" xl:min-h-[280px] w-[45%] bg-white flex items-center justify-center rounded-xl relative p-2">
-            <Link href={`${blogData?.slug}`}>
+            <Link href={slugToBlogPostHref(blogData?.slug)}>
               {blogData?.feature_image_url && (
                 <Image
                   data-cursor-text="View Blog!"
@@ -51,14 +51,14 @@ export const BlogSectionOne = () => {
           </div>
 
           <div className=" h-full xl:min-h-[280px] w-[55%] md:p-2 xl:p-4 flex flex-col justify-center md:gap-3 xl:gap-5 ">
-            <Link href={`${blogData?.slug}`}>
+            <Link href={slugToBlogPostHref(blogData?.slug)}>
               <RainbowButton className=" w-fit menularge-cursor">
                 {blogData?.categories?.join(", ")}
               </RainbowButton>
             </Link>
 
             <h2 className=" text-[25px] font-semibold leading-[1.2em] relative">
-              <Link href={`${blogData?.slug}`}>
+              <Link href={slugToBlogPostHref(blogData?.slug)}>
                 <SparklesText
                   sparklesCount={5}
                   className=" md:text-[20px] xl:text-[25px] font-semibold leading-[1.2em] md:line-clamp-1 xl:line-clamp-2"
