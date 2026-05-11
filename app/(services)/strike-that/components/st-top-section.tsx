@@ -19,10 +19,10 @@ export function StTopSection() {
     <section className="w-full">
       <div className="w-full bg-[#15285C] px-[12px] pb-10 pt-12 sm:px-5 sm:pb-12 sm:pt-14 md:px-8 md:pb-14 md:pt-16 xl:px-14 2xl:px-[80px]">
         <div className="mx-auto flex w-full max-w-[1100px] flex-col items-center text-center">
-          <h1 className="max-w-[760px] text-balance text-[1.45rem] font-extrabold leading-[1.12] tracking-tight text-white sm:text-[1.8rem] md:text-[2.2rem] lg:text-[2.8rem]">
-            Free Up Hundreds Of Hours
+          <h1 className="max-w-[960px] text-balance text-[1.45rem] font-extrabold leading-[1.12] tracking-tight text-white sm:text-[1.8rem] md:text-[2.2rem] lg:text-[2.8rem]">
+            Bulk MCA Struck Off Company Check
             <br />
-            Of The Finance Team.
+            Using GST or PAN, No CIN Required.
           </h1>
 
           <div className="relative mt-4 h-[42px] w-[200px] sm:mt-5 sm:h-[54px] sm:w-[260px] md:h-[64px] md:w-[320px]">
@@ -48,10 +48,8 @@ export function StTopSection() {
             </span>
             <br className="hidden md:block" />
             <span className="hidden sm:inline md:hidden"> </span>
-            <span className="text-[#5EC8FF]">
-              Disclosure Requirement
-            </span>{" "}
-            Of Schedule III.
+            <span className="text-[#5EC8FF]">Disclosure Requirement</span> Of
+            Schedule III.
           </p>
 
           <Button
@@ -70,7 +68,7 @@ export function StTopSection() {
       >
         <div className="mx-auto flex w-full max-w-[1100px] flex-col items-center text-center">
           <h2 className="max-w-[760px] text-balance text-[1.85rem] font-bold leading-[1.2] tracking-tight text-[#244C90] sm:text-[2.2rem] md:text-[2.8rem]">
-            Hold up, what&apos;s this about?
+          What Is the MCA Schedule III Struck Off Disclosure Requirement?
           </h2>
 
           <p className="mt-5 max-w-[900px] text-pretty text-[15px] font-semibold leading-[1.65] text-[#1D2B4F] sm:text-base md:text-[1.1rem]">

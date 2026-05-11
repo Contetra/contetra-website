@@ -73,6 +73,7 @@ export function SbfmsMiddleSectionTwo() {
                   for Strategic Finance Mentoring
                 </span>
               </h2>
+              <h3 className=" mt-5 text-[1.2rem] font-semibold leading-tight sm:text-[1.35rem] text-white" >Strategic CFO Services and Financial Management Support for Better Cash Flow, Reporting, and Business Control</h3>
               <div className="mx-auto mt-4 h-1 w-14 rounded-full bg-white/85" />
             </div>
 

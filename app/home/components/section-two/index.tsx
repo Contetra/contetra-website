@@ -95,18 +95,18 @@ export function SectionTwo() {
         <header className="flex w-full max-w-4xl flex-col items-center gap-3 text-center sm:gap-4 md:gap-5">
           <h2 className="text-balance text-[30px] font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-[2.5rem] lg:leading-tight">
             <span className="text-contetra-blue dark:!text-zinc-100">
-              End-to-End Finance Transformation {""}
+            What Sets Leading Finance Advisory Firms {""}
             </span>
             <span className="text-contetra-green">
-            Services for CFOs & Growing Businesses
+            Apart: Clarity, Control, and Scalable Growth
             </span>
           </h2>
-          <p className="max-w-prose text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">
+          <p className="text-black max-w-prose text-pretty text-sm leading-relaxed  sm:text-base md:text-lg">
             Partner with Contetra for{" "}
             <strong className="font-semibold text-foreground">
               end-to-end finance transformation
-            </strong>
-            —combining{" "}
+            </strong>{" "}
+            combining{" "}
             <strong className="font-semibold text-foreground">
               Virtual CFO leadership
             </strong>

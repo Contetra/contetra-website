@@ -9,7 +9,7 @@ import { LogoCarousel } from "@/components/common/logo-carousel";
 
 export default function IPOReadiness() {
   return (
-    <section className="mt-[90px] flex min-h-screen w-full flex-col gap-10 md:mt-[0px] xl:mt-[58px] 2xl:mt-[65px]">
+    <section className="mt-[60px] flex min-h-screen w-full flex-col gap-10 md:mt-[0px] xl:mt-[58px] 2xl:mt-[40px]">
       <IrTopSection />
       <LogoCarousel />
       <IrMiddleSectionOne />

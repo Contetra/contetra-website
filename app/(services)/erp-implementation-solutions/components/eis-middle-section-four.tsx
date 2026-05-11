@@ -39,7 +39,7 @@ export const EisMiddleSectionFour = () => {
       <div className="w-full rounded-b-[36px] bg-[#F8F9FE] px-4 py-10 dark:bg-[#111827] sm:rounded-b-[50px] sm:px-6 sm:py-12 md:px-8 lg:py-14 xl:rounded-b-[100px] xl:px-12">
         <div className="mx-auto flex max-w-[1080px] flex-col items-center text-center">
           <h2 className="text-[28px] font-semibold leading-[1.4em] text-[#252B42] dark:text-white sm:text-[34px] lg:text-[38px]">
-            Why do you need a functional consultant and why should it be us?
+            Why do you need an ERP functional consultant and why should it be us?
           </h2>
 
           <div className="mt-3 h-[3px] w-[52px] rounded-full bg-[#4C8DEB]" />

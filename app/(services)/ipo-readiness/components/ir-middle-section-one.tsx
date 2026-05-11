@@ -27,7 +27,7 @@ export function IrMiddleSectionOne() {
               "text-[1.5rem] sm:text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] xl:text-[2.5rem]",
             )}
           >
-            The Reality of <span className={gold}>IPO Readiness</span>
+            The Reality of <span className={gold}>IPO Readiness</span> Assessment 
           </h2>
           <p
             className={cn(

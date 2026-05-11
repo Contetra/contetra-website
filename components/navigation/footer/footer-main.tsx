@@ -46,22 +46,22 @@ const furtherLinks = [
 const socialLinks = [
   {
     label: "Facebook",
-    href: "https://www.facebook.com/",
+    href: "https://www.facebook.com/ContetraPrivateLimited/",
     Icon: Facebook,
   },
   {
     label: "X (Twitter)",
-    href: "https://twitter.com/",
+    href: "https://twitter.com/contetra?lang=en",
     Icon: Twitter,
   },
   {
     label: "YouTube",
-    href: "https://www.youtube.com/",
+    href: "https://www.youtube.com/channel/UCcQNXLjiX-mN94n5ew4H3Xg",
     Icon: Youtube,
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/company/contetra-universal-llp/",
     Icon: Linkedin,
   },
 ] as const;

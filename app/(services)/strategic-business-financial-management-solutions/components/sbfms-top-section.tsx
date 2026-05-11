@@ -81,7 +81,7 @@ export function SbfmsTopSection() {
         >
           <div
             className={cn(
-              "w-full min-w-0 max-w-xl text-left sm:max-w-xl",
+              "w-full min-w-0 max-w-xl text-left sm:max-w-xl xl:mt-10",
               "md:max-w-2xl lg:w-auto lg:max-w-[min(100%,32rem)] xl:max-w-[min(100%,36rem)]",
             )}
           >
@@ -93,8 +93,7 @@ export function SbfmsTopSection() {
                 "lg:text-[1.75rem] lg:leading-[1.12] xl:text-[1.9rem] 2xl:text-[2rem]",
               )}
             >
-              Build scalable cash-rich businesses by converting books profits to
-              cash in the bank
+              Virtual CFO Services in India for Growing Businesses and Enterprises
             </h1>
 
             <div className="mt-5 flex gap-3 sm:mt-6 md:mt-8">

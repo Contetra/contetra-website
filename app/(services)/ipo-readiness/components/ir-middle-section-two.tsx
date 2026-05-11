@@ -110,11 +110,11 @@ export function IrMiddleSectionTwo() {
             <h2
               id="ir-cfo-solutions-heading"
               className={cn(
-                "text-balance font-bold leading-tight text-white",
+                "text-balance font-bold leading-[1em] text-white",
                 "text-[1.5rem] sm:text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] xl:text-[2.5rem]",
               )}
             >
-              Strategic <span className={gold}>CFO Solutions</span>
+              Strategic <span className={gold}>CFO Solutions</span> Industry Veterans + an elite team of Chartered Accountants
             </h2>
             <p
               className={cn(
@@ -122,13 +122,13 @@ export function IrMiddleSectionTwo() {
                 "text-base leading-relaxed sm:mt-4 sm:text-[1.0625rem] md:text-lg lg:text-xl",
               )}
             >
-              Industry Veterans + an elite team of Chartered Accountants
+              Backed by deep domain expertise, we conduct IPO Readiness Gap Analysis to help businesses transition from private-scale finance to public-market discipline.
             </p>
           </div>
         </div>
 
         <div className="mt-12 text-center sm:mt-14 md:mt-16 lg:mt-[4.5rem]">
-          <h2
+          <p
             id="ir-what-contetra-heading"
             className={cn(
               "text-balance font-bold leading-tight text-neutral-900 dark:text-white",
@@ -136,15 +136,15 @@ export function IrMiddleSectionTwo() {
             )}
           >
             What <span className={gold}>Contetra Does</span>
-          </h2>
-          <p
+          </p>
+          <h2
             className={cn(
-              "mx-auto mt-3 max-w-[40rem] text-pretty text-neutral-800 dark:text-neutral-200",
+              "mx-auto mt-3 max-w-[50rem] text-pretty text-neutral-800 dark:text-neutral-200",
               "text-base italic sm:text-[1.0625rem] md:text-lg lg:text-xl",
             )}
           >
-            (the less-glamorous IPO readiness aspects nobody wants to talk about)
-          </p>
+            IPO Readiness Services in India that go beyond timelines and filings,covering financial clean-ups, governance alignment, process discipline, and audit-ready numbers that stand up to regulator and investor scrutiny
+          </h2>
         </div>
 
         <div

@@ -181,10 +181,11 @@ export function IrBottomSection() {
           </h2>
 
           <p className="mt-6 max-w-[32rem] text-base leading-[1.65] text-white/95 sm:text-[17px]">
-            You&apos;re here because IPO readiness isn&apos;t just about filing
-            documents. Tell us a little about your business, and we&apos;ll
-            assess where you stand and what needs fixing before the markets
-            scrutinize you.
+            You&apos;re here because IPO readiness isn&apos;t just about filing documents,
+            it&apos;s about LODR compliance preparation and NSE BSE listing&apos;s
+            readiness. Tell us a little about your business, and we&apos;ll assess
+            where you stand, including mainboard IPO financial restructuring
+            needs, before the markets scrutinize you.
           </p>
           <p className="mt-4 max-w-[32rem] text-base leading-[1.65] text-white/95 sm:text-[17px]">
             This assessment helps us understand your current finance maturity,

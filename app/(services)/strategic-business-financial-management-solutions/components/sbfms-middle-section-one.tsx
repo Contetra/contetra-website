@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -63,7 +64,13 @@ const OUTCOMES: { key: string; parts: ReactNode }[] = [
     key: "o4",
     parts: (
       <>
-        Get <strong className="font-semibold text-[#15803d]">IPO ready</strong>{" "}
+        Get{" "}
+        <Link
+          href="/ipo-readiness"
+          className="inline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15803d]/35 focus-visible:ring-offset-2 rounded-sm"
+        >
+          <strong className="font-semibold text-[#15803d]">IPO ready</strong>
+        </Link>{" "}
         with a valuation story backed by Numbers.
       </>
     ),
