@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -75,7 +74,7 @@ export function IrTopSection() {
               "bg-[#D14124] hover:bg-[#b8361e] focus-visible:ring-[#D14124]/40",
             )}
           >
-            <Link href="#ipo-readiness-assessment">Assess Your IPO Readiness</Link>
+            <a href="#ipo-readiness-assessment">Assess Your IPO Readiness</a>
           </Button>
         </div>
       </div>

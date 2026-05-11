@@ -7,6 +7,9 @@ import { cn } from "@/lib/utils";
 const OAS_ILLUSTRATION =
   "https://contetra.b-cdn.net/pages/services/oas/oas_Illustration.png";
 
+const TURBOCHARGE_EBOOK_HREF =
+  "/turbocharge-your-finance-function-through-offshore-accounting/";
+
 export function OasMiddleSectionTwo() {
   return (
     <section
@@ -42,24 +45,24 @@ export function OasMiddleSectionTwo() {
             </div>
 
             <div className="flex min-w-0 flex-col items-center justify-center text-center lg:items-center">
-              <p className="w-full max-w-[480px] text-pretty text-[13px] font-normal leading-[1.62] text-slate-800 sm:text-[14px] md:text-[15px] lg:max-w-[440px] xl:max-w-[480px] xl:text-[16px]">
+              <p className="leading-[1.4em] w-full max-w-[480px] text-pretty text-[14px] font-normal text-slate-800 sm:text-[15px] md:text-[16px] lg:max-w-[440px] xl:max-w-[480px] xl:text-[17px]">
                 Instead of trying to manage everything yourself, why not call in
                 the experts? Read our short guide for why companies should
                 outsource their accounting function!
               </p>
-              <p className="mt-3 max-w-[480px] text-pretty text-[13px] font-bold leading-[1.5] text-slate-900 sm:mt-4 sm:text-[14px] md:text-[15px] lg:max-w-[440px] xl:max-w-[480px] xl:text-[16px]">
+              <p className="mt-3 max-w-[480px] text-pretty text-[14px] font-bold leading-[1.5] text-slate-900 sm:mt-4 sm:text-[15px] md:text-[16px] lg:max-w-[440px] xl:max-w-[480px] xl:text-[17px]">
                 Tldr; Complete control. Measurable KPIs. Zero time lost in
                 training staff. Full Accountability.
               </p>
               <Button
                 asChild
                 className={cn(
-                  "mt-4 h-auto min-h-9 w-full max-w-[340px] whitespace-normal rounded-lg px-3 py-2 text-center text-[11.5px] font-semibold leading-snug text-white shadow-[0_6px_18px_rgba(0,40,30,0.1)] sm:mt-5 sm:min-h-10 sm:max-w-[380px] sm:px-4 sm:py-2.5 sm:text-xs md:max-w-[400px] md:text-[13px]",
+                  "mt-4 h-auto min-h-10 w-full max-w-[340px] whitespace-normal rounded-lg px-3 py-2.5 text-center text-[13px] font-semibold leading-snug text-white shadow-[0_6px_18px_rgba(0,40,30,0.1)] sm:mt-5 sm:min-h-11 sm:max-w-[400px] sm:px-4 sm:py-3 sm:text-sm md:max-w-[440px] md:text-[15px] lg:text-base",
                   "bg-[#99D1B3] hover:bg-[#85c4a2] focus-visible:ring-[#99D1B3]/40",
                   "dark:bg-[#99D1B3] dark:hover:bg-[#85c4a2]"
                 )}
               >
-                <Link href="/ebooks">
+                <Link href={TURBOCHARGE_EBOOK_HREF}>
                   Find out how you can transform your accounting challenges into
                   opportunities.
                 </Link>

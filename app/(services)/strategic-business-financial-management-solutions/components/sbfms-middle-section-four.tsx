@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const JOURNEY_STAGES = [
   {
@@ -39,12 +40,14 @@ export function SbfmsMiddleSectionFour() {
             Want to know how you can manage your credit risk and check whether
             your customers will pay you on time?
           </p>
-          <button
-            type="button"
-            className="mt-5 rounded-full bg-[#55b48a] px-9 py-2 text-[1.2rem] font-semibold text-white"
-          >
-            Curious? Read On!
-          </button>
+          <Link href="/2023/03/17/code-red-managing-credit-risk-in-your-business">
+            <button
+              type="button"
+              className="cursor-pointer mt-5 rounded-full bg-[#55b48a] px-9 py-2 text-[1.2rem] font-semibold text-white"
+            >
+              Curious? Read On!
+            </button>
+          </Link>
         </div>
 
         <div className="xl:hidden">

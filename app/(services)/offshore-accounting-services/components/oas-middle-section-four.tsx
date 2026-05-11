@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 const OAS_ILLUSTRATION_2 =
   "https://contetra.b-cdn.net/pages/services/oas/oas_Illustration_2.png";
 
+const PERIOD_CLOSURE_CHECKLIST_HREF = "/period-closure-checklist/";
+
 export function OasMiddleSectionFour() {
   return (
     <section
@@ -42,12 +44,12 @@ export function OasMiddleSectionFour() {
               <Button
                 asChild
                 className={cn(
-                  "mt-5 h-auto min-h-9 w-full max-w-[340px] whitespace-normal rounded-md px-3 py-2.5 text-center text-[11.5px] font-semibold leading-snug text-white shadow-[0_6px_20px_rgba(0,50,35,0.14)] sm:mt-6 sm:min-h-10 sm:max-w-[380px] sm:px-4 sm:py-3 sm:text-xs md:max-w-[420px] md:text-[13px]",
+                  "mt-5 h-auto min-h-10 w-full max-w-[360px] whitespace-normal rounded-md px-3 py-2.5 text-center text-[13px] font-semibold leading-snug text-white shadow-[0_6px_20px_rgba(0,50,35,0.14)] sm:mt-6 sm:min-h-11 sm:max-w-[400px] sm:px-4 sm:py-3 sm:text-sm md:max-w-[440px] md:text-[15px] lg:text-base",
                   "bg-[#95d5b2] hover:bg-[#82c9a0] focus-visible:ring-[#95d5b2]/45",
                   "dark:bg-[#95d5b2] dark:hover:bg-[#82c9a0]"
                 )}
               >
-                <Link href="/ebooks">
+                <Link href={PERIOD_CLOSURE_CHECKLIST_HREF}>
                   Download our detailed Reporting Bundle
                 </Link>
               </Button>

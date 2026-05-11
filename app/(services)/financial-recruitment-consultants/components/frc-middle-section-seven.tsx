@@ -313,7 +313,7 @@ export function FrcMiddleSectionSeven() {
               asChild
               className="mt-0 h-auto min-h-12 rounded-full border-2 border-[#3d8f6f] bg-[#50a085] px-6 py-3.5 text-center text-[clamp(0.85rem,1.1vw,1rem)] font-bold text-white shadow-sm hover:bg-[#459678] hover:text-white"
             >
-              <Link href="/corporate-training">
+              <Link href="/corporate-trainings-at-contetra/">
                 Invest in your finance team&apos;s growth!
               </Link>
             </Button>

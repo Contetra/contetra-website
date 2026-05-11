@@ -63,8 +63,7 @@ const OUTCOMES: { key: string; parts: ReactNode }[] = [
     key: "o4",
     parts: (
       <>
-        Get{" "}
-        <strong className="font-semibold text-[#15803d]">IPO ready</strong>{" "}
+        Get <strong className="font-semibold text-[#15803d]">IPO ready</strong>{" "}
         with a valuation story backed by Numbers.
       </>
     ),
@@ -113,9 +112,11 @@ export function SbfmsMiddleSectionOne() {
             "text-[1.5rem] sm:text-[1.65rem] md:text-[1.85rem] lg:text-[2rem]",
           )}
         >
-          How Can We{" "}
-          <span className="text-[#16a34a] dark:text-[#4ade80]">Support</span>{" "}
-          You?
+          Common Finance Challenges our{" "}
+          <span className="text-[#16a34a] dark:text-[#4ade80]">
+            Fractional CFO services
+          </span>{" "}
+          solve for SMEs and Corporates
         </h2>
 
         <div className="mx-auto mt-5 max-w-[52rem] space-y-4 text-pretty text-center text-sm leading-relaxed text-neutral-700 sm:mt-6 sm:text-base dark:text-neutral-300">

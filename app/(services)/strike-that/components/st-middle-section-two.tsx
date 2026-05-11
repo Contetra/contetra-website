@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+
+const ST_PRICING_SECTION_ID = "st-pricing";
 
 const STRIKE_THAT_CTA_IMAGE =
   "https://contetra.b-cdn.net/pages/services/st/strike-that-cta-img.png";
@@ -6,6 +10,12 @@ const STRIKE_THAT_DONE_IMAGE =
   "https://contetra.b-cdn.net/pages/services/st/strike-that-you-are-done.png";
 
 export function StMiddleSectionTwo() {
+  function scrollToPricing() {
+    document
+      .getElementById(ST_PRICING_SECTION_ID)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   return (
     <section className="w-full bg-[#0c2558] pb-10 pt-16 sm:pb-12 sm:pt-20">
       <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center px-4 text-center sm:px-6 md:px-8">
@@ -55,7 +65,8 @@ export function StMiddleSectionTwo() {
 
         <button
           type="button"
-          className="mt-8 inline-flex min-h-[50px] items-center justify-center rounded-full bg-[#E2533D] px-8 text-lg font-bold text-white shadow-[0_4px_0_#BC3B2A] transition-colors hover:bg-[#D24A36]"
+          onClick={scrollToPricing}
+          className="cursor-pointer mt-8 inline-flex min-h-[50px] items-center justify-center rounded-full bg-[#E2533D] px-8 text-lg font-bold text-white shadow-[0_4px_0_#BC3B2A] transition-colors hover:bg-[#D24A36]"
         >
           Explore Pricing
         </button>

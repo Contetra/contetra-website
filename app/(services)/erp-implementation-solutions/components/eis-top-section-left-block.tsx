@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
 
 const cdnUrl = process.env.NEXT_PUBLIC_CDN_URL?.replace(/\/$/, "") ?? "";
 
@@ -63,12 +62,12 @@ export const EisTopSectionLeftBlock = () => {
         ))}
       </div>
 
-      <Button
+      {/* <Button
         className="mt-8 h-11 w-full max-w-[230px] rounded-full bg-[#21196C] px-7 text-[13px] font-semibold uppercase tracking-[0.04em] text-white hover:bg-[#181253] sm:px-8"
         type="button"
       >
         Book An ERP Review Call
-      </Button>
+      </Button> */}
     </div>
   );
 };

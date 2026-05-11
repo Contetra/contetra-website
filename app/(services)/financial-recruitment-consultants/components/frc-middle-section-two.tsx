@@ -1,10 +1,14 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
 const FRC_CTA_IMAGE =
   "https://contetra.b-cdn.net/pages/services/frc/frc-cta-two.png";
+
+const FINANCE_DREAM_TEAM_GUIDE_HREF =
+  "#";
 
 export function FrcMiddleSectionTwo() {
   return (
@@ -39,12 +43,17 @@ export function FrcMiddleSectionTwo() {
             </p>
 
             <Button
-              type="button"
+              asChild
               variant="outline"
               className="h-auto min-h-14 w-full max-w-[560px] rounded-full border-2 border-[#50a085] bg-transparent px-6 py-4 text-center text-[clamp(0.95rem,1.15vw,1.1rem)] font-semibold text-[#50a085] shadow-[0_3px_10px_rgba(80,160,133,0.22)] hover:bg-[#edf7f3] hover:text-[#50a085]"
             >
-              <span>The Ultimate Guide to Building Your Finance Dream-Team</span>
-              <ArrowRight className="size-5" />
+              <Link
+                href={FINANCE_DREAM_TEAM_GUIDE_HREF}
+                className="inline-flex items-center justify-center gap-2"
+              >
+                <span>The Ultimate Guide to Building Your Finance Dream-Team</span>
+                <ArrowRight className="size-5 shrink-0" aria-hidden />
+              </Link>
             </Button>
           </div>
         </div>

@@ -1,9 +1,15 @@
+"use client";
+
 import {
   ChartLine,
   GraduationCap,
   Trophy,
   Users,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
+
+const FINANCE_LD_DYNAMICS_POST_HREF =
+  "/2022/10/10/the-ld-dynamics-within-the-finance-function/";
 
 const impactCards = [
   {
@@ -33,6 +39,8 @@ const impactCards = [
 ] as const;
 
 export const CtMiddleSectionOne = () => {
+  const router = useRouter();
+
   return (
     <section className="w-full bg-[#1B1345] px-[10px] py-6 sm:px-4 sm:py-8 md:px-8 xl:px-14 2xl:px-[80px] dark:bg-[#0A0A0A]">
       <div className="mx-auto w-full max-w-[1260px]">
@@ -88,14 +96,13 @@ export const CtMiddleSectionOne = () => {
             See what industry champions have to say about L&amp;D and it&apos;s
             role in the growth of the finance function!
           </p>
-          <a
-            href="https://www.youtube.com/watch?v=xNQUmTyC6OU"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-10 items-center rounded-[8px] bg-[#80D7AA] px-6 text-[15px] font-semibold text-[#1B145F] transition-all hover:bg-[#70c79a] dark:bg-[#80D7AA] dark:text-[#1B145F] dark:hover:bg-[#70c79a]"
+          <button
+            type="button"
+            onClick={() => router.push(FINANCE_LD_DYNAMICS_POST_HREF)}
+            className="inline-flex h-10 cursor-pointer items-center justify-center rounded-[8px] bg-[#80D7AA] px-6 text-[15px] font-semibold text-[#1B145F] transition-all hover:bg-[#70c79a] dark:bg-[#80D7AA] dark:text-[#1B145F] dark:hover:bg-[#70c79a]"
           >
             The L&amp;D Dynamics Within the Finance Function
-          </a>
+          </button>
         </div>
       </div>
     </section>

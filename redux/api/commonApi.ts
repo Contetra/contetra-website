@@ -26,7 +26,18 @@ export const commonApi = createApi({
       }),
     }),
 
+    postContactCtac: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/common-rest/contact-ctac",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+
   }),
 });
 
-export const { useGetFormsQuery, usePostContactUsMutation } = commonApi;
+export const { useGetFormsQuery, usePostContactUsMutation, usePostContactCtacMutation } = commonApi;

@@ -21,7 +21,7 @@ const REASONS = [
     id: "3",
     title: "Transform data into actionable insights",
     description:
-      "Ditch the \"figuring it out as you go\" mentality. We equip you with a clear, data-driven roadmap to navigate your financial landscape. Complex data gets translated into practical, actionable steps you can implement immediately.",
+      'Ditch the "figuring it out as you go" mentality. We equip you with a clear, data-driven roadmap to navigate your financial landscape. Complex data gets translated into practical, actionable steps you can implement immediately.',
     icon: "https://contetra.b-cdn.net/pages/services/sbfms/sbfms-icon-cta%20(3).webp",
   },
   {
@@ -68,10 +68,10 @@ export function SbfmsMiddleSectionTwo() {
                 id="sbfms-mentor-heading"
                 className="text-balance text-[1.7rem] font-bold leading-tight text-white sm:text-[1.95rem] md:text-[2.2rem]"
               >
-                Why do you need a{" "}
-                <span className="text-[#6ae1b0]">Business Mentor</span>
-                <br />
-                and why should it be us?
+                Why CFOs and Founders Choose Contetra <br />
+                <span className="text-[#6ae1b0]">
+                  for Strategic Finance Mentoring
+                </span>
               </h2>
               <div className="mx-auto mt-4 h-1 w-14 rounded-full bg-white/85" />
             </div>

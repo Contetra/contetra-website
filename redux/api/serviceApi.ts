@@ -117,6 +117,17 @@ export const serviceApi = createApi({
         },
       }),
     }),
+
+    postServiceFrcOne: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/services/frcOne",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
   }),
 });
 
@@ -131,4 +142,5 @@ export const {
   usePostServiceOasTwoMutation,
   usePostServiceCtOneMutation,
   usePostServiceIrMutation,
+  usePostServiceFrcOneMutation,
 } = serviceApi;

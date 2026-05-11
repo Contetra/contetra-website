@@ -3,6 +3,9 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
+const FINANCE_LD_DYNAMICS_POST_HREF =
+  "/2022/10/10/the-ld-dynamics-within-the-finance-function/";
+
 export function FrcMiddleSectionSix() {
   return (
     <section
@@ -49,7 +52,7 @@ export function FrcMiddleSectionSix() {
               variant="outline"
               className="h-auto min-h-12 rounded-full border-2 border-[#50a085] bg-white px-6 py-3.5 text-center text-xs font-semibold uppercase tracking-wide text-[#50a085] shadow-[0_4px_16px_rgba(80,160,133,0.28)] hover:bg-[#f4faf8] hover:text-[#50a085] sm:min-h-14 sm:px-8 sm:text-sm"
             >
-              <Link href="/corporate-training">
+              <Link href={FINANCE_LD_DYNAMICS_POST_HREF}>
                 <span>How L&amp;D is a game changer</span>
                 <ArrowRight className="size-4 sm:size-5" aria-hidden />
               </Link>

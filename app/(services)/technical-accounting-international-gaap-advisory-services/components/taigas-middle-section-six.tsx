@@ -1,5 +1,8 @@
-
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+
+const IFRS_INSIGHTS_POST_HREF =
+  "/2021/11/11/how-misinterpretation-non-compliance-of-ifrs-can-cost-you-dearly/";
 
 export const TaigasMiddleSectionSix = () => {
   return (
@@ -15,13 +18,13 @@ export const TaigasMiddleSectionSix = () => {
               {" "}of <span className="text-[#8DD8B6]">IFRS</span> can cost you dearly!
             </h2>
 
-            <button
-              type="button"
+            <Link
+              href={IFRS_INSIGHTS_POST_HREF}
               className="mt-7 inline-flex items-center justify-center gap-2.5 rounded-full bg-[#8DD8B6] px-6 py-3 text-[11px] font-semibold tracking-[0.02em] text-white shadow-[0_16px_35px_rgba(141,216,182,0.4)] transition-all duration-300 hover:translate-y-[-1px] hover:bg-[#7dcdab] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8DD8B6] focus-visible:ring-offset-2 dark:ring-offset-[#111827] sm:mt-8 sm:gap-3 sm:px-8 sm:py-4 sm:text-[13px]"
             >
               <span>GET THE INSIGHTS</span>
-              <ArrowRight className="h-4 w-4" />
-            </button>
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
           </div>
         </div>
 

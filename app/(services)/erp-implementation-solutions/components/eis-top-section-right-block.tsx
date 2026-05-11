@@ -499,7 +499,7 @@ export const EisTopSectionRightBlock = () => {
                 />
               </div>
 
-              <div className="mt-1 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+              <div className="mt-1 flex flex-col gap-4 xl:flex-col xl:items-end xl:justify-between">
                 <div className="flex w-full min-w-0 flex-col gap-2 xl:w-auto">
                   {captchaError ? (
                     <p className="text-sm leading-[1.4em] text-red-500">

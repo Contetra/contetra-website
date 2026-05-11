@@ -47,6 +47,7 @@ import { useGetFormsQuery } from "@/redux/api/commonApi";
 import { usePostServiceSbfmsOneMutation } from "@/redux/api/serviceApi";
 import constants from "@/utils/constants.json";
 import { toast } from "sonner";
+import { useSbfmsReviewSheet } from "./sbfms-review-sheet-provider";
 
 const BG_IMAGE =
   "https://contetra.b-cdn.net/pages/services/sbfms/strategic%20bottom%20form%20bg.png";
@@ -262,7 +263,8 @@ function QuestionRadioGroup<TName extends keyof SbfmsFormValues>({
 }
 
 export function SbfmsBottomSection() {
-  const [sheetOpen, setSheetOpen] = useState(false);
+  const { reviewSheetOpen: sheetOpen, setReviewSheetOpen: setSheetOpen } =
+    useSbfmsReviewSheet();
   const [step, setStep] = useState(0);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [captchaError, setCaptchaError] = useState<string | null>(null);
@@ -356,7 +358,7 @@ export function SbfmsBottomSection() {
         );
       }
     }
-  }, [submitData, isSuccess, isError, error, resetWizard]);
+  }, [submitData, isSuccess, isError, error, resetWizard, setSheetOpen]);
 
   const setToken = (token: string) => {
     setCaptchaToken(token);
@@ -383,7 +385,7 @@ export function SbfmsBottomSection() {
           type="button"
           onClick={() => setSheetOpen(true)}
           className={cn(
-            "z-10 h-auto min-h-[48px] cursor-pointer rounded-xl px-6 py-3.5 text-center text-[15px] font-bold leading-tight text-[#2D8A77] sm:px-8 sm:text-[22px]",
+            " z-10 h-auto min-h-[48px] cursor-pointer rounded-xl px-6 py-3.5 text-center text-[15px] font-bold leading-tight text-[#2D8A77] sm:px-8 sm:text-[22px]",
             "relative shadow-[0_12px_40px_rgba(0,0,0,0.18)] hover:bg-white/95",
             "bg-white xl:absolute xl:top-[65%] xl:left-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2 xl:bg-transparent xl:shadow-none xl:hover:bg-transparent",
           )}

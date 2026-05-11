@@ -93,7 +93,7 @@ export const AuthorInfo = () => {
             <button
               type="button"
               onClick={() => toggleAuthor(index)}
-              className="mt-8 inline-flex min-w-[165px] self-center justify-center rounded-[12px] bg-[#1A166B] px-8 py-3 text-[15px] font-medium text-white transition-colors hover:bg-[#241f85] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A166B] focus-visible:ring-offset-2 dark:ring-offset-[#111827]"
+              className="cursor-pointer mt-8 inline-flex min-w-[165px] self-center justify-center rounded-[12px] bg-[#1A166B] px-8 py-3 text-[15px] font-medium text-white transition-colors hover:bg-[#241f85] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A166B] focus-visible:ring-offset-2 dark:ring-offset-[#111827]"
               aria-label={`${isExpanded ? "Collapse" : "Expand"} ${author.name}`}
             >
               <span>{isExpanded ? "show Less" : "show More"}</span>

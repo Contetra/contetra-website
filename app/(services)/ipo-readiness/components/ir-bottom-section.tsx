@@ -166,7 +166,10 @@ export function IrBottomSection() {
   };
 
   return (
-    <section className="w-full bg-[#0a051a] py-10 sm:py-12 md:py-14 lg:py-16 dark:bg-[#05030d]">
+    <section
+      id="ipo-readiness-assessment"
+      className="w-full scroll-mt-[88px] bg-[#0a051a] py-10 sm:py-12 md:py-14 lg:py-16 dark:bg-[#05030d]"
+    >
       <div className="mx-auto grid w-full max-w-[1200px] gap-10 px-4 sm:px-6 md:px-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,1fr)] lg:items-start lg:gap-12 xl:gap-16 xl:px-0">
         <div className="max-w-[560px] text-white lg:pt-2">
           <h2 className="text-balance text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem]">

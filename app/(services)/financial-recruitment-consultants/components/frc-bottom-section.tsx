@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 import Lottie from "lottie-react";
 import { Loader } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -21,8 +21,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
-
-const TEAL = "#50a085";
+import { useGetFormsQuery } from "@/redux/api/commonApi";
+import { usePostServiceFrcOneMutation } from "@/redux/api/serviceApi";
+import constants from "@/utils/constants.json";
+import { fireConfetti } from "@/lib/confettiFireworks";
+import { APIError } from "@/interface/api-response.types";
 
 const howCanWeHelpOptions = [
   "Contract Roles (Temp Staffing)",
@@ -61,7 +64,16 @@ const underlineLightClass =
 export function FrcBottomSection() {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [captchaError, setCaptchaError] = useState<string | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const { data: formsData } = useGetFormsQuery(
+    constants.form_type_ids.financial_recruitment_consultants,
+  );
+
+  const form_id = formsData?.response[0]?.id;
+
+  const [trigger, { data: frcData, isError, isSuccess, error, isLoading }] =
+    usePostServiceFrcOneMutation();
+
   const turnstileRef = useRef<TurnstileInstance | null>(null);
 
   const form = useForm<z.infer<typeof bottomFormSchema>>({
@@ -78,31 +90,60 @@ export function FrcBottomSection() {
     },
   });
 
-  const setToken = (token: string) => {
-    setCaptchaToken(token);
-    setCaptchaError(null);
-  };
-
-  async function onSubmit(values: z.infer<typeof bottomFormSchema>) {
+  function onSubmit(data: z.infer<typeof bottomFormSchema>) {
     if (!captchaToken) {
       setCaptchaError("Please verify the captcha");
       return;
     }
 
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
-
-    console.log("FRC bottom form data", values);
-    toast.info(
-      "Financial recruitment form UI is ready. Connect the API endpoint to enable live submissions."
-    );
+    trigger({
+      body: { ...data, form_id: form_id ?? "" },
+      captchaToken,
+    });
 
     setCaptchaError(null);
+
     setCaptchaToken(null);
     turnstileRef.current?.reset();
-    form.reset();
-    setIsSubmitting(false);
   }
+
+  useEffect(() => {
+    if (frcData && isSuccess && frcData?.statusCode) {
+      toast.success(frcData?.response?.message);
+      fireConfetti();
+      setCaptchaError(null);
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+      form.reset();
+      toast.success(
+        "Thank you for providing the requirements. Our team will connect within few hours to schedule the first call to understand your requirements clearly. We look forward to getting to know you better and exploring the possibility of working together.", {
+          duration: 10000,
+        }
+      );
+    }
+
+    if (frcData && isSuccess && !frcData?.statusCode) {
+      toast.error(frcData?.response?.message || "Something went wrong");
+    }
+
+    if (isError) {
+      setCaptchaError("Captcha verification failed. Please try again.");
+      turnstileRef.current?.reset();
+      setCaptchaToken(null);
+
+      if ((error as APIError)?.data) {
+        const apiError = error as APIError;
+        const errorMessage =
+          apiError?.data?.response?.message || "Something went wrong";
+        toast.error(errorMessage);
+      }
+    }
+  }, [isSuccess, frcData, isError, error, trigger, form]);
+
+  const setToken = (token: string) => {
+    setCaptchaToken(token);
+    setCaptchaError(null);
+  };
 
   return (
     <section
@@ -131,11 +172,11 @@ export function FrcBottomSection() {
           </div>
         </div>
 
-        <div className="mt-8 grid w-full max-w-[1100px] items-center gap-8 lg:mt-10 lg:grid-cols-[minmax(260px,380px)_minmax(260px,440px)] lg:justify-center lg:gap-x-12 lg:gap-y-8 xl:gap-x-20">
+        <div className="mt-8 grid w-full max-w-[1320px] items-center gap-8 lg:mt-10 lg:grid-cols-[minmax(300px,480px)_minmax(320px,580px)] lg:justify-center lg:gap-x-12 lg:gap-y-8 xl:gap-x-16 2xl:gap-x-20">
           <div className="flex w-full justify-center lg:justify-end">
-            <div className="flex aspect-square w-full max-w-[280px] items-center justify-center rounded-full bg-[#eef1f8] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[420px]">
+            <div className="flex aspect-square w-full max-w-[320px] items-center justify-center rounded-full bg-[#eef1f8] sm:max-w-[400px] md:max-w-[460px] lg:max-w-[500px] xl:max-w-[520px]">
               <Lottie
-                className="w-[88%] max-w-[320px] sm:w-[90%] sm:max-w-[360px] lg:max-w-[400px]"
+                className="w-[92%] max-w-[360px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[500px] xl:max-w-[520px]"
                 animationData={animationFive}
                 loop
                 aria-hidden
@@ -143,7 +184,7 @@ export function FrcBottomSection() {
             </div>
           </div>
 
-          <div className="order-2 mx-auto w-full  lg:order-none lg:mx-0   lg:justify-self-start">
+          <div className="order-2 mx-auto w-full max-w-[640px] lg:order-none lg:mx-0 lg:max-w-none lg:w-full lg:justify-self-start">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
@@ -323,7 +364,7 @@ export function FrcBottomSection() {
                 />
 
                 <div className="flex flex-col gap-4 pt-1 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
-                  <div className="flex w-full min-w-0 flex-col gap-2 sm:max-w-[320px]">
+                  <div className="flex w-full min-w-0 flex-col gap-2 sm:max-w-[380px] lg:max-w-[420px]">
                     {captchaError ? (
                       <p className="text-sm text-rose-600">{captchaError}</p>
                     ) : null}
@@ -339,16 +380,12 @@ export function FrcBottomSection() {
                   </div>
 
                   <Button
-                    type="submit"
-                    className="h-12 w-full shrink-0 rounded-[10px] px-8 text-[14px] font-semibold text-white sm:w-auto sm:min-w-[140px]"
-                    style={{ backgroundColor: TEAL }}
-                  >
-                    {isSubmitting ? (
-                      <Loader className="h-5 w-5 animate-spin" />
-                    ) : (
-                      "Send"
-                    )}
-                  </Button>
+                className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] xl:w-auto xl:min-w-[220px]"
+                type="submit"
+              >
+                {isLoading ? <Loader className="animate-spin" /> : null}
+                Submit
+              </Button>
                 </div>
               </form>
             </Form>

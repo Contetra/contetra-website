@@ -35,7 +35,10 @@ const PRICING_PLANS: PricingPlan[] = [
 
 export function StMiddleSectionFour() {
   return (
-    <section className="w-full bg-[#F2F3F5] px-4 py-10 sm:px-6 md:px-8 md:py-12">
+    <section
+      id="st-pricing"
+      className="w-full scroll-mt-[88px] bg-[#F2F3F5] px-4 py-10 sm:px-6 md:px-8 md:py-12"
+    >
       <div className="mx-auto w-full max-w-[1180px]">
         <h2 className="text-center text-[28px] font-semibold leading-tight text-[#3B7AB6] sm:text-[34px]">
           Pricing Plans

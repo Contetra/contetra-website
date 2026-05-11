@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
@@ -14,6 +13,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { useSbfmsReviewSheet } from "./sbfms-review-sheet-provider";
 
 const YOUTUBE_ID = "DJdvUMzg11g";
 
@@ -42,6 +42,7 @@ const arrowBtnClass =
 const AUTO_SCROLL_MS = 5500;
 
 export function SbfmsTopSection() {
+  const { setReviewSheetOpen } = useSbfmsReviewSheet();
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [carouselPaused, setCarouselPaused] = React.useState(false);
@@ -131,20 +132,19 @@ export function SbfmsTopSection() {
               </div>
 
               <Button
-                asChild
+                type="button"
                 variant="outline"
+                onClick={() => setReviewSheetOpen(true)}
                 className={cn(
-                  "h-auto w-full gap-0 rounded-full border-2 border-white bg-transparent px-4 py-3 text-xs font-semibold leading-snug text-white shadow-none",
+                  "cursor-pointer h-auto w-full gap-0 rounded-full border-2 border-white bg-transparent px-4 py-3 text-xs font-semibold leading-snug text-white shadow-none",
                   "whitespace-normal hover:bg-white/10 hover:text-white sm:px-5 sm:py-3.5 sm:text-sm md:px-6 md:py-4 md:text-base",
                 )}
               >
-                <Link href="/contact">
-                  <span className="block w-full text-pretty text-center leading-snug">
-                    Schedule your{" "}
-                    <span className="font-bold text-[#FDD03F]">FREE</span>{" "}
-                    business review with our Solution Experts NOW!
-                  </span>
-                </Link>
+                <span className="block w-full text-pretty text-center leading-snug">
+                  Schedule your{" "}
+                  <span className="font-bold text-[#FDD03F]">FREE</span>{" "}
+                  business review with our Solution Experts NOW!
+                </span>
               </Button>
             </div>
           </div>
