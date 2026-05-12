@@ -4,8 +4,8 @@ export const TaigasMiddleSectionTwo = () => {
   return (
     <div className="my-[50px] w-full flex min-h-[100px]  flex-col gap-20 ">
       <div className="flex w-full flex-col gap-8 justify-center items-center min-h-[100px] py-[40px] bg-[#F8F9FE] dark:bg-[#111827] rounded-b-[50px] xl:rounded-b-[100px]">
-        <h2 className="text-[35px] xl:text-[40px] font-medium ">
-          <b>Outsource Financial Reporting</b> = Achieve Strategic Objectives
+        <h2 className="text-[35px] xl:text-[35px] text-center leading-[1.2em] font-medium ">
+        IFRS and GAAP Reporting Support for IPO,<br /> Tax and Compliance Requirements
         </h2>
 
         <p className="hidden xl:block leading-[1.4em] text-[14px] xl:text-[17px] text-center">

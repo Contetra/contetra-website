@@ -17,10 +17,7 @@ export function OasTopSection() {
             id="oas-hero-heading"
             className="text-balance text-[1.45rem] font-bold leading-[1.18] tracking-tight text-white sm:text-[1.55rem] md:text-[1.85rem] md:leading-[1.14] lg:text-[2.15rem] xl:text-[2.4rem] 2xl:text-[2.55rem]"
           >
-            <span className="text-white">You can count on us for your </span>
-            <span className={accent}>accounting needs,</span>
-            <span className="text-white"> so you can focus on your </span>
-            <span className={accent}>business deeds!</span>
+            <span className="text-white">Offshore Accounting Services in India</span>
           </h1>
 
           <p className="mt-4 text-pretty text-[14px] leading-[1.6] text-white sm:mt-5 sm:text-[15px] md:text-[16px] md:leading-[1.65] lg:mt-5">

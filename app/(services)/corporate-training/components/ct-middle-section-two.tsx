@@ -11,7 +11,7 @@ const CT_ANIM_URL = "https://contetra.b-cdn.net/pages/services/ct/ct-anim.png";
 const rows = [
   {
     id: "practical-training",
-    title: "Practical Training Excellence",
+    title: "Practical Corporate Finance Training Excellence",
     body:
       "With a seasoned team of ex-Big 4 consultants, Chartered Accountants, and MBAs, our trainers bring real-world expertise from diverse roles in the finance industry. This unique background allows us to craft trainings that go beyond theory, immersing learners in practical implications and fostering deep understanding. Prepare to bridge the gap between knowledge and application with our exceptional practical training approach.",
     media: "lottie7" as const,
@@ -19,7 +19,7 @@ const rows = [
   },
   {
     id: "company-synergy",
-    title: "Aligning with Company Synergy and Culture",
+    title: "Customized Finance Training Aligned with Company Culture",
     body:
       "We understand the importance of aligning with your company's unique synergy and culture. Through our tailored training programs, we not only equip your employees with the necessary technical knowledge but also focus on fostering a mindset that resonates with your organization's values, ensuring they can effectively contribute and thrive within your company's dynamic environment.",
     media: "lottie8" as const,
@@ -27,7 +27,7 @@ const rows = [
   },
   {
     id: "roi-driven",
-    title: "ROI-Driven Trainings",
+    title: "ROI-Driven Corporate Training for Finance Teams",
     body:
       "By training your employees with the necessary knowledge and tools, we empower them to make informed decisions, drive efficiency, and contribute effectively to your business's success. With our training, you can witness improved ROI, streamlined processes, enhanced productivity, and a workforce that is aligned with your company's growth objectives, ensuring measurable and tangible outcomes for your organization.",
     media: "image" as const,
@@ -59,14 +59,18 @@ function LottieVisual({
 
 function MediaImage() {
   return (
-    <div className="relative mx-auto flex w-full max-w-[320px] shrink-0 items-center justify-center sm:max-w-[360px] md:max-w-[400px]">
+    <div
+      className="relative mx-auto flex w-full max-w-[320px] shrink-0 items-center justify-center sm:max-w-[360px] md:max-w-[400px]"
+      role="img"
+      aria-label="ROI and training outcomes illustration"
+    >
       <Image
         src={CT_ANIM_URL}
         alt="Corporate training illustration"
-        width={400}
-        height={400}
-        className="h-auto w-full object-contain object-center"
-        sizes="(max-width: 768px) 320px, 400px"
+        width={280}
+        height={280}
+        className="h-full w-full max-h-[240px] max-w-[240px] object-contain object-center sm:max-h-[260px] sm:max-w-[260px] md:max-h-[280px] md:max-w-[280px]"
+        sizes="(max-width: 768px) 240px, 280px"
         priority={false}
       />
     </div>
@@ -93,7 +97,7 @@ export const CtMiddleSectionTwo = () => {
         <div className="px-5 py-12 sm:px-8 sm:py-14 md:px-12 md:py-16">
           <div className="flex flex-col items-center text-center">
             <h2 className="text-[26px] font-semibold text-[#111827] sm:text-[30px] md:text-[32px] dark:text-white">
-              Why Contetra?
+            Why Choose Contetra for Corporate Finance Training
             </h2>
             <div
               className="mt-4 flex items-center justify-center gap-2"

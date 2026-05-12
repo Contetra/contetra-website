@@ -27,18 +27,10 @@ export const TaigasTopSection = () => {
       <div className="grid w-full items-start gap-8 overflow-hidden lg:grid-cols-[55fr_45fr] lg:gap-10 xl:gap-12">
         <div className="min-w-0 w-full px-1 py-2 sm:px-2 sm:py-4">
           <h1 className="w-full text-[28px] font-semibold leading-[1.15] text-[#111111] dark:text-white sm:text-[34px] lg:text-[38px]">
-            Because Financial Reporting
+          IFRS to Ind AS Conversion Services for
             <br />
-            needs <span className="text-[#17A8E3]">“CHAMPIONS”</span>
-            <span className="relative ml-2 inline-flex h-9 w-9 align-middle sm:h-10 sm:w-10">
-              <Image
-                src={`${cdnUrl}/pages/services/taigas/trophy.png`}
-                alt="Trophy icon"
-                fill
-                className="object-contain"
-                sizes="40px"
-              />
-            </span>
+             <span className="text-[#17A8E3]">Accurate Financial Reporting</span>
+           
           </h1>
 
           <p className="mt-6 w-full text-[15px] leading-[1.5] text-[#000] dark:text-[#E5E7EB] sm:mt-8 sm:text-[16px] sm:leading-[1.4em]">

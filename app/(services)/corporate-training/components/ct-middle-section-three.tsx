@@ -43,7 +43,7 @@ export const CtMiddleSectionThree = () => {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
           <div className="min-w-0 flex-1">
             <h2 className="text-left text-[26px] font-bold leading-[1.2] text-[#1a1a3c] sm:text-[30px] md:text-[32px] dark:text-white">
-              Empower transformation through measurable change management
+            Finance Training Programs That Drive Measurable Business Change
             </h2>
             <p className="mt-4 text-left text-[15px] leading-[1.6] text-[#6B7280] sm:text-[16px] dark:text-[#E5E7EB]">
               We&apos;re here to ignite your finance team with game-changing

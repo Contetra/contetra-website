@@ -5,10 +5,8 @@ import Image from "next/image";
 import { Highlighter } from "@/components/ui/highlighter";
 
 const cdnUrl = process.env.NEXT_PUBLIC_CDN_URL?.replace(/\/$/, "") ?? "";
-const completeOwnershipImage =
-  `${cdnUrl}/pages/services/taigas/taigas-complete-ownership.png`;
-const stackProcessImage =
-  `${cdnUrl}/pages/services/taigas/taigas-rank.png`;
+const completeOwnershipImage = `${cdnUrl}/pages/services/taigas/taigas-complete-ownership.png`;
+const stackProcessImage = `${cdnUrl}/pages/services/taigas/taigas-rank.png`;
 
 export const TaigasMiddleSectionFour = () => {
   return (
@@ -51,8 +49,10 @@ export const TaigasMiddleSectionFour = () => {
           <div className="order-2 flex flex-col gap-8 md:order-2 xl:order-1">
             <div className="border-b border-[#D9D9D9] pb-6 dark:border-[#2A3054]">
               <h3 className="text-[22px] font-semibold leading-[1.25] text-[#2B2B2B] dark:text-white sm:text-[24px]">
-                Pre-Closing{" "}
-                <span className="text-[#F39A33]">Activities Support:</span>
+                Preparation of Trial Balance and{" "}
+                <span className="text-[#F39A33]">
+                  Account Reconciliation Support:
+                </span>
               </h3>
               <p className="mt-4 text-[15px] leading-[1.7] text-[#2B2B2B] dark:text-[#D1D5DB] sm:mt-5">
                 Understanding closure process for key areas and potential
@@ -65,10 +65,8 @@ export const TaigasMiddleSectionFour = () => {
 
             <div>
               <h3 className="text-[22px] font-semibold leading-[1.25] text-[#2B2B2B] dark:text-white sm:text-[24px]">
-                Preparation of{" "}
-                <span className="text-[#F39A33]">Financial Statements</span>
-                <br />
-                as per GAAP
+                IPO Financial Reporting and{" "}
+                <span className="text-[#F39A33]"> GAAP Advisory Support</span>
               </h3>
               <p className="mt-4 text-[15px] leading-[1.75] text-[#2B2B2B] dark:text-[#D1D5DB] sm:mt-5">
                 Impact assessment of key standards with quantifiable aspects.
@@ -111,7 +109,10 @@ export const TaigasMiddleSectionFour = () => {
 
             <div>
               <h3 className="text-[22px] font-semibold leading-[1.25] text-[#2B2B2B] dark:text-white sm:text-[24px]">
-                <span className="text-[#F39A33]">Audit Closure</span> Support:
+                <span className="text-[#F39A33]">
+                  Audit and Compliance Support
+                </span>{" "}
+                for Growing Finance Teams:
               </h3>
               <p className="mt-4 text-[15px] leading-[1.75] text-[#2B2B2B] dark:text-[#D1D5DB] sm:mt-5">
                 Getting auditor buy-in on all key positions considered in the

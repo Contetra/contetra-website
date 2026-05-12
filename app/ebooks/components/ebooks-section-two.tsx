@@ -124,35 +124,40 @@ export const EbooksSectionTwo = () => {
   );
 
   return (
-    <div className="w-full px-[80px] flex justify-center items-center flex-col gap-[80px] my-[80px]">
+    <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center justify-center gap-10 px-4 py-10 sm:gap-12 sm:px-6 sm:py-12 md:gap-14 md:px-8 md:py-14 lg:gap-16 lg:px-12 xl:px-16 2xl:px-[80px] 2xl:py-20">
       {/* Search */}
-      <div className="w-full max-w-[500px]">
+      <div className="w-full max-w-[min(100%,500px)]">
         <Input
           placeholder="Search ebooks..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          className="w-full"
         />
       </div>
 
       {/* Ebook List */}
-      <div className="w-full flex flex-col gap-[120px]">
+      <div className="flex w-full flex-col gap-14 sm:gap-16 md:gap-20 lg:gap-24">
         {filteredEbooks.map((ebook, i) => (
-          <div key={i} className="w-full flex gap-5 h-[400px]">
-            <div className="w-[50%] flex justify-center">
+          <div
+            key={i}
+            className="flex w-full flex-col gap-6 sm:gap-8 md:flex-row md:items-center md:gap-8 lg:gap-10"
+          >
+            <div className="flex w-full shrink-0 justify-center md:w-1/2 md:max-w-[50%]">
               <Image
                 data-cursor-text="View Ebook!"
                 src={`${ebook?.image}`}
                 alt={`${ebook?.title}`}
-                priority
+                priority={i < 2}
                 width={320}
                 height={400}
-                className="rounded-xl cursor-pointer"
+                sizes="(max-width: 767px) min(100vw - 2rem, 320px), (max-width: 1279px) 40vw, 360px"
+                className="h-auto w-full max-w-[min(100%,280px)] cursor-pointer rounded-xl object-contain sm:max-w-[300px] md:max-w-[320px]"
                 quality={100}
               />
             </div>
 
-            <div className="w-[50%] flex items-start justify-end flex-col gap-10">
-              <div className="text-[30px] font-semibold border-l-2 border-green-500 pl-4 leading-[1.2em]">
+            <div className="flex w-full flex-col items-start gap-6 text-left sm:gap-8 md:w-1/2 md:max-w-[50%] md:justify-center">
+              <div className="w-full text-balance border-l-2 border-green-500 pl-3 text-left text-[1.125rem] font-bold leading-snug text-neutral-900 dark:text-neutral-100 sm:pl-4 sm:text-[1.25rem] md:text-[1.5rem] lg:text-[1.65rem] xl:text-[1.75rem]">
                 {ebook?.title}
               </div>
 
@@ -163,7 +168,7 @@ export const EbooksSectionTwo = () => {
                   if (!ebook?.link) return;
                   window.open(ebook.link, "_blank", "noopener,noreferrer");
                 }}
-                className="bg-contetra-blue cursor-pointer"
+                className="self-start bg-contetra-blue cursor-pointer"
               >
                 View Ebook
               </Button>

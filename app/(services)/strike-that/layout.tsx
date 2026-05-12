@@ -3,6 +3,7 @@ import { Header } from "@/components/navigation/navigation/header";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Metadata } from "next";
 
+import { STRIKE_THAT_FAQ_ITEMS } from "./components/strike-that-faq-items";
 export const metadata: Metadata = {
   title: `MCA Struck Off Companies List & Company Strike Off Status`,
   description: `Check MCA struck off company status in bulk using just GST or PAN numbers. No CIN needed. AI-powered tool with 48-hr turnaround. Schedule III compliant.`,
@@ -21,21 +22,35 @@ export default function LayoutServices({
 }: {
   children: React.ReactNode;
 }) {
-  const serviceSchema = {
+  const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: String(metadata.title ?? "Service"),
-    provider: {
-      "@type": "Organization",
-      name: "Contetra",
-      url: "https://contetra.com/",
-    },
+    "@graph": [
+      {
+        "@type": "Service",
+        name: String(metadata.title ?? "Service"),
+        provider: {
+          "@type": "Organization",
+          name: "Contetra",
+          url: "https://contetra.com/",
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: STRIKE_THAT_FAQ_ITEMS.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      },
+    ],
   };
 
   return (
     <section className="min-h-screen">
-      <JsonLd data={serviceSchema} />
-      <Header />
+      <JsonLd data={structuredData} />      <Header />
       {children}
       <FooterMain />
     </section>

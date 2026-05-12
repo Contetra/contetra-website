@@ -69,6 +69,9 @@ export const CtTopSectionLeft = () => {
         Learn Today, <span className="text-contetra-green">Lead Tomorrow</span>
       </h1>
 
+      <h1 className="mt-3 text-[15px] font-semibold leading-[1.5] text-[#1F2937] dark:text-[#E5E7EB] sm:text-[20px]">
+      Corporate Finance Training for Teams & Business Leaders
+      </h1>
       <p className="mt-3 text-[15px] font-semibold italic leading-[1.5] text-[#1F2937] dark:text-[#E5E7EB] sm:text-[16px]">
         Inspiring leaders through progressive, human powered Learning sessions
       </p>

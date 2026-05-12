@@ -45,7 +45,7 @@ export function FrcMiddleSectionHowHelp() {
               id="frc-how-help-heading"
               className="text-balance text-[clamp(1.45rem,2.2vw,2rem)] font-bold leading-tight text-[#3d8f76]"
             >
-              How can we help you?
+              How can our Financial Recuitment <br />Consultants help you?
             </h2>
             <div
               className="mx-auto mt-3 h-[3px] w-[clamp(140px,18vw,220px)] bg-[#50a085]"

@@ -53,9 +53,8 @@ function TalentBulletList({ bulletFill }: { bulletFill: string }) {
             Our way of doing things not only gets you top-notch hires but also
             slashes your hiring costs by a whopping 37%. We&apos;ve got the
             connections and know-how to find candidates in a flash, so you can
-            kiss goodbye to the endless and expensive recruitment grind. We
-            also go the extra mile to ensure culture fitment for your
-            organisation.
+            kiss goodbye to the endless and expensive recruitment grind. We also
+            go the extra mile to ensure culture fitment for your organisation.
           </p>
         </div>
       </li>
@@ -86,24 +85,33 @@ function TalentBulletList({ bulletFill }: { bulletFill: string }) {
 
 function HeroHeading() {
   return (
-    <h1
-      id="frc-hero-heading"
-      className="max-w-xl text-balance font-bold uppercase leading-[1.02] tracking-[0.02em]"
-      style={{ color: NAVY }}
-    >
-      <span className="mt-0 block max-xl:text-[clamp(2.35rem,7vw,3.5rem)] xl:text-[clamp(1.875rem,5vw,3.25rem)] font-semibold tracking-tight">
-        Creating your
-      </span>
-      <span
-        className="mt-1 block max-xl:text-[clamp(2.35rem,7vw,3.5rem)] xl:text-[clamp(1.875rem,5vw,3.25rem)] font-extrabold tracking-tight"
+    <div className="max-w-xl">
+      <h1
+        id="frc-hero-heading"
+        className="text-balance font-bold uppercase leading-[1.02] tracking-[0.02em]"
         style={{ color: NAVY }}
       >
-        Finance
-      </span>
-      <span className="mt-1 block max-xl:text-[clamp(2.35rem,7vw,3.5rem)] xl:text-[clamp(1.875rem,5vw,3.25rem)] font-bold tracking-tight">
-        Dream team !
-      </span>
-    </h1>
+        <span className="mt-0 block max-xl:text-[clamp(2.35rem,7vw,3.5rem)] xl:text-[clamp(1.875rem,5vw,3.25rem)] font-semibold tracking-tight">
+          Creating your
+        </span>
+        <span
+          className="mt-1 block max-xl:text-[clamp(2.35rem,7vw,3.5rem)] xl:text-[clamp(1.875rem,5vw,3.25rem)] font-extrabold tracking-tight"
+          style={{ color: NAVY }}
+        >
+          Finance
+        </span>
+        <span className="mt-1 block max-xl:text-[clamp(2.35rem,7vw,3.5rem)] xl:text-[clamp(1.875rem,5vw,3.25rem)] font-bold tracking-tight">
+          Dream team !
+        </span>
+      </h1>
+      <h1
+        className="text-teal mt-2 text-balance text-[1rem] font-semibold normal-case leading-snug tracking-wide sm:text-xs md:text-[1.5rem]"
+      
+      >
+        Finance Recruitment Consultants<br />
+         in India
+      </h1>
+    </div>
   );
 }
 

@@ -51,7 +51,7 @@ export function FrcMiddleSectionTwo() {
                 href={FINANCE_DREAM_TEAM_GUIDE_HREF}
                 className="inline-flex items-center justify-center gap-2"
               >
-                <span>The Ultimate Guide to Building Your Finance Dream-Team</span>
+                <span>The Ultimate Guide to Building Your<br /> Finance Dream-Team</span>
                 <ArrowRight className="size-5 shrink-0" aria-hidden />
               </Link>
             </Button>

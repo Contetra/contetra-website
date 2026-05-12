@@ -57,7 +57,7 @@ function ServicesHeading() {
         )}
       >
         <h2 className="text-[1.5rem] font-bold leading-tight tracking-tight text-[#333333] sm:text-[1.65rem] md:text-[1.85rem] lg:text-[2rem] dark:text-slate-100">
-          Services
+        Contetra’s Offshore Accounting Services Approach
         </h2>
         <div
           className="mt-3 flex items-center justify-center gap-1.5 sm:mt-4 sm:gap-2"

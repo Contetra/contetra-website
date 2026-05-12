@@ -156,8 +156,7 @@ export function FrcBottomSection() {
             id="frc-bottom-heading"
             className="text-balance text-[clamp(1.1rem,2.5vw,1.85rem)] font-semibold leading-[1.25] text-[#1a1640]"
           >
-            Want to know more about how you can deal with attrition and talent
-            development in your finance team?
+            Want to know more about how finance recruitment consultants can help you deal with attrition and talent development in your finance team?
           </h2>
           <div
             className="mt-6 flex flex-col items-center gap-2"

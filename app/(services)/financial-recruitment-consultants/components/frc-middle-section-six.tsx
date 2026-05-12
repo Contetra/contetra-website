@@ -26,6 +26,7 @@ export function FrcMiddleSectionSix() {
                 But are they fully skilled?
               </span>
             </h2>
+            <p className="text-[clamp(1rem,1.35vw,2rem)] font-bold leading-snug text-[#1a1640] mt-5">Challenges in Hiring Finance Talent</p>
             <div
               className="mx-auto mt-4 h-[3px] w-[clamp(120px,16vw,200px)] bg-[#50a085]"
               aria-hidden

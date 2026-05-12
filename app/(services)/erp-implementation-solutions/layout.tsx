@@ -3,6 +3,7 @@ import { Header } from "@/components/navigation/navigation/header";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Metadata } from "next";
 
+import { EIS_FAQ_ITEMS } from "./components/eis-faq-items";
 export const metadata: Metadata = {
   title: `ERP Consulting Services & Implementation Solutions for Businesses`,
   description: `End-to-end ERP consulting and implementation services to streamline operations, improve visibility, and drive data-driven decision-making.`,
@@ -21,21 +22,35 @@ export default function LayoutServices({
 }: {
   children: React.ReactNode;
 }) {
-  const serviceSchema = {
+  const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: String(metadata.title ?? "Service"),
-    provider: {
-      "@type": "Organization",
-      name: "Contetra",
-      url: "https://contetra.com/",
-    },
+    "@graph": [
+      {
+        "@type": "Service",
+        name: String(metadata.title ?? "Service"),
+        provider: {
+          "@type": "Organization",
+          name: "Contetra",
+          url: "https://contetra.com/",
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: EIS_FAQ_ITEMS.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      },
+    ],
   };
 
   return (
     <section className="min-h-screen">
-      <JsonLd data={serviceSchema} />
-      <Header />
+      <JsonLd data={structuredData} />      <Header />
       {children}
       <FooterMain />
     </section>

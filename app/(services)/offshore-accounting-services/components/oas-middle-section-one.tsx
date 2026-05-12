@@ -353,8 +353,7 @@ export function OasMiddleSectionOne() {
       <div className="mx-auto grid w-full max-w-[1440px] gap-8 sm:gap-9 md:gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:items-start lg:gap-11 xl:gap-12 2xl:gap-14">
         <div className="min-w-0">
           <h2 className="text-balance text-[1.3rem] font-bold leading-[1.2] tracking-tight text-slate-900 sm:text-[1.4rem] md:text-[1.55rem] md:leading-[1.18] lg:text-[1.65rem] xl:text-[1.72rem] 2xl:text-[1.75rem]">
-            We&apos;ll keep your accounting on track, No need to worry, just sit
-            back!
+          Why Growing Businesses Need Offshore Accounting Support
           </h2>
           <div className="mt-4 space-y-3 text-pretty text-[13.5px] leading-[1.62] text-slate-600 sm:mt-5 sm:space-y-[1.1rem] sm:text-[14.5px] sm:leading-[1.64] md:mt-6 md:space-y-5 md:text-[15.5px] md:leading-[1.65] lg:text-[16px]">
             <p>

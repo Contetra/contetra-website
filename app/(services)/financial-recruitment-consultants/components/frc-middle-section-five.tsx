@@ -66,7 +66,7 @@ export function FrcMiddleSectionFive() {
                 The Power of Contractual Deployment:
               </span>
               <span className="mt-2 block text-[clamp(1.35rem,2.4vw,2rem)] text-[#50a085]">
-                Increased Flexibility &amp; Agility for the Finance Team
+              How Finance Staffing Services Build Flexible Finance Teams
               </span>
             </h2>
             <div
