@@ -3,7 +3,6 @@ import Image from "next/image";
 const OAS_HERO_GIF =
   "https://contetra.b-cdn.net/pages/services/oas/offshore-accounting-services.gif";
 
-const accent = "text-[#F5E6B8]";
 
 export function OasTopSection() {
   return (
