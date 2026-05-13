@@ -4,11 +4,15 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Contact Us`,
-  description: `Contact Us`,
+  title: `Contact Contetra | CFO Advisory, ERP & Finance Consulting`,
+  description: `Connect with Contetra for CFO advisory, ERP implementation, IFRS, FP&A, and finance transformation services. Speak to our experts today!`,
   keywords: `Contact Us`,
   alternates: {
     canonical: "https://contetra.com/contact-us/",
+  },
+  openGraph: {
+    title: `Let’s Build Better Financial Clarity Together | Contetra`,
+    description: `Talk to Contetra’s finance experts for CFO advisory, ERP implementation, IFRS, FP&A, and finance transformation support for your business.`,
   },
 };
 
