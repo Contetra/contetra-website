@@ -1,6 +1,7 @@
 import { FooterMain } from "@/components/navigation/footer/footer-main";
 import { Header } from "@/components/navigation/navigation/header";
 import { JsonLd } from "@/components/seo/json-ld";
+import { resolveBlogListApiBase } from "@/lib/server-api-base-url";
 import { Floatingbar } from "./components/floating-bar";
 import { Metadata } from "next";
 
@@ -34,13 +35,33 @@ export async function generateMetadata({
   const blogPostPath = `/blog/${slug}`;
   const canonicalFromSlug = `https://contetra.com${blogPostPath}/`;
 
-  try {
-    const blogDataResponse = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/posts/posts-data?slug=${encodeURIComponent(apiSlug)}`,
-      { next: { revalidate: 60 } }
-    ).then((res) => res.json());
+  const apiBase = resolveBlogListApiBase();
+  if (!apiBase) {
+    return {
+      title: "Blog",
+      openGraph: { title: "Blog", url: canonicalFromSlug },
+      alternates: { canonical: canonicalFromSlug },
+    };
+  }
 
-    const blog = blogDataResponse?.response?.blog;
+  const postsDataUrl = `${apiBase}/posts/posts-data?slug=${encodeURIComponent(apiSlug)}`.replace(
+    /([^:]\/)\/+/g,
+    "$1",
+  );
+
+  try {
+    const blogRes = await fetch(postsDataUrl, { next: { revalidate: 60 } });
+    if (!blogRes.ok) {
+      return {
+        title: "Blog",
+        openGraph: { title: "Blog", url: canonicalFromSlug },
+        alternates: { canonical: canonicalFromSlug },
+      };
+    }
+
+    const blogDataResponse = await blogRes.json();
+    const r = blogDataResponse?.response;
+    const blog = r?.blog ?? r?.data?.blog;
 
     return {
       title: blog?.title || "Blog",

@@ -1,16 +1,6 @@
 import { FooterMain } from "@/components/navigation/footer/footer-main";
 import { Header } from "@/components/navigation/navigation/header";
 import { JsonLd } from "@/components/seo/json-ld";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: `Blog`,
-  description: `Blog | Contetra`,
-  keywords: `Blog | Contetra`,
-  alternates: {
-    canonical: "https://contetra.com/blog/",
-  },
-};
 
 export default function LayoutBlog({
   children,
