@@ -61,7 +61,7 @@ const socialLinks = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/company/contetra-universal-llp/",
+    href: "https://www.linkedin.com/company/contetra",
     Icon: Linkedin,
   },
 ] as const;
