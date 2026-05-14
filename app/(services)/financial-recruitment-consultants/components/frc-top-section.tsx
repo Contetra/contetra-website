@@ -153,7 +153,7 @@ export const FrcTopSection = () => {
           <TalentBulletList bulletFill={NAVY} />
         </div>
 
-        <div className="px-4 pb-12 pt-8 sm:px-6 md:px-10">
+        <div className="px-2 pb-12 pt-8 sm:px-6 md:px-10">
           <FrcTopForm />
         </div>
       </div>

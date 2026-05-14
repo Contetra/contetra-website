@@ -8,7 +8,7 @@ import { StTopSection } from "./components/st-top-section";
 
 export default function StrikeThat() {
   return (
-    <section className="mt-[90px] flex min-h-screen w-full flex-col gap-10 md:mt-[80px]">
+    <section className="mt-[60px] flex min-h-screen w-full flex-col gap-10 md:mt-[70px]">
       <StTopSection />
       <StMiddleSectionOne />
       <StMiddleSectionTwo />

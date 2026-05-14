@@ -148,14 +148,14 @@ export function FrcTopForm() {
   };
 
   return (
-    <div className="z-10 mx-auto mt-0 w-full max-w-lg px-4 py-6 sm:max-w-xl sm:px-2 xl:-mt-[18rem]">
+    <div className="z-10 mx-auto mt-0 w-full max-w-full px-0 py-6 sm:max-w-2xl sm:px-2 xl:max-w-xl xl:-mt-[18rem]">
       <div
         className="rounded-[24px] px-5 pb-8 pt-7 sm:rounded-[28px] sm:px-7 sm:pb-9 sm:pt-9"
         style={{ backgroundColor: NAVY }}
       >
         <div className="mb-7 flex items-start justify-between gap-4 sm:mb-8">
           <div className="min-w-0 flex-1 pr-2">
-            <p className="text-base font-medium leading-snug text-white sm:text-lg">
+            <p className="text-[20px] font-medium leading-snug text-white sm:text-lg">
               Find the right fit for
             </p>
             <p

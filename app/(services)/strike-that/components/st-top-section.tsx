@@ -19,7 +19,7 @@ export function StTopSection() {
     <section className="w-full">
       <div className="w-full bg-[#15285C] px-[12px] pb-10 pt-12 sm:px-5 sm:pb-12 sm:pt-14 md:px-8 md:pb-14 md:pt-16 xl:px-14 2xl:px-[80px]">
         <div className="mx-auto flex w-full max-w-[1100px] flex-col items-center text-center">
-          <h1 className="max-w-[960px] text-balance text-[1.45rem] font-extrabold leading-[1.12] tracking-tight text-white sm:text-[1.8rem] md:text-[2.2rem] lg:text-[2.8rem]">
+          <h1 className="max-w-[960px] text-balance text-[1.55rem] font-extrabold leading-[1.4em] tracking-tight text-white sm:text-[1.8rem] md:text-[2.2rem] lg:text-[2.8rem]">
             Bulk MCA Struck Off Company Check
             <br />
             Using GST or PAN, No CIN Required.
@@ -37,7 +37,7 @@ export function StTopSection() {
             />
           </div>
 
-          <p className="mt-4 max-w-[900px] text-balance text-[13px] font-semibold leading-[1.5] text-white sm:mt-5 sm:text-[15px] sm:leading-[1.5] md:text-[1.25rem] md:leading-[1.45]">
+          <p className="mt-4 max-w-[900px] text-balance text-[14px] font-semibold leading-[1.5] text-white sm:mt-5 sm:text-[15px] sm:leading-[1.5] md:text-[1.25rem] md:leading-[1.45]">
             is A Service That Helps You Get The Details Of &ldquo;STRUCK
             OFF&rdquo; Companies,
             <br className="hidden sm:block" />

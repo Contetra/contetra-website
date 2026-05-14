@@ -7,7 +7,7 @@ const cards = [
   {
     title: "Technical Accounting Advisory Services",
     icon: `${ICON_BASE}/home-icon-1.png`,
-    link: "/technical-accounting-international-gaap-advisory-services",
+    link: "/technical-accounting-international-gaap-advisory-services/",
     items: [
       "Ind AS, IFRS & US GAAP Advisory.",
       "CFO-Led Technical Accounting and International GAAP Solutions.",
@@ -20,7 +20,7 @@ const cards = [
   {
     title: "End-to-end ERP Implementation Services",
     icon: `${ICON_BASE}/home-icon-2.png`,
-    link: "/erp-implementation-solutions",
+    link: "/erp-implementation-solutions/",
     items: [
       "End-to-End ERP Implementation.",
       "SAP & Microsoft Dynamics Functional Consulting.",
@@ -33,7 +33,7 @@ const cards = [
   {
     title: "Financial Planning and Analysis Services",
     icon: `${ICON_BASE}/home-icon-3.png`,
-    link: "/strategic-business-financial-management-solutions",
+    link: "/strategic-business-financial-management-solutions/",
     items: [
       "Strategic Financial Management Solutions.",
       "Strategic CFO Services for SMEs.",
@@ -46,7 +46,7 @@ const cards = [
   {
     title: "Finance Process Automation Services",
     icon: `${ICON_BASE}/home-icon-4.png`,
-    link: "/strike-that",
+    link: "/strike-that/",
     items: [
       "MCA Struck Off Companies Check",
       "Automated Financial Reporting",
@@ -62,7 +62,7 @@ const cards = [
   {
     title: "IPO Readiness and Financial Transformation Services",
     icon: `${ICON_BASE}/home-icon-5.png`,
-    link: "/ipo-readiness",
+    link: "/ipo-readiness/",
     items: [
       "IPO Readiness Services.",
       "IPO-Grade ERP Implementation and Integration.",
@@ -76,7 +76,7 @@ const cards = [
   {
     title: "Global capability center and shared services consulting",
     icon: `${ICON_BASE}/home-icon-6.png`,
-    link: "/financial-recruitment-consultants",
+    link: "/financial-recruitment-consultants/",
     items: [
       "Offshore Accounting Services in India.",
       "Outsourced Finance and Accounting Operations.",

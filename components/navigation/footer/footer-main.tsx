@@ -15,32 +15,32 @@ export function getCopyrightYear(): number {
 const servicesLinks = [
   {
     label: "Technical Accounting & International GAAP Consultancy",
-    href: "/technical-accounting-international-gaap-advisory-services",
+    href: "/technical-accounting-international-gaap-advisory-services/",
   },
   {
     label: "ERP Functional Implementation",
-    href: "/erp-implementation-solutions",
+    href: "/erp-implementation-solutions/",
   },
   {
     label: "FP&A + Business Finance Services",
-    href: "/corporate-training",
+    href: "/strategic-business-financial-management-solutions/",
   },
   {
     label: "MCA - Struck off companies",
-    href: "/strike-that",
+    href: "/strike-that/",
   },
 ] as const;
 
 const companyLinks = [
   // { label: "About Us", href: "/team" },
-  { label: "Ebooks", href: "/ebooks" },
+  { label: "Ebooks", href: "/ebooks/" },
   // { label: "Webinar", href: "#" },
-  { label: "Contact Us", href: "/contact-us" },
+  { label: "Contact Us", href: "/contact-us/" },
 ] as const;
 
 const furtherLinks = [
-  { label: "Terms & Conditions", href: "/terms-and-conditions" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions/" },
+  { label: "Privacy Policy", href: "/privacy-policy/" },
 ] as const;
 
 const socialLinks = [

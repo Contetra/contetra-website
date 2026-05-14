@@ -30,7 +30,7 @@ export function IrTopSection() {
       <div
         className={cn(
           "absolute inset-0 z-10 flex w-full flex-col justify-center",
-          "px-4 pb-10 pt-28 sm:px-6 sm:pb-12 sm:pt-32 md:px-10 md:pb-14 lg:px-14 lg:pb-16 xl:px-20",
+          "px-4 pb-10 pt-8 sm:px-6 sm:pb-12 sm:pt-32 md:px-10 md:pb-14 lg:px-14 lg:pb-16 xl:px-20",
         )}
       >
         <div className="mx-auto flex w-full max-w-[52rem] flex-col items-center text-center">
@@ -38,7 +38,7 @@ export function IrTopSection() {
             id="ipo-readiness-hero-heading"
             className={cn(
               "text-center font-extrabold leading-[1.12] tracking-tight text-white",
-              "text-[1.65rem] sm:text-[2.1rem] md:text-[2.5rem] lg:text-[2.85rem] xl:text-[4.15rem]",
+              "text-[1.5rem] sm:text-[2.1rem] md:text-[2.5rem] lg:text-[2.85rem] xl:text-[4.15rem]",
             )}
           >
             <span className={gold}>IPO-Ready</span> on Paper.

@@ -14,7 +14,7 @@ export function OasTopSection() {
         <div className="min-w-0 py-1 sm:py-2 lg:py-0">
           <h1
             id="oas-hero-heading"
-            className="text-balance text-[1.45rem] font-bold leading-[1.18] tracking-tight text-white sm:text-[1.55rem] md:text-[1.85rem] md:leading-[1.14] lg:text-[2.15rem] xl:text-[2.4rem] 2xl:text-[2.55rem]"
+            className="text-balance text-[1.85rem] font-bold leading-[1.18] tracking-tight text-white sm:text-[1.55rem] md:text-[1.85rem] md:leading-[1.14] lg:text-[2.15rem] xl:text-[2.4rem] 2xl:text-[2.55rem]"
           >
             <span className="text-white">Offshore Accounting Services in India</span>
           </h1>

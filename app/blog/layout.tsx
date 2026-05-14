@@ -9,10 +9,34 @@ export default function LayoutBlog({
 }) {
   const blogSchema = {
     "@context": "https://schema.org",
-    "@type": "Blog",
-    name: "Contetra Blog",
-    url: "https://contetra.com/blog/",
-    description: "Insights on finance, ERP, IFRS, and business growth from Contetra.",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": "https://contetra.com/blog/#blog",
+        name: "Contetra Blog",
+        url: "https://contetra.com/blog/",
+        description:
+          "Insights on finance, ERP, IFRS, and business growth from Contetra.",
+        inLanguage: "en-IN",
+        publisher: {
+          "@id": "https://contetra.com/#organization",
+        },
+        isPartOf: {
+          "@id": "https://contetra.com/#website",
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://contetra.com/blog/#webpage",
+        url: "https://contetra.com/blog/",
+        name: "Blog | Finance, ERP & IFRS Insights | Contetra",
+        description:
+          "Insights on finance, ERP, IFRS, and business growth from Contetra.",
+        inLanguage: "en-IN",
+        isPartOf: { "@id": "https://contetra.com/#website" },
+        about: { "@id": "https://contetra.com/#organization" },
+      },
+    ],
   };
 
   return (

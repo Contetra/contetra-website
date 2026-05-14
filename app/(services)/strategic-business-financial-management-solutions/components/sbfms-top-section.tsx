@@ -88,8 +88,8 @@ export function SbfmsTopSection() {
             <h1
               id="sbfms-hero-heading"
               className={cn(
-                "text-balance font-bold uppercase leading-[1.15] tracking-[0.02em]",
-                "text-lg sm:text-xl sm:leading-snug md:text-2xl md:leading-tight",
+                "text-balance font-bold  leading-[1em] tracking-[0.02em]",
+                "text-[22px] sm:text-xl sm:leading-snug md:text-2xl md:leading-tight",
                 "lg:text-[1.75rem] lg:leading-[1.12] xl:text-[1.9rem] 2xl:text-[2rem]",
               )}
             >

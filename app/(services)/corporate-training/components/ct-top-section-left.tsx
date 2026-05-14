@@ -65,7 +65,7 @@ const cdnUrl = process.env.NEXT_PUBLIC_CDN_URL?.replace(/\/$/, "") ?? "";
 export const CtTopSectionLeft = () => {
   return (
     <div className="min-w-0 w-full px-1 py-2 sm:px-2 sm:py-4">
-      <h1 className="text-[30px] font-semibold leading-[1.2] text-[#101828] dark:text-white sm:text-[36px]">
+      <h1 className="text-[35px] font-semibold leading-[1.2] text-[#101828] dark:text-white sm:text-[36px]">
         Learn Today, <span className="text-contetra-green">Lead Tomorrow</span>
       </h1>
 
