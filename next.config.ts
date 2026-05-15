@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Default: URLs with a trailing slash redirect to the non-slash version.
+  trailingSlash: false,
+
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -54,6 +57,12 @@ const nextConfig: NextConfig = {
       {
         source: "/your-financial-playbook-fy-2025-26-edition-2",
         destination: "/your-financial-playbook-fy-2025-26-edition",
+        permanent: true,
+      },
+      // 301: strip trailing slash (except homepage "/"). Query string is preserved.
+      {
+        source: "/:path+/",
+        destination: "/:path+",
         permanent: true,
       },
     ];
