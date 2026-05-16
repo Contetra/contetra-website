@@ -3,6 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Default: URLs with a trailing slash redirect to the non-slash version.
   trailingSlash: false,
+  experimental: {
+    serverActions: {
+      allowedOrigins: ["contetra.com", "www.contetra.com"],
+    },
+  },
 
   images: {
     unoptimized: true,
