@@ -45,28 +45,28 @@ export const SectionOne = () => {
     };
   }, []);
 
-  const renderAnimatedWords = (text: string) => {
-    const words = text.split(" ");
-    return (
-      <>
-        {words.map((word, index) => (
-          <span
-            key={`p-${word}-${index}`}
-            className="overflow-hidden inline-block mr-2 align-top"
-          >
-            <span
-              className="inline-block will-change-transform"
-              ref={(el) => {
-                if (el) wordRefs.current.push(el);
-              }}
-            >
-              {word}
-            </span>
-          </span>
-        ))}
-      </>
-    );
-  };
+  // const renderAnimatedWords = (text: string) => {
+  //   const words = text.split(" ");
+  //   return (
+  //     <>
+  //       {words.map((word, index) => (
+  //         <span
+  //           key={`p-${word}-${index}`}
+  //           className="overflow-hidden inline-block mr-2 align-top"
+  //         >
+  //           <span
+  //             className="inline-block will-change-transform"
+  //             ref={(el) => {
+  //               if (el) wordRefs.current.push(el);
+  //             }}
+  //           >
+  //             {word}
+  //           </span>
+  //         </span>
+  //       ))}
+  //     </>
+  //   );
+  // };
 
   return (
     <div className="flex w-full gap-10 lg:gap-0 flex-col lg:flex-row mb-[100px] px-4 sm:px-8 md:px-12 lg:px-[80px]">
@@ -91,20 +91,14 @@ export const SectionOne = () => {
             </div>
 
             <p className="text-[16px] lg:text-[18px] font-[400] leading-[1.2em] mt-6">
-              {renderAnimatedWords("When it comes to business finance,")}{" "}
-              <b>{renderAnimatedWords("there’s no one-size fits all.")}</b>
+              When it comes to business finance,
+              <b>there’s no one-size fits all.</b>
               <br className="hidden lg:block" />
-              {renderAnimatedWords(
-                "Let us help you get the competitive advantage you need – whether it’s",
-              )}
+              Let us help you get the competitive advantage you need – whether it’s
               <br className="hidden lg:block" />
-              {renderAnimatedWords(
-                "creating financial statements that make more sense for a global",
-              )}
+              creating financial statements that make more sense for a global
               <br className="hidden lg:block" />
-              {renderAnimatedWords(
-                "world, or finance strategy that drives your business to new heights.",
-              )}
+              world, or finance strategy that drives your business to new heights.
             </p>
           </div>
         </div>

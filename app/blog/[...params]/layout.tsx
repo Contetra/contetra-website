@@ -26,14 +26,14 @@ export async function generateMetadata({
     return {
       title: "Blog",
       alternates: {
-        canonical: "https://contetra.com/blog/",
+        canonical: "https://contetra.com/blog",
       },
     };
   }
 
   const apiSlug = `/${slug}/`;
   const blogPostPath = `/blog/${slug}`;
-  const canonicalFromSlug = `https://contetra.com${blogPostPath}/`;
+  const canonicalFromSlug = `https://contetra.com${blogPostPath}`;
 
   const apiBase = resolveBlogListApiBase();
   if (!apiBase) {

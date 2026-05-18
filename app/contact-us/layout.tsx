@@ -25,7 +25,7 @@ export default function LayoutServices({
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: "Contact Us",
-    url: "https://contetra.com/contact-us/",
+    url: "https://contetra.com/contact-us",
     description: "Contact Contetra for finance transformation and advisory support.",
   };
 
