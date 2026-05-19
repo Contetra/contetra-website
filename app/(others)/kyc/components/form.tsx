@@ -34,6 +34,7 @@ import { useGetFormsQuery } from "@/redux/api/commonApi";
 import constants from "@/utils/constants.json";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
+import { MultiFileInput } from "./multi-file-input";
 
 // ── File constraints ──────────────────────────────────────────────────────────
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
@@ -72,20 +73,12 @@ function validateFiles(files: File[], acceptTypes: string[]): true | string {
 }
 
 const fileSchema = (acceptTypes: string[]) =>
-  z
-    .custom<FileList>((val) => val instanceof FileList, {
-      message: "Please upload at least one file.",
-    })
-    .superRefine((files, ctx) => {
-      const result = validateFiles(Array.from(files), acceptTypes);
-
-      if (result !== true) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: result,
-        });
-      }
-    });
+  z.array(z.instanceof(File)).superRefine((files, ctx) => {
+    const result = validateFiles(files, acceptTypes);
+    if (result !== true) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, message: result });
+    }
+  });
 
 // ── Zod schema ────────────────────────────────────────────────────────────────
 const FormSchema = z.object({
@@ -159,17 +152,15 @@ const fileInputClass = cn(
 export const FormKyc = () => {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [captchaError, setCaptchaError] = useState<string | null>(null);
+  const [dateOpen, setDateOpen] = useState(false);
   const turnstileRef = useRef<TurnstileInstance | null>(null);
   const router = useRouter();
 
-  const { data: formsData } = useGetFormsQuery(
-    constants.form_type_ids
-      .KYC,
-  );
+  const { data: formsData } = useGetFormsQuery(constants.form_type_ids.KYC);
   const form_id = formsData?.response[0]?.id;
 
   const [trigger, { data: taigasData, isError, isSuccess, error, isLoading }] =
-  usePostServiceKycMutation();
+    usePostServiceKycMutation();
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -179,17 +170,17 @@ export const FormKyc = () => {
       cin: "",
       date_of_incorporation: undefined,
       pan: "",
-      pan_upload: undefined,
+      pan_upload: [],
       gstin: "",
-      gst_upload: undefined,
+      gst_upload: [],
       nature_of_business: "",
       registered_office_address: "",
       business_addresses: "",
       contact_person_name: "",
       contact_email: "",
       contact_number: "",
-      signed_nda: undefined,
-      signed_engagement_letter: undefined,
+      signed_nda: [],
+      signed_engagement_letter: [],
     },
   });
 
@@ -316,7 +307,7 @@ export const FormKyc = () => {
                     <FormLabel className={labelClass}>
                       Date of Incorporation
                     </FormLabel>
-                    <Popover>
+                    <Popover open={dateOpen} onOpenChange={setDateOpen}>
                       <PopoverTrigger asChild>
                         <FormControl>
                           <Button
@@ -333,11 +324,22 @@ export const FormKyc = () => {
                           </Button>
                         </FormControl>
                       </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0" align="start">
+                      <PopoverContent
+                        className="w-auto overflow-hidden p-0"
+                        align="start"
+                      >
                         <Calendar
                           mode="single"
                           selected={field.value}
-                          onSelect={field.onChange}
+                          defaultMonth={field.value}
+                          captionLayout="dropdown"
+                          onSelect={(date) => {
+                            field.onChange(date);
+                            setDateOpen(false);
+                            {
+                              /* ← closes popover on select */
+                            }
+                          }}
                           disabled={(date) => date > new Date()}
                         />
                       </PopoverContent>
@@ -381,13 +383,10 @@ export const FormKyc = () => {
                   <FormItem>
                     <FormLabel className={labelClass}>Upload PAN</FormLabel>
                     <FormControl>
-                      <Input
-                        type="file"
-                        multiple
+                      <MultiFileInput
+                        value={value ?? []}
+                        onChange={onChange}
                         accept=".pdf,image/*"
-                        className={fileInputClass}
-                        onChange={(e) => onChange(e.target.files)}
-                        {...rest}
                       />
                     </FormControl>
                     <FormDescription className="text-[11px] text-[#9CA3AF]">
@@ -433,13 +432,10 @@ export const FormKyc = () => {
                   <FormItem>
                     <FormLabel className={labelClass}>Upload GST</FormLabel>
                     <FormControl>
-                      <Input
-                        type="file"
-                        multiple
+                      <MultiFileInput
+                        value={value ?? []}
+                        onChange={onChange}
                         accept=".pdf,image/*"
-                        className={fileInputClass}
-                        onChange={(e) => onChange(e.target.files)}
-                        {...rest}
                       />
                     </FormControl>
                     <FormDescription className="text-[11px] text-[#9CA3AF]">
@@ -569,13 +565,10 @@ export const FormKyc = () => {
                   <FormItem>
                     <FormLabel className={labelClass}>Signed NDA</FormLabel>
                     <FormControl>
-                      <Input
-                        type="file"
-                        multiple
+                      <MultiFileInput
+                        value={value ?? []}
+                        onChange={onChange}
                         accept=".pdf,.doc,.docx,image/*"
-                        className={fileInputClass}
-                        onChange={(e) => onChange(e.target.files)}
-                        {...rest}
                       />
                     </FormControl>
                     <FormDescription className="text-[11px] text-[#9CA3AF]">
@@ -596,13 +589,10 @@ export const FormKyc = () => {
                       Signed Engagement Letter
                     </FormLabel>
                     <FormControl>
-                      <Input
-                        type="file"
-                        multiple
+                      <MultiFileInput
+                        value={value ?? []}
+                        onChange={onChange}
                         accept=".pdf,.doc,.docx"
-                        className={fileInputClass}
-                        onChange={(e) => onChange(e.target.files)}
-                        {...rest}
                       />
                     </FormControl>
                     <FormDescription className="text-[11px] text-[#9CA3AF]">
@@ -635,7 +625,8 @@ export const FormKyc = () => {
                 className="h-11 w-full cursor-pointer rounded-[10px] bg-[#56B9F7] px-8 text-[14px] font-semibold text-white hover:bg-[#42aef1] sm:w-auto sm:self-start"
                 type="submit"
               >
-                {isLoading && <Loader className="animate-spin" />} {"Submit Form!"}
+                {isLoading && <Loader className="animate-spin" />}{" "}
+                {"Submit Form!"}
               </Button>
             </div>
           </form>
