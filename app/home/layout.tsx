@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: `Contetra helps CFOs and growing businesses with ERP implementation, FP&A strategy, and IFRS & IPO readiness. Serving 100+ clients globally.`,
   keywords: `Business management consultant in mumbai, finance business consultant, finance consulting services, finance advisory services, business financial management solutions`,
   alternates: {
-    canonical: "https://contetra.com/",
+    canonical: "https://contetra.com",
   },
   openGraph: {
     title: `Finance Transformation & Business Advisory for Growing Businesses`,

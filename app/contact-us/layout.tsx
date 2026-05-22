@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: `Connect with Contetra for CFO advisory, ERP implementation, IFRS, FP&A, and finance transformation services. Speak to our experts today!`,
   keywords: `Contact Us`,
   alternates: {
-    canonical: "https://contetra.com/contact-us/",
+    canonical: "https://contetra.com/contact-us",
   },
   openGraph: {
     title: `Let’s Build Better Financial Clarity Together | Contetra`,
@@ -25,7 +25,7 @@ export default function LayoutServices({
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: "Contact Us",
-    url: "https://contetra.com/contact-us",
+    url: "https://contetra.com/contact-us/",
     description: "Contact Contetra for finance transformation and advisory support.",
   };
 

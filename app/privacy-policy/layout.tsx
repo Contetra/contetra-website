@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: `Privacy Policy`,
   keywords: `Privacy Policy`,
   alternates: {
-    canonical: "https://contetra.com/privacy-policy/",
+    canonical: "https://contetra.com/privacy-policy",
   },
 };
 

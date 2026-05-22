@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: `Ebooks`,
   keywords: `Ebooks`,
   alternates: {
-    canonical: "https://contetra.com/ebooks/",
+    canonical: "https://contetra.com/ebooks",
   },
 };
 

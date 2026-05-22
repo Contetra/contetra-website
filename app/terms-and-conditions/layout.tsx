@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: `Terms and Conditions`,
   keywords: `Terms and Conditions`,
   alternates: {
-    canonical: "https://contetra.com/terms-and-conditions/",
+    canonical: "https://contetra.com/terms-and-conditions",
   },
 };
 

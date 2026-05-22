@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Blog | Contetra",
   keywords: "Blog | Contetra",
   alternates: {
-    canonical: "https://contetra.com/blog/",
+    canonical: "https://contetra.com/blog",
   },
 };
 
