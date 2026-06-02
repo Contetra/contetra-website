@@ -84,9 +84,9 @@ export const BlogList = () => {
           blogsdata?.length > 0 &&
           blogsdata?.map((blog: Blog, idx: number) => {
             return (
-              <BlurFade key={blog.id} delay={0.25 + idx * 0.05} inView>
+              <BlurFade className="min-h-[300px]" key={blog.id} delay={0.25 + idx * 0.05} inView>
                 <Link href={slugToBlogPostHref(blog?.slug)}>
-                  <Card className=" h-[450px] md:min-h-[480px] xl:min-h-[450px] flex flex-col gap-0 relative p-0">
+                  <Card className=" min-h-[450px] md:min-h-[480px] xl:min-h-[450px] flex flex-col gap-3 md:gap-0 relative p-0 ">
                     <div className="w-full h-[200px] md:h-[220px] xl:h-[180px] 2xl:h-[200px] relative">
                       {!loadedImages[blog.id] && (
                         <Skeleton className="absolute inset-0 rounded-xl z-10" />
