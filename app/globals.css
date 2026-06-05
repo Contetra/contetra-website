@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -313,6 +314,8 @@ html.lenis body {
 .bg-contetra-green {
   background-color: var(--color-contetra-green);
 }
+
+
 
 .magnetic {
   cursor: default;
