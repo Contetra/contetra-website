@@ -20,7 +20,7 @@ html {
 .custom-box {
     display: inline-block;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 30px;
@@ -347,8 +347,8 @@ html.lenis body {
   background: rgba(15, 23, 42, 0.03);
 }
 
-.blog-content p {
-  margin: 0;
+.blog-content > p {
+  margin: 0 0 1.25rem;
 }
 
 .magnetic {
