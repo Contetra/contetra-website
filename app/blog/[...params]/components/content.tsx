@@ -51,19 +51,20 @@ export const Content = ({ blogData }: ContentProps) => {
         </p>
       </div>
 
-      <div
-        className="
-        dark:text-white mt-[30px]
-    [&>p]:mb-5
-    [&>h1]:mt-8 [&>h1]:mb-4
-    [&>h2]:mt-8 [&>h2]:mb-4
-    [&>h3]:mt-6 [&>h3]:mb-3
-    [&>img]:mt-6 [&>img]:mb-3
-
-    text-[#333]
-  "
-        dangerouslySetInnerHTML={{ __html: blogData.content }}
-      />
+      <div className="w-full overflow-x-auto blog-content">
+        <div
+          className="
+            dark:text-white mt-[30px]
+            [&>p]:mb-5
+            [&>h1]:mt-8 [&>h1]:mb-4
+            [&>h2]:mt-8 [&>h2]:mb-4
+            [&>h3]:mt-6 [&>h3]:mb-3
+            [&>img]:mt-6 [&>img]:mb-3
+            text-[#333]
+          "
+          dangerouslySetInnerHTML={{ __html: blogData.content }}
+        />
+      </div>
     </div>
   );
 };

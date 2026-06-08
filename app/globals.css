@@ -315,7 +315,41 @@ html.lenis body {
   background-color: var(--color-contetra-green);
 }
 
+.blog-content {
+  width: 100%;
+  overflow-x: auto;
+}
 
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.blog-content th,
+.blog-content td {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  text-align: left;
+  vertical-align: top;
+}
+
+.blog-content th {
+  background: rgba(15, 23, 42, 0.05);
+  font-weight: 600;
+  color: rgba(15, 23, 42, 0.9);
+}
+
+.blog-content tr:nth-child(even) {
+  background: rgba(15, 23, 42, 0.03);
+}
+
+.blog-content p {
+  margin: 0;
+}
 
 .magnetic {
   cursor: default;
