@@ -135,19 +135,6 @@ const inputClass =
 const labelClass =
   "text-[12px] font-medium text-[#2B2B2B] dark:text-[#E5E7EB] sm:text-[13px]";
 
-// Shadcn Input styled as a file picker using `file:` pseudo-class utilities
-const fileInputClass = cn(
-  "h-11 rounded-[14px] border border-[#E8CFAF] bg-white text-sm dark:border-[#344155] dark:bg-[#0F172A]",
-  "cursor-pointer",
-  // native "Choose file" button styling
-  "file:mr-3 file:h-full file:cursor-pointer file:border-0 file:border-r file:border-[#E8CFAF]",
-  "file:bg-[#FFFDF8] file:px-3 file:text-[12px] file:font-medium file:text-[#2B2B2B]",
-  "dark:file:border-[#344155] dark:file:bg-[#172036] dark:file:text-[#E5E7EB]",
-  "hover:file:bg-[#F5ECD9] dark:hover:file:bg-[#1E2D45]",
-  // text colour for "No file chosen" label
-  "text-[#9CA3AF] dark:text-[#6B7280]",
-);
-
 // ── Main Form ─────────────────────────────────────────────────────────────────
 export const FormKyc = () => {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);

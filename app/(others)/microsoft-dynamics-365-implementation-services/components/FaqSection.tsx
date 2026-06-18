@@ -21,7 +21,7 @@ export default function FaqSection({ faqs }: { faqs: Faq[] }) {
               Frequently Asked Questions
             </h2>
             <p className="text-base leading-7 text-[#4d5b6e]">
-              Answers to common questions about Microsoft Dynamics 365 implementation, module selection, ERP failure risks and Contetra's role as a finance-led ERP consulting partner.
+              Answers to common questions about Microsoft Dynamics 365 implementation, module selection, ERP failure risks and ContetraA&apos;s role as a finance-led ERP consulting partner.
             </p>
             <a href="/contact-us" className="mt-6 inline-flex items-center justify-center rounded-sm border border-[#0e7c7b] bg-transparent px-8 py-3 text-sm font-semibold text-[#0e7c7b] transition duration-200 hover:bg-[#0e7c7b]/10">
               Ask Us Directly
