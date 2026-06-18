@@ -10,8 +10,8 @@ export default function FaqSection({ faqs }: { faqs: Faq[] }) {
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] items-start">
           <div className="space-y-6">
             <div className="space-y-3">
-              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0e7c7b]">Common Questions</div>
-              <div className="h-1 w-16 rounded-full bg-[#0e7c7b]" />
+              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#50a085]">Common Questions</div>
+              <div className="h-1 w-16 rounded-full bg-[#50a085]" />
               <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
                 Frequently Asked Questions
               </h2>
@@ -19,7 +19,7 @@ export default function FaqSection({ faqs }: { faqs: Faq[] }) {
                 Everything you need to know about Odoo ERP implementation and choosing Contetra as your Odoo implementation partner.
               </p>
             </div>
-            <a href="/contact" className="inline-flex items-center justify-center rounded-sm border border-[#0e7c7b] px-8 py-3 text-sm font-semibold text-[#0e7c7b] transition hover:bg-[#0e7c7b]/10">
+            <a href="/contact" className="inline-flex items-center justify-center rounded-sm border border-[#50a085] px-8 py-3 text-sm font-semibold text-[#50a085] transition hover:bg-[#eaf6f2]">
               Ask Us Directly →
             </a>
           </div>

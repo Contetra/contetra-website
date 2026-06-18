@@ -6,11 +6,11 @@ type Step = {
 
 export default function MethodologySection({ steps }: { steps: Step[] }) {
   return (
-    <section className="bg-[#112233] py-20 text-white">
+    <section className="bg-[#1a1640] py-20 text-white">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="space-y-6 text-center mb-10">
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#14a8a7]">Our Methodology</div>
-          <div className="mx-auto h-1 w-16 rounded-full bg-[#14a8a7]" />
+          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#50a085]">Our Methodology</div>
+          <div className="mx-auto h-1 w-16 rounded-full bg-[#50a085]" />
           <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
             How Contetra Approaches an Odoo ERP Project
           </h2>
@@ -23,7 +23,7 @@ export default function MethodologySection({ steps }: { steps: Step[] }) {
           <div className="grid gap-6 xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2">
             {steps.map((step) => (
               <div key={step.num} className="flex flex-col items-center text-center">
-                <div className="mb-5 flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-4 border-[#0e7c7b] bg-[#0d1b2a] text-lg font-semibold text-[#14a8a7] transition">
+                <div className="mb-5 flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-4 border-[#50a085] bg-[#1a1640] text-lg font-semibold text-[#50a085] transition">
                   {step.num}
                 </div>
                 <div className="mb-2 text-sm font-semibold text-white">{step.title}</div>

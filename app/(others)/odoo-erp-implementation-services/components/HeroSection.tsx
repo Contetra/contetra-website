@@ -14,19 +14,19 @@ export default function HeroSection() {
 
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-center">
           <div>
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-semibold text-contetra-green">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-semibold text-[#50a085]">
               <span className="h-px flex-1 bg-white/20" />
               Odoo ERP Implementation Partner
               <span className="h-px flex-1 bg-white/20" />
             </div>
             <h1 className="mb-6 text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">
-              Odoo ERP Implementation <span className="text-contetra-green">Services</span>
+              Odoo ERP Implementation <span className="text-[#50a085]">Services</span>
             </h1>
             <p className="max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
               Choose the right Odoo Implementation partner to connect finance, sales, inventory, procurement, manufacturing and reporting. Contetra helps growing businesses plan, implement and optimise Odoo ERP through business process mapping, ERP scope definition, module planning, Odoo Data migration readiness, UAT support, reporting design and post-go-live improvement.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center rounded-sm bg-contetra-green px-8 py-3 text-sm font-semibold text-[#0d1b2a] transition hover:brightness-110">
+              <Link href="/contact" className="inline-flex items-center justify-center rounded-sm bg-[#221971] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#181253]">
                 Schedule an ERP Scope & ROI Audit
               </Link>
               <Link href="/erp-implementation-solutions" className="inline-flex items-center justify-center rounded-sm border border-white/20 bg-white/5 px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
@@ -37,21 +37,21 @@ export default function HeroSection() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-[14px] border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition hover:-translate-y-1">
-              <div className="text-[2.5rem] font-serif font-bold text-[#c9a84c]">7+</div>
+              <div className="text-[2.5rem]  font-bold text-[#50a085]">7+</div>
               <p className="mt-3 text-sm leading-7 text-slate-200">
                 Odoo functional areas supported from finance to manufacturing
               </p>
             </div>
             <div className="rounded-[14px] border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition hover:-translate-y-1">
-              <div className="text-[2.5rem] font-serif font-bold text-white">4</div>
+              <div className="text-[2.5rem]  font-bold text-white">4</div>
               <p className="mt-3 text-sm leading-7 text-slate-200">Industry verticals with proven implementations</p>
             </div>
             <div className="rounded-[14px] border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition hover:-translate-y-1">
-              <div className="text-[2.5rem] font-serif font-bold text-white">100+</div>
+              <div className="text-[2.5rem]  font-bold text-white">100+</div>
               <p className="mt-3 text-sm leading-7 text-slate-200">Global clients served</p>
             </div>
             <div className="rounded-[14px] border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition hover:-translate-y-1">
-              <div className="text-[2.5rem] font-serif font-bold text-white">30%</div>
+              <div className="text-[2.5rem]  font-bold text-white">30%</div>
               <p className="mt-3 text-sm leading-7 text-slate-200">Average implementation cost reduction</p>
             </div>
           </div>
