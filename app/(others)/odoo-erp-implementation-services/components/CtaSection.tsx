@@ -11,11 +11,11 @@ export default function CtaSection() {
           Planning an Odoo ERP Implementation or Reviewing Your Current System?
         </h2>
         <p className="mb-8 text-base leading-8 text-white/70">
-          Move beyond disconnected processes, reporting delays and manual workarounds. Contetra helps businesses structure Odoo ERP implementation around stronger controls, operational visibility and scalable reporting.
+          Before investing further in Odoo, understand your process gaps, migration risks, reporting needs, implementation scope and ROI potential clearly.
         </p>
         <div className="mx-auto flex flex-wrap justify-center gap-4">
           <Link href="/contact" className="inline-flex items-center justify-center rounded-sm bg-[#c9a84c] px-8 py-3 text-sm font-semibold text-[#0d1b2a] transition hover:bg-[#e8c97a]">
-            Speak with Our Odoo ERP Consultants
+            Schedule an ERP Scope & ROI Audit
           </Link>
           <Link href="/erp-implementation-solutions" className="inline-flex items-center justify-center rounded-sm border border-white/20 bg-white/10 px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/20">
             Explore Our ERP Implementation Services

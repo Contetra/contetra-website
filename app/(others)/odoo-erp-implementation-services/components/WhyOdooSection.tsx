@@ -15,10 +15,13 @@ export default function WhyOdooSection({ challenges }: { challenges: Challenge[]
               <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0e7c7b]">From Disconnected to Integrated</div>
               <div className="h-1 w-16 rounded-full bg-[#0e7c7b]" />
               <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-                Move from Disconnected Processes to Integrated Operations
+                Why Businesses Need the Right Odoo ERP Implementation Strategy
               </h2>
               <p className="max-w-2xl text-base leading-8 text-slate-600">
-                Businesses looking for Odoo ERP are often trying to move beyond spreadsheets, disconnected systems and limited operational visibility. However, choosing software is only the first step. A successful Odoo ERP project requires the right scope, clean data, disciplined workflows and controlled customisation.
+                Many businesses start with spreadsheets, Tally, standalone billing tools, disconnected inventory systems or manual approval trackers. These systems may work in the early stage, but they begin to break when transactions, teams, locations, products and reporting needs increase.
+              </p>
+              <p className="max-w-2xl text-base leading-8 text-slate-600">
+                ERP systems such as Odoo, SAP, Microsoft Dynamics 365, Oracle and ERPNext help businesses connect finance, procurement, inventory, sales, manufacturing, projects and reporting into one integrated environment. But an Odoo ERP project should not be treated only as software configuration. It should be planned around business processes, reporting needs, financial controls, data quality, user adoption and measurable ROI.
               </p>
             </div>
             <Link href="/contact" className="inline-flex items-center justify-center rounded-sm bg-[#0e7c7b] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#14a8a7]">

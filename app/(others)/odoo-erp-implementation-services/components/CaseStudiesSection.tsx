@@ -14,7 +14,7 @@ export default function CaseStudiesSection({ caseStudies }: { caseStudies: CaseS
           <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0e7c7b]">Client Results</div>
           <div className="mx-auto h-1 w-16 rounded-full bg-[#0e7c7b]" />
           <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Odoo ERP Outcomes Across Industries
+            Odoo ERP Case Study Snapshots
           </h2>
         </div>
 

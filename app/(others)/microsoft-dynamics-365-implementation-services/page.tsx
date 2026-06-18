@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import BusinessOutcomesSection from './components/BusinessOutcomesSection';
 import BusinessCentralSection from './components/BusinessCentralSection';
 import CaseStudiesSection from './components/CaseStudiesSection';
@@ -9,103 +10,145 @@ import MethodologySection from './components/MethodologySection';
 import ServicesSection from './components/ServicesSection';
 import WhyExpertiseSection from './components/WhyExpertiseSection';
 
-// ── DATA ──────────────────────────────────────────────────────────────────────
+export const metadata: Metadata = {
+  title: 'Microsoft Dynamics 365 Implementation Services | Contetra',
+  description:
+    "Plan your Microsoft Dynamics 365 implementation with Contetra's finance-led ERP consulting for better reporting, controls, operations and ROI.",
+};
 
 const challenges = [
-  { challenge: 'Disconnected finance and operational data', outcome: 'Integrated workflows and consistent reporting' },
-  { challenge: 'Spreadsheet-led approvals and manual tracking', outcome: 'Controlled processes and workflow automation' },
-  { challenge: 'Limited inventory, project or profitability visibility', outcome: 'Decision-ready dashboards and MIS' },
-  { challenge: 'Weak master data and inconsistent processes', outcome: 'Standardised information and stronger controls' },
+  { challenge: 'Delayed MIS and month-end closing', outcome: 'Faster reporting cycles and cleaner financial control' },
+  { challenge: 'Poor inventory, project or profitability visibility', outcome: 'Decision-ready operational and margin insights' },
+  { challenge: 'Manual Excel-based reporting despite ERP go-live', outcome: 'ERP-linked MIS dashboards and reduced spreadsheet dependency' },
+  { challenge: 'Weak process ownership across departments', outcome: 'Clear approval workflows, roles and user responsibilities' },
+  { challenge: 'Data migration errors and reconciliation gaps', outcome: 'Stronger master data readiness and migration validation' },
+  { challenge: 'Expensive customisations caused by unclear requirements', outcome: 'Documented scope, BRDs and module fitment before configuration' },
 ];
 
 const msApps = [
-  { app: 'Dynamics 365 Business Central', suited: 'Growing small and midsize businesses', use: 'Finance, purchasing, sales, inventory, service and selected manufacturing' },
-  { app: 'Dynamics 365 Finance', suited: 'Mid-market and enterprise organisations', use: 'Financial control, budgeting, reporting and multi-entity visibility' },
-  { app: 'Dynamics 365 Supply Chain', suited: 'Manufacturers and distributors', use: 'Procurement, planning, production, inventory and warehousing' },
-  { app: 'Dynamics 365 Project Operations', suited: 'Consulting and project-led businesses', use: 'Projects, resources, billing and profitability' },
-  { app: 'Dynamics 365 Commerce', suited: 'Retail and ecommerce businesses', use: 'Omnichannel operations, transactions and fulfilment' },
-  { app: 'Microsoft Power BI', suited: 'CFOs and management teams', use: 'MIS dashboards, KPIs and profitability reporting' },
-  { app: 'Microsoft Power Platform', suited: 'Teams requiring workflow automation', use: 'Approvals, process extensions and low-code applications' },
+  { app: 'Dynamics 365 Finance', use: 'Financial accounting, budgeting, reporting, compliance, multi-entity control and financial governance' },
+  { app: 'Dynamics 365 Business Central', use: 'Finance, sales, purchasing, inventory, service management and operations for small and midsize businesses' },
+  { app: 'Dynamics 365 Supply Chain Management', use: 'Procurement, planning, production, inventory, warehousing and fulfilment' },
+  { app: 'Dynamics 365 Project Operations', use: 'Project planning, resource allocation, billing, project costing and profitability tracking' },
+  { app: 'Dynamics 365 Sales / CRM', use: 'Lead management, opportunity tracking, customer relationship management and sales visibility' },
+  { app: 'Dynamics 365 Commerce', use: 'Retail, ecommerce, customer experience, order management and fulfilment' },
+  { app: 'Power BI', use: 'MIS dashboards, KPI reporting, profitability analysis and management reporting' },
+  { app: 'Power Platform', use: 'Workflow automation, approvals, low-code apps and process extensions' },
+];
+
+const industries = [
+  { industry: 'Manufacturing', needs: 'Production planning, inventory control, procurement, costing, quality and finance integration' },
+  { industry: 'Pharma and Healthcare', needs: 'Batch tracking, compliance visibility, procurement, inventory and financial controls' },
+  { industry: 'Automotive and Engineering', needs: 'BOM, production, supplier management, inventory and job costing' },
+  { industry: 'Textiles and Garments', needs: 'Inventory, production stages, vendor coordination, order fulfilment and margin tracking' },
+  { industry: 'Distribution and Trading', needs: 'Procurement, warehouse visibility, sales orders, receivables and working capital control' },
+  { industry: 'IT and Professional Services', needs: 'Projects, timesheets, billing, resource planning and project profitability' },
+  { industry: 'Retail and Ecommerce', needs: 'Inventory, sales channels, customer orders, pricing, fulfilment and reporting' },
+  { industry: 'Multi-location Businesses', needs: 'Branch reporting, entity-level visibility, consolidation and standardised controls' },
 ];
 
 const services = [
-  { title: 'ERP Readiness Assessment', desc: 'Review current systems, reporting gaps, process issues and data readiness before implementation begins.' },
-  { title: 'Solution & Module Mapping', desc: 'Identify relevant Microsoft applications and define functional scope aligned with business goals.' },
-  { title: 'Process & Control Design', desc: 'Map finance, procurement, inventory, sales, production or project workflows to ERP configuration.' },
-  { title: 'Data Migration & Testing', desc: 'Support master-data structure, reconciliations, UAT and issue closure for a clean go-live.' },
-  { title: 'Reporting & Automation', desc: 'Define MIS dashboards, Power BI views and controlled workflow opportunities for management insight.' },
-  { title: 'Go-Live & Optimisation', desc: 'Support user adoption, stabilisation and reduced spreadsheet dependency post-implementation.' },
+  { title: 'ERP Scope & ROI Audit', desc: 'Review current systems, process gaps, implementation needs, cost drivers and expected ROI.' },
+  { title: 'Business Requirement Document', desc: 'Document functional requirements before configuration begins.' },
+  { title: 'Process Mapping', desc: 'Map current and future-state workflows across finance, procurement, inventory, sales, projects and reporting.' },
+  { title: 'Chart of Accounts and Dimensions Review', desc: 'Structure finance data for reporting, controls and MIS visibility.' },
+  { title: 'Module Fitment and Solution Mapping', desc: 'Identify the right Microsoft Dynamics 365 modules based on business needs.' },
+  { title: 'Data Readiness Support', desc: 'Review master data, opening balances, migration gaps and reconciliation expectations.' },
+  { title: 'UAT and Issue Tracking', desc: 'Support user acceptance testing, issue documentation and closure coordination.' },
+  { title: 'Vendor Coordination', desc: 'Work with technical vendors, implementation partners and internal teams to reduce execution gaps.' },
+  { title: 'MIS and Power BI Reporting Design', desc: 'Define dashboards, KPIs, profitability views and management reporting requirements.' },
+  { title: 'Post-Go-Live Optimisation', desc: 'Help stabilise processes, reduce Excel dependency and improve adoption after go-live.' },
 ];
 
 const steps = [
-  { num: '01', title: 'Assess', desc: 'Understand existing systems, process challenges, reporting needs and priorities' },
-  { num: '02', title: 'Design', desc: 'Map future-state workflows, controls, modules, integrations and data structures' },
-  { num: '03', title: 'Implement', desc: 'Support functional configuration, data readiness, testing and issue resolution' },
-  { num: '04', title: 'Report', desc: 'Align ERP information with MIS dashboards and management reporting needs' },
-  { num: '05', title: 'Optimise', desc: 'Strengthen adoption, close process gaps and improve post-go-live performance' },
+  { num: '01', title: 'Scope', desc: 'Assess systems, process gaps, ERP requirements, cost drivers, risks and ROI opportunities.' },
+  { num: '02', title: 'Document', desc: 'Prepare functional requirements, BRDs, reporting expectations and business ownership.' },
+  { num: '03', title: 'Map', desc: 'Align finance, procurement, inventory, sales, projects and reporting workflows.' },
+  { num: '04', title: 'Validate', desc: 'Support data readiness, UAT, issue tracking and vendor coordination.' },
+  { num: '05', title: 'Optimise', desc: 'Stabilise processes, reduce Excel dependency and improve adoption after go-live.' },
 ];
 
 const caseStudies = [
   {
-    industry: 'Fashion Retail & Distribution',
-    title: 'Tailored ERP for Fast-Moving Retail Operations',
-    challenge: 'Seasonal inventory, multichannel sales and vendor coordination created inefficiencies during ERP transition.',
-    solution: 'Business Central functional support across inventory, purchase planning and order fulfilment.',
-    outcome: 'Achieved 95% process fit and 60% faster SKU creation, with improved stock allocation and purchase planning.',
+    industry: 'Manufacturing Business',
+    title: 'ERPNext Implementation Roadmap',
+    challenge: 'The business needed better visibility across finance, inventory, procurement, manufacturing and reporting.',
+    solution: 'Contetra supported process mapping, module scoping, business requirements and implementation planning.',
+    outcome: 'Helped the business move from fragmented workflows to a structured ERP environment.',
   },
   {
-    industry: 'Global Glass Manufacturing',
-    title: 'Integrated Operations for Better Visibility',
-    challenge: 'Legacy systems and spreadsheet-led processes disconnected finance, production and inventory information.',
-    solution: 'Business Central implementation integrating core finance and operational workflows.',
-    outcome: 'Established a single source of truth, improved inventory visibility and streamlined procure-to-pay cycles.',
+    industry: 'Logistics Business',
+    title: 'ERP Stabilisation and Process Review',
+    challenge: 'ERP integration issues, reporting delays and process gaps affected adoption after implementation.',
+    solution: 'Contetra supported diagnostic review, issue identification, finance process alignment and roadmap planning.',
+    outcome: 'Improved system adoption and reporting reliability.',
   },
   {
-    industry: 'Premium Organic Exports',
-    title: 'Digitised Supply Chain & Traceability',
-    challenge: 'Manual farm-level data and disconnected quality and export processes limited traceability and compliance.',
-    solution: 'Microsoft ERP-enabled workflows connecting procurement, inventory, quality, logistics and finance.',
-    outcome: 'Improved farm-to-export traceability, compliance reporting and visibility into shipments and profitability.',
+    industry: 'Professional Services Business',
+    title: 'Project Accounting and Billing Visibility',
+    challenge: 'The service-led business needed better tracking of projects, billing, timesheets, WIP and profitability.',
+    solution: 'Contetra defined functional requirements for project accounting, finance integration, billing workflows and management reporting.',
+    outcome: 'Created a clearer ERP roadmap for project profitability and billing control.',
   },
   {
-    industry: 'Consulting & Professional Services',
-    title: 'Connected Projects, Billing & Finance',
-    challenge: 'Separate project and finance tools caused billing delays, limited WIP visibility and difficulty tracking profitability.',
-    solution: 'Business Central integrated with project accounting, timesheets and billing workflows.',
-    outcome: 'Improved project margin visibility, streamlined billing and strengthened cash flow monitoring.',
+    industry: 'Multi-Entity Business',
+    title: 'Consolidation and Reporting Improvement',
+    challenge: 'The group required stronger visibility across multiple entities, intercompany transactions and reporting structures.',
+    solution: 'Contetra supported reporting design, process standardisation and ERP-linked visibility.',
+    outcome: 'Enabled better management decision-making across entities.',
+  },
+  {
+    industry: 'Manufacturing and Trading Business',
+    title: 'Inventory and Margin Visibility',
+    challenge: 'Inventory-heavy operations needed better control over stock, procurement, sales and profitability.',
+    solution: 'Contetra identified process gaps, reporting needs and ERP improvement priorities.',
+    outcome: 'Reduced manual dependency and improved decision visibility.',
   },
 ];
 
 const faqs = [
   {
     q: 'What is Microsoft Dynamics 365 implementation?',
-    a: 'Microsoft Dynamics 365 implementation is the process of selecting, configuring, testing and adopting Microsoft business applications for finance and operational requirements. It also includes process mapping, data readiness, controls, reporting and user training.',
+    a: 'Microsoft Dynamics 365 implementation is the process of planning, configuring, testing and adopting Microsoft ERP applications for finance, operations, supply chain, projects, sales and reporting. It includes process mapping, data readiness, module selection, UAT, training and post-go-live support.',
   },
   {
-    q: 'What is Microsoft Dynamics 365 Business Central?',
-    a: 'Business Central is an ERP solution for small and midsize businesses that require connected finance, sales, purchasing, inventory, service and operational workflows.',
+    q: 'Which businesses should consider Microsoft Dynamics 365?',
+    a: 'Businesses that need stronger finance control, operational visibility, reporting automation, multi-location management, inventory control, project tracking or scalable ERP workflows can consider Microsoft Dynamics 365.',
   },
   {
-    q: 'Which Microsoft ERP solution is suitable for manufacturing companies?',
-    a: 'Businesses with selected manufacturing requirements may evaluate Business Central. Organisations with greater production, warehouse, planning or enterprise finance complexity may evaluate Dynamics 365 Finance with Supply Chain Management.',
+    q: 'Is Microsoft Dynamics 365 better than Odoo, SAP or ERPNext?',
+    a: 'There is no single best ERP for every business. Microsoft Dynamics 365, SAP, Odoo, ERPNext and Oracle each serve different business needs. The right ERP depends on business size, process complexity, budget, industry, reporting needs and integration requirements.',
   },
   {
-    q: 'Can Microsoft ERP support reporting and workflow automation?',
-    a: 'Yes. Power BI can support management dashboards and analytics, while Power Platform can support approvals and controlled workflow extensions around ERP processes.',
+    q: 'What modules should be implemented first?',
+    a: 'Most businesses should begin with core modules such as finance, procurement, sales, inventory and reporting. Manufacturing, project-based or retail businesses may also need production, project operations, CRM, commerce or supply chain modules.',
   },
   {
-    q: 'How should a business select a Microsoft ERP implementation consultant?',
-    a: 'Evaluate functional expertise, industry understanding, data migration approach, reporting capability, testing support, user training and post-go-live optimisation.',
+    q: 'Why do ERP implementations fail?',
+    a: 'ERP implementations often fail because of unclear requirements, poor process mapping, weak data quality, lack of user training, excessive customisation, poor reporting design and insufficient leadership involvement.',
+  },
+  {
+    q: 'How does Contetra help during ERP implementation?',
+    a: 'Contetra helps with ERP scope assessment, BRD preparation, process mapping, module fitment, Chart of Accounts review, data readiness, UAT support, vendor coordination, reporting design and post-go-live optimisation.',
+  },
+  {
+    q: 'Does Contetra handle technical configuration?',
+    a: 'Contetra primarily supports the functional, financial, process and reporting side of ERP implementation. We can work alongside technical implementation partners to ensure the system is aligned with business requirements and management expectations.',
+  },
+  {
+    q: 'What is an ERP Scope & ROI Audit?',
+    a: 'An ERP Scope & ROI Audit is a structured review of your current systems, business processes, ERP requirements, expected benefits, implementation risks and ROI opportunities. It helps leadership understand what should be implemented, why it matters and how it can create measurable business value.',
   },
 ];
 
 const whyItems = [
-  { icon: '🎯', title: 'Finance-Led Approach', desc: 'Every implementation is anchored in finance outcomes, not just software configuration.' },
-  { icon: '📊', title: 'Reporting First', desc: 'We design MIS, Power BI and management dashboards as core deliverables — not afterthoughts.' },
-  { icon: '🔒', title: 'Controls & Process', desc: 'We build segregation of duty, approvals and audit trails into every ERP environment we touch.' },
-  { icon: '🔄', title: 'End-to-End Ownership', desc: 'From readiness to go-live and beyond — we stay with you through adoption and optimisation.' },
-  { icon: '⚙️', title: 'Functional Depth', desc: 'Our consultants understand operational workflows across finance, manufacturing, distribution and services.' },
-  { icon: '📈', title: 'Proven Outcomes', desc: 'We measure success by business impact — faster closes, better visibility, reduced manual effort.' },
+  { title: 'Finance-led ERP approach', desc: 'ERP workflows are designed around reporting, controls and decision-making.' },
+  { title: 'Strong process understanding', desc: 'Better alignment across finance, procurement, inventory, sales and operations.' },
+  { title: 'Cross-industry experience', desc: 'Relevant insights for manufacturing, services, trading, pharma, retail and distribution.' },
+  { title: 'BRD and documentation discipline', desc: 'Clear scope before implementation reduces rework and confusion.' },
+  { title: 'Vendor oversight support', desc: 'Better coordination between business users and technical teams.' },
+  { title: 'Reporting and MIS focus', desc: 'ERP data is structured for management decisions, not just accounting entries.' },
+  { title: 'Post-go-live optimisation', desc: 'Helps businesses stabilise processes and improve adoption after implementation.' },
 ];
 
 export default function MicrosoftERP() {
@@ -114,7 +157,7 @@ export default function MicrosoftERP() {
       <HeroSection />
       <BusinessOutcomesSection challenges={challenges} />
       <EcosystemSection msApps={msApps} />
-      <BusinessCentralSection />
+      <BusinessCentralSection industries={industries} />
       <ServicesSection services={services} />
       <WhyExpertiseSection whyItems={whyItems} />
       <MethodologySection steps={steps} />

@@ -20,14 +20,14 @@ export default function HeroSection() {
               <span className="h-px flex-1 bg-white/20" />
             </div>
             <h1 className="mb-6 text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">
-              Choosing the Right <span className="text-contetra-green">Odoo Implementation Partner</span> for Scalable ERP Success
+              Odoo ERP Implementation <span className="text-contetra-green">Services</span>
             </h1>
             <p className="max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
-              Connect finance, sales, inventory, procurement, manufacturing and reporting through an Odoo ERP environment designed around your business needs. Contetra supports businesses evaluating or implementing Odoo through finance-led process mapping and adoption support.
+              Choose the right Odoo Implementation partner to connect finance, sales, inventory, procurement, manufacturing and reporting. Contetra helps growing businesses plan, implement and optimise Odoo ERP through business process mapping, ERP scope definition, module planning, Odoo Data migration readiness, UAT support, reporting design and post-go-live improvement.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link href="/contact" className="inline-flex items-center justify-center rounded-sm bg-contetra-green px-8 py-3 text-sm font-semibold text-[#0d1b2a] transition hover:brightness-110">
-                Book an Odoo ERP Strategy Discussion
+                Schedule an ERP Scope & ROI Audit
               </Link>
               <Link href="/erp-implementation-solutions" className="inline-flex items-center justify-center rounded-sm border border-white/20 bg-white/5 px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                 Explore All ERP Services

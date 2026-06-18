@@ -14,7 +14,7 @@ export default function BusinessModelsSection({ businessTypes }: { businessTypes
             Odoo ERP Solutions for Different Business Models
           </h2>
           <p className="mx-auto max-w-2xl text-base leading-8 text-slate-600">
-            The right implementation scope should reflect transaction volume, operational complexity, reporting expectations and management priorities.
+            Odoo is modular, which means businesses can implement only the applications that are relevant to their operations. The right Odoo ERP requirement depends on business size, industry, process complexity, reporting needs and future growth plans.
           </p>
         </div>
 

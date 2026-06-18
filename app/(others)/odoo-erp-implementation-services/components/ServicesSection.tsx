@@ -8,13 +8,13 @@ export default function ServicesSection({ services }: { services: Service[] }) {
     <section className="bg-slate-100 py-20">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="space-y-6 text-center mb-12">
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0e7c7b]">What We Deliver</div>
+          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0e7c7b]">What Contetra Delivers in Odoo ERP Implementation</div>
           <div className="mx-auto h-1 w-16 rounded-full bg-[#0e7c7b]" />
           <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Odoo ERP Implementation Services by Contetra
+            Contetra’s Odoo ERP Implementation Support
           </h2>
           <p className="mx-auto max-w-2xl text-base leading-8 text-slate-600">
-            Our Odoo ERP implementation services are designed for businesses that want ERP decisions to support operational control, reporting accuracy and management visibility.
+            Contetra works as a finance-led Odoo consultant for businesses that want Odoo decisions to support operational control, reporting accuracy and management visibility. We help businesses avoid the common mistake of jumping directly into configuration without defining the right scope, workflows, master data, reporting structure and user responsibilities.
           </p>
         </div>
 

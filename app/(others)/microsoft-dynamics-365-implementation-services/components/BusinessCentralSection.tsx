@@ -1,46 +1,38 @@
-import Link from 'next/link';
+type IndustryInfo = {
+  industry: string;
+  needs: string;
+};
 
-const businessNeeds = [
-  { need: 'Financial reporting', focus: 'Chart of accounts, dimensions, controls and MIS design' },
-  { need: 'Inventory and procurement', focus: 'Item masters, purchase planning and stock visibility' },
-  { need: 'Sales and fulfilment', focus: 'Order-to-cash workflows and reconciliation' },
-  { need: 'Management insight', focus: 'Power BI-ready data and performance dashboards' },
-];
-
-export default function BusinessCentralSection() {
+export default function BusinessCentralSection({ industries }: { industries: IndustryInfo[] }) {
   return (
-    <section className="py-20 bg-[#1a2d45] text-white">
+    <section className="bg-[#1a2d45] py-20 text-white">
       <div className="mx-auto max-w-[1200px] px-6">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <div className="md:order-2">
-            <div className="rounded-[14px] border border-white/10 bg-white/5 overflow-hidden">
-              <div className="border-b border-white/10 bg-[#0e7c7b]/25 px-6 py-5">
-                <p className="text-[0.75rem] font-bold uppercase tracking-[0.1em] text-white/70">Business Need</p>
-              </div>
-              {businessNeeds.map((row, i) => (
-                <div key={i} className="flex border-t border-white/10">
-                  <div className="flex-1 px-6 py-5 text-[0.9rem] font-semibold text-white">{row.need}</div>
-                  <div className="flex-[1.5] border-l border-white/10 px-6 py-5 text-[0.88rem] text-white/60">{row.focus}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
+        <div className="grid gap-10 md:grid-cols-2 md:items-start">
           <div>
-            <div className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#14a8a7]">Business Central ERP</div>
+            <div className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#14a8a7]">Industry Fit</div>
             <div className="mb-6 h-px w-16 bg-white/20" />
-            <h2 className="mb-6 text-3xl font-semibold leading-tight font-serif text-white md:text-[2.6rem]">
-              Connected Finance and Operations with Microsoft Business Central ERP
+            <h2 className="mb-6 font-serif text-3xl font-semibold leading-tight text-white md:text-[2.6rem]">
+              Industries That Can Benefit from Microsoft Dynamics 365
             </h2>
             <p className="mb-6 text-base leading-7 text-white/70">
-              For businesses moving away from basic accounting tools, fragmented systems or Excel-led operations, Microsoft Business Central ERP can connect finance, purchasing, sales, inventory, services and management reporting.
+              Microsoft Dynamics 365 can support businesses that need connected operations, stronger controls and better reporting visibility.
             </p>
-            <p className="mb-8 text-sm leading-7 text-white/60">
-              A successful Microsoft Business Central ERP project is not limited to software configuration. It should address process fit, master data, approvals, reporting design, testing, training and post-go-live adoption.
+            <p className="text-sm leading-7 text-white/60">
+              Contetra brings 10+ years of cross-industry finance transformation and ERP advisory experience through finance professionals, functional consultants, Chartered Accountants and business process specialists.
             </p>
-            <Link href="/contact" className="inline-flex items-center justify-center rounded-sm bg-[#c9a84c] px-8 py-3 text-sm font-semibold text-[#0d1b2a] transition duration-200 hover:bg-[#e8c97a]">
-              Start Your BC Project →
-            </Link>
+          </div>
+
+          <div className="overflow-hidden rounded-[14px] border border-white/10 bg-white/5">
+            <div className="grid grid-cols-[0.8fr_1.4fr] border-b border-white/10 bg-[#0e7c7b]/25">
+              <div className="px-5 py-4 text-[0.72rem] font-bold uppercase tracking-[0.1em] text-white/75">Industry</div>
+              <div className="border-l border-white/10 px-5 py-4 text-[0.72rem] font-bold uppercase tracking-[0.1em] text-white/75">Common ERP Needs</div>
+            </div>
+            {industries.map((row) => (
+              <div key={row.industry} className="grid grid-cols-[0.8fr_1.4fr] border-t border-white/10">
+                <div className="px-5 py-4 text-sm font-semibold text-white">{row.industry}</div>
+                <div className="border-l border-white/10 px-5 py-4 text-sm leading-6 text-white/65">{row.needs}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

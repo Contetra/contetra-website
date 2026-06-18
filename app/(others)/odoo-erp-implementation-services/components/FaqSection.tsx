@@ -13,7 +13,7 @@ export default function FaqSection({ faqs }: { faqs: Faq[] }) {
               <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0e7c7b]">Common Questions</div>
               <div className="h-1 w-16 rounded-full bg-[#0e7c7b]" />
               <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-                FAQs on Odoo ERP Implementation
+                Frequently Asked Questions
               </h2>
               <p className="max-w-2xl text-base leading-8 text-slate-600">
                 Everything you need to know about Odoo ERP implementation and choosing Contetra as your Odoo implementation partner.
