@@ -69,7 +69,7 @@ export const SectionOne = () => {
   // };
 
   return (
-    <div className="flex w-full gap-10 lg:gap-0 flex-col lg:flex-row mb-[100px] px-4 sm:px-8 md:px-12 lg:px-[80px]">
+    <div className="flex w-full gap-10 lg:gap-0 flex-col lg:flex-row mb-[100px] px-4 dark:bg-[#0A0A0A] sm:px-8 md:px-12 lg:px-[80px]">
       <LightRaysWrapper count={20} speed={20} />
       <div className=" w-full lg:w-[60%] flex flex-col gap-6 justify-end">
         <div className="relative">
@@ -90,7 +90,7 @@ export const SectionOne = () => {
               </h1>
             </div>
 
-            <p className="text-[16px] lg:text-[18px] font-[400] leading-[1.2em] mt-6">
+            <p className="text-[16px] lg:text-[18px] font-[400] leading-[1.2em] mt-6 dark:text-[#E5E7EB]">
               When it comes to business finance,
               <b>there’s no one-size fits all.</b>
               <br className="hidden lg:block" />

@@ -168,7 +168,7 @@ export const EbooksSectionTwo = () => {
                   if (!ebook?.link) return;
                   window.open(ebook.link, "_blank", "noopener,noreferrer");
                 }}
-                className="self-start bg-contetra-blue cursor-pointer"
+                className="self-start dark:text-white bg-contetra-blue cursor-pointer"
               >
                 View Ebook
               </Button>

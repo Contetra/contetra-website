@@ -17,7 +17,7 @@ export function StMiddleSectionTwo() {
   }
 
   return (
-    <section className="w-full bg-[#0c2558] pb-10 pt-16 sm:pb-12 sm:pt-20">
+    <section className="w-full bg-[#0c2558] pb-10 pt-16 dark:bg-[#0A0A0A] sm:pb-12 sm:pt-20">
       <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center px-4 text-center sm:px-6 md:px-8">
         <h2 className="max-w-[1200px] text-[1.8rem] font-extrabold leading-[1.2] sm:text-[2rem] md:text-[2.2rem]">
           <span className="whitespace-nowrap text-[#E8C75F]">

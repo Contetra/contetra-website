@@ -60,7 +60,7 @@ export const EisMiddleSectionEight = () => {
                 className={cn(
                   "group rounded-none py-0 hover:no-underline focus-visible:ring-2 focus-visible:ring-[#4C8DEB]/40 [&>svg:last-child]:hidden",
                   "data-[state=closed]:bg-[#F9FAFB] data-[state=closed]:text-[#252B42]",
-                  "data-[state=open]:bg-[#2F3237] data-[state=open]:text-white dark:data-[state=closed]:bg-[#1e293b] dark:data-[state=open]:bg-[#2F3237]",
+                  "data-[state=open]:bg-[#2F3237] data-[state=open]:text-white dark:data-[state=closed]:bg-[#1e293b] dark:data-[state=open]:bg-[#2F3237] dark:text-white",
                 )}
               >
                 <div className="flex w-full items-center gap-3 px-4 py-4 sm:gap-4 sm:px-5 sm:py-5">
@@ -91,7 +91,7 @@ export const EisMiddleSectionEight = () => {
                   />
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="border-t border-[#E5E7EB] bg-white px-4 pb-5 pt-1 text-[14px] leading-relaxed text-[#444444] dark:border-[#374151] dark:bg-[#0F172A] dark:text-[#D1D5DB] sm:px-5 sm:text-[15px]">
+              <AccordionContent className="border-t dark:text-white border-[#E5E7EB] bg-white px-4 pb-5 pt-1 text-[14px] leading-relaxed text-[#444444] dark:border-[#374151] dark:bg-[#0F172A] dark:text-[#D1D5DB] sm:px-5 sm:text-[15px]">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>

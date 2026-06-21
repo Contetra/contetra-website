@@ -70,12 +70,12 @@ const formSchema = z.object({
 });
 
 const fieldClass =
-  "h-11 w-full rounded-[14px] border-[#E6EAF0] bg-white text-sm dark:border-[#344155] dark:bg-[#0F172A]";
+  "h-11 w-full rounded-[14px] border-[#E6EAF0] bg-white text-sm dark:border-[#344155] dark:bg-[#172036] dark:text-[#E5E7EB] dark:placeholder:text-[#9CA3AF] dark:focus-visible:ring-[#86efac]";
 const labelClass =
-  "text-left text-[12px] font-medium leading-snug text-slate-600 sm:text-[13px] md:text-[14px] dark:text-slate-400";
+  "text-left text-[12px] font-medium leading-snug text-slate-600 sm:text-[13px] md:text-[14px] dark:text-[#D1D5DB]";
 
 const comboboxTriggerClass =
-  "h-11 w-full justify-between rounded-[14px] border border-[#E6EAF0] bg-white px-3.5 text-left text-sm font-normal shadow-none hover:bg-white dark:border-[#344155] dark:bg-[#0F172A] dark:hover:bg-[#0F172A]";
+  "h-11 w-full justify-between rounded-[14px] border border-[#E6EAF0] bg-white px-3.5 text-left text-sm font-normal shadow-none hover:bg-white dark:border-[#344155] dark:bg-[#172036] dark:text-[#E5E7EB] dark:hover:bg-[#172036]";
 
 export function OasBottomSection() {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
@@ -169,7 +169,7 @@ export function OasBottomSection() {
         "w-full bg-[#f0f4f8]",
         "box-border px-[10px] py-10 sm:px-4 sm:py-12 md:px-8 md:py-14 lg:py-16",
         "xl:px-14 xl:py-16 2xl:px-[80px] 2xl:py-20",
-        "dark:bg-slate-900/50",
+        "dark:bg-[#0A0A0A]",
       )}
     >
       <div className="mx-auto w-full max-w-[640px] lg:max-w-[720px]">
@@ -268,7 +268,7 @@ export function OasBottomSection() {
                     </PopoverTrigger>
                     <PopoverContent
                       align="start"
-                      className="w-[min(var(--radix-popover-trigger-width),calc(100vw-2rem))] overflow-hidden p-0 sm:w-[var(--radix-popover-trigger-width)]"
+                      className="w-[min(var(--radix-popover-trigger-width),calc(100vw-2rem))] overflow-hidden p-0 dark:border-[#1F2937] dark:bg-[#111827] sm:w-[var(--radix-popover-trigger-width)]"
                     >
                       <div className="h-1 w-full bg-[#3b82f6]" aria-hidden />
                       <Command>
@@ -399,7 +399,7 @@ export function OasBottomSection() {
                   </div>
                 </div>
                 <Button
-                  className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] xl:w-auto xl:min-w-[220px]"
+                  className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] dark:bg-[#80D7AA] dark:text-[#1B145F] dark:hover:bg-[#70c79a] xl:w-auto xl:min-w-[220px]"
                   type="submit"
                 >
                   {isLoading ? <Loader className="animate-spin" /> : null}

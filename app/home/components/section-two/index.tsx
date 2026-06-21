@@ -90,7 +90,7 @@ const cards = [
 
 export function SectionTwo() {
   return (
-    <section className="w-full bg-background text-foreground">
+    <section className="w-full bg-background text-foreground dark:bg-[#0A0A0A]">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 py-10 sm:gap-10 sm:px-6 sm:py-12 md:gap-12 md:py-16 lg:gap-14 lg:px-8 lg:py-20">
         <header className="flex w-full max-w-4xl flex-col items-center gap-3 text-center sm:gap-4 md:gap-5">
           <h2 className="text-balance text-[30px] font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-[2.5rem] lg:leading-tight">
@@ -101,21 +101,21 @@ export function SectionTwo() {
             Apart: Clarity, Control, and Scalable Growth
             </span>
           </h2>
-          <p className="text-black max-w-prose text-pretty text-sm leading-relaxed  sm:text-base md:text-lg">
+          <p className="text-black max-w-prose text-pretty text-sm leading-relaxed dark:text-[#E5E7EB] sm:text-base md:text-lg">
             Partner with Contetra for{" "}
-            <strong className="font-semibold text-foreground">
+            <strong className="font-semibold text-foreground dark:text-white">
               end-to-end finance transformation
             </strong>{" "}
             combining{" "}
-            <strong className="font-semibold text-foreground">
+            <strong className="font-semibold text-foreground dark:text-white">
               Virtual CFO leadership
             </strong>
             ,{" "}
-            <strong className="font-semibold text-foreground">
+            <strong className="font-semibold text-foreground dark:text-white">
               world-class ERP implementation
             </strong>
             , and modern{" "}
-            <strong className="font-semibold text-foreground">
+            <strong className="font-semibold text-foreground dark:text-white">
               finance automation tools
             </strong>
             .
@@ -125,7 +125,7 @@ export function SectionTwo() {
         <div className="grid w-full min-w-0 grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
           {cards.map((card) => (
             <Link key={card.title} href={card.link} className="block">
-              <article className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-5 text-card-foreground shadow-sm ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-md motion-reduce:transition-none dark:ring-white/10 dark:hover:shadow-md sm:rounded-[1.25rem] sm:p-6 md:p-7 lg:p-8">
+              <article className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-5 text-card-foreground shadow-sm ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-md motion-reduce:transition-none dark:border-[#1F2937] dark:bg-[#111827] dark:ring-white/10 dark:shadow-[0_12px_36px_rgba(0,0,0,0.28)] dark:hover:shadow-[0_22px_60px_rgba(0,0,0,0.32)] sm:rounded-[1.25rem] sm:p-6 md:p-7 lg:p-8">
                 <div
                   className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-0 bg-contetra-green transition-[height] duration-500 ease-out motion-reduce:transition-none group-hover:h-full dark:brightness-110 dark:saturate-110"
                   aria-hidden
@@ -144,7 +144,7 @@ export function SectionTwo() {
                   <h3 className="text-base font-bold text-contetra-blue transition-colors duration-300 group-hover:!text-white dark:!text-zinc-100 dark:!group-hover:text-white md:text-lg lg:text-xl">
                     {card.title}
                   </h3>
-                  <ul className="list-disc space-y-1.5 pl-4 text-xs leading-relaxed text-muted-foreground transition-colors duration-300 marker:text-muted-foreground group-hover:!text-white group-hover:!marker:!text-white sm:text-sm md:text-[0.9375rem] dark:!text-zinc-400 dark:!marker:!text-zinc-500">
+                  <ul className="list-disc space-y-1.5 pl-4 text-xs leading-relaxed text-muted-foreground transition-colors duration-300 marker:text-muted-foreground group-hover:!text-white group-hover:!marker:!text-white sm:text-sm md:text-[0.9375rem] dark:!text-[#D1D5DB] dark:!marker:!text-[#9CA3AF]">
                     {card.items.map((item) => (
                       <li key={item}>{item}</li>
                     ))}

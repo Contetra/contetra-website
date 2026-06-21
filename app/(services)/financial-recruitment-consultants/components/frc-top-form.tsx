@@ -62,7 +62,7 @@ const formSchema = z.object({
 });
 
 const inputClass =
-  "h-10 w-full rounded-none border-0 border-b border-white/90 bg-transparent text-sm text-white shadow-none outline-none ring-0 focus-visible:border-white focus-visible:ring-0";
+  "h-10 w-full rounded-none border-0 border-b border-white/90 bg-transparent text-sm text-white shadow-none outline-none ring-0 placeholder:text-white/60 focus-visible:border-white focus-visible:ring-0 dark:text-white";
 
 export function FrcTopForm() {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
@@ -364,7 +364,7 @@ export function FrcTopForm() {
               </div>
 
               <Button
-                className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] xl:w-auto xl:min-w-[220px]"
+                className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] dark:bg-[#80D7AA] dark:text-[#1B145F] dark:hover:bg-[#70c79a] xl:w-auto xl:min-w-[220px]"
                 type="submit"
               >
                 {isLoading ? <Loader className="animate-spin" /> : null}

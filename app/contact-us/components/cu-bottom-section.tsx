@@ -26,10 +26,10 @@ import { APIError } from "@/interface/api-response.types";
 import constants from "@/utils/constants.json";
 
 const fieldClass =
-  "h-12 rounded-full border border-[#d9d9d9] bg-white px-4 text-[16px] text-[#2E3A59] placeholder:text-[#9aa0ae] focus-visible:ring-1 focus-visible:ring-[#2d4f93]";
+  "h-12 rounded-full border border-[#d9d9d9] bg-white px-4 text-[16px] text-[#2E3A59] placeholder:text-[#9aa0ae] focus-visible:ring-1 focus-visible:ring-[#2d4f93] dark:border-[#344155] dark:bg-[#172036] dark:text-[#E5E7EB] dark:placeholder:text-[#9CA3AF] dark:focus-visible:ring-[#86efac]";
 
 const messageClass =
-  "min-h-[130px] rounded-[14px] border border-[#d9d9d9] bg-white px-4 py-3 text-[16px] text-[#2E3A59] placeholder:text-[#9aa0ae] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#2d4f93]";
+  "min-h-[130px] rounded-[14px] border border-[#d9d9d9] bg-white px-4 py-3 text-[16px] text-[#2E3A59] placeholder:text-[#9aa0ae] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#2d4f93] dark:border-[#344155] dark:bg-[#172036] dark:text-[#E5E7EB] dark:placeholder:text-[#9CA3AF] dark:focus-visible:ring-[#86efac]";
 
 const formSchema = z.object({
   first_name: z.string().trim().min(2, {
@@ -138,13 +138,13 @@ export function CuBottomSection() {
   };
 
   return (
-    <section className="w-full bg-[#f6f7fb] px-[12px] pb-12 pt-10 sm:px-5 sm:pb-14 sm:pt-12 md:px-8 md:pb-16 md:pt-14 xl:px-14 2xl:px-[80px]">
+    <section className="w-full bg-[#f6f7fb] px-[12px] pb-12 pt-10 dark:bg-[#0A0A0A] sm:px-5 sm:pb-14 sm:pt-12 md:px-8 md:pb-16 md:pt-14 xl:px-14 2xl:px-[80px]">
       <div className="mx-auto w-full max-w-[1100px]">
         <div className="mx-auto max-w-[760px] text-center">
-          <h2 className="text-[2.2rem] font-bold leading-[1.1] text-[#2d4f93] sm:text-[2.5rem] md:text-[2.8rem]">
+          <h2 className="text-[2.2rem] font-bold leading-[1.1] text-[#2d4f93] dark:text-white sm:text-[2.5rem] md:text-[2.8rem]">
             Reach out to us!
           </h2>
-          <p className="mt-3 text-[20px] leading-[1.5] text-[#263857] sm:text-[18px]">
+          <p className="mt-3 text-[20px] leading-[1.5] text-[#263857] dark:text-[#E5E7EB] sm:text-[18px]">
             Are you interested in partnering with us?
             <br />
             Have some suggestions or just want to say hi?
@@ -153,7 +153,7 @@ export function CuBottomSection() {
           </p>
         </div>
 
-        <div className="mx-auto mt-8 w-full max-w-[920px] rounded-[14px] border border-[#ececf2] bg-white p-6 shadow-[0_20px_60px_rgba(24,42,85,0.08)] sm:p-8">
+        <div className="mx-auto mt-8 w-full max-w-[920px] rounded-[14px] border border-[#ececf2] bg-white p-6 shadow-[0_20px_60px_rgba(24,42,85,0.08)] dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_12px_36px_rgba(0,0,0,0.28)] sm:p-8">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -303,7 +303,7 @@ export function CuBottomSection() {
                 </div>
 
                 <Button
-                  className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] xl:w-auto xl:min-w-[220px]"
+                  className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] dark:bg-[#80D7AA] dark:text-[#1B145F] dark:hover:bg-[#70c79a] xl:w-auto xl:min-w-[220px]"
                   type="submit"
                 >
                   {isLoading ? <Loader className="animate-spin" /> : null}

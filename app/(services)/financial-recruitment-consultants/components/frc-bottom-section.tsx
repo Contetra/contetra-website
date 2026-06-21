@@ -59,7 +59,7 @@ const bottomFormSchema = z.object({
 });
 
 const underlineLightClass =
-  "h-11 rounded-none border-0 border-b border-[#1a1640]/35 bg-transparent px-0 text-sm text-[#1a1640] shadow-none placeholder:text-[#1a1640]/40 focus-visible:border-[#50a085] focus-visible:ring-0";
+  "h-11 rounded-none border-0 border-b border-[#1a1640]/35 bg-transparent px-0 text-sm text-[#1a1640] shadow-none placeholder:text-[#1a1640]/40 focus-visible:border-[#50a085] focus-visible:ring-0 dark:border-[#344155] dark:text-white dark:placeholder:text-[#9CA3AF] dark:focus-visible:border-[#86efac]";
 
 export function FrcBottomSection() {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
@@ -147,14 +147,14 @@ export function FrcBottomSection() {
 
   return (
     <section
-      className="w-full py-6 sm:py-8 lg:py-10"
+      className="w-full py-6 dark:bg-[#0A0A0A] sm:py-8 lg:py-10"
       aria-labelledby="frc-bottom-heading"
     >
-      <div className="flex w-full flex-col items-center rounded-b-[36px] bg-[#F8F9FE] px-4 py-8 sm:rounded-b-[50px] sm:px-6 sm:py-10 md:px-8 xl:rounded-b-[100px] xl:px-12 xl:py-12">
+      <div className="flex w-full flex-col items-center rounded-b-[36px] bg-[#F8F9FE] px-4 py-8 dark:bg-[#111827] sm:rounded-b-[50px] sm:px-6 sm:py-10 md:px-8 xl:rounded-b-[100px] xl:px-12 xl:py-12">
         <div className="mx-auto max-w-[760px] text-center">
           <h2
             id="frc-bottom-heading"
-            className="text-balance text-[clamp(1.1rem,2.5vw,1.85rem)] font-semibold leading-[1.25] text-[#1a1640]"
+            className="text-balance text-[clamp(1.1rem,2.5vw,1.85rem)] font-semibold leading-[1.25] text-[#1a1640] dark:text-white"
           >
             Want to know more about how finance recruitment consultants can help you deal with attrition and talent development in your finance team?
           </h2>
@@ -173,7 +173,7 @@ export function FrcBottomSection() {
 
         <div className="mt-8 grid w-full max-w-[1320px] items-center gap-8 lg:mt-10 lg:grid-cols-[minmax(300px,480px)_minmax(320px,580px)] lg:justify-center lg:gap-x-12 lg:gap-y-8 xl:gap-x-16 2xl:gap-x-20">
           <div className="flex w-full justify-center lg:justify-end">
-            <div className="flex aspect-square w-full max-w-[320px] items-center justify-center rounded-full bg-[#eef1f8] sm:max-w-[400px] md:max-w-[460px] lg:max-w-[500px] xl:max-w-[520px]">
+            <div className="flex aspect-square w-full max-w-[320px] items-center justify-center rounded-full bg-[#eef1f8] dark:bg-[#172036] sm:max-w-[400px] md:max-w-[460px] lg:max-w-[500px] xl:max-w-[520px]">
               <Lottie
                 className="w-[92%] max-w-[360px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[500px] xl:max-w-[520px]"
                 animationData={animationFive}
@@ -195,7 +195,7 @@ export function FrcBottomSection() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[13px] font-medium leading-[1.4] text-[#1a1640] sm:text-[14px]">
+                        <FormLabel className="text-[13px] font-medium leading-[1.4] text-[#1a1640] dark:text-white sm:text-[14px]">
                           Full name
                         </FormLabel>
                         <FormControl>
@@ -216,7 +216,7 @@ export function FrcBottomSection() {
                     name="work_email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[13px] font-medium leading-[1.4] text-[#1a1640] sm:text-[14px]">
+                        <FormLabel className="text-[13px] font-medium leading-[1.4] text-[#1a1640] dark:text-white sm:text-[14px]">
                           Work Email
                         </FormLabel>
                         <FormControl>
@@ -238,7 +238,7 @@ export function FrcBottomSection() {
                     name="company"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[13px] font-medium leading-[1.4] text-[#1a1640] sm:text-[14px]">
+                        <FormLabel className="text-[13px] font-medium leading-[1.4] text-[#1a1640] dark:text-white sm:text-[14px]">
                           Company name
                         </FormLabel>
                         <FormControl>
@@ -259,7 +259,7 @@ export function FrcBottomSection() {
                     name="designation"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[13px] font-medium leading-[1.4] text-[#1a1640] sm:text-[14px]">
+                        <FormLabel className="text-[13px] font-medium leading-[1.4] text-[#1a1640] dark:text-white sm:text-[14px]">
                           Your Designation
                         </FormLabel>
                         <FormControl>
@@ -280,7 +280,7 @@ export function FrcBottomSection() {
                     name="finance_team_size"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[13px] font-medium leading-[1.4] text-[#1a1640] sm:text-[14px]">
+                        <FormLabel className="text-[13px] font-medium leading-[1.4] text-[#1a1640] dark:text-white sm:text-[14px]">
                           Current size of the Finance Team:
                         </FormLabel>
                         <FormControl>
@@ -300,7 +300,7 @@ export function FrcBottomSection() {
                     name="phone_number"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[13px] font-medium leading-[1.4] text-[#1a1640] sm:text-[14px]">
+                        <FormLabel className="text-[13px] font-medium leading-[1.4] text-[#1a1640] dark:text-white sm:text-[14px]">
                           Phone Number
                         </FormLabel>
                         <FormControl>
@@ -323,7 +323,7 @@ export function FrcBottomSection() {
                   name="how_can_we_help"
                   render={({ field }) => (
                     <FormItem className="space-y-3">
-                      <FormLabel className="text-[13px] font-medium text-[#1a1640] sm:text-[14px]">
+                      <FormLabel className="text-[13px] font-medium text-[#1a1640] dark:text-white sm:text-[14px]">
                         How can we help you?
                       </FormLabel>
                       <div
@@ -350,7 +350,7 @@ export function FrcBottomSection() {
                                 ref={index === 0 ? field.ref : undefined}
                                 className="mt-1 h-4 w-4 shrink-0 border-2 border-[#50a085] bg-transparent accent-[#50a085] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#50a085]"
                               />
-                              <span className="text-[13px] leading-snug text-[#25243a] sm:text-[14px]">
+                              <span className="text-[13px] leading-snug text-[#25243a] dark:text-[#E5E7EB] sm:text-[14px]">
                                 {option}
                               </span>
                             </label>
@@ -379,7 +379,7 @@ export function FrcBottomSection() {
                   </div>
 
                   <Button
-                className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] xl:w-auto xl:min-w-[220px]"
+                className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] dark:bg-[#80D7AA] dark:text-[#1B145F] dark:hover:bg-[#70c79a] xl:w-auto xl:min-w-[220px]"
                 type="submit"
               >
                 {isLoading ? <Loader className="animate-spin" /> : null}

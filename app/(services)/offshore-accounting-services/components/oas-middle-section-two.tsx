@@ -14,7 +14,7 @@ export function OasMiddleSectionTwo() {
   return (
     <section
       className={cn(
-        "w-full bg-white",
+        "w-full bg-white dark:bg-[#0A0A0A]",
         "box-border py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 2xl:py-20",
         /* Horizontal gutters: padding only (no margin-based layout) */
         "px-[10px] sm:px-4 md:px-8 xl:px-14 2xl:px-[80px]"
@@ -24,7 +24,7 @@ export function OasMiddleSectionTwo() {
       <div className="w-full">
         <div
           className={cn(
-            "w-full overflow-hidden bg-[#E8EDF3]",
+            "w-full overflow-hidden bg-[#E8EDF3] dark:bg-[#111827]",
             "rounded-[22px] sm:rounded-[28px] md:rounded-[32px] lg:rounded-[36px] xl:rounded-[40px]",
             /* Inner padding scales down; 80px is on the section, not doubled here */
             "p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10 2xl:p-12"
@@ -45,12 +45,12 @@ export function OasMiddleSectionTwo() {
             </div>
 
             <div className="flex min-w-0 flex-col items-center justify-center text-center lg:items-center">
-              <p className="leading-[1.4em] w-full max-w-[480px] text-pretty text-[14px] font-normal text-slate-800 sm:text-[15px] md:text-[16px] lg:max-w-[440px] xl:max-w-[480px] xl:text-[17px]">
+              <p className="leading-[1.4em] w-full max-w-[480px] text-pretty text-[14px] font-normal text-slate-800 dark:text-[#E5E7EB] sm:text-[15px] md:text-[16px] lg:max-w-[440px] xl:max-w-[480px] xl:text-[17px]">
                 Instead of trying to manage everything yourself, why not call in
                 the experts? Read our short guide for why companies should
                 outsource their accounting function!
               </p>
-              <p className="mt-3 max-w-[480px] text-pretty text-[14px] font-bold leading-[1.5] text-slate-900 sm:mt-4 sm:text-[15px] md:text-[16px] lg:max-w-[440px] xl:max-w-[480px] xl:text-[17px]">
+              <p className="mt-3 max-w-[480px] text-pretty text-[14px] font-bold leading-[1.5] text-slate-900 dark:text-white sm:mt-4 sm:text-[15px] md:text-[16px] lg:max-w-[440px] xl:max-w-[480px] xl:text-[17px]">
                 Tldr; Complete control. Measurable KPIs. Zero time lost in
                 training staff. Full Accountability.
               </p>

@@ -41,7 +41,7 @@ function PointBlock({
         <h3 className="text-base font-bold leading-snug text-[#50a085] sm:text-[1.05rem]">
           {title}
         </h3>
-        <p className="text-pretty text-sm font-medium leading-relaxed text-[#1a1640] sm:text-[0.95rem]">
+        <p className="text-pretty text-sm font-medium leading-relaxed text-[#1a1640] dark:text-[#E5E7EB] sm:text-[0.95rem]">
           {body}
         </p>
       </div>
@@ -52,7 +52,7 @@ function PointBlock({
 export function FrcMiddleSectionFive() {
   return (
     <section
-      className="w-full bg-white px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-14 xl:px-14 2xl:px-[80px]"
+      className="w-full bg-white px-4 py-10 dark:bg-[#0A0A0A] sm:px-6 sm:py-12 md:px-8 md:py-14 xl:px-14 2xl:px-[80px]"
       aria-labelledby="frc-section-five-heading"
     >
       <div className="mx-auto w-full max-w-[1440px]">
@@ -62,7 +62,7 @@ export function FrcMiddleSectionFive() {
               id="frc-section-five-heading"
               className="mx-auto max-w-4xl text-balance font-bold leading-tight"
             >
-              <span className="block text-[clamp(1.2rem,2vw,1.65rem)] text-[#1a1640]">
+              <span className="block text-[clamp(1.2rem,2vw,1.65rem)] text-[#1a1640] dark:text-white">
                 The Power of Contractual Deployment:
               </span>
               <span className="mt-2 block text-[clamp(1.35rem,2.4vw,2rem)] text-[#50a085]">
@@ -73,7 +73,7 @@ export function FrcMiddleSectionFive() {
               className="mx-auto mt-4 h-[4px] w-[clamp(160px,20vw,260px)] bg-[#50a085]"
               aria-hidden
             />
-            <p className="mx-auto mt-6 max-w-3xl text-balance text-[clamp(1rem,1.5vw,1.2rem)] font-bold leading-snug text-[#1a1640]">
+            <p className="mx-auto mt-6 max-w-3xl text-balance text-[clamp(1rem,1.5vw,1.2rem)] font-bold leading-snug text-[#1a1640] dark:text-white">
               Why should you go for temp staffing over permanent, especially
               within the finance team?
             </p>

@@ -13,7 +13,7 @@ export function OasMiddleSectionFour() {
   return (
     <section
       className={cn(
-        "w-full bg-white",
+        "w-full bg-white dark:bg-[#0A0A0A]",
         "box-border py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 2xl:py-20",
         "px-[10px] sm:px-4 md:px-8 xl:px-14 2xl:px-[80px]"
       )}
@@ -24,7 +24,7 @@ export function OasMiddleSectionFour() {
             "w-full overflow-hidden bg-[#f0f2f7]",
             "rounded-[22px] sm:rounded-[28px] md:rounded-[32px] lg:rounded-[36px] xl:rounded-[40px]",
             "p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10 2xl:p-12",
-            "dark:bg-slate-800/60"
+            "dark:bg-[#111827]"
           )}
         >
           <div className="grid w-full items-center gap-6 sm:gap-8 md:gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-8 xl:gap-10 2xl:gap-12">

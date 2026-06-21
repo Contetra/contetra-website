@@ -171,7 +171,7 @@ function OasMiddleSectionRightForm() {
   };
 
   const fieldClass =
-    "h-11 rounded-[14px] border-[#E6EAF0] bg-white text-sm dark:border-[#344155] dark:bg-[#0F172A]";
+    "h-11 rounded-[14px] border-[#E6EAF0] bg-white text-sm dark:border-[#344155] dark:bg-[#172036] dark:text-[#E5E7EB] dark:placeholder:text-[#9CA3AF] dark:focus-visible:ring-[#86efac]";
   const labelClass =
     "text-[12px] font-medium leading-[1.4em] text-[#2B2B2B] dark:text-[#E5E7EB] sm:text-[13px]";
 
@@ -323,7 +323,7 @@ function OasMiddleSectionRightForm() {
                   </div>
 
                   <Button
-                    className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] xl:w-auto xl:min-w-[220px]"
+                    className="h-12 w-full rounded-[12px] bg-[#221971] px-6 text-[14px] font-semibold leading-[1.4em] text-white hover:bg-[#181253] dark:bg-[#80D7AA] dark:text-[#1B145F] dark:hover:bg-[#70c79a] xl:w-auto xl:min-w-[220px]"
                     type="submit"
                   >
                     {isLoading ? <Loader className="animate-spin" /> : null}
@@ -349,23 +349,23 @@ function OasMiddleSectionRightForm() {
 
 export function OasMiddleSectionOne() {
   return (
-    <section className="w-full bg-white px-[10px] py-8 sm:px-4 sm:py-10 md:px-8 md:py-12 lg:py-14 xl:px-14 xl:py-16 2xl:px-[80px]">
+    <section className="w-full bg-white px-[10px] py-8 dark:bg-[#0A0A0A] sm:px-4 sm:py-10 md:px-8 md:py-12 lg:py-14 xl:px-14 xl:py-16 2xl:px-[80px]">
       <div className="mx-auto grid w-full max-w-[1440px] gap-8 sm:gap-9 md:gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:items-start lg:gap-11 xl:gap-12 2xl:gap-14">
         <div className="min-w-0">
-          <h2 className="text-balance text-[1.3rem] font-bold leading-[1.2] tracking-tight text-slate-900 sm:text-[1.4rem] md:text-[1.55rem] md:leading-[1.18] lg:text-[1.65rem] xl:text-[1.72rem] 2xl:text-[1.75rem]">
+          <h2 className="text-balance text-[1.3rem] font-bold leading-[1.2] tracking-tight text-slate-900 dark:text-white sm:text-[1.4rem] md:text-[1.55rem] md:leading-[1.18] lg:text-[1.65rem] xl:text-[1.72rem] 2xl:text-[1.75rem]">
           Why Growing Businesses Need Offshore Accounting Support
           </h2>
-          <div className="mt-4 space-y-3 text-pretty text-[13.5px] leading-[1.62] text-slate-600 sm:mt-5 sm:space-y-[1.1rem] sm:text-[14.5px] sm:leading-[1.64] md:mt-6 md:space-y-5 md:text-[15.5px] md:leading-[1.65] lg:text-[16px]">
+          <div className="mt-4 space-y-3 text-pretty text-[13.5px] leading-[1.62] text-slate-600 dark:text-[#E5E7EB] sm:mt-5 sm:space-y-[1.1rem] sm:text-[14.5px] sm:leading-[1.64] md:mt-6 md:space-y-5 md:text-[15.5px] md:leading-[1.65] lg:text-[16px]">
             <p>
               Okay, while we&apos;re clearly bad at cheesy rhymes, we&apos;re
               really good with{" "}
-              <strong className="font-semibold text-slate-800">
+              <strong className="font-semibold text-slate-800 dark:text-white">
                 managing end-to-end finance and accounting
               </strong>{" "}
               for you, so you can run your business stress-free.
             </p>
             <p>
-              <strong className="font-semibold text-slate-800">
+              <strong className="font-semibold text-slate-800 dark:text-white">
                 Who are we?
               </strong>{" "}
               A bunch of ex-Big 4 consultants and industry accountants who are
@@ -373,7 +373,7 @@ export function OasMiddleSectionOne() {
               and are obsessed with making sure you never worry about financial
               reporting again!
             </p>
-            <p className="italic text-slate-700">
+            <p className="italic text-slate-700 dark:text-[#D1D5DB]">
               So don&apos;t hire an army of accountants. We&apos;ll take care of
               everything:
             </p>

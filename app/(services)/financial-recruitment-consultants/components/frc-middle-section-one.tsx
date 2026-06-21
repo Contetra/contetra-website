@@ -30,15 +30,15 @@ const stats = [
 
 export function FrcMiddleSectionOne() {
   return (
-    <section className="w-full px-[10px] py-4 sm:px-4 md:px-8 xl:px-14 2xl:px-[80px]">
-      <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-10 bg-white px-4 py-10 sm:px-6 md:px-8 md:py-12 lg:grid-cols-[minmax(0,1fr)_minmax(260px,420px)] lg:gap-8">
+    <section className="w-full px-[10px] py-4 dark:bg-[#0A0A0A] sm:px-4 md:px-8 xl:px-14 2xl:px-[80px]">
+      <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-10 bg-white px-4 py-10 dark:bg-[#0A0A0A] sm:px-6 md:px-8 md:py-12 lg:grid-cols-[minmax(0,1fr)_minmax(260px,420px)] lg:gap-8">
         <div className="min-w-0">
           <div className="max-w-3xl">
-            <h2 className="text-[clamp(1.45rem,2.2vw,2rem)] font-bold leading-tight text-[#1a1640]">
+            <h2 className="text-[clamp(1.45rem,2.2vw,2rem)] font-bold leading-tight text-[#1a1640] dark:text-white">
               Who we are?
             </h2>
             <div className="mt-3 h-[3px] w-14 bg-[#50a085]" />
-            <p className="mt-5 max-w-2xl text-pretty text-[clamp(0.95rem,1.25vw,1.15rem)] font-medium leading-[1.4em] text-[#25243a]">
+            <p className="mt-5 max-w-2xl text-pretty text-[clamp(0.95rem,1.25vw,1.15rem)] font-medium leading-[1.4em] text-[#25243a] dark:text-[#E5E7EB]">
               A bunch of ex-Big 4 consultants and former industry veterans who
               are obsessed with getting you the best finance team!
             </p>
@@ -55,7 +55,7 @@ export function FrcMiddleSectionOne() {
                   />
                   <span>{stat.suffix}</span>
                 </div>
-                <p className="mt-2 text-sm font-semibold leading-tight text-[#25243a]">
+                <p className="mt-2 text-sm font-semibold leading-tight text-[#25243a] dark:text-[#D1D5DB]">
                   {stat.label}
                 </p>
               </article>

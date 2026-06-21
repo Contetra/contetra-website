@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import BusinessOutcomesSection from './components/BusinessOutcomesSection';
 import BusinessCentralSection from './components/BusinessCentralSection';
 import CaseStudiesSection from './components/CaseStudiesSection';
@@ -9,12 +8,6 @@ import HeroSection from './components/HeroSection';
 import MethodologySection from './components/MethodologySection';
 import ServicesSection from './components/ServicesSection';
 import WhyExpertiseSection from './components/WhyExpertiseSection';
-
-export const metadata: Metadata = {
-  title: 'Microsoft Dynamics 365 Implementation Services | Contetra',
-  description:
-    "Plan your Microsoft Dynamics 365 implementation with Contetra's finance-led ERP consulting for better reporting, controls, operations and ROI.",
-};
 
 const challenges = [
   { challenge: 'Delayed MIS and month-end closing', outcome: 'Faster reporting cycles and cleaner financial control' },

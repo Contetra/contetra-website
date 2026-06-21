@@ -37,10 +37,10 @@ export function StMiddleSectionFour() {
   return (
     <section
       id="st-pricing"
-      className="w-full scroll-mt-[88px] bg-[#F2F3F5] px-4 py-10 sm:px-6 md:px-8 md:py-12"
+      className="w-full scroll-mt-[88px] bg-[#F2F3F5] px-4 py-10 dark:bg-[#0A0A0A] sm:px-6 md:px-8 md:py-12"
     >
       <div className="mx-auto w-full max-w-[1180px]">
-        <h2 className="text-center text-[28px] font-semibold leading-tight text-[#3B7AB6] sm:text-[34px]">
+        <h2 className="text-center text-[28px] font-semibold leading-tight text-[#3B7AB6] dark:text-white sm:text-[34px]">
           Pricing Plans
         </h2>
 
@@ -48,15 +48,15 @@ export function StMiddleSectionFour() {
           {PRICING_PLANS.map((plan) => (
             <article
               key={plan.title}
-              className="w-full max-w-[220px] overflow-hidden rounded-[14px] border border-[#D5D8DD] bg-white shadow-[0_2px_10px_rgba(15,23,42,0.05)] sm:w-[220px]"
+              className="w-full max-w-[220px] overflow-hidden rounded-[14px] border border-[#D5D8DD] bg-white shadow-[0_2px_10px_rgba(15,23,42,0.05)] dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_12px_36px_rgba(0,0,0,0.28)] sm:w-[220px]"
             >
-              <div className="bg-[#123B77] px-4 py-[8px] text-center text-[14px] font-bold leading-none text-white sm:text-[15px]">
+              <div className="bg-[#123B77] px-4 py-[8px] text-center text-[14px] font-bold leading-none text-white dark:bg-[#172036] sm:text-[15px]">
                 {plan.title}
               </div>
 
               <div className="flex min-h-[250px] flex-col items-center justify-center px-5 py-7 text-center">
                 <p
-                  className={`font-semibold leading-[1.05] text-[#123B77] ${
+                  className={`font-semibold leading-[1.05] text-[#123B77] dark:text-white ${
                     plan.price === "₹ 13,000"
                       ? "text-[30px] sm:text-[34px]"
                       : "text-[34px] sm:text-[38px]"
@@ -66,13 +66,13 @@ export function StMiddleSectionFour() {
                 </p>
                 {plan.secondaryPrice ? (
                   <>
-                    <p className="text-[30px] font-semibold leading-[1.05] text-[#123B77] sm:text-[34px]">
+                    <p className="text-[30px] font-semibold leading-[1.05] text-[#123B77] dark:text-white sm:text-[34px]">
                       +
                     </p>
-                    <p className="text-[34px] font-semibold leading-[1.05] text-[#123B77] sm:text-[38px]">
+                    <p className="text-[34px] font-semibold leading-[1.05] text-[#123B77] dark:text-white sm:text-[38px]">
                       {plan.secondaryPrice}
                     </p>
-                    <p className="text-[10px] font-semibold leading-none text-[#13284B]">
+                    <p className="text-[10px] font-semibold leading-none text-[#13284B] dark:text-[#D1D5DB]">
                       {plan.perCompany}
                     </p>
                   </>
@@ -82,11 +82,11 @@ export function StMiddleSectionFour() {
                   ✓
                 </div>
 
-                <p className="max-w-[150px] text-[11px] font-semibold leading-[1.2] text-[#4C8FAF] sm:text-[12px]">
+                <p className="max-w-[150px] text-[11px] font-semibold leading-[1.2] text-[#4C8FAF] dark:text-[#86efac] sm:text-[12px]">
                   {plan.subtitle}
                 </p>
 
-                <p className="mt-3 text-[10px] font-semibold leading-none text-[#13284B]">
+                <p className="mt-3 text-[10px] font-semibold leading-none text-[#13284B] dark:text-[#D1D5DB]">
                   *Exclusive of GST
                 </p>
               </div>

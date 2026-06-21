@@ -190,7 +190,7 @@ export const EisBottomSection = () => {
   return (
     <section
       id="eis-bottom-section"
-      className="w-full scroll-mt-[88px] bg-[#F8F9FE] py-6 sm:py-8 lg:py-10"
+      className="w-full scroll-mt-[88px] bg-[#F8F9FE] dark:bg-[#111827] py-6 sm:py-8 lg:py-10"
     >
       <div className="mx-auto flex w-full max-w-[720px] flex-col items-center px-4 sm:px-6 md:px-8">
         <h2 className="text-balance text-center text-[22px] font-semibold leading-[1.35] text-[#252B42] dark:text-white sm:text-[26px] lg:text-[28px]">

@@ -7,7 +7,7 @@ const OAS_HERO_GIF =
 export function OasTopSection() {
   return (
     <section
-      className="flex min-h-[75vh] w-full flex-col bg-[#0e044d]"
+      className="flex min-h-[75vh] w-full flex-col bg-[#0e044d] dark:bg-[#0A0A0A]"
       aria-labelledby="oas-hero-heading"
     >
       <div className="mx-auto box-border flex w-full max-w-[1440px] flex-1 flex-col justify-center px-[10px] py-6 sm:px-4 sm:py-7 md:px-8 md:py-8 lg:grid lg:min-h-[75vh] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-7 lg:py-8 xl:gap-9 xl:px-14 xl:py-10 2xl:px-[80px]">

@@ -135,7 +135,7 @@ function IntroParagraph({ className }: { className?: string }) {
 
 export const FrcTopSection = () => {
   return (
-    <div className=" mt-[0px] xl:mt-[80px] flex min-h-screen flex-col">
+    <div className="mt-[0px] flex min-h-screen flex-col dark:bg-[#0A0A0A] xl:mt-[80px]">
       {/* &lt; 1280px: no images, stacked copy → solid teal → form */}
       <div className="flex flex-col xl:hidden">
         <div className="px-4 pb-6 pt-4 sm:px-6 md:px-10">
@@ -143,7 +143,7 @@ export const FrcTopSection = () => {
         </div>
 
         <div className="px-4 sm:px-6 md:px-10">
-          <IntroParagraph className="text-[#1a1640]" />
+          <IntroParagraph className="text-[#1a1640] dark:text-white" />
         </div>
 
         <div

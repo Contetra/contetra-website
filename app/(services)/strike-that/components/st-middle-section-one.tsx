@@ -7,14 +7,14 @@ const STRIKE_THAT_LOGO =
 
 export function StMiddleSectionOne() {
   return (
-    <section className="w-full bg-white pt-10 sm:pt-12 md:pt-14">
+    <section className="w-full bg-white pt-10 dark:bg-[#0A0A0A] sm:pt-12 md:pt-14">
       <div className="mx-auto flex w-full max-w-[1100px] flex-col items-center px-4 text-center sm:px-6 md:px-8 xl:px-0">
-        <h2 className="text-balance text-[1.8rem] font-extrabold leading-[1.15] tracking-tight text-[#17366D] sm:text-[2.1rem] md:text-[2.6rem]">
+        <h2 className="text-balance text-[1.8rem] font-extrabold leading-[1.15] tracking-tight text-[#17366D] dark:text-white sm:text-[2.1rem] md:text-[2.6rem]">
         Why Checking{" "}
           <span className="text-[#E2533D]">Struck Off Companies</span> Manually Is a Finance Team Nightmare
         </h2>
 
-        <p className="mt-3 max-w-[860px] text-balance text-sm font-medium leading-[1.55] text-[#2E3C5A] sm:text-[15px] md:text-[1.05rem]">
+        <p className="mt-3 max-w-[860px] text-balance text-sm font-medium leading-[1.55] text-[#2E3C5A] dark:text-[#E5E7EB] sm:text-[15px] md:text-[1.05rem]">
           (By spending hours and hours of precious finance team bandwidth)
         </p>
       </div>

@@ -137,7 +137,7 @@ export function OasMiddleSectionThree() {
   return (
     <section
       className={cn(
-        "w-full bg-white",
+        "w-full bg-white dark:bg-[#0A0A0A]",
         "box-border px-[10px] py-10 sm:px-4 sm:py-12 md:px-8 md:py-14 lg:py-16",
         "xl:px-14 xl:py-16 2xl:px-[80px] 2xl:py-20"
       )}

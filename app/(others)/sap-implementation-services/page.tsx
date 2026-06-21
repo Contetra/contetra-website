@@ -134,31 +134,31 @@ const faqs = [
 function SectionHeading({ eyebrow, title, desc, light = false }: { eyebrow: string; title: string; desc?: string; light?: boolean }) {
   return (
     <div className="mx-auto mb-12 max-w-3xl text-center">
-      <div className={`mb-3 text-xs font-semibold uppercase tracking-[0.18em] ${light ? 'text-[#77bcab]' : 'text-[#50a085]'}`}>{eyebrow}</div>
-      <div className={`mx-auto mb-6 h-1 w-16 rounded-full ${light ? 'bg-[#77bcab]' : 'bg-[#50a085]'}`} />
-      <h2 className={`text-3xl font-semibold leading-tight md:text-[2.6rem] ${light ? 'text-white' : 'text-[#1a1640]'}`}>{title}</h2>
-      {desc ? <p className={`mt-5 text-base leading-8 ${light ? 'text-white/70' : 'text-[#25243a]'}`}>{desc}</p> : null}
+      <div className={`mb-3 text-xs font-semibold uppercase tracking-[0.18em] ${light ? 'text-[#77bcab] dark:text-[#86efac]' : 'text-[#50a085] dark:text-[#86efac]'}`}>{eyebrow}</div>
+      <div className={`mx-auto mb-6 h-1 w-16 rounded-full ${light ? 'bg-[#77bcab] dark:bg-[#86efac]' : 'bg-[#50a085] dark:bg-[#86efac]'}`} />
+      <h2 className={`text-3xl font-semibold leading-tight md:text-[2.6rem] ${light ? 'text-white' : 'text-[#1a1640] dark:text-white'}`}>{title}</h2>
+      {desc ? <p className={`mt-5 text-base leading-8 ${light ? 'text-white/70 dark:text-[#D1D5DB]' : 'text-[#25243a] dark:text-[#E5E7EB]'}`}>{desc}</p> : null}
     </div>
   );
 }
 
 export default function SapImplementationServicesPage() {
   return (
-    <main className="bg-white text-[#1a1640]">
-      <section className="relative overflow-hidden bg-[#1a1640] py-24 text-white md:py-28">
+    <main className="bg-white text-[#1a1640] dark:bg-[#0A0A0A]">
+      <section className="relative overflow-hidden bg-[#1a1640] py-24 text-white dark:bg-[#0A0A0A] md:py-28">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_80%_20%,rgba(80,160,133,0.22)_0%,transparent_60%),radial-gradient(ellipse_50%_50%_at_10%_80%,rgba(91,141,239,0.12)_0%,transparent_55%)]" />
         <div className="relative z-10 mx-auto max-w-[1200px] px-6">
           <nav className="mb-10 flex flex-wrap gap-2 text-sm text-white/70">
-            <Link href="/" className="transition hover:text-[#50a085]">Home</Link>
+            <Link href="/" className="transition hover:text-[#50a085] dark:hover:text-[#86efac]">Home</Link>
             <span>/</span>
-            <Link href="/erp-implementation-solutions" className="transition hover:text-[#50a085]">ERP Services</Link>
+            <Link href="/erp-implementation-solutions" className="transition hover:text-[#50a085] dark:hover:text-[#86efac]">ERP Services</Link>
             <span>/</span>
-            <span className="font-semibold text-[#50a085]">SAP S/4HANA</span>
+            <span className="font-semibold text-[#50a085] dark:text-[#86efac]">SAP S/4HANA</span>
           </nav>
 
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-semibold text-[#50a085]">
+              <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-semibold text-[#50a085] dark:border-[#1F2937] dark:bg-[#111827] dark:text-[#86efac]">
                 SAP S/4HANA Implementation Services
               </div>
               <h1 className="mb-6 text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">
@@ -167,14 +167,14 @@ export default function SapImplementationServicesPage() {
               <p className="max-w-2xl text-lg font-semibold leading-8 text-white">
                 Turn SAP S/4HANA into a business transformation engine, not just another ERP project.
               </p>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-white/70">
+              <p className="mt-5 max-w-2xl text-base leading-8 text-white/70 dark:text-[#D1D5DB]">
                 Contetra helps organizations bridge the gap between SAP technology and business outcomes, aligning S/4HANA with finance, operations, governance, reporting and growth objectives.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
-                <Link href="/contact-us" className="inline-flex items-center justify-center rounded-sm bg-[#221971] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#181253]">
+                <Link href="/contact-us" className="inline-flex items-center justify-center rounded-sm bg-[#221971] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#181253] dark:bg-[#80D7AA] dark:text-[#1B145F] dark:hover:bg-[#70c79a]">
                   Schedule an ERP Scope & ROI Audit
                 </Link>
-                <Link href="/erp-implementation-solutions" className="inline-flex items-center justify-center rounded-sm border border-[#50a085] bg-white/5 px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#50a085]/15">
+                <Link href="/erp-implementation-solutions" className="inline-flex items-center justify-center rounded-sm border border-[#50a085] bg-white/5 px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#50a085]/15 dark:border-[#344155] dark:hover:bg-[#172036]">
                   Explore ERP Services
                 </Link>
               </div>
@@ -187,9 +187,9 @@ export default function SapImplementationServicesPage() {
                 ['FRD', 'Functional documentation before configuration'],
                 ['ROI', 'Business case clarity before SAP investment'],
               ].map(([stat, label], i) => (
-                <div key={stat} className={`rounded-[14px] border border-white/10 p-6 backdrop-blur-sm transition hover:-translate-y-1 ${i === 0 ? 'bg-[#50a085]/12 sm:col-span-2' : 'bg-white/5'}`}>
-                  <div className="text-[2.5rem] font-bold leading-none text-[#50a085]">{stat}</div>
-                  <p className="mt-3 text-sm font-medium leading-7 text-white/70">{label}</p>
+                <div key={stat} className={`rounded-[14px] border border-white/10 p-6 backdrop-blur-sm transition hover:-translate-y-1 dark:border-[#1F2937] ${i === 0 ? 'bg-[#50a085]/12 sm:col-span-2 dark:bg-[#172036]' : 'bg-white/5 dark:bg-[#111827]'}`}>
+                  <div className="text-[2.5rem] font-bold leading-none text-[#50a085] dark:text-[#86efac]">{stat}</div>
+                  <p className="mt-3 text-sm font-medium leading-7 text-white/70 dark:text-[#D1D5DB]">{label}</p>
                 </div>
               ))}
             </div>
@@ -197,42 +197,42 @@ export default function SapImplementationServicesPage() {
         </div>
       </section>
 
-      <section className="bg-[#F8F9FE] py-20">
+      <section className="bg-[#F8F9FE] py-20 dark:bg-[#0A0A0A]">
         <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
-            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#50a085]">Why S/4HANA</div>
-            <div className="mb-6 h-1 w-16 rounded-full bg-[#50a085]" />
-            <h2 className="text-3xl font-semibold leading-tight md:text-[2.6rem]">Why Businesses are Moving to SAP S/4HANA</h2>
-            <p className="mt-5 text-base leading-8 text-[#25243a]">
+            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#50a085] dark:text-[#86efac]">Why S/4HANA</div>
+            <div className="mb-6 h-1 w-16 rounded-full bg-[#50a085] dark:bg-[#86efac]" />
+            <h2 className="text-3xl font-semibold leading-tight dark:text-white md:text-[2.6rem]">Why Businesses are Moving to SAP S/4HANA</h2>
+            <p className="mt-5 text-base leading-8 text-[#25243a] dark:text-[#E5E7EB]">
               Many SAP implementations fail not because of technology, but because the ERP is configured around software capabilities rather than business realities. SAP S/4HANA works best when process, data, governance and reporting decisions are designed before build.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-[14px] border border-[#eef1f8] bg-white p-6 shadow-[0_8px_24px_rgba(26,22,64,0.06)]">
-              <h3 className="mb-4 text-lg font-bold">Legacy ERPs create</h3>
+            <div className="rounded-[14px] border border-[#eef1f8] bg-white p-6 shadow-[0_8px_24px_rgba(26,22,64,0.06)] dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_12px_36px_rgba(0,0,0,0.28)]">
+              <h3 className="mb-4 text-lg font-bold dark:text-white">Legacy ERPs create</h3>
               <div className="space-y-3">
-                {legacyChallenges.map((item) => <p key={item} className="border-l-2 border-[#50a085] pl-3 text-sm font-medium leading-6 text-[#25243a]">{item}</p>)}
+                {legacyChallenges.map((item) => <p key={item} className="border-l-2 border-[#50a085] pl-3 text-sm font-medium leading-6 text-[#25243a] dark:border-[#86efac] dark:text-[#D1D5DB]">{item}</p>)}
               </div>
             </div>
-            <div className="rounded-[14px] border border-[#50a085]/20 bg-[#eaf6f2] p-6 shadow-[0_8px_24px_rgba(26,22,64,0.06)]">
-              <h3 className="mb-4 text-lg font-bold">SAP S/4HANA enables</h3>
+            <div className="rounded-[14px] border border-[#50a085]/20 bg-[#eaf6f2] p-6 shadow-[0_8px_24px_rgba(26,22,64,0.06)] dark:border-[#1F2937] dark:bg-[#172036] dark:shadow-[0_12px_36px_rgba(0,0,0,0.28)]">
+              <h3 className="mb-4 text-lg font-bold dark:text-white">SAP S/4HANA enables</h3>
               <div className="space-y-3">
-                {sapOutcomes.map((item) => <p key={item} className="border-l-2 border-[#1a1640] pl-3 text-sm font-semibold leading-6 text-[#1a1640]">{item}</p>)}
+                {sapOutcomes.map((item) => <p key={item} className="border-l-2 border-[#1a1640] pl-3 text-sm font-semibold leading-6 text-[#1a1640] dark:border-[#86efac] dark:text-[#E5E7EB]">{item}</p>)}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-20 dark:bg-[#0A0A0A]">
         <div className="mx-auto max-w-[1200px] px-6">
           <SectionHeading eyebrow="Modules" title="SAP S/4HANA Modules We Support" desc="We support finance-led design across core SAP modules, with a strong focus on control, reporting, data quality and operational fit." />
           <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {modules.map((module) => (
-              <div key={module.name} className="rounded-[14px] border border-[#eef1f8] bg-white p-6 shadow-[0_4px_18px_rgba(26,22,64,0.07)] transition hover:-translate-y-1 hover:border-[#50a085]/30">
-                <h3 className="mb-4 text-base font-bold text-[#1a1640]">{module.name}</h3>
+              <div key={module.name} className="rounded-[14px] border border-[#eef1f8] bg-white p-6 shadow-[0_4px_18px_rgba(26,22,64,0.07)] transition hover:-translate-y-1 hover:border-[#50a085]/30 dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_12px_36px_rgba(0,0,0,0.28)] dark:hover:border-[#86efac]/50">
+                <h3 className="mb-4 text-base font-bold text-[#1a1640] dark:text-white">{module.name}</h3>
                 <div className="space-y-2">
-                  {module.items.map((item) => <p key={item} className="text-sm leading-6 text-[#25243a]">{item}</p>)}
+                  {module.items.map((item) => <p key={item} className="text-sm leading-6 text-[#25243a] dark:text-[#D1D5DB]">{item}</p>)}
                 </div>
               </div>
             ))}
@@ -240,15 +240,15 @@ export default function SapImplementationServicesPage() {
         </div>
       </section>
 
-      <section className="bg-[#eaf6f2] py-20">
+      <section className="bg-[#eaf6f2] py-20 dark:bg-[#111827]">
         <div className="mx-auto max-w-[1200px] px-6">
           <SectionHeading eyebrow="Industries" title="Industries That Benefit from SAP S/4HANA" />
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {industries.map((industry) => (
-              <div key={industry.name} className="rounded-[14px] bg-white p-6 shadow-[0_4px_18px_rgba(26,22,64,0.07)]">
-                <h3 className="mb-4 text-lg font-bold text-[#1a1640]">{industry.name}</h3>
+              <div key={industry.name} className="rounded-[14px] border border-transparent bg-white p-6 shadow-[0_4px_18px_rgba(26,22,64,0.07)] dark:border-[#1F2937] dark:bg-[#0A0A0A] dark:shadow-[0_12px_36px_rgba(0,0,0,0.28)]">
+                <h3 className="mb-4 text-lg font-bold text-[#1a1640] dark:text-white">{industry.name}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {industry.focus.map((item) => <span key={item} className="rounded-full bg-[#F8F9FE] px-3 py-2 text-xs font-semibold text-[#25243a]">{item}</span>)}
+                  {industry.focus.map((item) => <span key={item} className="rounded-full bg-[#F8F9FE] px-3 py-2 text-xs font-semibold text-[#25243a] dark:bg-[#172036] dark:text-[#D1D5DB]">{item}</span>)}
                 </div>
               </div>
             ))}
@@ -256,15 +256,15 @@ export default function SapImplementationServicesPage() {
         </div>
       </section>
 
-      <section className="bg-[#1a1640] py-20 text-white">
+      <section className="bg-[#1a1640] py-20 text-white dark:bg-[#0A0A0A]">
         <div className="mx-auto max-w-[1200px] px-6">
           <SectionHeading light eyebrow="Contetra Role" title="What Contetra Brings to Your SAP S/4HANA Journey" desc="Unlike traditional system integrators that focus primarily on technology, Contetra acts as the functional and transformation partner ensuring SAP supports strategic business objectives." />
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {capabilities.map((capability) => (
-              <div key={capability.title} className="rounded-[14px] border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:bg-[#50a085]/10">
+              <div key={capability.title} className="rounded-[14px] border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:bg-[#50a085]/10 dark:border-[#1F2937] dark:bg-[#111827] dark:hover:bg-[#172036]">
                 <h3 className="mb-4 text-lg font-bold">{capability.title}</h3>
                 <div className="space-y-2">
-                  {capability.items.map((item) => <p key={item} className="text-sm leading-6 text-white/65">{item}</p>)}
+                  {capability.items.map((item) => <p key={item} className="text-sm leading-6 text-white/65 dark:text-[#D1D5DB]">{item}</p>)}
                 </div>
               </div>
             ))}
@@ -275,38 +275,38 @@ export default function SapImplementationServicesPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-20 dark:bg-[#0A0A0A]">
         <div className="mx-auto max-w-[1200px] px-6">
           <SectionHeading eyebrow="Experience" title="10+ Years of ERP & Finance Transformation Experience" desc="Our team includes finance professionals, Chartered Accountants, ERP consultants and transformation specialists who understand how ERP decisions impact profitability, compliance and business performance." />
           <div className="flex flex-wrap justify-center gap-3">
-            {ecosystem.map((item) => <span key={item} className="rounded-full border border-[#50a085] bg-white px-4 py-2 text-sm font-semibold text-[#1a1640]">{item}</span>)}
+            {ecosystem.map((item) => <span key={item} className="rounded-full border border-[#50a085] bg-white px-4 py-2 text-sm font-semibold text-[#1a1640] dark:border-[#1F2937] dark:bg-[#111827] dark:text-[#E5E7EB]">{item}</span>)}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F8F9FE] py-20">
+      <section className="bg-[#F8F9FE] py-20 dark:bg-[#0A0A0A]">
         <div className="mx-auto max-w-[1200px] px-6">
           <SectionHeading eyebrow="Success Stories" title="SAP S/4HANA Success Stories" />
           <div className="grid gap-6 lg:grid-cols-2">
             {caseStudies.map((story) => (
-              <article key={story.company} className="overflow-hidden rounded-[16px] border border-[#eef1f8] bg-white shadow-[0_8px_28px_rgba(26,22,64,0.08)]">
-                <div className="bg-gradient-to-br from-[#1a1640] to-[#50a085] p-6 text-white">
+              <article key={story.company} className="overflow-hidden rounded-[16px] border border-[#eef1f8] bg-white shadow-[0_8px_28px_rgba(26,22,64,0.08)] dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_12px_36px_rgba(0,0,0,0.28)]">
+                <div className="bg-gradient-to-br from-[#1a1640] to-[#50a085] p-6 text-white dark:from-[#172036] dark:to-[#111827]">
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/70">{story.company}</p>
                   <h3 className="mt-2 text-xl font-bold leading-tight">{story.title}</h3>
                 </div>
                 <div className="space-y-5 p-6">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#50a085]">Challenge</p>
-                    <p className="mt-2 text-sm leading-7 text-[#25243a]">{story.challenge}</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#50a085] dark:text-[#86efac]">Challenge</p>
+                    <p className="mt-2 text-sm leading-7 text-[#25243a] dark:text-[#D1D5DB]">{story.challenge}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#50a085]">Solution</p>
-                    <p className="mt-2 text-sm leading-7 text-[#25243a]">{story.solution}</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#50a085] dark:text-[#86efac]">Solution</p>
+                    <p className="mt-2 text-sm leading-7 text-[#25243a] dark:text-[#D1D5DB]">{story.solution}</p>
                   </div>
-                  <div className="border-t border-[#eef1f8] pt-5">
-                    <p className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-[#1a1640]">Results</p>
+                  <div className="border-t border-[#eef1f8] pt-5 dark:border-[#1F2937]">
+                    <p className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-[#1a1640] dark:text-white">Results</p>
                     <div className="grid gap-2 sm:grid-cols-2">
-                      {story.results.map((result) => <p key={result} className="rounded-[10px] bg-[#eaf6f2] px-3 py-2 text-sm font-semibold leading-6 text-[#1a1640]">{result}</p>)}
+                      {story.results.map((result) => <p key={result} className="rounded-[10px] bg-[#eaf6f2] px-3 py-2 text-sm font-semibold leading-6 text-[#1a1640] dark:bg-[#172036] dark:text-[#E5E7EB]">{result}</p>)}
                     </div>
                   </div>
                 </div>
@@ -316,16 +316,16 @@ export default function SapImplementationServicesPage() {
         </div>
       </section>
 
-      <section className="bg-[#1a1640] py-20 text-white">
+      <section className="bg-[#1a1640] py-20 text-white dark:bg-[#0A0A0A]">
         <div className="mx-auto max-w-[1200px] px-6">
           <SectionHeading light eyebrow="Methodology" title="Our SAP S/4HANA Implementation Methodology" desc="A structured approach keeps SAP implementations aligned with business goals while reducing project risk." />
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
             {methodology.map((phase) => (
-              <div key={phase.phase} className="rounded-[14px] border border-white/10 bg-white/5 p-6 text-center transition hover:-translate-y-1 hover:bg-[#50a085]/10">
-                <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border-4 border-[#50a085] text-lg font-bold text-[#50a085]">{phase.phase}</div>
+              <div key={phase.phase} className="rounded-[14px] border border-white/10 bg-white/5 p-6 text-center transition hover:-translate-y-1 hover:bg-[#50a085]/10 dark:border-[#1F2937] dark:bg-[#111827] dark:hover:bg-[#172036]">
+                <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border-4 border-[#50a085] text-lg font-bold text-[#50a085] dark:border-[#86efac] dark:text-[#86efac]">{phase.phase}</div>
                 <h3 className="mb-4 text-base font-bold leading-snug">{phase.title}</h3>
                 <div className="space-y-2">
-                  {phase.items.map((item) => <p key={item} className="text-sm leading-6 text-white/60">{item}</p>)}
+                  {phase.items.map((item) => <p key={item} className="text-sm leading-6 text-white/60 dark:text-[#D1D5DB]">{item}</p>)}
                 </div>
               </div>
             ))}
@@ -333,52 +333,52 @@ export default function SapImplementationServicesPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-20 dark:bg-[#0A0A0A]">
         <div className="mx-auto max-w-[1200px] px-6">
           <SectionHeading eyebrow="Why Contetra" title="Why Choose Contetra for SAP S/4HANA?" />
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
             {whyContetra.map((item, index) => (
-              <div key={item.title} className="rounded-[14px] border border-[#eef1f8] bg-white p-6 shadow-[0_4px_18px_rgba(26,22,64,0.07)]">
-                <div className="mb-4 text-4xl font-bold leading-none text-[#50a085]/25">{String(index + 1).padStart(2, '0')}</div>
-                <h3 className="mb-3 text-base font-bold text-[#1a1640]">{item.title}</h3>
-                <p className="text-sm leading-7 text-[#25243a]">{item.desc}</p>
+              <div key={item.title} className="rounded-[14px] border border-[#eef1f8] bg-white p-6 shadow-[0_4px_18px_rgba(26,22,64,0.07)] dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_12px_36px_rgba(0,0,0,0.28)]">
+                <div className="mb-4 text-4xl font-bold leading-none text-[#50a085]/25 dark:text-[#86efac]/30">{String(index + 1).padStart(2, '0')}</div>
+                <h3 className="mb-3 text-base font-bold text-[#1a1640] dark:text-white">{item.title}</h3>
+                <p className="text-sm leading-7 text-[#25243a] dark:text-[#D1D5DB]">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F8F9FE] py-20">
+      <section className="bg-[#F8F9FE] py-20 dark:bg-[#0A0A0A]">
         <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#50a085]">Common Questions</div>
-            <div className="mb-6 h-1 w-16 rounded-full bg-[#50a085]" />
-            <h2 className="text-3xl font-semibold leading-tight md:text-[2.6rem]">Frequently Asked Questions</h2>
-            <p className="mt-5 text-base leading-8 text-[#25243a]">Quick answers on SAP S/4HANA implementation timelines, complexity and Contetra&apos;s functional consulting role.</p>
+            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#50a085] dark:text-[#86efac]">Common Questions</div>
+            <div className="mb-6 h-1 w-16 rounded-full bg-[#50a085] dark:bg-[#86efac]" />
+            <h2 className="text-3xl font-semibold leading-tight dark:text-white md:text-[2.6rem]">Frequently Asked Questions</h2>
+            <p className="mt-5 text-base leading-8 text-[#25243a] dark:text-[#E5E7EB]">Quick answers on SAP S/4HANA implementation timelines, complexity and Contetra&apos;s functional consulting role.</p>
           </div>
           <div className="space-y-3">
             {faqs.map((faq) => (
-              <details key={faq.q} className="group rounded-[12px] border border-[#eef1f8] bg-white p-5 shadow-[0_4px_18px_rgba(26,22,64,0.05)]">
-                <summary className="cursor-pointer list-none text-sm font-bold text-[#1a1640]">{faq.q}</summary>
-                <p className="mt-4 text-sm leading-7 text-[#25243a]">{faq.a}</p>
+              <details key={faq.q} className="group rounded-[12px] border border-[#eef1f8] bg-white p-5 shadow-[0_4px_18px_rgba(26,22,64,0.05)] dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_12px_36px_rgba(0,0,0,0.28)]">
+                <summary className="cursor-pointer list-none text-sm font-bold text-[#1a1640] dark:text-white">{faq.q}</summary>
+                <p className="mt-4 text-sm leading-7 text-[#25243a] dark:text-[#D1D5DB]">{faq.a}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-[#1a1640] via-[#221971] to-[#1a1640] py-24 text-white">
+      <section className="bg-gradient-to-br from-[#1a1640] via-[#221971] to-[#1a1640] py-24 text-white dark:from-[#0A0A0A] dark:via-[#111827] dark:to-[#0A0A0A]">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <div className="mb-6 inline-flex items-center rounded-full border border-[#50a085]/30 bg-[#50a085]/10 px-4 py-2 text-sm font-semibold text-[#77bcab]">Schedule an ERP Scope & ROI Audit</div>
+          <div className="mb-6 inline-flex items-center rounded-full border border-[#50a085]/30 bg-[#50a085]/10 px-4 py-2 text-sm font-semibold text-[#77bcab] dark:border-[#86efac]/30 dark:bg-[#172036] dark:text-[#86efac]">Schedule an ERP Scope & ROI Audit</div>
           <h2 className="text-3xl font-semibold leading-tight md:text-[2.6rem]">Build a business-first SAP roadmap that delivers measurable outcomes, not just a successful go-live.</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/70">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/70 dark:text-[#D1D5DB]">
             Before committing to SAP S/4HANA, understand your process gaps, ERP readiness level, implementation roadmap, ROI case, change management requirements, data migration complexity and project risks.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link href="/contact-us" className="inline-flex items-center justify-center rounded-sm bg-[#50a085] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#459678]">
+            <Link href="/contact-us" className="inline-flex items-center justify-center rounded-sm bg-[#50a085] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#459678] dark:bg-[#80D7AA] dark:text-[#1B145F] dark:hover:bg-[#70c79a]">
               Schedule a SAP S/4HANA ERP Scope & ROI Audit
             </Link>
-            <Link href="/erp-implementation-solutions" className="inline-flex items-center justify-center rounded-sm border border-white/60 bg-white/10 px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#50a085]/20">
+            <Link href="/erp-implementation-solutions" className="inline-flex items-center justify-center rounded-sm border border-white/60 bg-white/10 px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#50a085]/20 dark:border-[#344155] dark:hover:bg-[#172036]">
               Explore ERP Implementation Services
             </Link>
           </div>

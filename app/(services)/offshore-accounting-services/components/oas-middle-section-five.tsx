@@ -53,7 +53,7 @@ function ServicesHeading() {
       <div
         className={cn(
           "w-full rounded-b-[20px] bg-[#f0f4f8] px-4 py-6 text-center sm:rounded-b-[24px] sm:px-6 sm:py-8 md:rounded-b-[28px] md:py-10 lg:rounded-b-[32px]",
-          "dark:bg-slate-800/90"
+          "dark:bg-[#111827]"
         )}
       >
         <h2 className="text-[1.5rem] font-bold leading-tight tracking-tight text-[#333333] sm:text-[1.65rem] md:text-[1.85rem] lg:text-[2rem] dark:text-slate-100">
@@ -77,7 +77,7 @@ export function OasMiddleSectionFive() {
   return (
     <section
       className={cn(
-        "w-full bg-white",
+        "w-full bg-white dark:bg-[#0A0A0A]",
         "box-border px-[10px] pb-10 pt-2 sm:px-4 sm:pb-12 sm:pt-3 md:px-8 md:pb-14 md:pt-4 lg:pb-16",
         "xl:px-14 2xl:px-[80px]"
       )}
@@ -91,7 +91,7 @@ export function OasMiddleSectionFive() {
               <article
                 className={cn(
                   "flex h-full flex-col rounded-xl border border-slate-300 bg-white p-4 shadow-sm sm:p-5 md:rounded-2xl md:p-6",
-                  "dark:border-slate-600 dark:bg-[#111827] dark:shadow-none"
+                  "dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_12px_36px_rgba(0,0,0,0.28)]"
                 )}
               >
                 <div className="flex min-w-0 items-start gap-3 sm:gap-4">

@@ -35,7 +35,7 @@ const cardStyles = {
 export function FrcMiddleSectionHowHelp() {
   return (
     <section
-      className="w-full bg-white px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-14 xl:px-14 2xl:px-[80px]"
+      className="w-full bg-white px-4 py-10 dark:bg-[#0A0A0A] sm:px-6 sm:py-12 md:px-8 md:py-14 xl:px-14 2xl:px-[80px]"
       aria-labelledby="frc-how-help-heading"
     >
       <div className="mx-auto w-full max-w-[1440px]">
@@ -43,7 +43,7 @@ export function FrcMiddleSectionHowHelp() {
           <header className="text-center">
             <h2
               id="frc-how-help-heading"
-              className="text-balance text-[clamp(1.45rem,2.2vw,2rem)] font-bold leading-tight text-[#3d8f76]"
+              className="text-balance text-[clamp(1.45rem,2.2vw,2rem)] font-bold leading-tight text-[#3d8f76] dark:text-[#86efac]"
             >
               How can our Financial Recuitment <br />Consultants help you?
             </h2>
@@ -58,11 +58,11 @@ export function FrcMiddleSectionHowHelp() {
               const s = cardStyles[card.variant];
               return (
                 <li key={card.title}>
-                  <article className="flex h-full flex-col overflow-hidden rounded-2xl shadow-[0_8px_24px_rgba(26,22,64,0.08)]">
+                  <article className="flex h-full flex-col overflow-hidden rounded-2xl shadow-[0_8px_24px_rgba(26,22,64,0.08)] dark:border dark:border-[#1F2937] dark:bg-[#111827] dark:shadow-[0_12px_36px_rgba(0,0,0,0.28)]">
                     <div
                       className={`flex min-h-[5.5rem] items-center px-5 py-4 sm:min-h-[6rem] sm:px-6 ${s.header}`}
                     >
-                      <h3 className="text-balance text-base font-bold leading-snug text-[#1a1640] sm:text-[1.05rem]">
+                      <h3 className="text-balance text-base font-bold leading-snug text-[#1a1640] dark:text-white sm:text-[1.05rem]">
                         {card.title}
                       </h3>
                     </div>

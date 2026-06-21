@@ -34,7 +34,7 @@ const stats = [
 
 export function SectionThree() {
   return (
-    <section className="w-full bg-contetra-blue text-white rounded-tl-[100px]">
+    <section className="w-full bg-contetra-blue text-white rounded-tl-[100px] dark:bg-[#0A0A0A]">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-14 sm:px-6 sm:py-16 md:gap-10 md:px-8 md:py-20">
         <header className="text-center">
           <h2 className="text-2xl font-semibold leading-tight sm:text-3xl md:text-4xl">
@@ -61,7 +61,7 @@ export function SectionThree() {
                 {stat.label}
               </span>
 
-              <p className="max-w-[28ch] text-sm leading-relaxed text-white/90">
+              <p className="max-w-[28ch] text-sm leading-relaxed text-white/90 dark:text-[#D1D5DB]">
                 {stat.description}
               </p>
             </article>

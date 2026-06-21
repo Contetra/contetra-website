@@ -5,10 +5,10 @@ const FRC_CTA_THREE_IMAGE =
 
 export function FrcMiddleSectionThree() {
   return (
-    <section className="w-full  px-4 py-10 sm:px-6 md:px-8 md:py-12 xl:px-14 2xl:px-[80px]">
+    <section className="w-full px-4 py-10 dark:bg-[#0A0A0A] sm:px-6 md:px-8 md:py-12 xl:px-14 2xl:px-[80px]">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center">
         <header className="text-center">
-          <h2 className="mx-auto max-w-4xl text-balance text-[clamp(1.45rem,2.2vw,2rem)] font-bold leading-tight text-[#1a1640]">
+          <h2 className="mx-auto max-w-4xl text-balance text-[clamp(1.45rem,2.2vw,2rem)] font-bold leading-tight text-[#1a1640] dark:text-white">
             How to stay ahead of the curve in an industry where
             <br />
             everyone is looking to grab &quot;The Best Talent&quot;

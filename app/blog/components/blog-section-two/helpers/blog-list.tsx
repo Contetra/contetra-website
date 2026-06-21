@@ -84,19 +84,19 @@ export const BlogList = () => {
           blogsdata?.length > 0 &&
           blogsdata?.map((blog: Blog, idx: number) => {
             return (
-              <BlurFade className="min-h-[300px]" key={blog.id} delay={0.25 + idx * 0.05} inView>
-                <Link href={slugToBlogPostHref(blog?.slug)}>
-                  <Card className=" min-h-[450px] md:min-h-[480px] xl:min-h-[450px] flex flex-col gap-3 md:gap-0 relative p-0 ">
-                    <div className="w-full h-[200px] md:h-[220px] xl:h-[180px] 2xl:h-[200px] relative">
+              <BlurFade className="h-full min-h-[300px]" key={blog.id} delay={0.25 + idx * 0.05} inView>
+                <Link className="block h-full" href={slugToBlogPostHref(blog?.slug)}>
+                  <Card className="relative flex h-full min-h-[450px] flex-col gap-0 overflow-hidden p-0 md:min-h-[480px] xl:min-h-[450px]">
+                    <div className="relative h-[200px] w-full shrink-0 overflow-hidden md:h-[220px] xl:h-[180px] 2xl:h-[200px]">
                       {!loadedImages[blog.id] && (
                         <Skeleton className="absolute inset-0 rounded-xl z-10" />
                       )}
                       <Image
                         src={`${process.env.NEXT_PUBLIC_CDN_URL}${blog?.feature_image_url}`}
                         alt="blog-banner"
-                        height={1000}
-                        width={1000}
-                        className="object-contain rounded-xl"
+                        fill
+                        sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
+                        className="rounded-xl object-contain"
                         onLoadingComplete={() =>
                           setLoadedImages((prev) => ({
                             ...prev,
@@ -106,11 +106,11 @@ export const BlogList = () => {
                       />
                     </div>
 
-                    <div className="flex flex-col gap-5 px-3">
-                      <h3 className="text-[20px] leading-[1.2em] font-semibold text-[#333333] dark:text-[#fff] line-clamp-2">
+                    <div className="flex min-w-0 flex-1 flex-col gap-4 px-4 pb-4 pt-5">
+                      <h3 className="line-clamp-2 break-words text-[20px] font-semibold leading-[1.25em] text-[#333333] dark:text-white">
                         {blog?.title}
                       </h3>
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {blog?.categories?.map((cat) => {
                           return (
                             <Button
@@ -124,10 +124,10 @@ export const BlogList = () => {
                           );
                         })}
                       </div>
-                      <p className=" leading-[1.2em] text-[16px]">
+                      <p className="line-clamp-2 text-[16px] leading-[1.4em]">
                         {blog?.excerpt?.slice(0, 100) + "..."}
                       </p>
-                      <div className="flex justify-between">
+                      <div className=" flex items-end justify-between gap-3 ">
                         <div>
                           <Highlighter
                             padding={10}
@@ -137,7 +137,7 @@ export const BlogList = () => {
                             {formatDate(blog?.created_at)}
                           </Highlighter>
                         </div>
-                        <div className="  border-gray-300 mr-3 group cursor-pointer">
+                        <div className="  border-gray-300 mr-3 group cursor-pointer mt-2">
                           <Highlighter
                             padding={10}
                             action="circle"

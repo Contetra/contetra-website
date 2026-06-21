@@ -98,10 +98,10 @@ function BranchLeaf({
         aria-haspopup="true"
         data-state={open ? "open" : "closed"}
         className={cn(
-          "relative flex min-h-[3rem] w-full max-w-[280px] cursor-default items-center justify-center rounded-xl border-2 border-[#50a085] bg-white px-4 py-3 text-center text-[13px] font-bold uppercase leading-snug tracking-wide text-[#1a1640] shadow-sm outline-none transition sm:min-h-[3rem] sm:max-w-[300px] sm:px-5 sm:text-[14px]",
+          "relative flex min-h-[3rem] w-full max-w-[280px] cursor-default items-center justify-center rounded-xl border-2 border-[#50a085] bg-white px-4 py-3 text-center text-[13px] font-bold uppercase leading-snug tracking-wide text-[#1a1640] shadow-sm outline-none transition dark:border-[#86efac] dark:bg-[#111827] dark:text-white sm:min-h-[3rem] sm:max-w-[300px] sm:px-5 sm:text-[14px]",
           /* Panel uses z-[60] = chip z-[50] + 10 so hover detail stacks above illustration & CTA */
           open ? "z-[50]" : "z-10",
-          "hover:bg-[#f4faf8] focus-visible:ring-2 focus-visible:ring-[#50a085]/50",
+          "hover:bg-[#f4faf8] focus-visible:ring-2 focus-visible:ring-[#50a085]/50 dark:hover:bg-[#172036]",
           open && "ring-2 ring-[#50a085]/35",
         )}
         onMouseEnter={openNow}
@@ -262,7 +262,7 @@ function TreeMobile({
 export function FrcMiddleSectionSeven() {
   return (
     <section
-      className="relative z-0 w-full bg-white px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-14 xl:px-14 2xl:px-[80px]"
+      className="relative z-0 w-full bg-white px-4 py-10 dark:bg-[#0A0A0A] sm:px-6 sm:py-12 md:px-8 md:py-14 xl:px-14 2xl:px-[80px]"
       aria-labelledby="frc-section-seven-heading"
     >
       <div className="relative z-0 mx-auto w-full max-w-[1280px]">
@@ -271,7 +271,7 @@ export function FrcMiddleSectionSeven() {
             id="frc-section-seven-heading"
             className="mx-auto max-w-3xl text-balance text-[clamp(1.35rem,2.4vw,2rem)] font-bold leading-tight"
           >
-            <span className="text-[#1a1640]">Ready to elevate your </span>
+            <span className="text-[#1a1640] dark:text-white">Ready to elevate your </span>
             <span className="text-[#50a085]">Finance Team&apos;s Expertise?</span>
           </h2>
           <div

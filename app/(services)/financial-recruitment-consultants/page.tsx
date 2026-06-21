@@ -12,7 +12,7 @@ import { FrcTopSection } from "./components/frc-top-section";
 
 export default function FinancialRecruitmentConsultantsPage() {
   return (
-    <section className="mt-[90px] flex min-h-screen w-full flex-col gap-10 md:mt-[80px]">
+    <section className="mt-[90px] flex min-h-screen w-full flex-col gap-10 dark:bg-[#0A0A0A] md:mt-[80px]">
       <FrcTopSection />
       {/* <FrcTopSection /> */}
       <FrcMiddleSectionOne />
