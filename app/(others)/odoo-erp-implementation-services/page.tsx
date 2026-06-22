@@ -2,11 +2,10 @@ import HeroSection from './components/HeroSection';
 import WhyOdooSection from './components/WhyOdooSection';
 import ModulesSection from './components/ModulesSection';
 import ServicesSection from './components/ServicesSection';
-import FunctionalConsultingSection from './components/FunctionalConsultingSection';
+import AdvisorySection from './components/AdvisorySection';
 import BusinessModelsSection from './components/BusinessModelsSection';
-import MethodologySection from './components/MethodologySection';
-import PartnerSelectionSection from './components/PartnerSelectionSection';
 import CaseStudiesSection from './components/CaseStudiesSection';
+import WhyContetraSection from './components/WhyContetraSection';
 import FaqSection from './components/FaqSection';
 import CtaSection from './components/CtaSection';
 
@@ -44,14 +43,6 @@ const services = [
   { title: 'Post-Go-Live Optimisation', desc: 'Identify workflow gaps, reporting improvements and enhancement opportunities after go-live' },
 ];
 
-const steps = [
-  { num: '01', title: 'Assess', desc: 'Understand current systems, reporting gaps, process pain points and business objectives' },
-  { num: '02', title: 'Define', desc: 'Finalise modules, workflows, controls, data requirements and implementation scope' },
-  { num: '03', title: 'Prepare', desc: 'Support master-data readiness, migration planning, testing scenarios and user roles' },
-  { num: '04', title: 'Implement', desc: 'Coordinate functional requirements, testing, reporting and stakeholder alignment' },
-  { num: '05', title: 'Optimise', desc: 'Strengthen adoption, improve workflows and identify post-go-live enhancements' },
-];
-
 const businessTypes = [
   { type: 'Manufacturing Businesses', focus: 'Purchase, inventory, manufacturing, quality, costing and finance visibility' },
   { type: 'Distribution and Trading Companies', focus: 'Procurement, sales orders, warehouses, inventory tracking and reporting' },
@@ -62,51 +53,33 @@ const businessTypes = [
   { type: 'Multi-Department Growing Companies', focus: 'Finance, CRM, purchase, inventory, approvals and management reporting' },
 ];
 
-const decisionAreas = [
-  { area: 'Module selection', question: 'Which applications solve the real business requirement?' },
-  { area: 'Process design', question: 'Which existing workflows should be simplified or standardised?' },
-  { area: 'Data readiness', question: 'What master data and opening information must be cleaned before migration?' },
-  { area: 'Customisation', question: 'What is genuinely needed beyond standard configuration?' },
-  { area: 'Reporting', question: 'Which MIS reports, controls and dashboards are required from day one?' },
-  { area: 'Adoption', question: 'How will business users be trained and supported after go-live?' },
-];
-
-const evaluationAreas = [
-  { area: 'Functional capability', review: 'Experience across the Odoo modules relevant to your business' },
-  { area: 'Industry understanding', review: 'Familiarity with workflows similar to your operating model' },
-  { area: 'Migration approach', review: 'Method for cleaning, mapping and reconciling business data' },
-  { area: 'Customisation discipline', review: 'Ability to avoid unnecessary development and upgrade complications' },
-  { area: 'Reporting expertise', review: 'Understanding of MIS, controls, margins, inventory and financial visibility' },
-  { area: 'Support model', review: 'Training, hypercare, issue resolution and ongoing optimisation' },
-];
-
 const caseStudies = [
   {
     industry: 'Pipe Manufacturing',
-    title: 'Streamlined Operations for a Pipe Manufacturer',
-    challenge: 'Legacy ERP systems created inefficiencies across manufacturing, inventory, purchase, accounting and quality control.',
-    solution: 'Odoo modules for manufacturing, PLM, QC, inventory, sales, purchase, accounting and reporting were implemented.',
+    title: 'Streamlined Manufacturing and Quality Control',
+    challenge: 'A pipe manufacturing business faced inefficiencies across manufacturing, inventory, purchase, accounting and quality control.',
+    solution: 'Contetra supported Odoo planning across manufacturing, PLM, QC, inventory, sales, purchase, accounting and reporting workflows.',
     outcome: 'Improved manufacturing tracking, stronger inventory visibility, integrated workflows and automated quality checks.',
   },
   {
     industry: 'E-commerce Platform',
-    title: 'Optimised Warehouse Operations for a Leading E-commerce Business',
-    challenge: 'Outdated ERP processes caused order fulfilment delays, weak inventory visibility and system performance issues.',
-    solution: 'Migrated to Odoo Enterprise with sales, purchase, inventory, barcode and accounting modules, with priority-based warehouse allocation.',
+    title: 'Optimised Warehouse Operations',
+    challenge: 'A growing ecommerce business faced order fulfilment delays, weak inventory visibility and system performance issues.',
+    solution: 'The project involved Odoo Enterprise modules for sales, purchase, inventory, barcode and accounting, along with priority-based warehouse allocation.',
     outcome: 'Faster order fulfilment, better warehouse efficiency, reduced downtime and improved scalability during peak order volumes.',
   },
   {
-    industry: 'Insurance Company',
-    title: 'CRM & Subscription Management for an Insurance Business',
-    challenge: 'Dispersed customer data, inefficient subscription management, commission issues and limited real-time policy tracking.',
-    solution: 'Odoo CRM and subscription management implemented to centralise customer data, policies, claims and renewal workflows.',
+    industry: 'Insurance Business',
+    title: 'CRM and Subscription Management',
+    challenge: 'An insurance business struggled with scattered customer data, inefficient subscription management, commission issues and limited real-time policy tracking.',
+    solution: 'Odoo CRM and subscription workflows were structured to centralise customer data, policies, claims and renewal processes.',
     outcome: 'Improved customer engagement, automated renewals, real-time policy tracking and streamlined commission calculation.',
   },
   {
-    industry: 'Retail & Wholesale Business',
-    title: 'Streamlined Retail and Wholesale Operations with POS',
-    challenge: 'Scattered data, inefficient stock transfers, negative stock issues and inaccurate financial records affected daily operations.',
-    solution: 'Odoo 17 implemented with inventory, POS, automated journal entries and asset management modules.',
+    industry: 'Retail and Wholesale Business',
+    title: 'POS and Inventory Control',
+    challenge: 'A retail and wholesale business faced scattered data, inefficient stock transfers, negative stock issues and inaccurate financial records.',
+    solution: 'Odoo was implemented with inventory, POS, automated journal entries and asset management workflows.',
     outcome: 'Centralised data access, automated item transfers, accurate landed-cost calculation, customised reporting and improved stock control.',
   },
 ];
@@ -163,11 +136,10 @@ export default function OdooERP() {
       <WhyOdooSection challenges={challenges} />
       <ModulesSection modules={odooModules} />
       <ServicesSection services={services} />
-      <FunctionalConsultingSection decisionAreas={decisionAreas} />
+      <AdvisorySection />
       <BusinessModelsSection businessTypes={businessTypes} />
-      <MethodologySection steps={steps} />
-      <PartnerSelectionSection evaluationAreas={evaluationAreas} />
       <CaseStudiesSection caseStudies={caseStudies} />
+      <WhyContetraSection />
       <FaqSection faqs={faqs} />
       <CtaSection />
     </>
