@@ -44,10 +44,11 @@ export async function generateMetadata({
     };
   }
 
-  const postsDataUrl = `${apiBase}/posts/posts-data?slug=${encodeURIComponent(apiSlug)}`.replace(
-    /([^:]\/)\/+/g,
-    "$1",
-  );
+  const postsDataUrl =
+    `${apiBase}/posts/posts-data?slug=${encodeURIComponent(apiSlug)}`.replace(
+      /([^:]\/)\/+/g,
+      "$1",
+    );
 
   try {
     const blogRes = await fetch(postsDataUrl, { next: { revalidate: 60 } });
@@ -64,9 +65,12 @@ export async function generateMetadata({
     const blog = r?.blog ?? r?.data?.blog;
 
     return {
-      title: blog?.title || "Blog",
+      title: blog?.meta_title || blog?.title || "Blog",
+      description : blog?.meta_description || "",
+      keywords : blog?.meta_keywords || "",
       openGraph: {
-        title: blog?.title || "Blog",
+        title: blog?.og_title || blog?.title || "Blog",
+        description : blog?.og_description || "",
         url: canonicalFromSlug,
       },
       alternates: {

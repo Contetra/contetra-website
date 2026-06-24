@@ -83,11 +83,11 @@ export const SectionOne = () => {
                   {" "}
                 </h1>
               </div>
-              <h1
+              <h2
                 className={`${headlineLineClass} text-contetra-green`}
               >
                 {LINE_TWO}
-              </h1>
+              </h2>
             </div>
 
             <p className="text-[16px] lg:text-[18px] font-[400] leading-[1.2em] mt-6 dark:text-[#E5E7EB]">
