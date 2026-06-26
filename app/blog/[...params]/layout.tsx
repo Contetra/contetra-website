@@ -1,4 +1,3 @@
-import { FooterMain } from "@/components/navigation/footer/footer-main";
 import { Header } from "@/components/navigation/navigation/header";
 import { JsonLd } from "@/components/seo/json-ld";
 import { resolveBlogListApiBase } from "@/lib/server-api-base-url";
@@ -66,11 +65,11 @@ export async function generateMetadata({
 
     return {
       title: blog?.meta_title || blog?.title || "Blog",
-      description : blog?.meta_description || "",
-      keywords : blog?.meta_keywords || "",
+      description: blog?.meta_description || "",
+      keywords: blog?.meta_keywords || "",
       openGraph: {
         title: blog?.og_title || blog?.title || "Blog",
-        description : blog?.og_description || "",
+        description: blog?.og_description || "",
         url: canonicalFromSlug,
       },
       alternates: {
@@ -124,7 +123,6 @@ export default async function LayoutSubPages({
       <Header />
       {children}
       <Floatingbar />
-      <FooterMain />
     </section>
   );
 }

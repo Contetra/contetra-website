@@ -191,7 +191,7 @@ export default function LayoutServices({
   };
 
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen overflow-x-hidden">
       <JsonLd data={structuredData} />
       <Header />
       {children}
