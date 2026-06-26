@@ -1,17 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Highlighter } from "@/components/ui/highlighter";
 import { Input } from "@/components/ui/input";
-import { ChevronLeft, ChevronRight, LayoutList, Sparkles } from "lucide-react";
+import { LayoutList, Sparkles } from "lucide-react";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-
-type Ebook = {
-  title: string;
-  link: string;
-  image: string;
-};
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { EbookSpotlightList } from "./spotlight/ebook-spotlight-list";
+import { EbookSpotlightPreview } from "./spotlight/ebook-spotlight-preview";
+import type { Ebook } from "./spotlight/types";
 
 const eBooks: Ebook[] = [
   {
@@ -129,8 +125,12 @@ export const EbooksSectionTwo = () => {
   const [viewMode, setViewMode] = useState<"list" | "spotlight">("spotlight");
   const [activeEbookIndex, setActiveEbookIndex] = useState(0);
 
-  const filteredEbooks = eBooks.filter((ebook) =>
-    ebook.title.toLowerCase().includes(search.toLowerCase()),
+  const filteredEbooks = useMemo(
+    () =>
+      eBooks.filter((ebook) =>
+        ebook.title.toLowerCase().includes(search.toLowerCase()),
+      ),
+    [search],
   );
   const activeEbook = filteredEbooks[activeEbookIndex];
 
@@ -145,11 +145,15 @@ export const EbooksSectionTwo = () => {
     );
   }, [filteredEbooks.length]);
 
-  const openEbook = (link: string) => {
+  const openEbook = useCallback((link: string) => {
     window.open(link, "_blank", "noopener,noreferrer");
-  };
+  }, []);
 
-  const moveSpotlight = (direction: "prev" | "next") => {
+  const handleSpotlightSelect = useCallback((index: number) => {
+    setActiveEbookIndex(index);
+  }, []);
+
+  const moveSpotlight = useCallback((direction: "prev" | "next") => {
     if (filteredEbooks.length === 0) return;
 
     setActiveEbookIndex((current) => {
@@ -159,7 +163,7 @@ export const EbooksSectionTwo = () => {
 
       return current === filteredEbooks.length - 1 ? 0 : current + 1;
     });
-  };
+  }, [filteredEbooks.length]);
 
   return (
     <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center justify-center gap-10 px-4 py-10 sm:gap-12 sm:px-6 sm:py-12 md:gap-14 md:px-8 md:py-14 lg:gap-16 lg:px-12 xl:px-16 2xl:px-[80px] 2xl:py-20">
@@ -246,105 +250,22 @@ export const EbooksSectionTwo = () => {
       ) : (
         <div className="w-full overflow-visible lg:flex lg:gap-6">
           <div className="order-2 lg:order-none lg:w-[44%] lg:self-start">
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-2">
-              {filteredEbooks.map((ebook, index) => (
-                <button
-                  key={ebook.title}
-                  type="button"
-                  onClick={() => setActiveEbookIndex(index)}
-                  className={`group rounded-xl border p-3 text-left transition ${
-                    index === activeEbookIndex
-                      ? "border-contetra-blue border-3 bg-blue-50 shadow-md dark:border-blue-400 dark:bg-blue-950/40"
-                      : "border-neutral-200 hover:border-contetra-blue/50 hover:shadow-sm dark:border-neutral-800 dark:hover:border-blue-400/70"
-                  }`}
-                >
-                  <Image
-                    src={ebook.image}
-                    alt={ebook.title}
-                    width={180}
-                    height={230}
-                    sizes="(max-width: 1023px) 30vw, 18vw"
-                    className="h-auto w-full rounded-lg object-contain"
-                  />
-                  <p className="mt-3 line-clamp-2 text-sm font-semibold text-neutral-900 dark:text-neutral-100">
-                    {ebook.title}
-                  </p>
-                </button>
-              ))}
-            </div>
+            <EbookSpotlightList
+              ebooks={filteredEbooks}
+              activeEbookIndex={activeEbookIndex}
+              onSelect={handleSpotlightSelect}
+              onOpen={openEbook}
+            />
           </div>
 
-          
-
           <div className="menularge-cursor order-1 mb-6 overflow-visible lg:order-none lg:mb-0 lg:w-[56%] lg:self-start lg:sticky lg:top-24">
-            <div className="h-fit rounded-2xl border border-neutral-200 bg-[#F8FAFF] p-5 shadow-sm dark:border-neutral-800 dark:bg-neutral-900 sm:p-6">
-              <div className="mb-4 flex items-center justify-between">
-               
-                <Highlighter
-                iterations={2}
-                // strokeWidth={2}
-                animationDuration={1500}
-                            padding={12}
-                            action="box"
-                            color="#FF9800"
-                          >
-                 
-                <p className="text-sm font-semibold text-neutral-600 dark:text-neutral-300">
-                  {activeEbookIndex + 1} / {filteredEbooks.length}
-                </p>
-                          </Highlighter>
-              </div>
-
-              {activeEbook ? (
-                <div className="grid gap-6 md:grid-cols-[minmax(240px,300px)_minmax(0,1fr)] md:items-center">
-                  <div className="mx-auto w-full max-w-[280px]">
-                    <Image
-                      src={activeEbook.image}
-                      alt={activeEbook.title}
-                      width={320}
-                      height={420}
-                      sizes="(max-width: 767px) 80vw, (max-width: 1279px) 34vw, 320px"
-                      className="h-auto w-full rounded-xl object-contain"
-                    />
-                  </div>
-
-                  <div className="flex flex-col items-start gap-4">
-                    <h3 className="text-balance text-2xl font-bold leading-tight text-neutral-900 dark:text-neutral-100">
-                      {activeEbook.title}
-                    </h3>
-                    <p className="text-sm leading-6 text-neutral-600 dark:text-neutral-300">
-                      Browse covers on the left, preview instantly, then open
-                      the ebook in a new tab.
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      <button
-                        type="button"
-                        onClick={() => moveSpotlight("prev")}
-                        className="cursor-pointer inline-flex items-center gap-2 rounded-md border border-neutral-300 px-3 py-2 text-sm font-semibold text-neutral-700 transition hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
-                      >
-                        <ChevronLeft className="h-4 w-4" />
-                        Prev
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => moveSpotlight("next")}
-                        className="cursor-pointer inline-flex items-center gap-2 rounded-md border border-neutral-300 px-3 py-2 text-sm font-semibold text-neutral-700 transition hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
-                      >
-                        Next
-                        <ChevronRight className="h-4 w-4" />
-                      </button>
-                      <Button
-                        type="button"
-                        onClick={() => openEbook(activeEbook.link)}
-                        className="cursor-pointer bg-contetra-blue dark:text-white"
-                      >
-                        View Ebook
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              ) : null}
-            </div>
+            <EbookSpotlightPreview
+              activeEbook={activeEbook}
+              activeEbookIndex={activeEbookIndex}
+              total={filteredEbooks.length}
+              onMove={moveSpotlight}
+              onOpen={openEbook}
+            />
           </div>
         </div>
       )}
