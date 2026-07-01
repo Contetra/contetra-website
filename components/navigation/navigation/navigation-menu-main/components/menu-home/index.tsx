@@ -5,7 +5,7 @@ import { SlideUpText } from "@/components/ui/slide-up-text";
 
 export const MenuHome = () => {
   return (
-    <NavigationMenuItem>
+    <NavigationMenuItem className="menularge-cursor">
       <Link href="/" className={navigationMenuTriggerStyle()}>
         <SlideUpText>Home</SlideUpText>
       </Link>

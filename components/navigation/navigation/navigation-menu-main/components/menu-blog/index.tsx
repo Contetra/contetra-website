@@ -45,7 +45,7 @@ export const MenuBlog = () => {
     //   </NavigationMenuContent>
     // </NavigationMenuItem>
 
-    <NavigationMenuItem>
+    <NavigationMenuItem className="menularge-cursor">
       <Link href="/blog" className={navigationMenuTriggerStyle()}>
         <Highlighter padding={10} action="highlight" color="#FF9800">
           <SlideUpText>Blog</SlideUpText>

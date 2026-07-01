@@ -8,7 +8,7 @@ import React from "react";
 
 export const MenuContactUs = () => {
   return (
-    <NavigationMenuItem>
+    <NavigationMenuItem className="menularge-cursor">
       <Link href="/contact-us" className={navigationMenuTriggerStyle()}>
         <SlideUpText>Contact Us</SlideUpText>
       </Link>

@@ -1,4 +1,5 @@
 import AdvisorySection from "./components/AdvisorySection";
+import CaseStudySection from "./components/CaseStudySection";
 import CtaSection from "./components/CtaSection";
 import FaqSection from "./components/FaqSection";
 import HeroSection from "./components/HeroSection";
@@ -15,6 +16,7 @@ export default function ZohoImplementationServicesPage() {
       <ModulesIndustriesSection />
       <ServicesSection />
       <AdvisorySection />
+      <CaseStudySection />
       <WhyContetraSection />
       <FaqSection />
       <CtaSection />
