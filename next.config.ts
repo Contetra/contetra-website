@@ -48,6 +48,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/your-business-at-a-glance",
+        destination: "https://splendorous-truffle-7a75b1.netlify.app/",
+        permanent: true,
+      },
+      {
         source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug',
         destination: '/blog/:slug',
         permanent: true, // 301 redirect — good for SEO
