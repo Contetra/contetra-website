@@ -26,52 +26,63 @@ export default function HomeLayout({
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://contetra.com/#organization",
-        name: "Contetra",
+        "@id": "https://contetra.com#organization",
+        name: "Contetra Private Limited",
+        alternateName: "Contetra",
         url: "https://contetra.com",
         logo: {
           "@type": "ImageObject",
-          url: "https://contetra.com/assets/images/logo/contetra-main-logo.png",
-          width: 150,
-          height: 60,
+          "@id": "https://contetra.com#logo",
+          url: "https://contetra.com/_next/static/media/contetra-main-logo.b2c93224.png",
+          contentUrl:
+            "https://contetra.com/_next/static/media/contetra-main-logo.b2c93224.png",
+          caption: "Contetra Private Limited",
         },
         description:
-          "Contetra provides CFO advisory, ERP implementation, IFRS advisory, FP&A, IPO readiness, and finance transformation services.",
-        email: "growth@contetra.com",
-        telephone: "+919833818857",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress:
-            "2nd floor, Swastik Disa Corporate Park, 225, Lal Bahadur Shastri Marg, near Kotak Bank",
-          addressLocality: "Mumbai",
-          addressRegion: "Maharashtra",
-          postalCode: "400086",
-          addressCountry: "IN",
-        },
-        foundingDate: "2016-10-30",
-        sameAs: [
-          "https://www.linkedin.com/company/contetra",
-          "https://www.facebook.com/ContetraPrivateLimited/",
-          "https://twitter.com/contetra",
-          "https://www.youtube.com/channel/UCcQNXLjiX-mN94n5ew4H3Xg",
-        ],
+          "Contetra Private Limited is a finance transformation and ERP consulting firm helping CFOs and growing businesses improve financial visibility, reporting, operational efficiency, and strategic decision-making.",
       },
       {
         "@type": "WebSite",
-        "@id": "https://contetra.com/#website",
-        url: "https://contetra.com/",
+        "@id": "https://contetra.com#website",
+        url: "https://contetra.com",
         name: "Contetra",
-        publisher: { "@id": "https://contetra.com/#organization" },
+        publisher: {
+          "@id": "https://contetra.com#organization",
+        },
+        inLanguage: "en-IN",
       },
       {
         "@type": "WebPage",
-        "@id": "https://contetra.com/#webpage",
-        url: "https://contetra.com/",
-        name: "CFO Advisory & Finance Transformation Services | ERP, IFRS & FP&A | Contetra",
+        "@id": "https://contetra.com#webpage",
+        url: "https://contetra.com",
+        name: "CFO Advisory & Finance Transformation Services | ERP, FP&A & IFRS",
         description:
-          "Contetra offers CFO advisory and finance transformation services in India, helping businesses with ERP implementation, IFRS advisory, FP&A, and IPO readiness.",
-        isPartOf: { "@id": "https://contetra.com/#website" },
-        about: { "@id": "https://contetra.com/#organization" },
+          "Contetra provides finance transformation, ERP implementation, Virtual CFO, FP&A, technical accounting, finance automation, IPO readiness, and offshore accounting services.",
+        isPartOf: {
+          "@id": "https://contetra.com#website",
+        },
+        about: {
+          "@id": "https://contetra.com#organization",
+        },
+        breadcrumb: {
+          "@id": "https://contetra.com#breadcrumb",
+        },
+        publisher: {
+          "@id": "https://contetra.com#organization",
+        },
+        inLanguage: "en-IN",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://contetra.com#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://contetra.com",
+          },
+        ],
       },
     ],
   };

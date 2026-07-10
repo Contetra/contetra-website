@@ -11,7 +11,7 @@ export const commonApi = createApi({
     getForms: builder.query({
       query: (formid?: string) =>
         formid
-          ? `/common-rest/forms?formid=${encodeURIComponent(formid)}`
+          ? `/common-rest/get-forms?formid=${encodeURIComponent(formid)}`
           : `/common-rest/forms`,
     }),
 

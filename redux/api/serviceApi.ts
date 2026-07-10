@@ -8,6 +8,16 @@ export const serviceApi = createApi({
   }),
 
   endpoints: (builder) => ({
+    postServiceAutomation: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/services/automation",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
     postServiceKyc: builder.mutation({
       query: ({ body, captchaToken }) => ({
         url: "/services/kyc",
@@ -153,6 +163,7 @@ export const serviceApi = createApi({
 });
 
 export const {
+  usePostServiceAutomationMutation,
   usePostServiceTaigasOneMutation,
   usePostServiceTaigasTwoMutation,
   usePostServiceEisOneMutation,
@@ -165,5 +176,5 @@ export const {
   usePostServiceIrMutation,
   usePostServiceFrcOneMutation,
   usePostServiceSbfmsMutation,
-  usePostServiceKycMutation
+  usePostServiceKycMutation,
 } = serviceApi;

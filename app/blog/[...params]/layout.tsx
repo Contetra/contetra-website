@@ -102,19 +102,88 @@ export default async function LayoutSubPages({
       ? [resolvedParams.params]
       : [];
   const slug = paramArray.join("/");
-  const canonicalUrl = slug
-    ? `https://contetra.com/blog/${slug}/`
-    : "https://contetra.com/blog/";
   const blogPostingSchema = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    mainEntityOfPage: canonicalUrl,
-    url: canonicalUrl,
-    publisher: {
-      "@type": "Organization",
-      name: "Contetra",
-      url: "https://contetra.com/",
-    },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id":
+          "https://contetra.com/blog/the-cfo-pipeline-problem-why-mid-level-finance-talent-is-drying-up#webpage",
+        url: "https://contetra.com/blog/the-cfo-pipeline-problem-why-mid-level-finance-talent-is-drying-up",
+        name: "The CFO Pipeline Problem: Why Mid-Level Finance Talent Is Drying Up",
+        description:
+          "Explore why mid-level finance talent is becoming increasingly difficult to hire and what CFOs can do to strengthen the finance leadership pipeline.",
+        breadcrumb: {
+          "@id":
+            "https://contetra.com/blog/the-cfo-pipeline-problem-why-mid-level-finance-talent-is-drying-up#breadcrumb",
+        },
+        primaryImageOfPage:
+          "https://contetra.com/blog/the-cfo-pipeline-problem-why-mid-level-finance-talent-is-drying-up",
+      },
+      {
+        "@type": "Article",
+        "@id":
+          "https://contetra.com/blog/the-cfo-pipeline-problem-why-mid-level-finance-talent-is-drying-up#article",
+        headline:
+          "The CFO Pipeline Problem: Why Mid-Level Finance Talent Is Drying Up",
+        description:
+          "A detailed look at the growing shortage of mid-level finance professionals and its impact on CFO succession planning, business growth, and finance transformation.",
+        mainEntityOfPage: {
+          "@id":
+            "https://contetra.com/blog/the-cfo-pipeline-problem-why-mid-level-finance-talent-is-drying-up#webpage",
+        },
+        author: {
+          "@id": "https://contetra.com#author",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Contetra Private Limited",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://contetra.com/logo.png",
+          },
+        },
+        datePublished: "2026-07-10",
+        dateModified: "2026-07-10",
+        inLanguage: "en-IN",
+      },
+      {
+        "@type": "Person",
+        "@id": "https://contetra.com#author",
+        name: "Ramanujam Narayan",
+        jobTitle: "Co-Founder & CFO Transformation Consultant",
+        worksFor: {
+          "@type": "Organization",
+          name: "Contetra Private Limited",
+          url: "https://contetra.com",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id":
+          "https://contetra.com/blog/the-cfo-pipeline-problem-why-mid-level-finance-talent-is-drying-up#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://contetra.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Blog",
+            item: "https://contetra.com/blog",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "The CFO Pipeline Problem: Why Mid-Level Finance Talent Is Drying Up",
+            item: "https://contetra.com/blog/the-cfo-pipeline-problem-why-mid-level-finance-talent-is-drying-up",
+          },
+        ],
+      },
+    ],
   };
 
   return (

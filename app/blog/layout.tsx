@@ -11,30 +11,61 @@ export default function LayoutBlog({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Blog",
-        "@id": "https://contetra.com/blog/#blog",
-        name: "Contetra Blog",
-        url: "https://contetra.com/blog/",
+        "@type": ["CollectionPage", "WebPage"],
+        "@id": "https://contetra.com/blog#webpage",
+        url: "https://contetra.com/blog",
+        name: "Finance, ERP & CFO Insights Blog | Contetra",
         description:
-          "Insights on finance, ERP, IFRS, and business growth from Contetra.",
+          "Read Contetra's latest articles on ERP implementation, Virtual CFO services, FP&A, technical accounting, finance transformation, recruitment and business growth.",
         inLanguage: "en-IN",
-        publisher: {
-          "@id": "https://contetra.com/#organization",
+        breadcrumb: {
+          "@id": "https://contetra.com/blog#breadcrumb",
         },
-        isPartOf: {
-          "@id": "https://contetra.com/#website",
+        mainEntity: {
+          "@id": "https://contetra.com/blog#bloglist",
         },
       },
       {
-        "@type": "WebPage",
-        "@id": "https://contetra.com/blog/#webpage",
-        url: "https://contetra.com/blog/",
-        name: "Blog | Finance, ERP & IFRS Insights | Contetra",
-        description:
-          "Insights on finance, ERP, IFRS, and business growth from Contetra.",
-        inLanguage: "en-IN",
-        isPartOf: { "@id": "https://contetra.com/#website" },
-        about: { "@id": "https://contetra.com/#organization" },
+        "@type": "BreadcrumbList",
+        "@id": "https://contetra.com/blog#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://contetra.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Blog",
+            item: "https://contetra.com/blog",
+          },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://contetra.com/blog#bloglist",
+        name: "Contetra Blog Articles",
+        itemListOrder: "https://schema.org/ItemListOrderDescending",
+        numberOfItems: "50",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            url: "https://contetra.com/blog/the-cfo-pipeline-problem-why-mid-level-finance-talent-is-drying-up",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            url: "https://contetra.com/blog/revenue-recognition-in-saas-tech-where-most-indian-companies-get-it-wrong",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            url: "https://contetra.com/blog/beyond-factories-why-service-businesses-need-erp-now-more-than-ever",
+          },
+        ],
       },
     ],
   };
