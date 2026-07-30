@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 interface NumberTickerProps extends ComponentPropsWithoutRef<"span"> {
   value: number
   startValue?: number
+  fallbackValue?: number
   direction?: "up" | "down"
   delay?: number
   decimalPlaces?: number
@@ -16,6 +17,7 @@ interface NumberTickerProps extends ComponentPropsWithoutRef<"span"> {
 export function NumberTicker({
   value,
   startValue = 0,
+  fallbackValue = startValue,
   direction = "up",
   delay = 0,
   className,
@@ -68,7 +70,10 @@ export function NumberTicker({
       )}
       {...props}
     >
-      {startValue}
+      {Intl.NumberFormat("en-US", {
+        minimumFractionDigits: decimalPlaces,
+        maximumFractionDigits: decimalPlaces,
+      }).format(fallbackValue)}
     </span>
   )
 }

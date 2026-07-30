@@ -51,6 +51,8 @@ export function SectionThree() {
               <div className="flex items-end gap-0.5 text-4xl font-semibold tracking-tight sm:text-5xl">
                 <NumberTicker
                   value={stat.value}
+                  fallbackValue={stat.value}
+                  data-target={stat.value}
                   delay={index * 0.12}
                   className="text-white dark:text-white"
                 />

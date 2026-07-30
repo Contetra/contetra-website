@@ -33,6 +33,12 @@ export default function LayoutEbooks({
         mainEntity: {
           "@id": "https://contetra.com/ebooks#ebook-list",
         },
+        isPartOf: {
+          "@id": "https://contetra.com#website",
+        },
+        publisher: {
+          "@id": "https://contetra.com#organization",
+        },
         inLanguage: "en-IN",
       },
       {
@@ -66,189 +72,273 @@ export default function LayoutEbooks({
             "@type": "ListItem",
             position: 1,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Business Insights into IFRS 16",
               url: "https://contetra.com/business-insights-into-ifrs-16",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 2,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Interview Prep Guide for Careers in Financial Reporting",
               url: "https://contetra.com/interview-prep-guide-for-careers-in-financial-reporting",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 3,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Implementable ECL Template for the Non-BFSI Sector",
               url: "https://contetra.com/implementable-ecl-template-for-non-bfsi-sector",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 4,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Top 20 Questions Your FY 2022-23 Business Plan Must Answer",
               url: "https://contetra.com/top-20-questions-your-fy-22-23-business-plan-must-answer",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 5,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Turbocharge Your Finance Function Through Offshore Accounting",
               url: "https://contetra.com/turbocharge-your-finance-function-through-offshore-accounting",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 6,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Maximise Profitability, Choose the Right ERP",
               url: "https://contetra.com/maximize-profitability-choose-the-right-erp",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 7,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "How to Master Business Budgeting",
               url: "https://contetra.com/strategic-business-budget-guide",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 8,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Unlocking 200% Revenue Growth: The CHHABI Success Story",
               url: "https://contetra.com/unlocking-200-revenue-growth-the-chhabi-success-story",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 9,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Business Insights into IFRS 9",
               url: "https://contetra.com/business-insights-into-ifrs-9",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 10,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "MSME Collection Advantage: New Amendment Explained",
               url: "https://contetra.com/msme-collection-advantage-new-amendment-explained",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 11,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Year-End Closure Checklist for Business Owners",
               url: "https://contetra.com/year-end-closure-checklist-for-business-owners",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 12,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Business Growth and Compliance",
               url: "https://contetra.com/business-growth-compliance",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 13,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "ERP Success: The Essential Blueprint",
               url: "https://contetra.com/erp-implementation-unveiled",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 14,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "ROI-Driven Trainings with Contetra",
               url: "https://contetra.com/roi-driven-trainings-with-contetra",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 15,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "How to Optimise Your Customers: A Comprehensive Guide to Achieve 10X Growth",
               url: "https://contetra.com/how-to-optimise-your-customers-a-comprehensive-guide-achieve-10x-growth",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 16,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "8 Actionable Strategies to Improve Profit After Tax",
               url: "https://contetra.com/8-actionable-strategies-to-improve-profit-after-tax-ebook",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 17,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "The CFO's Guide to Controlling ERP Costs: 6 Strategies to Stay on Budget",
               url: "https://contetra.com/the-cfos-guide-to-controlling-erp-costs6-strategies-to-stay-on-budget-ebook",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 18,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Business Insights into Revenue Recognition",
               url: "https://contetra.com/business-insights-into-revenue-recognition",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 19,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Period Closure Checklist",
               url: "https://contetra.com/period-closure-checklist",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 20,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Revamping Revenue: Unveiling ASC 606 Implications for Acquisition Memo",
               url: "https://contetra.com/revamping-revenue-unveiling-asc-606-implications-on-acquisition-memo",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
           {
             "@type": "ListItem",
             position: 21,
             item: {
-              "@type": "CreativeWork",
+              "@type": ["CreativeWork", "DigitalDocument"],
               name: "Your Financial Playbook: FY 2025-26 Edition",
               url: "https://contetra.com/your-financial-playbook-fy-2025-26-edition",
+              publisher: {
+                "@id": "https://contetra.com#organization",
+              },
+              inLanguage: "en-IN",
             },
           },
         ],
