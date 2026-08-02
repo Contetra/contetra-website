@@ -95,13 +95,7 @@ export default async function LayoutSubPages({
     params?: string[];
   }>;
 }) {
-  const resolvedParams = await params;
-  const paramArray = Array.isArray(resolvedParams.params)
-    ? resolvedParams.params
-    : typeof resolvedParams.params === "string"
-      ? [resolvedParams.params]
-      : [];
-  const slug = paramArray.join("/");
+  
   const blogPostingSchema = {
     "@context": "https://schema.org",
     "@graph": [

@@ -1,15 +1,35 @@
-import { LogoCarousel } from "@/components/common/logo-carousel";
-import { SectionOne } from "./components/section-one";
-import { SectionThree } from "./components/section-three";
-import { SectionTwo } from "./components/section-two";
+import type { Metadata } from "next";
+import { FourCapabilities } from "./components/FourCapabilities";
+import { WhereWeGetCalled } from "./components/WhereWeGetCalled";
+import { Approach } from "./components/Approach";
+import { WhyContetra } from "./components/WhyContetra";
+import { Outcomes } from "./components/Outcomes";
+import { WhoWeWorkWith } from "./components/WhoWeWorkWith";
+import { Faq } from "@/components/sections/Faq";
+import { ClosingCta } from "@/components/sections/ClosingCta";
+import { Hero } from "./components/Hero";
+
+export const metadata: Metadata = {
+  title: "Finance Transformation, ERP, CFO & AI Automation | Contetra",
+  description:
+    "Improve planning, reporting, controls, ERP performance and business workflows with Contetra's CFO, accounting, ERP and AI automation specialists.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (
-    <section className="mt-[6rem] flex w-full flex-col dark:bg-[#0A0A0A] lg:mt-[10rem]">
-      <SectionOne />
-      <LogoCarousel />
-      <SectionTwo />
-      <SectionThree />
-    </section>
+    <>
+      <Hero />
+      <FourCapabilities />
+      <WhereWeGetCalled />
+      <Approach />
+      <WhyContetra />
+      <Outcomes />
+      <WhoWeWorkWith />
+      <Faq />
+      <ClosingCta />
+    </>
   );
 }

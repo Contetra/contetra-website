@@ -39,9 +39,7 @@ export default function HomeLayout({
         addressRegion: "Maharashtra",
         addressCountry: "IN",
       },
-      sameAs: [
-        "https://www.linkedin.com/company/contetra-private-limited/",
-      ],
+      sameAs: ["https://www.linkedin.com/company/contetra-private-limited/"],
     },
     {
       "@context": "https://schema.org",
@@ -180,7 +178,7 @@ export default function HomeLayout({
   ];
 
   return (
-    <section className="flex flex-col justify-between overflow-x-hidden ">
+    <section className="flex flex-col justify-between overflow-x-hidden">
       <JsonLd data={structuredData} />
       <Header />
       {children}

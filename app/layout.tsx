@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ReactLenis } from "@/utils/lenis";
 import { MouseFollowerProvider } from "@/components/mouse-follower/mouse-follower-provider";
@@ -9,11 +8,18 @@ import { ThemeProvider } from "@/provider/ThemeProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
 import Script from "next/script";
+import { Sora, Plus_Jakarta_Sans } from "next/font/google";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const heading = Sora({
+  variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["500", "600", "700"],
+});
+
+const body = Plus_Jakarta_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning
+    >
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt"></link>
         <Script
@@ -47,7 +54,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${poppins.variable} font-poppins antialiased`}
+        className={`${heading.variable} ${body.variable} antialiased`}
       >
          <noscript>
           <iframe
