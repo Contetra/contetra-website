@@ -183,7 +183,6 @@ export default async function LayoutSubPages({
   return (
     <section className="min-h-screen relative">
       <JsonLd data={blogPostingSchema} />
-      <Header />
       {children}
       <Floatingbar />
     </section>
