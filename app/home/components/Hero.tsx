@@ -38,10 +38,10 @@ export function Hero() {
               <span className="block whitespace-nowrap text-[1.75rem] font-bold sm:text-[2.25rem] lg:text-[2.4rem]">
                 {hero.titleLine2}
               </span>
+              <span className="mt-1 block font-heading text-xl font-semibold normal-case leading-tight text-brand-green sm:text-2xl">
+                {hero.subtitle}
+              </span>
             </h1>
-            <p className="mt-1 font-heading text-xl font-semibold leading-tight text-brand-green sm:text-2xl">
-              {hero.subtitle}
-            </p>
 
             <div className="mt-4 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               {hero.paragraphs.map((p) => (

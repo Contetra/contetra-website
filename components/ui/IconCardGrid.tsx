@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { renderRichText } from "@/lib/utils copy";
 import type { IconCard } from "@/lib/content";
 import { ScrollReveal } from "./ScrollReveal";
 
@@ -84,7 +85,7 @@ export function IconCardGrid({
                   )}
                 </h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  {item.body}
+                  {renderRichText(item.body)}
                 </p>
                 {item.href && (
                   <span className="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-brand-green">

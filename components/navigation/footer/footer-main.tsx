@@ -24,18 +24,18 @@ const servicesLinks = [
   },
   {
     label: "MCA - Struck off companies",
-    href: "https://contetra.com/strike-that",
+    href: "/strike-that",
   },
 ] as const;
 
 const companyLinks = [
-  { label: "Ebooks", href: "https://contetra.com/ebooks" },
-  { label: "Contact Us", href: "https://contetra.com/contact-us" },
+  { label: "Ebooks", href: "/ebooks" },
+  { label: "Contact Us", href: "/contact-us" },
 ] as const;
 
 const furtherLinks = [
-  { label: "Terms & Conditions", href: "https://contetra.com/terms-and-conditions" },
-  { label: "Privacy Policy", href: "https://contetra.com/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ] as const;
 
 const socialLinks = [

@@ -152,6 +152,18 @@ export const navGroups: NavGroup[] = [
           },
         ],
       },
+      {
+        label: "ERP Functional Implementation",
+        href: "/erp-implementation-solutions",
+      },
+      {
+        label: "FP&A + Business Finance Services",
+        href: "/strategic-business-financial-management-solutions",
+      },
+      {
+        label: "MCA - Struck off companies",
+        href: "/strike-that",
+      },
     ],
   },
   {

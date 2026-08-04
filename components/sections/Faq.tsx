@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { faqs, type FaqItem } from "@/lib/content";
+import { renderRichText } from "@/lib/utils copy";
 import { ScrollReveal } from "../ui/ScrollReveal";
 
 interface FaqAccordionProps {
@@ -35,7 +36,7 @@ export function FaqAccordion({ heading, items, openFirstByDefault }: FaqAccordio
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                {faq.answer}
+                {renderRichText(faq.answer)}
               </AccordionContent>
             </AccordionItem>
           ))}

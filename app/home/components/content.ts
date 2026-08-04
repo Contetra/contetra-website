@@ -3,11 +3,11 @@ import { Award, Banknote, BarChart3, BookOpenCheck, Bot, Boxes, Building, Buildi
 
 export const hero = {
   kicker: "Start with the business problem - not the service label",
-  title: "Finance-Led",
-  titleLine2: "Business Transformation",
+  title: "Finance Transformation",
+  titleLine2: "Consulting",
   subtitle: "That Improves Decisions, Controls and Scale",
   paragraphs: [
-    "Contetra helps **growing and global businesses** turn fragmented numbers, disconnected systems and manual processes into a finance and operating model that management can rely on. Our specialists combine **CFO and FP&A expertise, ERP functional consulting, accounting and reporting advisory**, and AI-enabled automation to solve problems from strategy through implementation.",
+    "Contetra's **finance transformation consulting** approach helps **growing and global businesses** turn fragmented numbers, disconnected systems and manual processes into a finance and operating model that management can rely on. Our specialists combine **CFO and FP&A expertise, ERP functional consulting, accounting and reporting advisory**, and AI-enabled automation to solve problems from strategy through implementation.",
     "Whether you need clearer **business performance**, a successful **ERP programme**, **audit-ready financial reporting** or **workflows** that scale without adding headcount, we bring the financial discipline and execution ownership required to make change work.",
   ],
   primaryCta: "Book a Transformation Consultation",
@@ -19,28 +19,31 @@ export const hero = {
 export const callTriggers: IconCard[] = [
   {
     icon: BarChart3,
-    title: "We have numbers, but not decision-ready insight.",
+    title: "We Have Numbers, but Not Decision-Ready Insight",
     body: "Management reporting is late, forecasts are unreliable, cash surprises recur, and teams debate whose numbers are correct.",
   },
   {
     icon: Puzzle,
-    title: "Our ERP is live, but the business is still working outside it.",
+    title: "Our ERP Is Live, but the Business Is Still Working Outside It",
     body: "Processes remain on spreadsheets and email, users bypass controls, reports do not reconcile, or implementation has stalled.",
   },
   {
     icon: BookOpenCheck,
-    title: "The accounting is getting more complex than the team can absorb.",
+    title: "The Accounting Is Getting More Complex Than the Team Can Absorb",
     body: "New standards, acquisitions, group reporting, investor requirements or audit scrutiny are stretching internal capability.",
   },
   {
     icon: Repeat,
-    title: "Growth is adding people faster than it is adding capacity.",
+    title: "Growth Is Adding People Faster Than Capacity",
     body: "Recurring workflows depend on manual follow-ups, rekeying, reconciliations, status updates and individual knowledge.",
   },
 ];
 
+export const whereWeGetCalledIntro =
+  "A finance business consultant helps management identify whether the issue sits in reporting, cash flow, accounting, ERP, workflows or operating discipline.";
+
 export const capabilitiesHeading =
-  "Four capabilities. One connected transformation agenda.";
+  "Four Capabilities That Support Business Transformation";
 
 export const capabilitiesIntro =
   "Most transformation problems do not sit neatly inside one function. Weak reporting may be caused by poor processes. Poor processes may be embedded in the ERP. Manual work may persist because controls and data were never redesigned. Contetra connects these issues instead of treating them as separate projects.";
@@ -49,7 +52,7 @@ export const capabilities: IconCard[] = [
   {
     icon: LineChart,
     title: "Fractional CFO, FP&A & Performance Management",
-    body: "Build reliable plans, cash-flow visibility, management reporting, profitability insight and decision discipline - without waiting to hire a full-time senior finance team.",
+    body: "Build reliable plans, [cash-flow visibility](/strategic-business-financial-management-solutions), management reporting, profitability insight and decision discipline - without waiting to hire a full-time senior finance team.",
     href: "/services/fractional-cfo-fpa",
   },
   {
@@ -61,13 +64,13 @@ export const capabilities: IconCard[] = [
   {
     icon: BookOpenCheck,
     title: "Accounting & Reporting Consulting",
-    body: "Resolve complex accounting matters, prepare audit-ready financial statements, accelerate close, support transactions and strengthen readiness for investors, lenders and public markets.",
+    body: "Resolve complex accounting matters, prepare audit-ready [financial statements](/services/accounting-reporting), accelerate close, support transactions and strengthen readiness for investors, lenders and public markets.",
     href: "/services/accounting-reporting",
   },
   {
     icon: Bot,
     title: "Agentic AI & Business Workflow Automation",
-    body: "Redesign and automate workflows across finance, sales, operations, marketing and project management using governed AI agents, integrations and human approval controls.",
+    body: "Redesign and [automate workflows](/automation) across finance, sales, operations, marketing and project management using governed AI agents, integrations and human approval controls.",
     href: "/services/agentic-ai-automation",
   },
 ];
@@ -122,7 +125,7 @@ export const outcomes: string[] = [
   "Released working capital and reduced cash-flow volatility through receivables, inventory and payment discipline.",
   "Improved profitability visibility by product, customer, project, branch or business segment.",
   "Accelerated ERP adoption by converting business needs into transaction-level requirements, controls and user testing.",
-  "Reduced close and audit friction through reconciliations, schedules, technical accounting documentation and clear ownership.",
+  "Reduced close and audit friction through reconciliations, schedules, technical accounting documentation, clear ownership and [IPO readiness support](/services/fractional-cfo-fpa/ipo-readiness).",
   "Removed recurring manual effort through workflow, reporting and reconciliation automation.",
 ];
 

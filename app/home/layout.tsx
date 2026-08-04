@@ -4,8 +4,8 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `CFO Advisory & Finance Transformation Services | ERP, FP&A,  IFRS`,
-  description: `Contetra helps CFOs and growing businesses with ERP implementation, FP&A strategy, and IFRS & IPO readiness. Serving 100+ clients globally.`,
+  title: `Finance Transformation Consulting | ERP, CFO & AI Automation | Contetra`,
+  description: `Looking for a finance business consultant? Contetra helps businesses improve finance transformation, ERP performance, reporting, controls and AI automation.`,
   keywords: `Business management consultant in mumbai, finance business consultant, finance consulting services, finance advisory services, business financial management solutions`,
   alternates: {
     canonical: "https://contetra.com",
@@ -27,8 +27,17 @@ export default function HomeLayout({
       "@type": "Organization",
       "@id": "https://contetra.com#organization",
       name: "Contetra Private Limited",
+      legalName: "Contetra Private Limited",
+      alternateName: "Contetra",
       url: "https://contetra.com",
-      logo: "https://contetra.com/assets/images/logo/contetra-main-logo.png",
+      logo: {
+        "@type": "ImageObject",
+        "@id": "https://contetra.com#logo",
+        url: "https://contetra.com/assets/images/logo/contetra-main-logo.png",
+        contentUrl:
+          "https://contetra.com/assets/images/logo/contetra-main-logo.png",
+        caption: "Contetra Private Limited",
+      },
       description:
         "Contetra Private Limited is a finance transformation consulting firm offering CFO advisory, ERP implementation, FP&A, technical accounting, automation, IPO readiness, and offshore accounting services.",
       email: "growth@contetra.com",
@@ -38,6 +47,14 @@ export default function HomeLayout({
         addressLocality: "Mumbai",
         addressRegion: "Maharashtra",
         addressCountry: "IN",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "Business Enquiries",
+        telephone: "+91 98338 18857",
+        email: "growth@contetra.com",
+        areaServed: "IN",
+        availableLanguage: ["English", "Hindi"],
       },
       sameAs: ["https://www.linkedin.com/company/contetra-private-limited/"],
     },
@@ -53,11 +70,35 @@ export default function HomeLayout({
     },
     {
       "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://contetra.com#webpage",
+      url: "https://contetra.com",
+      name: "Finance Transformation Consulting, ERP, CFO & AI Automation | Contetra",
+      description:
+        "Improve planning, reporting, ERP performance and business workflows with Contetra, a finance business consultant specialising in CFO advisory, accounting and AI automation.",
+      isPartOf: {
+        "@id": "https://contetra.com#website",
+      },
+      about: {
+        "@id": "https://contetra.com#professionalservice",
+      },
+      breadcrumb: {
+        "@id": "https://contetra.com#breadcrumb",
+      },
+      publisher: {
+        "@id": "https://contetra.com#organization",
+      },
+      inLanguage: "en-IN",
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "@id": "https://contetra.com#professionalservice",
       name: "Contetra Private Limited",
       url: "https://contetra.com",
-      image: "https://contetra.com/assets/images/logo/contetra-main-logo.png",
+      image: {
+        "@id": "https://contetra.com#logo",
+      },
       description:
         "Contetra is a finance transformation consulting firm offering ERP implementation, Virtual CFO, FP&A, technical accounting, finance automation, IPO readiness, and offshore accounting services.",
       telephone: "+91 98338 18857",
@@ -84,12 +125,26 @@ export default function HomeLayout({
             itemOffered: {
               "@type": "Service",
               "@id":
+                "https://contetra.com/strategic-business-financial-management-solutions#service",
+              name: "Fractional CFO, FP&A and Performance Management",
+              serviceType:
+                "Virtual CFO, Fractional CFO and Financial Planning and Analysis",
+              url: "https://contetra.com/strategic-business-financial-management-solutions",
+              description:
+                "Strategic finance support covering budgeting, forecasting, cash flow planning, MIS reporting, profitability analysis, working capital and performance management.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              "@id":
                 "https://contetra.com/erp-implementation-solutions#service",
-              name: "ERP Implementation Services",
+              name: "ERP Implementation, Diagnostic Review and Transformation",
               serviceType: "ERP Implementation and Functional Consulting",
               url: "https://contetra.com/erp-implementation-solutions",
               description:
-                "ERP implementation and functional consulting services for growing businesses, including SAP, Microsoft Dynamics, ERPNext, Odoo, ERP health checks, and process transformation.",
+                "ERP selection, business process mapping, functional consulting, implementation governance, diagnostic review, UAT, user adoption and post-go-live optimisation.",
             },
           },
           {
@@ -98,26 +153,12 @@ export default function HomeLayout({
               "@type": "Service",
               "@id":
                 "https://contetra.com/technical-accounting-international-gaap-advisory-services#service",
-              name: "Technical Accounting Advisory Services",
+              name: "Accounting and Reporting Consulting",
               serviceType:
-                "Technical Accounting, Ind AS, IFRS and GAAP Advisory",
+                "Technical Accounting, Ind AS, IFRS and US GAAP Advisory",
               url: "https://contetra.com/technical-accounting-international-gaap-advisory-services",
               description:
-                "Technical accounting advisory services for businesses requiring Ind AS, IFRS, US GAAP, financial reporting, audit support, revenue recognition, consolidation, and complex accounting guidance.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              "@id":
-                "https://contetra.com/strategic-business-financial-management-solutions#service",
-              name: "FP&A and Virtual CFO Services",
-              serviceType:
-                "Financial Planning and Analysis, Virtual CFO and Fractional CFO Services",
-              url: "https://contetra.com/strategic-business-financial-management-solutions",
-              description:
-                "FP&A, Virtual CFO and Fractional CFO services for growing businesses, including budgeting, forecasting, cash flow planning, MIS reporting, working capital management, profitability analysis, and strategic finance advisory.",
+                "Technical accounting, financial statement preparation, reporting advisory, audit support, revenue recognition, consolidation and complex accounting guidance.",
             },
           },
           {
@@ -125,11 +166,11 @@ export default function HomeLayout({
             itemOffered: {
               "@type": "Service",
               "@id": "https://contetra.com/automation#service",
-              name: "Finance Process Automation Services",
-              serviceType: "Finance Automation and Business Process Automation",
+              name: "Agentic AI and Business Workflow Automation",
+              serviceType: "AI Automation and Business Process Automation",
               url: "https://contetra.com/automation",
               description:
-                "Finance process automation services for businesses looking to automate reconciliations, reporting, approvals, workflows, data consolidation, dashboards, and repetitive finance and operations processes.",
+                "AI-enabled automation for reporting, reconciliations, approvals, dashboards, data consolidation and repetitive finance and operational workflows.",
             },
           },
           {
@@ -139,10 +180,10 @@ export default function HomeLayout({
               "@id": "https://contetra.com/ipo-readiness#service",
               name: "IPO Readiness Services",
               serviceType:
-                "IPO Readiness, Financial Reporting and Pre-IPO Advisory",
+                "IPO Readiness and Pre-IPO Finance Transformation",
               url: "https://contetra.com/ipo-readiness",
               description:
-                "IPO readiness services for businesses preparing for public listing, including financial reporting readiness, audit preparedness, internal controls, working capital review, MIS improvement, technical accounting, and pre-IPO finance transformation.",
+                "IPO readiness support covering financial reporting, audit preparedness, internal controls, MIS improvement, technical accounting and pre-IPO finance transformation.",
             },
           },
           {
@@ -153,10 +194,10 @@ export default function HomeLayout({
                 "https://contetra.com/offshore-accounting-services#service",
               name: "Offshore Accounting Services",
               serviceType:
-                "Offshore Accounting, Bookkeeping and Finance Operations Support",
+                "Offshore Accounting and Finance Operations Support",
               url: "https://contetra.com/offshore-accounting-services",
               description:
-                "Offshore accounting services for businesses requiring bookkeeping, accounts payable, accounts receivable, reconciliations, month-end support, financial reporting, remote accounting operations, and finance process support.",
+                "Offshore accounting support covering bookkeeping, accounts payable, accounts receivable, reconciliations, month-end close and financial reporting.",
             },
           },
         ],

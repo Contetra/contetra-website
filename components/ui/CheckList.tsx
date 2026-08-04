@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { renderRichText } from "@/lib/utils copy";
 import { ScrollReveal } from "./ScrollReveal";
 
 interface CheckListProps {
@@ -38,7 +39,7 @@ export function CheckList({
             )}
           >
             <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand-green" />
-            <span className="text-sm leading-relaxed text-foreground">{item}</span>
+            <span className="text-sm leading-relaxed text-foreground">{renderRichText(item)}</span>
           </ScrollReveal>
         ))}
       </ul>

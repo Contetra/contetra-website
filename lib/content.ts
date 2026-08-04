@@ -84,7 +84,7 @@ export const faqs: FaqItem[] = [
   {
     question: "What does finance transformation consulting include?",
     answer:
-      "It can include CFO and FP&A support, management reporting, accounting and close improvement, ERP implementation, data and control design, and workflow automation. The correct scope depends on the business problem and transformation maturity.",
+      "It can include CFO and FP&A support, management reporting, accounting and close improvement, [ERP implementation](/erp-implementation-solutions), data and control design, and workflow automation. The correct scope depends on the business problem and transformation maturity.",
   },
   {
     question: "Does Contetra only advise, or also help implement?",
