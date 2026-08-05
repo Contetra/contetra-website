@@ -32,6 +32,21 @@ const extraLinks = [
   { label: "Contact Us", href: "/contact-us" },
 ] as const;
 
+/**
+ * Animated underline on hover/focus. Parent needs `group/navlabel` (a named
+ * group, not the bare `group` the surrounding NavigationMenuList already
+ * uses — reusing that would light up every item's underline at once since
+ * hovering any child bubbles `:hover` up to that shared ancestor).
+ */
+function NavLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="relative">
+      {children}
+      <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-brand-green transition-all duration-300 ease-out group-hover/navlabel:w-full group-focus-visible/navlabel:w-full" />
+    </span>
+  );
+}
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -84,8 +99,8 @@ export function Header() {
               if (!group.links || group.links.length === 0) {
                 return (
                   <NavigationMenuItem key={group.label}>
-                    <Link href={group.href} className={navigationMenuTriggerStyle()}>
-                      {group.label}
+                    <Link href={group.href} className={cn(navigationMenuTriggerStyle(), "group/navlabel")}>
+                      <NavLabel>{group.label}</NavLabel>
                     </Link>
                   </NavigationMenuItem>
                 );
@@ -107,7 +122,9 @@ export function Header() {
 
               return (
                 <NavigationMenuItem key={group.label}>
-                  <NavigationMenuTrigger>{group.label}</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="group/navlabel">
+                    <NavLabel>{group.label}</NavLabel>
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent
                     className={cn(
                       "group-data-[viewport=false]/navigation-menu:mt-2",
@@ -203,8 +220,8 @@ export function Header() {
 
             {extraLinks.map((link) => (
               <NavigationMenuItem key={link.href}>
-                <Link href={link.href} className={navigationMenuTriggerStyle()}>
-                  {link.label}
+                <Link href={link.href} className={cn(navigationMenuTriggerStyle(), "group/navlabel")}>
+                  <NavLabel>{link.label}</NavLabel>
                 </Link>
               </NavigationMenuItem>
             ))}

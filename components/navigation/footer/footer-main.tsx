@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Linkedin, Twitter, Youtube } from "lucide-react";
-import ContetraMainLogo from "@/public/assets/images/logo/contetra-main-logo.png";
 import ContetraWhiteLogo from "@/public/assets/images/logo/Contetra logo - white.png";
 
 /** Returns the current calendar year for the copyright line. */
@@ -83,18 +82,11 @@ export const FooterMain = () => {
           <div className="lg:col-span-2">
             <div className="relative h-10 w-44">
               <Image
-                src={ContetraMainLogo}
-                alt="Contetra"
-                fill
-                sizes="176px"
-                className="object-contain object-left dark:hidden"
-              />
-              <Image
                 src={ContetraWhiteLogo}
                 alt="Contetra"
                 fill
                 sizes="176px"
-                className="hidden object-contain object-left dark:block"
+                className="object-contain object-left"
               />
             </div>
             <p className="mt-4 max-w-xs text-sm text-white/70">

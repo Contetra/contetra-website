@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { closingCta } from "@/lib/content";
 import { primaryCta as bookingCta } from "@/lib/nav";
 import { ScrollReveal } from "../ui/ScrollReveal";
-import { FpaForm } from "@/app/services/fractional-cfo-fpa/components/fpa-form";
+import { FpaForm } from "@/app/services/management-reporting/components/fpa-form";
 
 interface CtaLink {
   label: string;

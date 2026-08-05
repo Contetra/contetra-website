@@ -18,74 +18,67 @@ export const navGroups: NavGroup[] = [
     href: "/services",
     links: [
       {
-        label: "Fractional CFO & FP&A",
-        href: "/services/fractional-cfo-fpa",
+        label: "IPO Readiness",
+        href: "/services/ipo-readiness",
         children: [
-          { label: "Fractional CFO & FP&A", href: "/services/fractional-cfo-fpa" },
-          { label: "IPO Readiness", href: "/services/fractional-cfo-fpa/ipo-readiness" },
           {
-            label: "Fractional CFO Services",
-            href: "/services/fractional-cfo-fpa/fractional-cfo-services",
+            label: "Finance Maturity Arc",
+            href: "/services/ipo-readiness/finance-maturity-arc",
           },
-          {
-            label: "Working Capital & Cash-Flow Advisory",
-            href: "/services/fractional-cfo-fpa/working-capital-cashflow-advisory",
-          },
-          {
-            label: "MIS Reporting & Financial Dashboards",
-            href: "/services/fractional-cfo-fpa/mis-reporting-dashboards",
-          },
-          { label: "FP&A Services", href: "/services/fractional-cfo-fpa/fpa-services" },
         ],
       },
-      {
-        label: "ERP Transformation",
-        href: "/services/erp-implementation",
+       {
+        label: "Digital Transformation",
+        href: "/services/digital-transformation",
         children: [
           {
-            label: "ERP Transformation",
-            href: "/services/erp-implementation",
+            label: "ERP & Process Transformation",
+            href: "/services/digital-transformation",
           },
           {
             label: "ERP Diagnostic Review & Health Check",
-            href: "/services/erp-implementation/erp-diagnostic-review",
+            href: "/services/digital-transformation/erp-diagnostic-review",
           },
           {
             label: "ERP Selection & Evaluation Advisory",
-            href: "/services/erp-implementation/erp-selection-evaluation",
+            href: "/services/digital-transformation/erp-selection-and-evaluation-advisory",
           },
           {
             label: "ERP Implementation PMO & Functional Consulting",
-            href: "/services/erp-implementation/erp-implementation-pmo",
+            href: "/services/digital-transformation/erp-implementation-pmo-and-functional-consulting",
           },
           {
-            label: "ERP Project Rescue & Post-Go-Live Optimisation",
-            href: "/services/erp-implementation/erp-project-rescue",
+            label: "ERP Project Rescue & Post Go-Live Optimisation",
+            href: "/services/digital-transformation/erp-project-rescue-and-post-go-live-optimisation",
           },
           {
-            label: "SAP S/4HANA Implementation & Migration Consulting",
-            href: "/services/erp-implementation/sap-s4hana-consulting",
+            label: "ERP Functional Implementation",
+            href: "/services/digital-transformation/erp-functional-implementation",
           },
-          {
-            label: "Microsoft Dynamics 365 ERP Consulting",
-            href: "/services/erp-implementation/microsoft-dynamics-365-consulting",
-          },
-          {
-            label: "Oracle Fusion Cloud ERP Consulting",
-            href: "/services/erp-implementation/oracle-fusion-cloud-consulting",
-          },
-          {
-            label: "Oracle NetSuite Implementation Consulting",
-            href: "/services/erp-implementation/netsuite-implementation-consulting",
-          },
-          {
-            label: "Odoo Implementation Consulting",
-            href: "/services/erp-implementation/odoo-implementation-consulting",
-          },
-          {
-            label: "ERPNext Implementation Consulting",
-            href: "/services/erp-implementation/erpnext-implementation-consulting",
-          },
+          // {
+          //   label: "SAP S/4HANA Implementation & Migration Consulting",
+          //   href: "/services/digital-transformation/sap-s4hana-consulting",
+          // },
+          // {
+          //   label: "Microsoft Dynamics 365 ERP Consulting",
+          //   href: "/services/digital-transformation/microsoft-dynamics-365-consulting",
+          // },
+          // {
+          //   label: "Oracle Fusion Cloud ERP Consulting",
+          //   href: "/services/digital-transformation/oracle-fusion-cloud-consulting",
+          // },
+          // {
+          //   label: "Oracle NetSuite Implementation Consulting",
+          //   href: "/services/digital-transformation/netsuite-implementation-consulting",
+          // },
+          // {
+          //   label: "Odoo Implementation Consulting",
+          //   href: "/services/digital-transformation/odoo-implementation-consulting",
+          // },
+          // {
+          //   label: "ERPNext Implementation Consulting",
+          //   href: "/services/digital-transformation/erpnext-implementation-consulting",
+          // },
         ],
       },
       {
@@ -93,7 +86,7 @@ export const navGroups: NavGroup[] = [
         href: "/services/accounting-reporting",
         children: [
           {
-            label: "Accounting & Reporting",
+            label: "Ind AS, IFRS & US GAAP Reporting",
             href: "/services/accounting-reporting",
           },
           {
@@ -120,50 +113,67 @@ export const navGroups: NavGroup[] = [
             label: "Financial Due Diligence & Quality of Earnings",
             href: "/services/accounting-reporting/financial-due-diligence",
           },
+          {
+            label: "Offshore Accounting Services",
+            href: "/services/accounting-reporting/offshore-accounting-services",
+          },
         ],
       },
       {
-        label: "Agentic AI Automation",
-        href: "/services/agentic-ai-automation",
+        label: "Management Reporting",
+        href: "/services/management-reporting",
+        children: [
+            {
+              label: "FP&A + Business Finance Services",
+              href: "/services/management-reporting/strategic-business-financial-management-solutions",
+            },
+          {
+            label: "Working Capital & Cash-Flow Advisory with AI",
+            href: "/services/management-reporting/working-capital-cashflow-advisory-with-ai",
+          },
+          {
+            label: "MIS Reporting & Financial Dashboards with AI",
+            href: "/services/management-reporting/mis-reporting-dashboards-with-ai",
+          },
+        ],
+      },
+      {
+        label: "Agentic AI and Process Automation",
+        href: "/services/agentic-ai-and-process-automation",
         children: [
           {
-            label: "Agentic AI Automation",
-            href: "/services/agentic-ai-automation",
+            label: "Process Automation",
+            href: "/services/agentic-ai-and-process-automation/process-automation",
           },
           {
             label: "Agentic AI & AI Agent Development",
-            href: "/services/agentic-ai-automation/ai-agent-development",
+            href: "/services/agentic-ai-and-process-automation/ai-agent-development",
           },
           {
             label: "Finance & Reporting Automation",
-            href: "/services/agentic-ai-automation/finance-reporting-automation",
+            href: "/services/agentic-ai-and-process-automation/finance-reporting-automation",
           },
           {
             label: "Sales & Marketing Workflow Automation",
-            href: "/services/agentic-ai-automation/sales-marketing-automation",
+            href: "/services/agentic-ai-and-process-automation/sales-marketing-automation",
           },
           {
             label: "Operations & Project Workflow Automation",
-            href: "/services/agentic-ai-automation/operations-project-automation",
+            href: "/services/agentic-ai-and-process-automation/operations-project-automation",
           },
           {
             label: "Automation Opportunity Assessment & Roadmap",
-            href: "/services/agentic-ai-automation/automation-opportunity-assessment",
+            href: "/services/agentic-ai-and-process-automation/automation-opportunity-assessment",
+          },
+          {
+            label: "MCA - Struck off companies",
+            href: "/services/agentic-ai-and-process-automation/strike-that",
           },
         ],
       },
-      {
-        label: "ERP Functional Implementation",
-        href: "/erp-implementation-solutions",
-      },
-      {
-        label: "FP&A + Business Finance Services",
-        href: "/strategic-business-financial-management-solutions",
-      },
-      {
-        label: "MCA - Struck off companies",
-        href: "/strike-that",
-      },
+      
+    
+      
     ],
   },
   {

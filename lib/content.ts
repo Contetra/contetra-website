@@ -59,7 +59,7 @@ import {
 } from "lucide-react";
 import { primaryCta as bookingCta } from "@/lib/nav";
 import { createElement, type ReactNode } from "react";
-import { FpaForm } from "@/app/services/fractional-cfo-fpa/components/fpa-form";
+import { FpaForm } from "@/app/services/management-reporting/components/fpa-form";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "./utils";
 

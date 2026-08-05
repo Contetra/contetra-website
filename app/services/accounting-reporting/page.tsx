@@ -11,52 +11,11 @@ import { ClosingCta } from "@/components/sections/ClosingCta";
 import { accountingReportingService } from "@/app/services/accounting-reporting/content";
 import { primaryCta as bookingCta } from "@/lib/nav";
 
-const siteUrl = "https://contetra.com";
-const pagePath = "/services/accounting-reporting";
-const title = "Accounting & Reporting Consulting | IFRS, Ind AS, US GAAP";
-const description =
-  "Get technical accounting, financial statement, audit, GAAP conversion, transaction, due diligence and IPO-readiness support from experienced specialists.";
-
-export const metadata: Metadata = {
-  title: { absolute: title },
-  description,
-  alternates: {
-    canonical: pagePath,
-  },
-  openGraph: {
-    title,
-    description,
-    url: pagePath,
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title,
-    description,
-  },
-};
-
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Accounting and Reporting Consulting",
-  serviceType: "Accounting and Reporting Consulting",
-  provider: {
-    "@type": "Organization",
-    name: "Contetra Private Limited",
-    url: siteUrl,
-  },
-  url: `${siteUrl}${pagePath}`,
-  description,
-};
 
 export default function AccountingReportingPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
+
       <Hero />
       <Capabilities />
       <TechnicalAreas />

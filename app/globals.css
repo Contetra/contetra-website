@@ -8,6 +8,10 @@ html,
 body {
   /* overflow-x: hidden; */
   cursor: default;
+  /* Dark mode is force-disabled for now; this stops browsers' native
+     forced-dark heuristics from repainting the page even when the OS
+     or browser is set to dark mode. Remove once dark colors ship. */
+  color-scheme: light only;
 }
 
 .x-hidden {

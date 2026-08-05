@@ -37,18 +37,7 @@ export function ClosingCta({
       id="transformation-decision"
       className="relative scroll-mt-20 overflow-hidden bg-brand-blue py-20 sm:py-28"
     >
-      <div
-        className="pointer-events-none absolute -right-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 opacity-[0.06]"
-        aria-hidden
-      >
-        <Image
-          src="/Contetra_logo_-_Inverted_High_res.png"
-          alt=""
-          fill
-          sizes="420px"
-          className="object-contain"
-        />
-      </div>
+     
 
       <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
         <ScrollReveal>

@@ -3,8 +3,8 @@ import { Award, Banknote, BarChart3, BookOpenCheck, Bot, Boxes, Building, Buildi
 
 export const hero = {
   kicker: "Start with the business problem - not the service label",
-  title: "Finance Transformation",
-  titleLine2: "Consulting",
+  title: "Finance-Led",
+  titleLine2: "Business Transformation",
   subtitle: "That Improves Decisions, Controls and Scale",
   paragraphs: [
     "Contetra's **finance transformation consulting** approach helps **growing and global businesses** turn fragmented numbers, disconnected systems and manual processes into a finance and operating model that management can rely on. Our specialists combine **CFO and FP&A expertise, ERP functional consulting, accounting and reporting advisory**, and AI-enabled automation to solve problems from strategy through implementation.",

@@ -37,6 +37,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning
     >
       <head>
+        {/* Dark mode is force-disabled for now; remove once dark colors ship. */}
+        <meta name="color-scheme" content="light only" />
         <link rel="alternate" type="text/plain" href="/llms.txt"></link>
         <Script
           id="gtm-script"
@@ -71,6 +73,7 @@ export default function RootLayout({
               <ThemeProvider
                 attribute="class"
                 defaultTheme="light"
+                forcedTheme="light"
                 enableSystem={false}
                 disableTransitionOnChange
               >
