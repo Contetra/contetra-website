@@ -11,7 +11,7 @@ type SlideUpTextProps = React.PropsWithChildren<{
 export function SlideUpText({ className, children, text }: SlideUpTextProps) {
   const content = typeof children === "string" || typeof children === "number" ? String(children) : text ?? ""
   return (
-    <span className={cn("slide-up-text", className)} data-text={content}>
+    <span className={cn("slide-up-text cursor-pointer", className)} data-text={content}>
       <span className="slide-up-text__inner">{content}</span>
     </span>
   )

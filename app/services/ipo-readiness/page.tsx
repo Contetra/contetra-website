@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
-import { Hero } from "@/app/services/ipo-readiness/components/Hero";
-import { PainPoints } from "@/app/services/ipo-readiness/components/PainPoints";
-import { Workstreams } from "@/app/services/ipo-readiness/components/Workstreams";
-import { ReadinessOutputs } from "@/app/services/ipo-readiness/components/ReadinessOutputs";
-import { ReadinessQuestions } from "@/app/services/ipo-readiness/components/ReadinessQuestions";
-import { AdviserFit } from "@/app/services/ipo-readiness/components/AdviserFit";
-import { PhasedProgramme } from "@/app/services/ipo-readiness/components/PhasedProgramme";
-import { FaqSection } from "@/app/services/ipo-readiness/components/FaqSection";
+
+import { Hero } from "./components/Hero";
+import { PainPoints } from "./components/PainPoints";
+import { Workstreams } from "./components/Workstreams";
+import { ReadinessOutputs } from "./components/ReadinessOutputs";
+import { ReadinessQuestions } from "./components/ReadinessQuestions";
+import { AdviserFit } from "./components/AdviserFit";
+import { PhasedProgramme } from "./components/PhasedProgramme";
+import { FaqSection } from "./components/FaqSection";
 import { ClosingCta } from "@/components/sections/ClosingCta";
-import { ipoReadinessPage } from "@/app/services/ipo-readiness/content";
+import { ipoReadinessPage } from "./content";
 import { primaryCta as bookingCta } from "@/lib/nav";
 import { LogoCarousel } from "@/components/common/logo-carousel";
 

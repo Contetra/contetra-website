@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronRight, Menu } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -25,6 +25,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { navGroups, primaryCta } from "@/lib/nav";
 import ContetraMainLogo from "@/public/assets/images/logo/contetra-main-logo.png";
 import ContetraWhiteLogo from "@/public/assets/images/logo/Contetra logo - white.png";
+import { SlideUpText } from "@/components/ui/slide-up-text";
+import { Highlighter } from "@/components/ui/highlighter";
 
 /** Links kept from cw's previous header that aren't part of cpl's nav data. */
 const extraLinks = [
@@ -51,7 +53,9 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hoveredParent, setHoveredParent] = useState<string | null>(null);
+  const [hoveredTop, setHoveredTop] = useState(0);
   const [expandedMobileParent, setExpandedMobileParent] = useState<string | null>(null);
+  const parentItemRefs = useRef<Record<string, HTMLLIElement | null>>({});
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -100,7 +104,12 @@ export function Header() {
                 return (
                   <NavigationMenuItem key={group.label}>
                     <Link href={group.href} className={cn(navigationMenuTriggerStyle(), "group/navlabel")}>
-                      <NavLabel>{group.label}</NavLabel>
+                      <NavLabel>
+                         <SlideUpText>
+
+                        {group.label}
+                         </SlideUpText>
+                        </NavLabel>
                     </Link>
                   </NavigationMenuItem>
                 );
@@ -123,7 +132,13 @@ export function Header() {
               return (
                 <NavigationMenuItem key={group.label}>
                   <NavigationMenuTrigger className="group/navlabel">
-                    <NavLabel>{group.label}</NavLabel>
+                    <NavLabel>
+                       <SlideUpText>
+
+                      {group.label}
+                       </SlideUpText>
+                      
+                      </NavLabel>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent
                     className={cn(
@@ -138,12 +153,19 @@ export function Header() {
                           {group.links.map((link) => (
                             <li
                               key={link.href}
-                              onMouseEnter={() =>
-                                setHoveredParent(link.children ? link.href : null)
-                              }
-                              onFocus={() =>
-                                setHoveredParent(link.children ? link.href : null)
-                              }
+                              ref={(el) => {
+                                parentItemRefs.current[link.href] = el;
+                              }}
+                              onMouseEnter={() => {
+                                setHoveredParent(link.children ? link.href : null);
+                                const el = parentItemRefs.current[link.href];
+                                if (el) setHoveredTop(el.offsetTop);
+                              }}
+                              onFocus={() => {
+                                setHoveredParent(link.children ? link.href : null);
+                                const el = parentItemRefs.current[link.href];
+                                if (el) setHoveredTop(el.offsetTop);
+                              }}
                             >
                               {link.children && link.children.length > 0 ? (
                                 <div className="flex items-center rounded-lg hover:bg-muted focus-within:bg-muted">
@@ -175,9 +197,10 @@ export function Header() {
 
                         <div
                           className={cn(
-                            "absolute -top-2 left-[calc(100%+0.5rem)] z-10 rounded-r-md border border-l-0 border-border bg-popover p-2 shadow",
+                            "absolute left-[calc(100%+0.5rem)] z-10 rounded-r-md border border-l-0 border-border bg-popover p-2 shadow transition-[top] duration-150 ease-out",
                             useTwoColumnPanel ? "w-[26rem] max-h-96 overflow-y-auto" : "w-60"
                           )}
+                          style={{ top: Math.max(hoveredTop - 8, -8) }}
                         >
                           {activeParent && activeParent.children ? (
                             <ul
@@ -221,7 +244,15 @@ export function Header() {
             {extraLinks.map((link) => (
               <NavigationMenuItem key={link.href}>
                 <Link href={link.href} className={cn(navigationMenuTriggerStyle(), "group/navlabel")}>
-                  <NavLabel>{link.label}</NavLabel>
+                  {link.label === "Blog" ? (
+                    <Highlighter padding={10} action="highlight" color="#FF9800">
+                      <SlideUpText>{link.label}</SlideUpText>
+                    </Highlighter>
+                  ) : (
+                    <NavLabel>
+                      <SlideUpText>{link.label}</SlideUpText>
+                    </NavLabel>
+                  )}
                 </Link>
               </NavigationMenuItem>
             ))}

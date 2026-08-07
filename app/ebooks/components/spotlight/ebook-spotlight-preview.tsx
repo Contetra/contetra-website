@@ -27,17 +27,10 @@ export const EbookSpotlightPreview = memo(function EbookSpotlightPreview({
   return (
     <div className="h-fit rounded-2xl border border-neutral-200 bg-[#F8FAFF] p-5 shadow-sm dark:border-neutral-800 dark:bg-neutral-900 sm:p-6">
       <div className="mb-4 flex items-center justify-between">
-        <Highlighter
-          iterations={2}
-          animationDuration={1500}
-          padding={12}
-          action="box"
-          color="#FF9800"
-        >
+      
           <p className="text-sm font-semibold text-neutral-600 dark:text-neutral-300">
             {activeEbookIndex + 1} / {total}
           </p>
-        </Highlighter>
       </div>
 
       <div className="grid gap-6 md:grid-cols-[minmax(240px,300px)_minmax(0,1fr)] md:items-center">

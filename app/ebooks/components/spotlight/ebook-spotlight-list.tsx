@@ -1,6 +1,6 @@
 "use client";
 
-import { Highlighter } from "@/components/ui/highlighter";
+
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { memo } from "react";
@@ -33,15 +33,8 @@ const OpenEbookIconButton = memo(function OpenEbookIconButton({
       onClick={() => onOpen(link)}
       className="cursor-pointer absolute right-2 top-2 z-20 inline-flex h-6 w-6 items-center justify-center rounded-full border border-neutral-200 bg-white/90 text-neutral-600 transition hover:text-contetra-blue dark:border-neutral-700 dark:bg-neutral-900/90 dark:text-neutral-300"
     >
-      <Highlighter
-        iterations={2}
-        animationDuration={1500}
-        padding={6}
-        action="circle"
-        color="#FF9800"
-      >
+   
         <ExternalLink className="h-3.5 w-3.5" />
-      </Highlighter>
     </button>
   );
 });

@@ -53,7 +53,7 @@ export const navGroups: NavGroup[] = [
           },
           {
             label: "ERP Functional Implementation",
-            href: "/services/digital-transformation/erp-functional-implementation",
+            href: "/erp-implementation-solutions",
           },
           // {
           //   label: "SAP S/4HANA Implementation & Migration Consulting",
@@ -115,7 +115,7 @@ export const navGroups: NavGroup[] = [
           },
           {
             label: "Offshore Accounting Services",
-            href: "/services/accounting-reporting/offshore-accounting-services",
+            href: "/offshore-accounting-services",
           },
         ],
       },
@@ -125,7 +125,7 @@ export const navGroups: NavGroup[] = [
         children: [
             {
               label: "FP&A + Business Finance Services",
-              href: "/services/management-reporting/strategic-business-financial-management-solutions",
+              href: "/strategic-business-financial-management-solutions",
             },
           {
             label: "Working Capital & Cash-Flow Advisory with AI",
@@ -167,7 +167,7 @@ export const navGroups: NavGroup[] = [
           },
           {
             label: "MCA - Struck off companies",
-            href: "/services/agentic-ai-and-process-automation/strike-that",
+            href: "/strike-that",
           },
         ],
       },

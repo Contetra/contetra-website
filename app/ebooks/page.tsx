@@ -4,7 +4,7 @@ import { EbooksSectionTwo } from "./components/ebooks-section-two";
 
 export default function Blog() {
   return (
-    <section className="w-full min-h-screen flex flex-col mt-[70px]  ">
+    <section className="w-full min-h-screen flex flex-col">
      <EbooksSectionOne />
      <EbooksSectionTwo />
     </section>

@@ -4,15 +4,15 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Offshore Accounting Services for Scalable Finance Operations | Contetra`,
-  description: `Outsource accounting with structured processes, better accuracy, and cost efficiency. Build scalable finance operations with Contetra.`,
-  keywords: `offshore accounting services, offshore accounting services India, outsourced accounting services, accounting outsourcing services, finance outsourcing services, finance and accounting outsourcing, remote accounting services, offshore bookkeeping services, accounting outsourcing India, outsource accounting to India`,
+  title: `Corporate Finance Training for Teams & Business Leaders | Contetra`,
+  description: `Upskill your teams with practical corporate finance training on accounting, ERP, and decision-making frameworks.`,
+  keywords: `finance training for employees, finance training for companies, business finance training services, corporate training programs for finance teams, professional finance training services, corporate training services India, finance training company India, corporate finance training, corporate training services, corporate finance training programs`,
   alternates: {
-    canonical: "https://contetra.com/offshore-accounting-services",
+    canonical: "https://contetra.com/corporate-training",
   },
   openGraph: {
-    title: `Offshore Accounting Services for Scalable Finance Operations`,
-    description: `Outsource accounting with structured processes, improved accuracy, and cost efficiency for growing businesses.`,
+    title: `Corporate Finance Training for Teams & Leaders in Mumbai`,
+    description: `Upskill your teams with practical finance training on accounting, ERP, and decision-making frameworks.`,
   },
 };
 
@@ -58,32 +58,32 @@ export default function LayoutServices({
       },
       {
         "@type": "WebPage",
-        "@id": "https://contetra.com/offshore-accounting-services/#webpage",
-        url: "https://contetra.com/offshore-accounting-services/",
-        name: "Offshore Accounting Services",
+        "@id": "https://contetra.com/corporate-training/#webpage",
+        url: "https://contetra.com/corporate-training/",
+        name: "Corporate Training",
         description:
-          "Contetra provides offshore accounting services to support businesses with accounting operations, reconciliations, reporting, month-end closing, and finance process execution.",
+          "Contetra provides corporate finance training programs on IFRS, Ind AS, ERP, FP&A, finance transformation, and finance for non-finance teams.",
         about: {
-          "@id": "https://contetra.com/offshore-accounting-services/#service",
+          "@id": "https://contetra.com/corporate-training/#service",
         },
       },
       {
         "@type": "Service",
-        "@id": "https://contetra.com/offshore-accounting-services/#service",
-        name: "Offshore Accounting Services",
-        url: "https://contetra.com/offshore-accounting-services/",
+        "@id": "https://contetra.com/corporate-training/#service",
+        name: "Corporate Finance Training",
+        url: "https://contetra.com/corporate-training/",
         description:
-          "Offshore accounting services helping businesses strengthen accounting operations, financial reporting, reconciliations, month-end close, and finance process execution.",
+          "Corporate finance training programs helping businesses strengthen finance knowledge across IFRS, Ind AS, ERP, FP&A, reporting, and finance transformation.",
         provider: { "@id": "https://contetra.com/#organization" },
         areaServed: {
           "@type": "Country",
           name: "India",
         },
-        serviceType: "Offshore Accounting Support",
+        serviceType: "Corporate Finance Training",
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://contetra.com/offshore-accounting-services/#breadcrumb",
+        "@id": "https://contetra.com/corporate-training/#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
@@ -94,8 +94,8 @@ export default function LayoutServices({
           {
             "@type": "ListItem",
             position: 2,
-            name: "Offshore Accounting Services",
-            item: "https://contetra.com/offshore-accounting-services/",
+            name: "Corporate Training",
+            item: "https://contetra.com/corporate-training/",
           },
         ],
       },
@@ -105,9 +105,9 @@ export default function LayoutServices({
   return (
     <section className="min-h-screen overflow-x-hidden">
       <JsonLd data={structuredData} />
- 
+      <Header />
       {children}
- 
+      <FooterMain />
     </section>
   );
 }

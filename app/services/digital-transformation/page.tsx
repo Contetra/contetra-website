@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Hero } from "@/app/services/digital-transformation/components/Hero";
 import { WhyUnderperform } from "@/app/services/digital-transformation/components/WhyUnderperform";
 import { HowWeSupport } from "@/app/services/digital-transformation/components/HowWeSupport";
@@ -11,54 +10,15 @@ import { ExploreSubPages } from "@/app/services/digital-transformation/component
 import { ClosingCta } from "@/components/sections/ClosingCta";
 import { erpImplementationService } from "@/app/services/digital-transformation/content";
 import { primaryCta as bookingCta } from "@/lib/nav";
+import { LogoCarousel } from "@/components/common/logo-carousel";
 
-const siteUrl = "https://contetra.com";
-const pagePath = "/services/erp-implementation";
-const title = "ERP Implementation & Diagnostic Review Services | Contetra";
-const description =
-  "Select, implement, rescue and optimise ERP systems with finance-led process design, independent functional consulting, PMO, data, UAT and change support.";
 
-export const metadata: Metadata = {
-  title: { absolute: title },
-  description,
-  alternates: {
-    canonical: pagePath,
-  },
-  openGraph: {
-    title,
-    description,
-    url: pagePath,
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title,
-    description,
-  },
-};
-
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "ERP Implementation and Diagnostic Review",
-  serviceType: "ERP Implementation and Diagnostic Review",
-  provider: {
-    "@type": "Organization",
-    name: "Contetra Private Limited",
-    url: siteUrl,
-  },
-  url: `${siteUrl}${pagePath}`,
-  description,
-};
 
 export default function ErpImplementationPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
       <Hero />
+      <LogoCarousel />
       <WhyUnderperform />
       <HowWeSupport />
       <DiagnosticReview />

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Hero } from "@/app/services/agentic-ai-and-process-automation/components/Hero";
 import { WhatCanChange } from "@/app/services/agentic-ai-and-process-automation/components/WhatCanChange";
 import { FunctionsWeAutomate } from "@/app/services/agentic-ai-and-process-automation/components/FunctionsWeAutomate";
@@ -11,54 +10,14 @@ import { ExploreSubPages } from "@/app/services/agentic-ai-and-process-automatio
 import { agenticAiService } from "@/app/services/agentic-ai-and-process-automation/content";
 import { primaryCta as bookingCta } from "@/lib/nav";
 import { ClosingCta } from "@/components/sections/ClosingCta";
+import { LogoCarousel } from "@/components/common/logo-carousel";
 
-const siteUrl = "https://contetra.com";
-const pagePath = "/services/agentic-ai-automation";
-const title = "Agentic AI & Workflow Automation Services | Contetra";
-const description =
-  "Design and implement governed AI agents and workflow automations across finance, reporting, sales, operations, marketing and project management.";
-
-export const metadata: Metadata = {
-  title: { absolute: title },
-  description,
-  alternates: {
-    canonical: pagePath,
-  },
-  openGraph: {
-    title,
-    description,
-    url: pagePath,
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title,
-    description,
-  },
-};
-
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Agentic AI and Business Workflow Automation",
-  serviceType: "Agentic AI and Business Workflow Automation",
-  provider: {
-    "@type": "Organization",
-    name: "Contetra Private Limited",
-    url: siteUrl,
-  },
-  url: `${siteUrl}${pagePath}`,
-  description,
-};
 
 export default function AgenticAiAutomationPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
       <Hero />
+      <LogoCarousel />
       <WhatCanChange />
       <FunctionsWeAutomate />
       <DesignPrinciples />

@@ -10,13 +10,14 @@ import { ExploreSubPages } from "@/app/services/accounting-reporting/components/
 import { ClosingCta } from "@/components/sections/ClosingCta";
 import { accountingReportingService } from "@/app/services/accounting-reporting/content";
 import { primaryCta as bookingCta } from "@/lib/nav";
+import { LogoCarousel } from "@/components/common/logo-carousel";
 
 
 export default function AccountingReportingPage() {
   return (
     <>
-
       <Hero />
+      <LogoCarousel />
       <Capabilities />
       <TechnicalAreas />
       <FromConclusionToClose />

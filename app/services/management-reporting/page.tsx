@@ -10,12 +10,14 @@ import { ExploreSubPages } from "@/app/services/management-reporting/components/
 import { ClosingCta } from "@/components/sections/ClosingCta";
 import { primaryCta as bookingCta } from "@/lib/nav";
 import { cfoFpaService } from "./content";
+import { LogoCarousel } from "@/components/common/logo-carousel";
 
 
 export default function FractionalCfoFpaPage() {
   return (
     <>
       <Hero />
+      <LogoCarousel />
       <WhenToCall />
       <WhatWeCover />
       <DecisionSystem />

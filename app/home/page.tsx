@@ -8,6 +8,7 @@ import { WhoWeWorkWith } from "./components/WhoWeWorkWith";
 import { Faq } from "@/components/sections/Faq";
 import { ClosingCta } from "@/components/sections/ClosingCta";
 import { Hero } from "./components/Hero";
+import { LogoCarousel } from "@/components/common/logo-carousel";
 
 export const metadata: Metadata = {
   title: "Finance Transformation, ERP, CFO & AI Automation | Contetra",
@@ -22,6 +23,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <LogoCarousel />
       <FourCapabilities />
       <WhereWeGetCalled />
       <Approach />
