@@ -27,7 +27,7 @@ export const navGroups: NavGroup[] = [
           },
         ],
       },
-       {
+      {
         label: "Digital Transformation",
         href: "/services/digital-transformation",
         children: [
@@ -123,17 +123,17 @@ export const navGroups: NavGroup[] = [
         label: "Management Reporting",
         href: "/services/management-reporting",
         children: [
-            {
-              label: "FP&A + Business Finance Services",
-              href: "/strategic-business-financial-management-solutions",
-            },
+          {
+            label: "FP&A + Business Finance Services",
+            href: "/strategic-business-financial-management-solutions",
+          },
           {
             label: "Working Capital & Cash-Flow Advisory with AI",
-            href: "/services/management-reporting/working-capital-cashflow-advisory-with-ai",
+            href: "/services/management-reporting/working-capital-and-cashflow-advisory-with-ai",
           },
           {
             label: "MIS Reporting & Financial Dashboards with AI",
-            href: "/services/management-reporting/mis-reporting-dashboards-with-ai",
+            href: "/services/management-reporting/mis-reporting-and-financial-dashboards-with-ai",
           },
         ],
       },
@@ -171,9 +171,6 @@ export const navGroups: NavGroup[] = [
           },
         ],
       },
-      
-    
-      
     ],
   },
   {
@@ -184,7 +181,10 @@ export const navGroups: NavGroup[] = [
       { label: "Retail & Consumer", href: "/industries/retail-consumer" },
       { label: "Logistics", href: "/industries/logistics" },
       { label: "Technology & SaaS", href: "/industries/technology-saas" },
-      { label: "Professional Services", href: "/industries/professional-services" },
+      {
+        label: "Professional Services",
+        href: "/industries/professional-services",
+      },
       { label: "Multi-entity Groups", href: "/industries/multi-entity-groups" },
     ],
   },
@@ -248,8 +248,16 @@ export interface ComingSoonRoute {
 export const comingSoonRoutes: ComingSoonRoute[] = [
   ...navGroups
     .filter((group) => group.links && group.links.length > 0)
-    .map((group) => ({ slug: group.href, label: group.label, group: "Overview" })),
+    .map((group) => ({
+      slug: group.href,
+      label: group.label,
+      group: "Overview",
+    })),
   ...navGroups.flatMap((group) =>
-    (group.links ?? []).map((link) => ({ slug: link.href, label: link.label, group: group.label }))
+    (group.links ?? []).map((link) => ({
+      slug: link.href,
+      label: link.label,
+      group: group.label,
+    })),
   ),
 ];

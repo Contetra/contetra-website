@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -9,40 +9,12 @@ import { caseStudies } from "@/lib/case-studies";
 import { primaryCta as bookingCta } from "@/lib/nav";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
-const siteUrl = "https://contetra.com";
-const pagePath = "/industries";
-const title = "Industries We Serve | Contetra";
-const description =
-  "Explore Contetra's finance, ERP, accounting and training case studies across manufacturing, retail, logistics, technology, professional services and multi-entity groups.";
 
-export const metadata: Metadata = {
-  title: { absolute: title },
-  description,
-  alternates: { canonical: pagePath },
-  openGraph: { title, description, url: pagePath, type: "website" },
-  twitter: { card: "summary_large_image", title, description },
-};
-
-const collectionJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Contetra Industries",
-  description,
-  url: `${siteUrl}${pagePath}`,
-  provider: {
-    "@type": "Organization",
-    name: "Contetra Private Limited",
-    url: siteUrl,
-  },
-};
 
 export default function IndustriesOverviewPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
-      />
+
 
       <section className="bg-white pt-5 pb-10 sm:pb-14">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">

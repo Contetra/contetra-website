@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Hero } from "@/app/services/accounting-reporting/components/Hero";
 import { Capabilities } from "@/app/services/accounting-reporting/components/Capabilities";
 import { TechnicalAreas } from "@/app/services/accounting-reporting/components/TechnicalAreas";

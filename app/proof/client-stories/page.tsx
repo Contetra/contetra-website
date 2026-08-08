@@ -1,52 +1,8 @@
-import type { Metadata } from "next";
 import { ArrowRight, Lightbulb, ThumbsUp, TriangleAlert } from "lucide-react";
 import { ClientStoryExplorer } from "@/app/proof/client-stories/components/ClientStoryExplorer";
 import { ClosingCta } from "@/components/sections/ClosingCta";
-import { clientStories } from "@/lib/client-stories";
 import { primaryCta as bookingCta } from "@/lib/nav";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-
-const siteUrl = "https://contetra.com";
-const pagePath = "/proof/client-stories";
-const title = "Client Stories | Contetra";
-const description =
-  "Real Contetra client transformations across ERP, FP&A and technical accounting - the challenge before, what we did, and the outcome delivered.";
-
-export const metadata: Metadata = {
-  title: { absolute: title },
-  description,
-  alternates: {
-    canonical: pagePath,
-  },
-  openGraph: {
-    title,
-    description,
-    url: pagePath,
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title,
-    description,
-  },
-};
-
-const collectionJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Contetra Client Stories",
-  description,
-  url: `${siteUrl}${pagePath}`,
-  provider: {
-    "@type": "Organization",
-    name: "Contetra Private Limited",
-    url: siteUrl,
-  },
-  mainEntity: {
-    "@type": "ItemList",
-    numberOfItems: clientStories.length,
-  },
-};
 
 function LegendChip({
   icon: Icon,
@@ -76,11 +32,6 @@ function LegendChip({
 export default function ClientStoriesPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
-      />
-
       <section className="bg-white pt-5 pb-6 sm:pb-8">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <ScrollReveal>
