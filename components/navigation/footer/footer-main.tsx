@@ -10,21 +10,34 @@ export function getCopyrightYear(): number {
 
 const servicesLinks = [
   {
-    label: "Technical Accounting & International GAAP Consultancy",
+    label: "Accounting & Reporting",
     href: "/services/accounting-reporting",
   },
   {
-    label: "ERP Functional Implementation",
-    href: "/services/erp-implementation",
+    label: "Digital Transformation",
+    href: "/services/digital-transformation",
   },
   {
-    label: "FP&A + Business Finance Services",
-    href: "/services/fractional-cfo-fpa",
+    label: "Management Reporting",
+    href: "/services/management-reporting",
   },
   {
-    label: "MCA - Struck off companies",
-    href: "/strike-that",
+    label: "Agentic AI and Process Automation",
+    href: "/services/agentic-ai-and-process-automation",
   },
+  {
+    label: "IPO Readiness",
+    href: "/services/ipo-readiness",
+  },
+] as const;
+
+const industriesLinks = [
+  { label: "Manufacturing", href: "/industries/manufacturing" },
+  { label: "Retail & Consumer", href: "/industries/retail-consumer" },
+  { label: "Logistics", href: "/industries/logistics" },
+  { label: "Technology & SaaS", href: "/industries/technology-saas" },
+  { label: "Professional Services", href: "/industries/professional-services" },
+  { label: "Multi-entity Groups", href: "/industries/multi-entity-groups" },
 ] as const;
 
 const companyLinks = [
@@ -78,7 +91,7 @@ export const FooterMain = () => {
   return (
     <footer className="bg-brand-blue text-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <div className="relative h-10 w-44">
               <Image
@@ -115,6 +128,7 @@ export const FooterMain = () => {
           </div>
 
           <FooterColumn heading="Services" links={servicesLinks} />
+          <FooterColumn heading="Industries" links={industriesLinks} />
           <FooterColumn heading="Company" links={companyLinks} />
           <FooterColumn heading="Further Information" links={furtherLinks} />
         </div>

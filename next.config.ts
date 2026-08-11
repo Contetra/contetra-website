@@ -87,6 +87,56 @@ const nextConfig: NextConfig = {
         destination: "/your-financial-playbook-fy-2025-26-edition",
         permanent: true,
       },
+      {
+        source: "/automation",
+        destination: "/services/agentic-ai-and-process-automation/process-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/digital-transformation/erp-diagnostic-review",
+        destination: "/services/digital-transformation/erp-diagnostic-review-and-health-check",
+        permanent: true,
+      },
+      {
+        source: "/services/accounting-reporting/financial-statement-preparation",
+        destination: "/services/accounting-reporting/financial-statement-preparation-and-accounting-support",
+        permanent: true,
+      },
+      {
+        source: "/services/accounting-reporting/gaap-conversion",
+        destination: "/services/accounting-reporting/ind-as-ifrs-and-us-gaap-conversion",
+        permanent: true,
+      },
+      {
+        source: "/services/accounting-reporting/financial-due-diligence",
+        destination: "/services/accounting-reporting/financial-due-diligence-and-quality-of-earnings",
+        permanent: true,
+      },
+      {
+        source: "/services/agentic-ai-and-process-automation/ai-agent-development",
+        destination: "/services/agentic-ai-and-process-automation/agentic-ai-and-ai-agent-development",
+        permanent: true,
+      },
+      {
+        source: "/services/agentic-ai-and-process-automation/finance-reporting-automation",
+        destination: "/services/agentic-ai-and-process-automation/finance-and-reporting-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/agentic-ai-and-process-automation/sales-marketing-automation",
+        destination: "/services/agentic-ai-and-process-automation/sales-and-marketing-workflow-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/agentic-ai-and-process-automation/operations-project-automation",
+        destination: "/services/agentic-ai-and-process-automation/operations-and-project-workflow-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/agentic-ai-and-process-automation/automation-opportunity-assessment",
+        destination: "/services/agentic-ai-and-process-automation/automation-opportunity-assessment-and-roadmap",
+        permanent: true,
+      },
       // 301: strip trailing slash (except homepage "/"). Query string is preserved.
       {
         source: "/:path+/",

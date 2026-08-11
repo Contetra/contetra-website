@@ -37,7 +37,7 @@ export const navGroups: NavGroup[] = [
           },
           {
             label: "ERP Diagnostic Review & Health Check",
-            href: "/services/digital-transformation/erp-diagnostic-review",
+            href: "/services/digital-transformation/erp-diagnostic-review-and-health-check",
           },
           {
             label: "ERP Selection & Evaluation Advisory",
@@ -95,7 +95,7 @@ export const navGroups: NavGroup[] = [
           },
           {
             label: "Financial Statement Preparation & Accounting Support",
-            href: "/services/accounting-reporting/financial-statement-preparation",
+            href: "/services/accounting-reporting/financial-statement-preparation-and-accounting-support",
           },
           {
             label: "Audit Support & Close Acceleration",
@@ -103,7 +103,7 @@ export const navGroups: NavGroup[] = [
           },
           {
             label: "Ind AS, IFRS & US GAAP Conversion",
-            href: "/services/accounting-reporting/gaap-conversion",
+            href: "/services/accounting-reporting/ind-as-ifrs-and-us-gaap-conversion",
           },
           {
             label: "Transaction Accounting Advisory",
@@ -111,7 +111,7 @@ export const navGroups: NavGroup[] = [
           },
           {
             label: "Financial Due Diligence & Quality of Earnings",
-            href: "/services/accounting-reporting/financial-due-diligence",
+            href: "/services/accounting-reporting/financial-due-diligence-and-quality-of-earnings",
           },
           {
             label: "Offshore Accounting Services",
@@ -147,23 +147,23 @@ export const navGroups: NavGroup[] = [
           },
           {
             label: "Agentic AI & AI Agent Development",
-            href: "/services/agentic-ai-and-process-automation/ai-agent-development",
+            href: "/services/agentic-ai-and-process-automation/agentic-ai-and-ai-agent-development",
           },
           {
             label: "Finance & Reporting Automation",
-            href: "/services/agentic-ai-and-process-automation/finance-reporting-automation",
+            href: "/services/agentic-ai-and-process-automation/finance-and-reporting-automation",
           },
           {
             label: "Sales & Marketing Workflow Automation",
-            href: "/services/agentic-ai-and-process-automation/sales-marketing-automation",
+            href: "/services/agentic-ai-and-process-automation/sales-and-marketing-workflow-automation",
           },
           {
             label: "Operations & Project Workflow Automation",
-            href: "/services/agentic-ai-and-process-automation/operations-project-automation",
+            href: "/services/agentic-ai-and-process-automation/operations-and-project-workflow-automation",
           },
           {
             label: "Automation Opportunity Assessment & Roadmap",
-            href: "/services/agentic-ai-and-process-automation/automation-opportunity-assessment",
+            href: "/services/agentic-ai-and-process-automation/automation-opportunity-assessment-and-roadmap",
           },
           {
             label: "MCA - Struck off companies",
@@ -212,21 +212,36 @@ export const primaryCta = {
 export const footerNav = {
   services: [
     {
-      label: "Technical Accounting & International GAAP Consultancy",
+      label: "Accounting & Reporting",
       href: "/services/accounting-reporting",
     },
     {
-      label: "ERP Functional Implementation",
-      href: "/services/erp-implementation",
+      label: "Digital Transformation",
+      href: "/services/digital-transformation",
     },
     {
-      label: "FP&A + Business Finance Services",
-      href: "/services/fractional-cfo-fpa",
+      label: "Management Reporting",
+      href: "/services/management-reporting",
     },
     {
-      label: "MCA - Struck off companies",
-      href: "/strike-that",
+      label: "Agentic AI and Process Automation",
+      href: "/services/agentic-ai-and-process-automation",
     },
+    {
+      label: "IPO Readiness",
+      href: "/services/ipo-readiness",
+    },
+  ] as NavLink[],
+  industries: [
+    { label: "Manufacturing", href: "/industries/manufacturing" },
+    { label: "Retail & Consumer", href: "/industries/retail-consumer" },
+    { label: "Logistics", href: "/industries/logistics" },
+    { label: "Technology & SaaS", href: "/industries/technology-saas" },
+    {
+      label: "Professional Services",
+      href: "/industries/professional-services",
+    },
+    { label: "Multi-entity Groups", href: "/industries/multi-entity-groups" },
   ] as NavLink[],
   company: [
     { label: "Ebooks", href: "/ebooks" },

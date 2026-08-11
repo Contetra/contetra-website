@@ -11,7 +11,6 @@ export function GET() {
       "Disallow: /proof/experts",
       `Sitemap: ${SITE_URL}/sitemap.xml`,
       `Host: ${SITE_URL}`,
-      `LLMS: ${SITE_URL}/llms.txt`,
     ].join("\n"),
     {
       headers: {
