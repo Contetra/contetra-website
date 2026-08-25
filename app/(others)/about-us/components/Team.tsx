@@ -1,10 +1,17 @@
+"use client";
+
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { aboutPage } from "../content";
 import { TeamCard } from "./TeamCard";
-import { teamMembers } from "@/data/team";
+import { TeamCardSkeleton } from "./TeamCardSkeleton";
+import { useGetTeamQuery } from "@/redux/api/commonApi";
 
+const SKELETON_COUNT = 10;
 
 export function Team() {
+  const { data, isLoading, isError } = useGetTeamQuery();
+  const teamMembers = data?.response ?? [];
+
   return (
     <section className="bg-white">
       <div className="bg-brand-blue py-16 sm:py-20">
@@ -21,13 +28,25 @@ export function Team() {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-          {teamMembers.map((member, i) => (
-            <ScrollReveal key={member.slug} delay={(i % 4) * 0.06}>
-              <TeamCard member={member} />
-            </ScrollReveal>
-          ))}
-        </div>
+        {isLoading ? (
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+            {Array.from({ length: SKELETON_COUNT }).map((_, i) => (
+              <TeamCardSkeleton key={i} />
+            ))}
+          </div>
+        ) : isError ? (
+          <p className="text-center text-sm text-muted-foreground">
+            The team is temporarily unavailable.
+          </p>
+        ) : (
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+            {teamMembers.map((member, i) => (
+              <ScrollReveal key={member.id} delay={(i % 5) * 0.06}>
+                <TeamCard member={member} />
+              </ScrollReveal>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

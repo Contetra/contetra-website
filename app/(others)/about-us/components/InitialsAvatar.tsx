@@ -10,11 +10,15 @@ interface InitialsAvatarProps {
 
 export function InitialsAvatar({ name, initials, photo, className }: InitialsAvatarProps) {
   return (
-    <Avatar role="img" aria-label={name} className={cn("size-16", className)}>
+    <Avatar
+      role="img"
+      aria-label={name}
+      className={cn("aspect-[498/562] size-auto w-full rounded-xl", className)}
+    >
       {photo ? (
-        <AvatarImage src={photo} alt="" />
+        <AvatarImage src={photo} alt="" className="aspect-auto object-cover object-top" />
       ) : (
-        <AvatarFallback className="bg-gradient-to-br from-brand-blue to-brand-green font-heading text-base font-semibold text-white">
+        <AvatarFallback className="aspect-auto rounded-xl bg-gradient-to-br from-brand-blue to-brand-green font-heading text-xl font-semibold text-white">
           {initials}
         </AvatarFallback>
       )}

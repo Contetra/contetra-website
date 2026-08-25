@@ -1,6 +1,20 @@
 import { fetchBaseQuery } from "@reduxjs/toolkit/query";
 import { createApi } from "@reduxjs/toolkit/query/react";
 
+export type TeamMember = {
+  id: string;
+  name: string;
+  department: string;
+  designation: string;
+  profile_picture_url: string | null;
+  order: number;
+};
+
+type TeamResponse = {
+  statusCode: number;
+  response: TeamMember[];
+};
+
 export const commonApi = createApi({
   reducerPath: "commonApi",
   baseQuery: fetchBaseQuery({
@@ -8,6 +22,10 @@ export const commonApi = createApi({
   }),
 
   endpoints: (builder) => ({
+    getTeam: builder.query<TeamResponse, void>({
+      query: () => "/users/team",
+    }),
+
     getForms: builder.query({
       query: (formid?: string) =>
         formid
@@ -40,4 +58,9 @@ export const commonApi = createApi({
   }),
 });
 
-export const { useGetFormsQuery, usePostContactUsMutation, usePostContactCtacMutation } = commonApi;
+export const {
+  useGetTeamQuery,
+  useGetFormsQuery,
+  usePostContactUsMutation,
+  usePostContactCtacMutation,
+} = commonApi;

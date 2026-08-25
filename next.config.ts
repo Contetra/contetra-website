@@ -41,7 +41,13 @@ const nextConfig: NextConfig = {
       {
         source: '/',
         destination: '/home',
-      }
+      },
+      {
+        source: "/api/:path*",
+        destination: `${
+          process.env.BACKEND_URL ?? "http://localhost:5555"
+        }/:path*`,
+      },
     ];
   },
 
