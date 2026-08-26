@@ -31,9 +31,11 @@ export function TeamCard({ member }: { member: TeamMember }) {
           <p className="mt-1 text-xs leading-snug text-muted-foreground">
             {member.designation}
           </p>
-          <p className="mt-1 text-xs font-medium leading-snug text-brand-green">
-            {member.department}
-          </p>
+          {member.department && (
+            <p className="mt-1 text-xs font-medium leading-snug text-brand-green">
+              {member.department}
+            </p>
+          )}
         </div>
       </CardContent>
     </Card>

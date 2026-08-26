@@ -4,7 +4,7 @@ import { createApi } from "@reduxjs/toolkit/query/react";
 export type TeamMember = {
   id: string;
   name: string;
-  department: string;
+  department: string | null;
   designation: string;
   profile_picture_url: string | null;
   order: number;
