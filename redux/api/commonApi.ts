@@ -5,7 +5,7 @@ export type TeamMember = {
   id: string;
   name: string;
   department: string | null;
-  designation: string;
+  designation: string | null;
   profile_picture_url: string | null;
   order: number;
 };
