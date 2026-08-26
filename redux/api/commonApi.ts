@@ -55,6 +55,17 @@ export const commonApi = createApi({
       }),
     }),
 
+    postErpReadinessChecklist: builder.mutation({
+      query: ({ body, captchaToken }) => ({
+        url: "/common-rest/erp-readiness-checklist",
+        method: "POST",
+        body,
+        headers: {
+          "x-captcha-token": captchaToken,
+        },
+      }),
+    }),
+
   }),
 });
 
@@ -63,4 +74,5 @@ export const {
   useGetFormsQuery,
   usePostContactUsMutation,
   usePostContactCtacMutation,
+  usePostErpReadinessChecklistMutation,
 } = commonApi;
