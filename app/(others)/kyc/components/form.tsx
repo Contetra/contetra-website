@@ -72,8 +72,11 @@ function validateFiles(files: File[], acceptTypes: string[]): true | string {
   return true;
 }
 
+const FileCtor: typeof File =
+  typeof File !== "undefined" ? File : (class {} as unknown as typeof File);
+
 const fileSchema = (acceptTypes: string[]) =>
-  z.array(z.instanceof(File)).superRefine((files, ctx) => {
+  z.array(z.instanceof(FileCtor)).superRefine((files, ctx) => {
     const result = validateFiles(files, acceptTypes);
     if (result !== true) {
       ctx.addIssue({ code: z.ZodIssueCode.custom, message: result });
