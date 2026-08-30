@@ -41,7 +41,10 @@ const industriesLinks = [
 ] as const;
 
 const companyLinks = [
-  { label: "Ebooks", href: "/ebooks" },
+  { label: "Case Studies", href: "/proof/case-studies" },
+  { label: "E-Books", href: "/ebooks" },
+  { label: "Client Stories", href: "/proof/client-stories" },
+  { label: "Experts", href: "/proof/experts" },
   { label: "Contact Us", href: "/contact-us" },
 ] as const;
 
