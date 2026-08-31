@@ -53,13 +53,13 @@ export const capabilities: IconCard[] = [
     icon: LineChart,
     title: "Fractional CFO, FP&A & Performance Management",
     body: "Build reliable plans, [cash-flow visibility](/strategic-business-financial-management-solutions), management reporting, profitability insight and decision discipline - without waiting to hire a full-time senior finance team.",
-    href: "/services/fractional-cfo-fpa",
+    href: "/services/management-reporting",
   },
   {
     icon: Boxes,
     title: "ERP Implementation, Diagnostic Review & Transformation",
     body: "Select, design, implement and improve ERP systems around real business processes, with independent functional leadership across finance, operations, data, testing and adoption.",
-    href: "/services/erp-implementation",
+    href: "/services/digital-transformation",
   },
   {
     icon: BookOpenCheck,
@@ -70,8 +70,8 @@ export const capabilities: IconCard[] = [
   {
     icon: Bot,
     title: "Agentic AI & Business Workflow Automation",
-    body: "Redesign and [automate workflows](/automation) across finance, sales, operations, marketing and project management using governed AI agents, integrations and human approval controls.",
-    href: "/services/agentic-ai-automation",
+    body: "Redesign and [automate workflows](/services/agentic-ai-and-process-automation) across finance, sales, operations, marketing and project management using governed AI agents, integrations and human approval controls.",
+    href: "/services/agentic-ai-and-process-automation",
   },
 ];
 
