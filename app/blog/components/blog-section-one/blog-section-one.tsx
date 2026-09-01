@@ -33,8 +33,8 @@ export const BlogSectionOne = () => {
           <Skeleton className=" w-[1050px] h-[280px] shadow-[0_0_10px_rgba(118,118,118,0.2)] z-1" />
         </CardContent>
       ) : (
-        <div className=" bg-white dark:bg-[#111] rounded-xl md:w-[730px] xl:w-[1050px] md:h-[200px] xl:min-h-[280px] shadow-[0_0_10px_rgba(118,118,118,0.2)] z-1 flex gap-3">
-          <div className=" xl:min-h-[280px] w-[45%] bg-white flex items-center justify-center rounded-xl relative p-2">
+        <div className=" bg-white dark:bg-[#111] rounded-xl md:w-[730px] xl:w-[1050px] md:h-[200px] xl:h-[280px] shadow-[0_0_10px_rgba(118,118,118,0.2)] z-1 flex items-center gap-3">
+          <div className=" h-full w-[45%] bg-white flex items-center justify-center rounded-xl relative p-2">
             <Link href={slugToBlogPostHref(blogData?.slug)}>
               {blogData?.feature_image_url && (
                 <Image
@@ -50,12 +50,14 @@ export const BlogSectionOne = () => {
             </Link>
           </div>
 
-          <div className=" h-full xl:min-h-[280px] w-[55%] md:p-2 xl:p-4 flex flex-col justify-center md:gap-3 xl:gap-5 ">
-            <Link href={slugToBlogPostHref(blogData?.slug)}>
-              <RainbowButton className=" w-fit menularge-cursor">
-                {blogData?.categories?.join(", ")}
-              </RainbowButton>
-            </Link>
+          <div className=" w-[55%] md:p-2 xl:p-4 flex flex-col md:gap-3 xl:gap-5 ">
+            {blogData?.categories && blogData.categories.length > 0 && (
+              <Link href={slugToBlogPostHref(blogData?.slug)}>
+                <RainbowButton className=" w-fit menularge-cursor">
+                  {blogData.categories.join(", ")}
+                </RainbowButton>
+              </Link>
+            )}
 
             <h2 className=" text-[25px] font-semibold leading-[1.2em] relative">
               <Link href={slugToBlogPostHref(blogData?.slug)}>

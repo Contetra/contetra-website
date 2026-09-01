@@ -108,12 +108,12 @@ const ReviewCard = ({ img }: { img: string }) => {
 export function LogoCarousel() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden  xl:mx-[80px] ">
-      <Marquee pauseOnHover className="[--duration:45s]">
+      <Marquee pauseOnHover className="[--duration:90s]">
         {firstRow.map((review, i) => (
           <ReviewCard key={i} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:45s]">
+      <Marquee reverse pauseOnHover className="[--duration:90s]">
         {secondRow.map((review, i) => (
           <ReviewCard key={i} {...review} />
         ))}

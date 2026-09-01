@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
-import { toast } from "sonner";
+import { RotateCcw } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -26,14 +25,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { APIError } from "@/interface/api-response.types";
-import { usePostErpReadinessChecklistMutation } from "@/redux/api/commonApi";
 import {
   CHECKLIST_CATEGORIES,
   getResultTier,
   TOTAL_CHECKLIST_ITEMS,
   TURNOVER_OPTIONS,
 } from "../content";
+import { GetGuideDialog } from "./get-guide-dialog";
 
 const FormSchema = z.object({
   company_name: z
@@ -48,18 +46,19 @@ const FormSchema = z.object({
 
 type FormValues = z.infer<typeof FormSchema>;
 
+type ChecklistResult = {
+  score: number;
+  company_name: string;
+  turnover: string;
+  checked_items: string[];
+};
+
 export function ReadinessChecklistForm() {
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>(
     {},
   );
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  const [captchaError, setCaptchaError] = useState<string | null>(null);
   const [checklistError, setChecklistError] = useState<string | null>(null);
-  const [result, setResult] = useState<{ score: number } | null>(null);
-  const turnstileRef = useRef<TurnstileInstance | null>(null);
-
-  const [trigger, { data, isError, isSuccess, error, isLoading }] =
-    usePostErpReadinessChecklistMutation();
+  const [result, setResult] = useState<ChecklistResult | null>(null);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
@@ -84,47 +83,13 @@ export function ReadinessChecklistForm() {
     }
     setChecklistError(null);
 
-    if (!captchaToken) {
-      setCaptchaError("Please verify the captcha");
-      return;
-    }
-
-    trigger({
-      body: { ...values, checked_items },
-      captchaToken,
+    setResult({
+      score: checked_items.length,
+      company_name: values.company_name,
+      turnover: values.turnover,
+      checked_items,
     });
   };
-
-  const setToken = (token: string) => {
-    setCaptchaToken(token);
-    setCaptchaError(null);
-  };
-
-  useEffect(() => {
-    if (data && isSuccess && data?.statusCode) {
-      const score: number = data?.response?.score ?? 0;
-      setResult({ score });
-      turnstileRef.current?.reset();
-      setCaptchaToken(null);
-    }
-
-    if (data && isSuccess && !data?.statusCode) {
-      toast.error(data?.response?.message || "Something went wrong");
-    }
-
-    if (isError) {
-      setCaptchaError("Captcha verification failed. Please try again.");
-      turnstileRef.current?.reset();
-      setCaptchaToken(null);
-
-      if ((error as APIError)?.data) {
-        const apiError = error as APIError;
-        const errorMessage =
-          apiError?.data?.response?.message || "Something went wrong";
-        toast.error(errorMessage);
-      }
-    }
-  }, [data, isSuccess, isError, error]);
 
   const handleStartOver = () => {
     setResult(null);
@@ -156,14 +121,24 @@ export function ReadinessChecklistForm() {
             ))}
           </ul>
           <p className="text-muted-foreground">{tier.closing}</p>
-          <Button
-            type="button"
-            variant="outline"
-            className="mt-4 w-fit"
-            onClick={handleStartOver}
-          >
-            Start Over
-          </Button>
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <GetGuideDialog
+              companyName={result.company_name}
+              turnover={result.turnover}
+              checkedItems={result.checked_items}
+              totalItems={TOTAL_CHECKLIST_ITEMS}
+            />
+            <Button
+              type="button"
+              variant="outline"
+              size="lg"
+              className="gap-2"
+              onClick={handleStartOver}
+            >
+              <RotateCcw className="size-4" />
+              Start Over
+            </Button>
+          </div>
         </CardContent>
       </Card>
     );
@@ -246,19 +221,8 @@ export function ReadinessChecklistForm() {
           />
         </div>
 
-        <div className="flex flex-col gap-2">
-          {captchaError && (
-            <p className="mt-2 text-sm text-red-500">{captchaError}</p>
-          )}
-          <Turnstile
-            ref={turnstileRef}
-            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-            onSuccess={setToken}
-          />
-        </div>
-
-        <Button type="submit" className="w-fit" disabled={isLoading}>
-          {isLoading ? "Submitting..." : "Display results"}
+        <Button type="submit" className="w-fit">
+          Display results
         </Button>
       </form>
     </Form>
