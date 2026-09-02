@@ -3,9 +3,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import type { CaseStudy } from "@/lib/case-studies";
 
 const CATEGORY_LABELS: Record<CaseStudy["category"], string> = {
-  ERP: "ERP / Digital Transformation",
-  "FP&A": "FP&A / CFO Advisory",
-  "Technical Accounting": "Technical Accounting",
+  ERP: "Digital Transformation",
+  "FP&A": "Management Reporting",
+  "Technical Accounting": "Accounting & Reporting",
   Training: "Training",
 };
 

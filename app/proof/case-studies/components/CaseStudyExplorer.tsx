@@ -17,9 +17,9 @@ import { caseStudies, type CaseStudy } from "@/lib/case-studies";
 import { useCascadingFilters } from "@/lib/useCascadingFilters";
 
 const SERVICE_LABELS: Record<CaseStudy["category"], string> = {
-  ERP: "ERP / Digital Transformation",
-  "FP&A": "FP&A / CFO Advisory",
-  "Technical Accounting": "Technical Accounting",
+  ERP: "Digital Transformation",
+  "FP&A": "Management Reporting",
+  "Technical Accounting": "Accounting & Reporting",
   Training: "Training",
 };
 

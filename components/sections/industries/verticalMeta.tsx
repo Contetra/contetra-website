@@ -16,7 +16,7 @@ export interface VerticalMeta {
 
 export const VERTICAL_META: Record<CaseStudy["category"], VerticalMeta> = {
   ERP: {
-    label: "ERP / Digital Transformation",
+    label: "Digital Transformation",
     Icon: Workflow,
     text: "text-brand-blue",
     bg: "bg-brand-blue-tint",
@@ -24,7 +24,7 @@ export const VERTICAL_META: Record<CaseStudy["category"], VerticalMeta> = {
     solid: "bg-brand-blue border-brand-blue text-white",
   },
   "FP&A": {
-    label: "FP&A / CFO Advisory",
+    label: "Management Reporting",
     Icon: LineChart,
     text: "text-brand-green",
     bg: "bg-brand-green-tint",
@@ -32,7 +32,7 @@ export const VERTICAL_META: Record<CaseStudy["category"], VerticalMeta> = {
     solid: "bg-brand-green border-brand-green text-white",
   },
   "Technical Accounting": {
-    label: "Technical Accounting",
+    label: "Accounting & Reporting",
     Icon: FileCheck2,
     text: "text-brand-teal",
     bg: "bg-brand-teal-tint",

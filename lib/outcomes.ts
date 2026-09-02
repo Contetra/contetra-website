@@ -24,7 +24,7 @@ export const selectedOutcomes: SelectedOutcome[] = [
     businessType: "professional services",
     industry: "Professional Services",
     service: "ERP",
-    serviceLabel: "ERP / Digital Transformation",
+    serviceLabel: "Digital Transformation",
     rootCause:
       "the business had no ERP foundation — finance and operations ran on disconnected spreadsheets and tools",
     intervention:
@@ -37,7 +37,7 @@ export const selectedOutcomes: SelectedOutcome[] = [
     businessType: "professional services",
     industry: "Professional Services",
     service: "ERP",
-    serviceLabel: "ERP / Digital Transformation",
+    serviceLabel: "Digital Transformation",
     rootCause:
       "as-is processes were misaligned to the ERP structure, causing workarounds and reporting gaps",
     intervention:
@@ -50,7 +50,7 @@ export const selectedOutcomes: SelectedOutcome[] = [
     businessType: "financial services / NBFC",
     industry: "Financial Services / NBFC",
     service: "ERP",
-    serviceLabel: "ERP / Digital Transformation",
+    serviceLabel: "Digital Transformation",
     rootCause:
       "finance processes were undocumented, with no blueprint to configure or optimise the ERP",
     intervention:
@@ -63,7 +63,7 @@ export const selectedOutcomes: SelectedOutcome[] = [
     businessType: "technology",
     industry: "Technology",
     service: "FP&A",
-    serviceLabel: "FP&A / CFO Advisory",
+    serviceLabel: "Management Reporting",
     rootCause:
       "leadership was flying blind on cost management and margin erosion between quarterly reviews",
     intervention:
@@ -77,7 +77,7 @@ export const selectedOutcomes: SelectedOutcome[] = [
     businessType: "manufacturing",
     industry: "Manufacturing / Industrial",
     service: "FP&A",
-    serviceLabel: "FP&A / CFO Advisory",
+    serviceLabel: "Management Reporting",
     rootCause:
       "the business lacked the internal capability to run a structured annual budget and quarterly reforecast",
     intervention:
@@ -91,7 +91,7 @@ export const selectedOutcomes: SelectedOutcome[] = [
     businessType: "food & beverages",
     industry: "Food & Beverages",
     service: "FP&A",
-    serviceLabel: "FP&A / CFO Advisory",
+    serviceLabel: "Management Reporting",
     rootCause:
       "business decisions were being made without reliable financial models or scenario analysis",
     intervention:
@@ -105,7 +105,7 @@ export const selectedOutcomes: SelectedOutcome[] = [
     businessType: "pharma / life sciences",
     industry: "Pharma / Life Sciences",
     service: "FP&A",
-    serviceLabel: "FP&A / CFO Advisory",
+    serviceLabel: "Management Reporting",
     rootCause:
       "the finance team was producing reports without a clear framework for analysis or business commentary",
     intervention: "introduced a structured reporting pack and a monthly FP&A review process",
@@ -118,7 +118,7 @@ export const selectedOutcomes: SelectedOutcome[] = [
     businessType: "manufacturing",
     industry: "Manufacturing / Industrial",
     service: "Technical Accounting",
-    serviceLabel: "Technical Accounting",
+    serviceLabel: "Accounting & Reporting",
     rootCause:
       "financial statements were being prepared manually without a controlled, review-based process",
     intervention: "took end-to-end ownership of financial statement preparation under Ind AS / IFRS",
@@ -131,7 +131,7 @@ export const selectedOutcomes: SelectedOutcome[] = [
     businessType: "technology",
     industry: "Technology",
     service: "Technical Accounting",
-    serviceLabel: "Technical Accounting",
+    serviceLabel: "Accounting & Reporting",
     rootCause: "the CFO needed an independent technical view on a material accounting policy decision",
     intervention: "conducted a standards analysis and provided a written advisory memo with a recommended treatment",
     result: "the accounting policy decision was made with full, independent professional backing",

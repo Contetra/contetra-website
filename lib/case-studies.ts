@@ -43,7 +43,7 @@ export const caseStudies: CaseStudy[] = [
   {
     "client": "ATG Business Solutions Private Limited",
     "industry": "Manufacturing / Industrial",
-    "category": "Training",
+    "category": "Technical Accounting",
     "t1": "Finance team needed structured upskilling on Ind AS and IFRS to support more complex reporting",
     "t2": "Contetra designed and delivered a bespoke training programme covering practical application of standards",
     "t3": "Equipped participants with implementation-ready knowledge they could apply immediately to their work",
@@ -73,7 +73,7 @@ export const caseStudies: CaseStudy[] = [
   {
     "client": "Alchemy Solutions",
     "industry": "Professional Services",
-    "category": "Training",
+    "category": "Technical Accounting",
     "t1": "Leadership wanted to build internal Ind AS capability rather than rely entirely on external advisors",
     "t2": "Contetra delivered focused training sessions covering key standards, judgements, and disclosure requirements",
     "t3": "Built a baseline of technical accounting knowledge within the internal finance team",
@@ -283,7 +283,7 @@ export const caseStudies: CaseStudy[] = [
   {
     "client": "Cathay Pacific Airways Limited",
     "industry": "Aviation",
-    "category": "Training",
+    "category": "Technical Accounting",
     "t1": "Finance team was attending generic training but needed content specific to their business and industry",
     "t2": "Contetra designed industry-relevant training covering the Ind AS and IFRS topics most applicable to the client",
     "t3": "Delivered targeted, practical training that resonated with the team's day-to-day accounting challenges",
@@ -543,7 +543,7 @@ export const caseStudies: CaseStudy[] = [
   {
     "client": "Finplan International Education LLP",
     "industry": "Manufacturing / Industrial",
-    "category": "Training",
+    "category": "Technical Accounting",
     "t1": "Business wanted to upskill newly promoted finance managers on CFO-level financial management topics",
     "t2": "Contetra delivered a structured programme covering FP&A, business partnering, and strategic finance",
     "t3": "Accelerated the transition of technical accountants into commercial, business-facing finance leaders",
@@ -663,7 +663,7 @@ export const caseStudies: CaseStudy[] = [
   {
     "client": "Godrej Housing Finance Limited",
     "industry": "Financial Services / NBFC",
-    "category": "Training",
+    "category": "Technical Accounting",
     "t1": "Annual compliance training had become a tick-box exercise with limited lasting impact on the team",
     "t2": "Contetra redesigned the programme around case studies and practical workshops rather than passive delivery",
     "t3": "Improved knowledge retention by making sessions interactive, scenario-based, and directly applicable",
@@ -1133,7 +1133,7 @@ export const caseStudies: CaseStudy[] = [
   {
     "client": "Paul Mason Consulting India Private Limited",
     "industry": "Professional Services",
-    "category": "Training",
+    "category": "Technical Accounting",
     "t1": "New regulatory requirements meant the team needed rapid upskilling before the next reporting deadline",
     "t2": "Contetra delivered an accelerated training programme focused on the new standard's practical requirements",
     "t3": "Prepared the team in time for the reporting deadline with no external advisory dependency needed",
@@ -1223,7 +1223,7 @@ export const caseStudies: CaseStudy[] = [
   {
     "client": "Prudent Brokers Insurance Private Limited",
     "industry": "Manufacturing / Industrial",
-    "category": "Training",
+    "category": "Technical Accounting",
     "t1": "Senior finance team wanted to explore how AI and automation tools apply to finance functions",
     "t2": "Contetra facilitated a CFO-level workshop on AI in finance - use cases, tools, and implementation risks",
     "t3": "Gave leadership a practical, grounded view of where finance automation adds real value",
