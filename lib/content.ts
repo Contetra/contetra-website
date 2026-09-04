@@ -267,22 +267,22 @@ export const erpSubPages: MotifSubPage[] = [
     whatWeHelp: [
       {
         icon: Target,
-        title: "Business case and readiness",
+        title: "ERP Business Case and Readiness Assessment",
         body: "Objectives, scope, transformation priorities, current constraints and investment case.",
       },
       {
         icon: FileText,
-        title: "Requirements and RFP",
+        title: "ERP Requirements Gathering and RFP Support",
         body: "Future-state processes, transaction-level requirements, reports, controls, integrations and data needs.",
       },
       {
         icon: ClipboardCheck,
-        title: "Evaluation and demonstrations",
+        title: "ERP Vendor Evaluation and Demonstrations",
         body: "Scenario scripts, weighted scorecards, reference checks and documented fit-gap decisions.",
       },
       {
         icon: Banknote,
-        title: "Commercial and implementation view",
+        title: "ERP Total Cost of Ownership and Implementation Planning",
         body: "TCO, licence assumptions, customisation, partner capability, delivery plan, governance and risk.",
       },
     ],
@@ -349,22 +349,22 @@ export const erpSubPages: MotifSubPage[] = [
     whatWeHelp: [
       {
         icon: Workflow,
-        title: "Process and solution design",
+        title: "ERP Process and Solution Design",
         body: "Future-state processes, BRDs, controls, reports, roles, integrations and fit-gap decisions.",
       },
       {
         icon: ClipboardList,
-        title: "Programme governance",
+        title: "ERP Programme Governance and Milestone Assurance",
         body: "Plans, RAID, scope, decisions, steering reports, partner coordination and milestone assurance.",
       },
       {
         icon: FileCheck,
-        title: "Data and testing",
+        title: "ERP Data Migration and UAT Governance",
         body: "Master data, migration, reconciliation, end-to-end UAT, defect governance and readiness criteria.",
       },
       {
         icon: Repeat,
-        title: "Change and cutover",
+        title: "ERP Change Management and Cutover Planning",
         body: "Stakeholder readiness, SOPs, role-based training, cutover plan, go-live and stabilisation.",
       },
     ],
@@ -428,22 +428,22 @@ export const erpSubPages: MotifSubPage[] = [
     whatWeHelp: [
       {
         icon: Search,
-        title: "Rapid programme assessment",
+        title: "ERP Programme Assessment and Diagnosis",
         body: "Scope, plan, decisions, risks, requirements, design and stakeholder alignment.",
       },
       {
         icon: TriangleAlert,
-        title: "Root-cause and recovery plan",
+        title: "ERP Root-Cause Analysis and Recovery Plan",
         body: "Critical issues, dependencies, re-baselining, ownership and realistic exit criteria.",
       },
       {
         icon: Wrench,
-        title: "Remediation governance",
+        title: "ERP Remediation Governance and Workstreams",
         body: "Focused workstreams for data, controls, configuration, testing, reporting and adoption.",
       },
       {
         icon: Gauge,
-        title: "Post-go-live optimisation",
+        title: "Post-Go-Live ERP Optimisation",
         body: "Workarounds, performance, close, reports, user support, benefits and backlog prioritisation.",
       },
     ],
@@ -1044,22 +1044,22 @@ export const accountingSubPages: MotifSubPage[] = [
     whatWeHelp: [
       {
         icon: CalendarClock,
-        title: "Close and trial-balance support",
+        title: "Month-End Close and Trial Balance Support",
         body: "Close calendar, account review, reconciliations, accruals, provisions, cut-off and issue resolution.",
       },
       {
         icon: FileText,
-        title: "Financial statements and notes",
+        title: "Financial Statements, Notes and Disclosures",
         body: "Primary statements, cash flow, accounting policies, notes, comparatives and disclosure checklists.",
       },
       {
         icon: FileSpreadsheet,
-        title: "Schedules and reporting packs",
+        title: "Reporting Schedules and Audit-Ready Packs",
         body: "Lead schedules, roll-forwards, consolidation packs, management support and audit-ready evidence.",
       },
       {
         icon: Repeat,
-        title: "Recurring accounting support",
+        title: "Recurring Accounting and Offshore Support",
         body: "Specialist or offshore support for defined close, reporting and accounting activities under agreed controls.",
       },
     ],
@@ -1113,22 +1113,22 @@ export const accountingSubPages: MotifSubPage[] = [
     whatWeHelp: [
       {
         icon: CalendarClock,
-        title: "Close governance",
+        title: "Close Calendar and Governance",
         body: "Calendar, dependencies, account ownership, review controls, issue escalation and completion tracking.",
       },
       {
         icon: ClipboardList,
-        title: "PBC and audit coordination",
+        title: "PBC List and Audit Coordination",
         body: "Request lists, evidence standards, schedules, status, responses and open-item governance.",
       },
       {
         icon: FileCheck,
-        title: "Accounting and reconciliation support",
+        title: "Technical Accounting and Reconciliation Support",
         body: "Technical issues, lead schedules, account reconciliations, roll-forwards and documentation.",
       },
       {
         icon: RefreshCcw,
-        title: "Recurring remediation",
+        title: "Recurring Close and Audit Remediation",
         body: "Root-cause analysis, SOPs, controls, system improvements, training and future-period readiness.",
       },
     ],

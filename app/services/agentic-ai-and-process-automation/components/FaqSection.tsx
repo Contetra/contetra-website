@@ -6,7 +6,7 @@ export function FaqSection() {
     <section className="bg-brand-offwhite py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <FaqAccordion
-          heading="Frequently Asked Questions"
+          heading="Agentic AI and Process Automation FAQs"
           items={agenticAiService.faqs}
           openFirstByDefault
         />

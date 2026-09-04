@@ -25,7 +25,7 @@ export default function TransactionAccountingAdvisoryPage() {
         heading={page.closingCta.heading}
         body={page.closingCta.body}
         primaryCta={{ label: page.closingCta.primaryCta, href: bookingCta.href }}
-        secondaryCta={{ label: page.closingCta.secondaryCta, href: page.secondaryCtaHref }}
+        secondaryCta={{ label: page.closingCta.secondaryCta, href: "/services/accounting-reporting/financial-due-diligence-and-quality-of-earnings" }}
         form={page.closingCta.form}
       />
     </>

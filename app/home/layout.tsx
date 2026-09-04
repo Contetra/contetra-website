@@ -4,8 +4,8 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Finance Transformation Consulting | ERP, CFO & AI Automation | Contetra`,
-  description: `Looking for a finance business consultant? Contetra helps businesses improve finance transformation, ERP performance, reporting, controls and AI automation.`,
+  title: `CFO Advisory & Finance Transformation Consulting | Contetra`,
+  description: `Finance transformation consulting for growing, global businesses with CFO advisory, FP&A, ERP implementation, accounting advisory and AI automation.`,
   keywords: `Business management consultant in mumbai, finance business consultant, finance consulting services, finance advisory services, business financial management solutions`,
   alternates: {
     canonical: "https://contetra.com",

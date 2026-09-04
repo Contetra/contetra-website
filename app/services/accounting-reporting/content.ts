@@ -53,12 +53,12 @@ export const accountingReportingService = {
   capabilities: [
     {
       icon: ScrollText,
-      title: "Technical accounting advisory",
+      title: "Technical Accounting Advisory Services",
       body: "Research and position papers for complex or judgemental matters across revenue, leases, financial instruments, business combinations, consolidation, share-based payments and other standards.",
     },
     {
       icon: FileSpreadsheet,
-      title: "Financial statements and accounting support",
+      title: "Financial Statement Preparation and Accounting Support",
       body: "Period-end close support, trial-balance review, reconciliations, schedules, financial statements, notes, group reporting packs and accounting-policy documentation.",
     },
     {
@@ -68,17 +68,17 @@ export const accountingReportingService = {
     },
     {
       icon: ArrowLeftRight,
-      title: "GAAP conversion and reporting change",
+      title: " Ind AS, IFRS and US GAAP Conversion Services",
       body: "Impact assessment, accounting adjustments, opening balance sheet, policy elections, disclosures, comparative information and implementation support for Ind AS, IFRS and US GAAP conversions.",
     },
     {
       icon: Building2,
-      title: "Transaction accounting advisory",
+      title: "Transaction Accounting Advisory",
       body: "Accounting for acquisitions, disposals, restructurings, carve-outs, purchase price allocation, post-deal integration and complex capital or financing transactions.",
     },
     {
       icon: Search,
-      title: "Due diligence and IPO readiness",
+      title: "Financial Due Diligence and IPO Readiness",
       body: "Quality of earnings, working capital and net debt analysis, accounting red flags, public-company financial reporting readiness, controls, close, systems and finance-function preparation.",
     },
   ] as IconCard[],

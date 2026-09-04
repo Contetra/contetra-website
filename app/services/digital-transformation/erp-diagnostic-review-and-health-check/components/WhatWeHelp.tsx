@@ -5,7 +5,7 @@ export function WhatWeHelp({ items }: { items: IconCard[] }) {
   return (
     <section className="bg-brand-offwhite py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <IconCardGrid heading="What we help you do" items={items} tint="green" />
+        <IconCardGrid heading="What Our ERP Diagnostic Review Covers" items={items} tint="green" />
       </div>
     </section>
   );

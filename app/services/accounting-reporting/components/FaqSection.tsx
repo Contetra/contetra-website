@@ -6,7 +6,7 @@ export function FaqSection() {
     <section className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <FaqAccordion
-          heading="Frequently Asked Questions"
+          heading="Accounting and Reporting Advisory FAQs"
           items={accountingReportingService.faqs}
           openFirstByDefault
         />

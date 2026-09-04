@@ -7,7 +7,7 @@ export function WhyContetraAccounting() {
     <section className="bg-brand-offwhite py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <IconCardGrid
-          heading="Why finance teams engage Contetra"
+          heading="Why CFOs Choose Contetra for Accounting and Reporting Advisory"
           items={accountingReportingService.whyContetra}
           tint="green"
         />

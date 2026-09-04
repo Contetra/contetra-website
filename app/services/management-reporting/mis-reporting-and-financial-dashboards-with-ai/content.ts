@@ -24,22 +24,22 @@ export const misReportingDashboardsPage: SubPageContent = {
   whatWeHelp: [
     {
       icon: ClipboardList,
-      title: "Management and board packs",
+      title: "Management Reporting and Board Pack Preparation",
       body: "Executive summary, P&L and cash view, KPI trends, variances, risks, actions and forward-looking indicators.",
     },
     {
       icon: LayoutDashboard,
-      title: "Profitability dashboards",
+      title: "Profitability Dashboards by Product, Customer and Segment",
       body: "Product, customer, project, branch, channel, geography and segment reporting aligned to management accountability.",
     },
     {
       icon: Banknote,
-      title: "Working-capital dashboards",
+      title: "Working Capital Dashboards and Cash Conversion Tracking",
       body: "Receivables, ageing, collections, inventory, payables, cash conversion and action tracking.",
     },
     {
       icon: Bot,
-      title: "Reporting automation",
+      title: "MIS Reporting Automation and Data Preparation",
       body: "Data preparation, reconciliations, recurring report production, distribution and commentary workflows using appropriate BI and automation tools.",
     },
   ],

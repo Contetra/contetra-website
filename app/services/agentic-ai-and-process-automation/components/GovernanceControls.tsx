@@ -7,7 +7,7 @@ export function GovernanceControls() {
     <section className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <CheckList
-          heading="Governance controls we build in"
+          heading="AI Governance and Control Framework"
           items={agenticAiService.governanceControls}
         />
       </div>

@@ -46,7 +46,7 @@ export const capabilitiesHeading =
   "Four Capabilities That Support Business Transformation";
 
 export const capabilitiesIntro =
-  "Most transformation problems do not sit neatly inside one function. Weak reporting may be caused by poor processes. Poor processes may be embedded in the ERP. Manual work may persist because controls and data were never redesigned. Contetra connects these issues instead of treating them as separate projects.";
+  "Most finance transformation consulting problems do not sit neatly inside one function. Weak reporting may be caused by poor processes. Poor processes may be embedded in the ERP. Manual work may persist because controls and data were never redesigned. Contetra connects these issues instead of treating them as separate projects.";
 
 export const capabilities: IconCard[] = [
   {

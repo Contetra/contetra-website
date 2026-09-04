@@ -7,7 +7,7 @@ export function WhatCanChange() {
     <section className="bg-brand-offwhite py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <IconCardGrid
-          heading="What agentic automation can change"
+          heading="What Agentic AI Automation Changes"
           items={agenticAiService.whatCanChange}
           tint="green"
         />

@@ -3,9 +3,12 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: `ERP Project Rescue & Post-Go-Live Optimisation | Contetra`,
   description: `Recover delayed or underperforming ERP projects with Contetra’s ERP rescue and post-go-live optimisation services for stronger adoption and business outcomes.`,
+   alternates: {
+    canonical: "https://contetra.com/services/digital-transformation/erp-project-rescue-and-post-go-live-optimisation",
+  },
   openGraph: {
     title: `ERP Project Rescue & Post-Go-Live Optimisation | Contetra`,
-    description: `Recover delayed or underperforming ERP projects with Contetra’s ERP rescue and post-go-live optimisation services for stronger adoption and business outcomes.`,
+    description: `Recover delayed or underperforming ERP projects with Contetra's ERP rescue and post-go-live optimisation services for stronger adoption and business outcomes`,
   },
 };
 
