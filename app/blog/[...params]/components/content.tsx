@@ -22,7 +22,7 @@ interface ContentProps {
 export const Content = ({ blogData }: ContentProps) => {
   return (
     <div className=" w-full xl:w-[75%] 2xl:w-[80%] min-h-screen my-[100px]">
-      <h1 className="leading-[1.2em] text-[20px] md:text-3xl font-bold text-center mb-[40px]">
+      <h1 className="leading-[1.2em] text-[20px] md:text-3xl font-bold text-center mb-[40px] capitalize">
         {blogData.title}
       </h1>
 
