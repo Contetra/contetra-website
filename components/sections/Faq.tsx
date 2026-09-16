@@ -48,7 +48,7 @@ export function FaqAccordion({ heading, items, openFirstByDefault }: FaqAccordio
 
 export function Faq() {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-[#f7f8fb] py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <FaqAccordion heading="Homepage FAQs" items={faqs} openFirstByDefault />
       </div>

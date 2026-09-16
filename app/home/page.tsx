@@ -9,6 +9,7 @@ import { Faq } from "@/components/sections/Faq";
 import { ClosingCta } from "@/components/sections/ClosingCta";
 import { Hero } from "./components/Hero";
 import { LogoCarousel } from "@/components/common/logo-carousel";
+import { BlogCarousel } from "@/components/sections/BlogCarousel";
 
 export const metadata: Metadata = {
   title: "Finance Transformation, ERP, CFO & AI Automation | Contetra",
@@ -30,6 +31,7 @@ export default function Home() {
       <WhyContetra />
       <Outcomes />
       <WhoWeWorkWith />
+      <BlogCarousel />
       <Faq />
       <ClosingCta />
     </>

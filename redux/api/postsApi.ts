@@ -53,6 +53,26 @@ export const postsApi = createApi({
     getLatestBlog: builder.query({
       query: () => `/posts/latest-blog`,
     }),
+
+    getHomepageBlogs: builder.query({
+      query: (params: {
+        limit?: number;
+        categories?: string[];
+        sortOrder?: "asc" | "desc";
+      }) => {
+        const searchParams = new URLSearchParams();
+
+        if (params?.limit) searchParams.append("limit", String(params.limit));
+        if (params?.sortOrder)
+          searchParams.append("sortOrder", params.sortOrder);
+
+        params?.categories?.forEach((categoryId) =>
+          searchParams.append("categories", categoryId),
+        );
+
+        return `/common-rest/homepage-blogs?${searchParams.toString()}`;
+      },
+    }),
   }),
 });
 
@@ -63,5 +83,6 @@ export const {
   useLazyGetPostsListQuery,
   useLazyGetBlogContentQuery,
   useGetLatestBlogQuery,
-  useLazyGetBlogDataQuery
+  useLazyGetBlogDataQuery,
+  useGetHomepageBlogsQuery,
 } = postsApi;
