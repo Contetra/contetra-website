@@ -49,7 +49,7 @@ export function Approach() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <h2 className="font-heading text-3xl font-semibold text-brand-blue sm:text-4xl">
-            Our approach: diagnose, design, implement and sustain
+            Our Finance Transformation Consulting Approach
           </h2>
         </ScrollReveal>
 

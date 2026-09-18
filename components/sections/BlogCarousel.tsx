@@ -47,7 +47,11 @@ interface BlogCarouselProps {
 // Aligns the sidebar text with every other homepage section's left gutter
 // (max-w-7xl + lg:px-8) while letting the card row bleed to the true right
 // edge of the viewport, so the last card can peek/cut off like the reference.
-const SIDEBAR_LEFT_INSET = "lg:pl-[max(2rem,calc((100vw-1280px)/2+2rem))]";
+// Capped at 6rem: the sidebar itself is a fixed lg:w-[400px] box, so past
+// ~1408px viewport width an uncapped inset would exceed the box's own width
+// and collapse the text column to zero/negative space.
+const SIDEBAR_LEFT_INSET =
+  "lg:pl-[clamp(2rem,calc((100vw-1280px)/2+2rem),6rem)]";
 
 export function BlogCarousel({
   category,

@@ -7,7 +7,7 @@ export function WhereWeGetCalled() {
     <section className="bg-brand-offwhite pt-16 pb-20 sm:pt-[5.6rem] sm:pb-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <IconCardGrid
-          heading="Where a Finance Business Consultant Can Help"
+          heading="Where a Finance Transformation Consultant Helps CFOs Most"
           intro={whereWeGetCalledIntro}
           items={callTriggers}
           tint="blue"
