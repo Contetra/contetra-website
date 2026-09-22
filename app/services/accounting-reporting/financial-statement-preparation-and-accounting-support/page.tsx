@@ -5,6 +5,7 @@ import { Hero } from "./components/Hero";
 import { WhatWeHelp } from "./components/WhatWeHelp";
 import { HowWeWork } from "./components/HowWeWork";
 import { LogoCarousel } from "@/components/common/logo-carousel";
+import { FaqSection } from "./components/FaqSection";
 
 const SLUG = "financial-statement-preparation";
 
@@ -21,6 +22,7 @@ export default function FinancialStatementPreparationPage() {
       <LogoCarousel />
       <WhatWeHelp items={page.whatWeHelp} />
       <HowWeWork steps={page.howWeWork} />
+      <FaqSection />
       <ClosingCta
         heading={page.closingCta.heading}
         body={page.closingCta.body}

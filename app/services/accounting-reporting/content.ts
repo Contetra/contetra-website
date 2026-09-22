@@ -1,4 +1,4 @@
-import type { IconCard, EngagementStep, FaqItem } from "@/lib/content";
+import type { IconCard, EngagementStep } from "@/lib/content";
 import {
   ArrowLeftRight,
   ArrowRightLeft,
@@ -188,34 +188,6 @@ export const accountingReportingService = {
       body: "We can work alongside internal finance teams to complete the analysis, data, schedules and financial reporting - not merely advise from a distance.",
     },
   ] as IconCard[],
-
-  faqs: [
-    {
-      question: "What is technical accounting advisory?",
-      answer:
-        "Technical accounting advisory helps organisations interpret and apply accounting standards to complex transactions or reporting matters, document the conclusion and implement the resulting entries, calculations and disclosures.",
-    },
-    {
-      question: "Can you prepare complete financial statements?",
-      answer:
-        "Yes. Depending on the engagement, support can include trial-balance review, reconciliations, schedules, primary statements, notes, accounting policies, cash-flow statements, group reporting packs and audit-ready supporting documentation.",
-    },
-    {
-      question: "Do you support IFRS and US GAAP conversions?",
-      answer:
-        "Yes. Conversion work can include impact assessment, accounting-policy choices, opening adjustments, comparatives, disclosures, process changes, data requirements, controls and audit coordination.",
-    },
-    {
-      question: "How do you work with statutory auditors?",
-      answer:
-        "Management remains responsible for the financial statements and accounting judgements. Contetra helps prepare robust analysis, workings, schedules and evidence, responds to technical questions and coordinates open items to support an efficient audit.",
-    },
-    {
-      question: "Can you support acquisitions or investment transactions?",
-      answer:
-        "Yes. Services may include financial due diligence, quality of earnings, working capital and net debt analysis, transaction accounting, purchase price allocation coordination, opening balance-sheet work and post-deal reporting integration.",
-    },
-  ] as FaqItem[],
 
   closingCta: {
     heading:

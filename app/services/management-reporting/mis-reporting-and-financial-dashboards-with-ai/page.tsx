@@ -5,6 +5,7 @@ import { WhatWeHelp } from "./components/WhatWeHelp";
 import { HowWeWork } from "./components/HowWeWork";
 import { LogoCarousel } from "@/components/common/logo-carousel";
 import { misReportingDashboardsPage } from "./content";
+import { FaqSection } from "./components/FaqSection";
 
 export default function MisReportingDashboardsPage() {
   return (
@@ -17,6 +18,7 @@ export default function MisReportingDashboardsPage() {
       <LogoCarousel />
       <WhatWeHelp items={misReportingDashboardsPage.whatWeHelp} />
       <HowWeWork steps={misReportingDashboardsPage.howWeWork} />
+      <FaqSection />
       <ClosingCta
         heading={misReportingDashboardsPage.closingCta.heading}
         body={misReportingDashboardsPage.closingCta.body}

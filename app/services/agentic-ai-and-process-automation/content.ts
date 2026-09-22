@@ -1,5 +1,5 @@
 import { Button, buttonVariants } from "@/components/ui/button";
-import type { IconCard, EngagementStep, PlatformItem, FaqItem } from "@/lib/content";
+import type { IconCard, EngagementStep, PlatformItem } from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { Activity, Banknote, BookOpenCheck, Bot, Braces, ClipboardList, Cloud, Cpu, Database, FileClock, FlaskConical, FolderOpen, Gauge, GitBranch, Handshake, KeyRound, Layers, LifeBuoy, ListFilter, Map, Megaphone, PenTool, Plug, RefreshCcw, Search, Truck, UserCheck, Workflow } from "lucide-react";
 import { createElement } from "react";
@@ -179,34 +179,6 @@ export const agenticAiService = {
     "Monitoring for workflow errors, model drift, data changes and unusual activity.",
     "Defined ownership for incidents, changes and periodic review.",
   ],
-
-  faqs: [
-    {
-      question: "What is agentic AI automation?",
-      answer:
-        "Agentic AI automation uses AI agents that can interpret information, use approved tools, coordinate multiple steps and take defined actions within a workflow. It differs from a simple chatbot because it is designed to execute parts of a business process under controls.",
-    },
-    {
-      question: "How is this different from RPA?",
-      answer:
-        "RPA is effective for deterministic, rules-based interaction with systems. Agentic AI can handle less structured inputs, reasoning, drafting and dynamic workflow decisions. Many enterprise solutions combine RPA, workflow orchestration, APIs and AI rather than choosing only one approach.",
-    },
-    {
-      question: "Which process should we automate first?",
-      answer:
-        "Start with a process that is frequent, measurable, sufficiently standardised and constrained by manual effort or delays. Avoid beginning with the most politically or technically complex enterprise process merely because it appears strategically important.",
-    },
-    {
-      question: "Can AI agents update our ERP or CRM?",
-      answer:
-        "They can where secure integration, permissions, validation and approval controls are designed appropriately. Material postings or customer-facing actions may require human approval depending on risk.",
-    },
-    {
-      question: "How do you manage data privacy and accuracy?",
-      answer:
-        "The architecture should define approved data sources, access restrictions, deployment environment, retention, validation, monitoring and escalation. The exact controls depend on the data sensitivity and actions the agent is authorised to perform.",
-    },
-  ] as FaqItem[],
 
   closingCta: {
     heading: "Turn recurring work into a governed, measurable workflow",

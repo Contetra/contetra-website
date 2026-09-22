@@ -21,202 +21,252 @@ export default function HomeLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const structuredData = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "@id": "https://contetra.com#organization",
-      name: "Contetra Private Limited",
-      legalName: "Contetra Private Limited",
-      alternateName: "Contetra",
-      url: "https://contetra.com",
-      logo: {
-        "@type": "ImageObject",
-        "@id": "https://contetra.com#logo",
-        url: "https://contetra.com/assets/images/logo/contetra-main-logo.png",
-        contentUrl:
-          "https://contetra.com/assets/images/logo/contetra-main-logo.png",
-        caption: "Contetra Private Limited",
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://contetra.com#organization",
+        name: "Contetra Private Limited",
+        alternateName: "Contetra",
+        url: "https://contetra.com",
+        logo: {
+          "@type": "ImageObject",
+          "@id": "https://contetra.com#logo",
+          url: "https://contetra.com/assets/images/logo/contetra-main-logo.png",
+        },
+        image: {
+          "@id": "https://contetra.com#logo",
+        },
+        description:
+          "Contetra Private Limited is a finance transformation consulting firm offering ERP implementation consulting, Virtual CFO, Fractional CFO, FP&A, technical accounting advisory, IPO readiness, offshore accounting and AI-enabled automation services.",
+        email: "growth@contetra.com",
+        telephone: "+91 98338 18857",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Mumbai",
+          addressRegion: "Maharashtra",
+          addressCountry: "IN",
+        },
+        areaServed: [
+          {
+            "@type": "Country",
+            name: "India",
+          },
+          {
+            "@type": "City",
+            name: "Mumbai",
+          },
+        ],
+        sameAs: ["https://www.linkedin.com/company/contetra-private-limited"],
       },
-      description:
-        "Contetra Private Limited is a finance transformation consulting firm offering CFO advisory, ERP implementation, FP&A, technical accounting, automation, IPO readiness, and offshore accounting services.",
-      email: "growth@contetra.com",
-      telephone: "+91 98338 18857",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Mumbai",
-        addressRegion: "Maharashtra",
-        addressCountry: "IN",
+      {
+        "@type": "WebSite",
+        "@id": "https://contetra.com#website",
+        url: "https://contetra.com",
+        name: "Contetra",
+        publisher: {
+          "@id": "https://contetra.com#organization",
+        },
+        inLanguage: "en-IN",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: "https://contetra.com/?s={search_term_string}",
+          "query-input": "required name=search_term_string",
+        },
       },
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "Business Enquiries",
+      {
+        "@type": "WebPage",
+        "@id": "https://contetra.com#webpage",
+        url: "https://contetra.com",
+        name: "Finance Transformation, ERP, CFO & AI Automation | Contetra",
+        description:
+          "Improve planning, reporting, controls, ERP performance and business workflows with Contetra’s CFO, accounting, ERP and AI automation specialists.",
+        isPartOf: {
+          "@id": "https://contetra.com#website",
+        },
+        about: {
+          "@id": "https://contetra.com#organization",
+        },
+        publisher: {
+          "@id": "https://contetra.com#organization",
+        },
+        inLanguage: "en-IN",
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://contetra.com#professionalservice",
+        name: "Contetra Private Limited",
+        url: "https://contetra.com",
+        image: {
+          "@id": "https://contetra.com#logo",
+        },
+        description:
+          "Contetra provides finance transformation consulting, ERP implementation consulting, Virtual CFO services, FP&A, technical accounting advisory, IPO readiness, offshore accounting and AI-enabled automation services for growing businesses.",
+        provider: {
+          "@id": "https://contetra.com#organization",
+        },
         telephone: "+91 98338 18857",
         email: "growth@contetra.com",
-        areaServed: "IN",
-        availableLanguage: ["English", "Hindi"],
-      },
-      sameAs: ["https://www.linkedin.com/company/contetra-private-limited/"],
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://contetra.com#website",
-      url: "https://contetra.com",
-      name: "Contetra",
-      publisher: {
-        "@id": "https://contetra.com#organization",
-      },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "@id": "https://contetra.com#webpage",
-      url: "https://contetra.com",
-      name: "Finance Transformation Consulting, ERP, CFO & AI Automation | Contetra",
-      description:
-        "Improve planning, reporting, ERP performance and business workflows with Contetra, a finance business consultant specialising in CFO advisory, accounting and AI automation.",
-      isPartOf: {
-        "@id": "https://contetra.com#website",
-      },
-      about: {
-        "@id": "https://contetra.com#professionalservice",
-      },
-      breadcrumb: {
-        "@id": "https://contetra.com#breadcrumb",
-      },
-      publisher: {
-        "@id": "https://contetra.com#organization",
-      },
-      inLanguage: "en-IN",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "@id": "https://contetra.com#professionalservice",
-      name: "Contetra Private Limited",
-      url: "https://contetra.com",
-      image: {
-        "@id": "https://contetra.com#logo",
-      },
-      description:
-        "Contetra is a finance transformation consulting firm offering ERP implementation, Virtual CFO, FP&A, technical accounting, finance automation, IPO readiness, and offshore accounting services.",
-      telephone: "+91 98338 18857",
-      email: "growth@contetra.com",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Mumbai",
-        addressRegion: "Maharashtra",
-        addressCountry: "IN",
-      },
-      areaServed: {
-        "@type": "Country",
-        name: "India",
-      },
-      parentOrganization: {
-        "@id": "https://contetra.com#organization",
-      },
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Contetra Finance Transformation Services",
-        itemListElement: [
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Mumbai",
+          addressRegion: "Maharashtra",
+          addressCountry: "IN",
+        },
+        areaServed: [
           {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              "@id":
-                "https://contetra.com/strategic-business-financial-management-solutions#service",
-              name: "Fractional CFO, FP&A and Performance Management",
-              serviceType:
-                "Virtual CFO, Fractional CFO and Financial Planning and Analysis",
-              url: "https://contetra.com/strategic-business-financial-management-solutions",
-              description:
-                "Strategic finance support covering budgeting, forecasting, cash flow planning, MIS reporting, profitability analysis, working capital and performance management.",
+            "@type": "Country",
+            name: "India",
+          },
+          {
+            "@type": "City",
+            name: "Mumbai",
+          },
+        ],
+        priceRange: "$$",
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          "@id": "https://contetra.com#offercatalog",
+          name: "Contetra Services",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                "@id": "https://contetra.com/erp-implementation-solutions#service",
+                name: "ERP Implementation Consulting Services",
+                url: "https://contetra.com/erp-implementation-solutions",
+                description:
+                  "ERP implementation consulting services covering ERP selection, BRD preparation, process design, implementation governance, UAT, change management, ERP diagnostic review and post-go-live optimisation.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                "@id": "https://contetra.com/strategic-business-financial-management-solutions#service",
+                name: "Virtual CFO and FP&A Services",
+                url: "https://contetra.com/strategic-business-financial-management-solutions",
+                description:
+                  "Virtual CFO, Fractional CFO and FP&A services for cash-flow planning, budgeting, forecasting, MIS reporting, profitability analysis, working capital management and strategic financial decision-making.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                "@id": "https://contetra.com/technical-accounting-international-gaap-advisory-services#service",
+                name: "Technical Accounting Advisory Services",
+                url: "https://contetra.com/technical-accounting-international-gaap-advisory-services",
+                description:
+                  "Technical accounting advisory services covering Ind AS, IFRS, US GAAP, accounting memos, financial statements preparation, audit support, revenue recognition, leases, ESOPs and complex accounting matters.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                "@id": "https://contetra.com/ipo-readiness#service",
+                name: "IPO Readiness Services",
+                url: "https://contetra.com/ipo-readiness",
+                description:
+                  "IPO readiness support covering finance readiness assessment, reporting discipline, governance, financial close, controls, restated financials, audit readiness and management information preparation.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                "@id": "https://contetra.com/automation#service",
+                name: "Finance Process Automation Services",
+                url: "https://contetra.com/automation",
+                description:
+                  "Finance process automation services for workflows, approvals, reconciliations, reporting, dashboards, follow-ups, data movement and recurring finance activities.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                "@id": "https://contetra.com/offshore-accounting-services#service",
+                name: "Offshore Accounting Services",
+                url: "https://contetra.com/offshore-accounting-services",
+                description:
+                  "Offshore accounting services for recurring accounting, bookkeeping, reconciliations, reporting support, finance operations and accounting process execution.",
+              },
+            },
+          ],
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://contetra.com#faq",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What services does Contetra provide?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Contetra provides finance transformation consulting, ERP implementation consulting, Virtual CFO and FP&A services, technical accounting advisory, IPO readiness, offshore accounting and finance process automation services.",
             },
           },
           {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              "@id":
-                "https://contetra.com/erp-implementation-solutions#service",
-              name: "ERP Implementation, Diagnostic Review and Transformation",
-              serviceType: "ERP Implementation and Functional Consulting",
-              url: "https://contetra.com/erp-implementation-solutions",
-              description:
-                "ERP selection, business process mapping, functional consulting, implementation governance, diagnostic review, UAT, user adoption and post-go-live optimisation.",
+            "@type": "Question",
+            name: "Who does Contetra work with?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Contetra works with business owners, founders, CFOs, finance leaders, promoters and management teams of growing businesses that need stronger finance, reporting, ERP, controls and decision-making systems.",
             },
           },
           {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              "@id":
-                "https://contetra.com/technical-accounting-international-gaap-advisory-services#service",
-              name: "Accounting and Reporting Consulting",
-              serviceType:
-                "Technical Accounting, Ind AS, IFRS and US GAAP Advisory",
-              url: "https://contetra.com/technical-accounting-international-gaap-advisory-services",
-              description:
-                "Technical accounting, financial statement preparation, reporting advisory, audit support, revenue recognition, consolidation and complex accounting guidance.",
+            "@type": "Question",
+            name: "Does Contetra provide ERP implementation consulting services?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Contetra provides ERP implementation consulting services including ERP selection, process mapping, BRD preparation, implementation governance, UAT support, change management, ERP diagnostic review and post-go-live optimisation.",
             },
           },
           {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              "@id": "https://contetra.com/automation#service",
-              name: "Agentic AI and Business Workflow Automation",
-              serviceType: "AI Automation and Business Process Automation",
-              url: "https://contetra.com/automation",
-              description:
-                "AI-enabled automation for reporting, reconciliations, approvals, dashboards, data consolidation and repetitive finance and operational workflows.",
+            "@type": "Question",
+            name: "Does Contetra provide Virtual CFO and FP&A services?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Contetra provides Virtual CFO, Fractional CFO and FP&A services covering cash-flow planning, budgeting, forecasting, MIS reporting, working capital management, profitability analysis and financial decision support.",
             },
           },
           {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              "@id": "https://contetra.com/ipo-readiness#service",
-              name: "IPO Readiness Services",
-              serviceType:
-                "IPO Readiness and Pre-IPO Finance Transformation",
-              url: "https://contetra.com/ipo-readiness",
-              description:
-                "IPO readiness support covering financial reporting, audit preparedness, internal controls, MIS improvement, technical accounting and pre-IPO finance transformation.",
+            "@type": "Question",
+            name: "Does Contetra support technical accounting and financial reporting?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Contetra supports technical accounting advisory, Ind AS, IFRS, US GAAP, financial statements preparation, accounting memos, audit support and complex accounting matters.",
             },
           },
           {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              "@id":
-                "https://contetra.com/offshore-accounting-services#service",
-              name: "Offshore Accounting Services",
-              serviceType:
-                "Offshore Accounting and Finance Operations Support",
-              url: "https://contetra.com/offshore-accounting-services",
-              description:
-                "Offshore accounting support covering bookkeeping, accounts payable, accounts receivable, reconciliations, month-end close and financial reporting.",
+            "@type": "Question",
+            name: "How can Contetra help businesses preparing for IPO?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Contetra helps businesses prepare for IPO by strengthening finance processes, reporting discipline, financial close, controls, governance, management information, audit readiness and restated financial reporting support.",
             },
           },
         ],
       },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "@id": "https://contetra.com#breadcrumb",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://contetra.com",
-        },
-      ],
-    },
-  ];
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://contetra.com#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://contetra.com",
+          },
+        ],
+      },
+    ],
+  };
 
   return (
     <section className="flex flex-col justify-between overflow-x-hidden">

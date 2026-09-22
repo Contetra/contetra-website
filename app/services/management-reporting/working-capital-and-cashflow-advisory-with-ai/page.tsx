@@ -5,6 +5,7 @@ import { Hero } from "./components/Hero";
 import { WhatWeHelp } from "./components/WhatWeHelp";
 import { HowWeWork } from "./components/HowWeWork";
 import { LogoCarousel } from "@/components/common/logo-carousel";
+import { FaqSection } from "./components/FaqSection";
 
 export default function WorkingCapitalCashflowPage() {
   return (
@@ -17,6 +18,7 @@ export default function WorkingCapitalCashflowPage() {
       <LogoCarousel />
       <WhatWeHelp items={workingCapitalCashflowPage.whatWeHelp} />
       <HowWeWork steps={workingCapitalCashflowPage.howWeWork} />
+      <FaqSection />
       <ClosingCta
         heading={workingCapitalCashflowPage.closingCta.heading}
         body={workingCapitalCashflowPage.closingCta.body}

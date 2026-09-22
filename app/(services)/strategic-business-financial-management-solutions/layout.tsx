@@ -108,6 +108,25 @@ export default function LayoutServices({
           },
         ],
       },
+      {
+        "@type": "VideoObject",
+        name: "Virtual & Strategic CFO Services for Growing Businesses",
+        description:
+          "Discover how Contetra transforms financial data into business strategy, improves cash flow visibility, supports budgeting and forecasting, and provides virtual and fractional CFO services for growing businesses.",
+        thumbnailUrl: ["https://i.ytimg.com/vi/DJdvUMzg11g/hqdefault.jpg"],
+        uploadDate: "2024-08-16",
+        embedUrl: "https://www.youtube.com/embed/DJdvUMzg11g",
+        contentUrl: "https://www.youtube.com/watch?v=DJdvUMzg11g",
+        publisher: {
+          "@type": "Organization",
+          name: "Contetra",
+          url: "https://contetra.com/",
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": "https://contetra.com/strategic-business-financial-management-solutions",
+        },
+      },
     ],
   };
 
