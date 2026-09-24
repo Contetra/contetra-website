@@ -10,7 +10,7 @@ export default function CaseStudiesPage() {
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <ScrollReveal>
             <h1 className="font-heading text-4xl font-semibold leading-[1.1] tracking-tight text-brand-blue sm:text-5xl">
-              Contetra&apos;s Clients Case Studies
+              Finance Transformation <br />Case Studies
             </h1>
 
             <p className="mt-3 text-xs text-muted-foreground italic">

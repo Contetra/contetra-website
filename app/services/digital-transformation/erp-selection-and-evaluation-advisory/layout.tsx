@@ -18,226 +18,97 @@ const structuredData = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://contetra.com#organization",
+      "@id": "https://contetra.com/#organization",
       name: "Contetra Private Limited",
       alternateName: "Contetra",
-      url: "https://contetra.com",
-      logo: {
-        "@type": "ImageObject",
-        "@id": "https://contetra.com#logo",
-        url: "https://contetra.com/assets/images/logo/contetra-main-logo.png",
-      },
-      image: {
-        "@id": "https://contetra.com#logo",
-      },
-      description:
-        "Contetra Private Limited is a finance transformation consulting firm offering ERP implementation consulting, ERP selection advisory, Virtual CFO, FP&A, technical accounting advisory, IPO readiness, offshore accounting and AI-enabled automation services.",
-      email: "growth@contetra.com",
-      telephone: "+91 98338 18857",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress:
-          "225, 2nd floor, Swastik Disa Corporate Park, LBS Road, Opposite Rajhans Cinemas, Ghatkopar West",
-        addressLocality: "Mumbai",
-        addressRegion: "Maharashtra",
-        postalCode: "400086",
-        addressCountry: "IN",
-      },
-      areaServed: [
-        {
-          "@type": "Country",
-          name: "India",
-        },
-        {
-          "@type": "City",
-          name: "Mumbai",
-        },
-      ],
-      sameAs: ["https://www.linkedin.com/company/contetra-private-limited"],
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://contetra.com#website",
-      url: "https://contetra.com",
-      name: "Contetra",
-      publisher: {
-        "@id": "https://contetra.com#organization",
-      },
-      inLanguage: "en-IN",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://contetra.com/?s={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory#webpage",
-      url: "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory",
-      name: "ERP Selection and Evaluation Advisory Services | Contetra",
-      description:
-        "Evaluate ERP platforms, vendors, implementation scope, business requirements and ROI risks with Contetra’s ERP selection and evaluation advisory services.",
-      isPartOf: {
-        "@id": "https://contetra.com#website",
-      },
-      about: {
-        "@id": "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory#service",
-      },
-      publisher: {
-        "@id": "https://contetra.com#organization",
-      },
-      breadcrumb: {
-        "@id": "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory#breadcrumb",
-      },
-      mainEntity: {
-        "@id": "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory#service",
-      },
-      inLanguage: "en-IN",
+      url: "https://contetra.com/",
     },
     {
       "@type": "Service",
       "@id": "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory#service",
-      name: "ERP Selection and Evaluation Advisory Services",
-      alternateName: [
-        "ERP Selection Advisory",
-        "ERP Evaluation Advisory",
-        "ERP Vendor Evaluation",
-        "ERP Software Selection Consulting",
-        "ERP RFP Support",
-        "ERP Fit-Gap Assessment",
-      ],
-      serviceType: "ERP Selection and Evaluation Advisory",
-      provider: {
-        "@id": "https://contetra.com#organization",
-      },
+      name: "ERP Selection and Evaluation Advisory",
       url: "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory",
-      description:
-        "Contetra helps businesses evaluate ERP platforms, compare vendors, define business requirements, review implementation assumptions, assess ROI risks and select the right ERP system before signing an ERP implementation SOW.",
-      audience: {
-        "@type": "BusinessAudience",
-        audienceType:
-          "Business owners, founders, CFOs, finance leaders, operations leaders, IT leaders and ERP transformation teams",
+      description: "Contetra provides independent ERP selection and evaluation advisory to help businesses define requirements, assess readiness, compare ERP platforms and implementation partners, evaluate total cost of ownership and select the right ERP based on business fit rather than product demonstrations alone.",
+      serviceType: [
+        "ERP Selection Advisory",
+        "ERP Evaluation Consulting",
+        "ERP Business Case Assessment",
+        "ERP Readiness Assessment",
+        "ERP Requirements Gathering",
+        "ERP RFP Support",
+        "ERP Vendor Evaluation",
+        "ERP Demonstration Assessment",
+        "ERP Fit-Gap Assessment",
+        "ERP Total Cost of Ownership Analysis",
+        "ERP Implementation Partner Evaluation",
+        "ERP Implementation Roadmap",
+      ],
+      category: "ERP Consulting and Digital Transformation",
+      provider: {
+        "@id": "https://contetra.com/#organization",
       },
-      areaServed: [
+      audience: [
         {
-          "@type": "Country",
-          name: "India",
+          "@type": "Audience",
+          audienceType: "Business Owners",
         },
         {
-          "@type": "City",
-          name: "Mumbai",
+          "@type": "Audience",
+          audienceType: "CFOs",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "Finance Heads",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "Operations Leaders",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "ERP Programme Sponsors",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "Digital Transformation Teams",
         },
       ],
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        "@id": "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory#offercatalog",
-        name: "ERP Selection and Evaluation Advisory Scope",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            name: "ERP Requirement Assessment",
-            itemOffered: {
-              "@type": "Service",
-              name: "ERP Requirement Assessment",
-              description:
-                "Assessment of finance, procurement, inventory, manufacturing, sales, reporting, integration and control requirements before ERP selection.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "ERP Platform Evaluation",
-            itemOffered: {
-              "@type": "Service",
-              name: "ERP Platform Evaluation",
-              description:
-                "Evaluation of suitable ERP platforms such as SAP, Microsoft Dynamics, Oracle, NetSuite, Odoo, ERPNext, Zoho and other ERP systems based on business needs.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "ERP Vendor Comparison",
-            itemOffered: {
-              "@type": "Service",
-              name: "ERP Vendor Comparison",
-              description:
-                "Comparison of ERP vendors based on functional fit, implementation approach, scope coverage, exclusions, assumptions, timelines, support model and delivery capability.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "ERP RFP and Demo Support",
-            itemOffered: {
-              "@type": "Service",
-              name: "ERP RFP and Demo Support",
-              description:
-                "Support for RFP preparation, demo evaluation, vendor questions, scoring criteria and management decision-making during ERP selection.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "ERP Scope and ROI Review",
-            itemOffered: {
-              "@type": "Service",
-              name: "ERP Scope and ROI Review",
-              description:
-                "Review of ERP project scope, expected ROI, implementation risks, customization needs, data readiness and business outcome alignment before SOW finalisation.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "ERP Implementation Partner Evaluation",
-            itemOffered: {
-              "@type": "Service",
-              name: "ERP Implementation Partner Evaluation",
-              description:
-                "Evaluation of ERP implementation partners based on business understanding, functional capability, project governance, delivery team, data migration approach and post-go-live support.",
-            },
-          },
-        ],
-      },
+      isRelatedTo: [
+        {
+          "@type": "Service",
+          name: "ERP Implementation and Diagnostic Review",
+          url: "https://contetra.com/services/digital-transformation",
+        },
+        {
+          "@type": "Service",
+          name: "ERP Implementation PMO and Functional Consulting",
+          url: "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting",
+        },
+      ],
     },
     {
-      "@type": "FAQPage",
-      "@id": "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory#faq",
+      "@type": [
+        "WebPage",
+        "FAQPage",
+      ],
+      "@id": "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory#webpage",
+      url: "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory",
+      name: "ERP Selection & Evaluation Advisory Services | Contetra",
+      description: "ERP selection and evaluation advisory covering business requirements, ERP readiness, RFP support, vendor evaluation, fit-gap analysis, TCO and implementation planning.",
+      inLanguage: "en-IN",
+      about: {
+        "@id": "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory#service",
+      },
+      breadcrumb: {
+        "@id": "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory#breadcrumb",
+      },
       mainEntity: [
         {
           "@type": "Question",
           name: "What is ERP selection and evaluation advisory?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "ERP selection and evaluation advisory helps businesses choose the right ERP system by assessing business requirements, processes, users, integrations, reporting needs, controls, scalability and implementation risks before selecting a platform or vendor.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Why should we conduct ERP evaluation before choosing a vendor?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "ERP evaluation helps avoid selecting software based only on demos, brand names or pricing. It ensures the selected ERP fits the company’s finance, operations, procurement, inventory, manufacturing, sales, reporting and compliance requirements.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What does Contetra review during ERP selection?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Contetra reviews business processes, pain points, reporting needs, data readiness, integration requirements, control expectations, user roles, functional requirements, implementation complexity and expected ROI before helping management compare ERP options.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can Contetra help us compare ERP vendors?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. Contetra can help businesses prepare evaluation criteria, review vendor proposals, compare functional fit, assess implementation assumptions, identify hidden exclusions and support management in selecting the right ERP implementation partner.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Which ERP systems can Contetra help evaluate?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Contetra works in an ERP-agnostic manner and can support evaluation across SAP, Microsoft Dynamics, Oracle, NetSuite, Odoo, ERPNext, Zoho and other mid-market or enterprise ERP systems, depending on the business requirement.",
+            text: "ERP selection and evaluation advisory helps businesses choose the right ERP system by assessing business requirements, processes, users, integrations, reporting needs, controls, scalability and implementation risks before committing to a platform or vendor.",
           },
         },
         {
@@ -245,7 +116,31 @@ const structuredData = {
           name: "Is ERP selection only an IT decision?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "No. ERP selection is a business decision, not only an IT decision. The right ERP must support finance, controls, reporting, inventory, operations, sales, procurement, compliance and management decision-making.",
+            text: "No. ERP selection is a business decision, not just a technical one. The right system needs to support finance, controls, reporting, inventory, operations, sales, procurement, compliance and management decision making, not just fit an IT specification sheet.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why should we evaluate options before choosing a vendor?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Because it stops the decision from being made purely on demos, brand names or pricing. A proper evaluation checks that the ERP actually fits the company's finance, operations, procurement, inventory, manufacturing, sales, reporting and compliance requirements, rather than assuming it will work itself out during implementation.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What does Contetra review during ERP selection?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Business processes, pain points, reporting needs, data readiness, integration requirements, control expectations, user roles, functional requirements, implementation complexity and expected ROI, all before helping management compare options on a like for like basis.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can Contetra help us compare ERP vendors?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. This includes preparing evaluation criteria, reviewing vendor proposals, comparing functional fit, assessing implementation assumptions, identifying hidden exclusions in scope, and supporting management through to selecting the right implementation partner.",
           },
         },
         {
@@ -253,15 +148,39 @@ const structuredData = {
           name: "When should a business take ERP selection advisory support?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A business should consider ERP selection advisory before signing an ERP SOW, issuing an RFP, finalising a vendor, replacing legacy systems, upgrading ERP, or investing in a new system where process, data, reporting or integration risks are unclear.",
+            text: "Before signing an ERP SOW, issuing an RFP, finalising a vendor, replacing a legacy system, upgrading an existing ERP, or investing in a new system where process, data, reporting or integration risks are not yet clear.",
           },
         },
         {
           "@type": "Question",
-          name: "How does ERP selection advisory reduce implementation risk?",
+          name: "How does ERP selection advisory actually reduce implementation risk?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "It reduces risk by clarifying requirements upfront, identifying process gaps, comparing ERP fit objectively, reviewing vendor assumptions, defining scope clearly and helping management avoid unnecessary customization or poorly defined implementation responsibilities.",
+            text: "By clarifying requirements upfront, identifying process gaps early, comparing ERP fit objectively rather than on vendor pitch alone, reviewing the assumptions built into vendor proposals, defining scope clearly, and helping management avoid unnecessary customisation or vague implementation responsibilities.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Which ERP systems can Contetra help evaluate?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Contetra works in an ERP agnostic manner and can support evaluation across SAP, Microsoft Dynamics, Oracle, NetSuite, Odoo, ERPNext, Zoho and other mid market or enterprise ERP systems, depending on the specific business requirement.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How long does an ERP selection process typically take?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "This varies with the complexity of the business and how well defined the requirements already are. A straightforward evaluation can move faster, while multi entity or multi department businesses usually need more time to gather requirements properly before comparing vendors.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Contetra also support after the ERP vendor is selected?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, this typically continues into implementation PMO and functional consulting support, so the requirements and evaluation work carried out during selection are not lost once the vendor is finalised and the project moves into execution.",
           },
         },
       ],
@@ -274,24 +193,18 @@ const structuredData = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://contetra.com",
+          item: "https://contetra.com/",
         },
         {
           "@type": "ListItem",
           position: 2,
-          name: "Services",
-          item: "https://contetra.com/services",
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
           name: "Digital Transformation",
           item: "https://contetra.com/services/digital-transformation",
         },
         {
           "@type": "ListItem",
-          position: 4,
-          name: "ERP Selection and Evaluation Advisory",
+          position: 3,
+          name: "ERP Selection & Evaluation Advisory",
           item: "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory",
         },
       ],

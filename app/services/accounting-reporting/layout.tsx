@@ -20,87 +20,19 @@ const structuredData = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://contetra.com#organization",
+      "@id": "https://contetra.com/#organization",
       name: "Contetra Private Limited",
       alternateName: "Contetra",
-      url: "https://contetra.com",
-      logo: {
-        "@type": "ImageObject",
-        "@id": "https://contetra.com#logo",
-        url: "https://contetra.com/assets/images/logo/contetra-main-logo.png",
-      },
-      image: {
-        "@id": "https://contetra.com#logo",
-      },
-      description:
-        "Contetra Private Limited is a finance transformation consulting firm offering accounting and reporting services, technical accounting advisory, financial statements preparation, Virtual CFO, FP&A, ERP implementation consulting, IPO readiness, offshore accounting and AI-enabled automation services.",
-      email: "growth@contetra.com",
-      telephone: "+91 98338 18857",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress:
-          "225, 2nd floor, Swastik Disa Corporate Park, LBS Road, Opposite Rajhans Cinemas, Ghatkopar West",
-        addressLocality: "Mumbai",
-        addressRegion: "Maharashtra",
-        postalCode: "400086",
-        addressCountry: "IN",
-      },
-      areaServed: [
-        {
-          "@type": "Country",
-          name: "India",
-        },
-        {
-          "@type": "City",
-          name: "Mumbai",
-        },
-      ],
-      sameAs: ["https://www.linkedin.com/company/contetra-private-limited"],
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://contetra.com#website",
-      url: "https://contetra.com",
-      name: "Contetra",
-      publisher: {
-        "@id": "https://contetra.com#organization",
-      },
-      inLanguage: "en-IN",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://contetra.com/?s={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://contetra.com/services/accounting-reporting#webpage",
-      url: "https://contetra.com/services/accounting-reporting",
-      name: "Accounting and Reporting Services | Contetra",
-      description:
-        "Strengthen accounting, reporting, financial statements, reconciliations, month-end close and audit readiness with Contetra’s finance-led accounting support.",
-      isPartOf: {
-        "@id": "https://contetra.com#website",
-      },
-      about: {
-        "@id": "https://contetra.com/services/accounting-reporting#service",
-      },
-      publisher: {
-        "@id": "https://contetra.com#organization",
-      },
-      breadcrumb: {
-        "@id": "https://contetra.com/services/accounting-reporting#breadcrumb",
-      },
-      mainEntity: {
-        "@id": "https://contetra.com/services/accounting-reporting#service",
-      },
-      inLanguage: "en-IN",
+      url: "https://contetra.com/",
     },
     {
       "@type": "Service",
       "@id": "https://contetra.com/services/accounting-reporting#service",
       name: "Accounting and Reporting Services",
-      alternateName: [
+      url: "https://contetra.com/services/accounting-reporting",
+      description:
+        "Contetra helps businesses improve accounting quality, reporting discipline, financial statements preparation, reconciliations, monthly close, audit readiness, management reporting and accounting documentation.",
+      serviceType: [
         "Financial Reporting Services",
         "Accounting Advisory Services",
         "Financial Statements Preparation",
@@ -112,134 +44,78 @@ const structuredData = {
         "IFRS Reporting Support",
         "US GAAP Reporting Support",
       ],
-      serviceType: "Accounting and Reporting Services",
+      category: "Accounting and Reporting Advisory",
       provider: {
-        "@id": "https://contetra.com#organization",
+        "@id": "https://contetra.com/#organization",
       },
-      url: "https://contetra.com/services/accounting-reporting",
-      description:
-        "Contetra helps businesses improve accounting quality, reporting discipline, financial statements preparation, reconciliations, monthly close, audit readiness, management reporting and accounting documentation.",
-      audience: {
-        "@type": "BusinessAudience",
-        audienceType:
-          "Business owners, founders, CFOs, finance leaders, controllers, accounting teams, auditors and growing businesses",
+      areaServed: {
+        "@type": "Country",
+        name: "India",
       },
-      areaServed: [
+      audience: [
         {
-          "@type": "Country",
-          name: "India",
+          "@type": "Audience",
+          audienceType: "CFOs",
         },
         {
-          "@type": "City",
-          name: "Mumbai",
+          "@type": "Audience",
+          audienceType: "Finance Heads",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "Controllers",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "Accounting Teams",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "Auditors",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "Growing Businesses",
         },
       ],
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        "@id": "https://contetra.com/services/accounting-reporting#offercatalog",
-        name: "Accounting and Reporting Services Scope",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            name: "Financial Statements Preparation",
-            itemOffered: {
-              "@type": "Service",
-              name: "Financial Statements Preparation",
-              description:
-                "Support for preparation of financial statements, schedules, notes to accounts, reconciliations and reporting packs for management, auditors, lenders or investors.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Monthly Close and Reporting Support",
-            itemOffered: {
-              "@type": "Service",
-              name: "Monthly Close and Reporting Support",
-              description:
-                "Support for month-end close, trial balance review, reconciliations, closing schedules, variance review and timely reporting discipline.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Audit Readiness Support",
-            itemOffered: {
-              "@type": "Service",
-              name: "Audit Readiness Support",
-              description:
-                "Preparation of audit schedules, reconciliations, documentation, accounting workings, management responses and information support for statutory or internal audits.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Accounting Memos and Technical Documentation",
-            itemOffered: {
-              "@type": "Service",
-              name: "Accounting Memos and Technical Documentation",
-              description:
-                "Preparation of accounting memos, technical notes and documentation for complex accounting matters, reporting judgments and audit discussions.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Ind AS, IFRS and US GAAP Reporting Support",
-            itemOffered: {
-              "@type": "Service",
-              name: "Ind AS, IFRS and US GAAP Reporting Support",
-              description:
-                "Support for accounting and reporting matters involving Ind AS, IFRS and US GAAP, including reporting adjustments, disclosure requirements and financial statement presentation.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Reconciliation and Balance Review",
-            itemOffered: {
-              "@type": "Service",
-              name: "Reconciliation and Balance Review",
-              description:
-                "Review of ledger balances, bank reconciliations, vendor reconciliations, customer reconciliations, inter-company balances, provisions, accruals and closing items.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Management Reporting Support",
-            itemOffered: {
-              "@type": "Service",
-              name: "Management Reporting Support",
-              description:
-                "Preparation and improvement of management reports, MIS packs, financial dashboards, variance analysis and business-performance reporting for leadership teams.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Finance Process and Control Improvement",
-            itemOffered: {
-              "@type": "Service",
-              name: "Finance Process and Control Improvement",
-              description:
-                "Review and improvement of finance processes, reporting ownership, close calendar, approval controls, documentation standards and accounting workflows.",
-            },
-          },
-        ],
+      isRelatedTo: {
+        "@type": "Service",
+        name: "Technical Accounting Advisory",
+        url: "https://contetra.com/services/accounting-reporting/technical-accounting-advisory",
       },
     },
     {
-      "@type": "FAQPage",
-      "@id": "https://contetra.com/services/accounting-reporting#faq",
+      "@type": [
+        "WebPage",
+        "FAQPage",
+      ],
+      "@id": "https://contetra.com/services/accounting-reporting#webpage",
+      url: "https://contetra.com/services/accounting-reporting",
+      name: "Accounting and Reporting Services | Contetra",
+      description:
+        "Strengthen accounting, reporting, financial statements, reconciliations, month-end close and audit readiness with Contetra's finance-led accounting support.",
+      inLanguage: "en-IN",
+      about: {
+        "@id": "https://contetra.com/services/accounting-reporting#service",
+      },
+      breadcrumb: {
+        "@id": "https://contetra.com/services/accounting-reporting#breadcrumb",
+      },
       mainEntity: [
         {
           "@type": "Question",
           name: "What are accounting and reporting services?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Accounting and reporting services help businesses maintain accurate books, prepare reliable financial statements, manage month-end close, reconcile accounts, create management reports and ensure finance information is ready for audits, lenders, investors and management decision-making.",
+            text: "Accounting and reporting services help businesses maintain accurate books, prepare reliable financial statements, manage month end close, reconcile accounts, build management reports, and stay ready for audits, lenders, investors and internal decision making. This goes well beyond just recording transactions.",
           },
         },
         {
           "@type": "Question",
-          name: "Who should use accounting and reporting services?",
+          name: "How is this different from regular bookkeeping?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "These services are useful for growing businesses, founder-led companies, CFO teams, finance heads, startups, subsidiaries, offshore entities and companies that need stronger accounting discipline, financial reporting quality and audit-ready finance processes.",
+            text: "Bookkeeping is about recording transactions accurately. Accounting and reporting services go a step further, ensuring reconciliations are clean, month end close is disciplined, financial statements are audit ready, and management actually has reliable numbers to work with, not just a maintained ledger.",
           },
         },
         {
@@ -247,15 +123,15 @@ const structuredData = {
           name: "What does Contetra support under accounting and reporting?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Contetra supports bookkeeping review, monthly close, reconciliations, financial statements preparation, MIS reporting, audit schedules, accounting memos, reporting packs, consolidation support and finance-process improvement.",
+            text: "Bookkeeping review, monthly close, reconciliations, financial statement preparation, MIS reporting, audit schedules, accounting memos, reporting packs, consolidation support and broader finance process improvement, all tailored to where the business currently stands.",
           },
         },
         {
           "@type": "Question",
-          name: "How are accounting and reporting services different from regular bookkeeping?",
+          name: "What are common signs that accounting and reporting needs attention?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Regular bookkeeping focuses on recording transactions. Accounting and reporting services go further by ensuring accuracy, reconciliations, close discipline, financial statement readiness, reporting quality, management visibility and audit support.",
+            text: "Delayed month end close, unreconciled balances, heavy reliance on Excel, MIS numbers that do not add up consistently, recurring audit observations, unclear ownership of reporting tasks, manual processes, weak documentation, or simply struggling to close financial statements reliably on time.",
           },
         },
         {
@@ -263,23 +139,15 @@ const structuredData = {
           name: "Can Contetra help prepare financial statements?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Contetra can support financial statements preparation, including schedules, notes, reconciliations, management reporting packs and audit-support documentation, depending on the company’s accounting framework and reporting requirements.",
+            text: "Yes. This includes schedules, notes, reconciliations, management reporting packs and audit support documentation, scoped to the company's accounting framework and specific reporting requirements.",
           },
         },
         {
           "@type": "Question",
-          name: "Can Contetra support Ind AS, IFRS or US GAAP reporting?",
+          name: "Does Contetra support Ind AS, IFRS or US GAAP reporting?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Contetra can support businesses with accounting and reporting matters involving Ind AS, IFRS and US GAAP, including accounting memos, reporting adjustments, financial statements, audit support and complex accounting areas.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What are common signs that accounting and reporting needs improvement?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Common signs include delayed month-end close, unreconciled balances, heavy Excel dependency, inconsistent MIS, audit observations, unclear ownership, manual reporting, weak documentation and difficulty preparing reliable financial statements on time.",
+            text: "Yes. Contetra supports accounting and reporting matters across Ind AS, IFRS and US GAAP, including accounting memos, reporting adjustments, financial statement preparation, audit support and technically complex accounting areas.",
           },
         },
         {
@@ -287,23 +155,47 @@ const structuredData = {
           name: "Does Contetra support audit readiness?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Contetra can support audit readiness by preparing schedules, reconciliations, documentation, accounting memos, financial statements, management responses and structured information required by auditors.",
+            text: "Yes. This includes preparing schedules, reconciliations, supporting documentation, accounting memos, financial statements and structured responses to auditor queries, so the audit process moves faster with fewer back and forths.",
           },
         },
         {
           "@type": "Question",
-          name: "Can accounting and reporting services improve management decisions?",
+          name: "Can accounting and reporting services actually improve management decisions?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Reliable accounting and reporting helps management understand profitability, costs, cash flow, working capital, business-unit performance and financial risks more clearly, which improves decision-making.",
+            text: "Yes. When the numbers are accurate and timely, management gets a clearer picture of profitability, costs, cash flow, working capital, and performance across business units, which directly improves the quality of decisions being made.",
           },
         },
         {
           "@type": "Question",
-          name: "Can Contetra work with the existing finance team?",
+          name: "Who should use accounting and reporting services?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Contetra can work alongside the existing finance team, CFO, auditor, accounting partner or internal management team to improve reporting quality, close discipline, documentation, controls and management visibility.",
+            text: "Growing businesses, founder led companies, CFO teams, finance heads, startups, subsidiaries and offshore entities. Essentially any organisation that needs stronger accounting discipline, better reporting quality, or audit ready finance processes.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can Contetra work alongside our existing finance team or auditors?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Contetra typically works alongside the existing finance team, CFO, auditors or accounting partners, strengthening reporting quality, close discipline, documentation and controls rather than replacing what is already in place.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Contetra work with specific accounting software or ERPs?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Contetra works across commonly used accounting and ERP systems, adapting to whatever platform the business already runs on, rather than requiring a switch in systems before engagement can begin.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is a one time clean up possible, or is this always an ongoing engagement?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Both are possible. Some businesses need a one time clean up of books, reconciliations or a specific audit cycle, while others prefer ongoing support for close, reporting and controls. The scope is typically set based on what the business needs at the time.",
           },
         },
       ],
@@ -316,18 +208,12 @@ const structuredData = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://contetra.com",
+          item: "https://contetra.com/",
         },
         {
           "@type": "ListItem",
           position: 2,
-          name: "Services",
-          item: "https://contetra.com/services",
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Accounting and Reporting",
+          name: "Accounting & Reporting",
           item: "https://contetra.com/services/accounting-reporting",
         },
       ],

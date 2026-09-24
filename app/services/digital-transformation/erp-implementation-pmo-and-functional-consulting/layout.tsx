@@ -18,216 +18,94 @@ const structuredData = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://contetra.com#organization",
+      "@id": "https://contetra.com/#organization",
       name: "Contetra Private Limited",
       alternateName: "Contetra",
-      url: "https://contetra.com",
-      logo: {
-        "@type": "ImageObject",
-        "@id": "https://contetra.com#logo",
-        url: "https://contetra.com/assets/images/logo/contetra-main-logo.png",
-      },
-      image: {
-        "@id": "https://contetra.com#logo",
-      },
-      description:
-        "Contetra Private Limited is a finance transformation consulting firm offering ERP implementation consulting, ERP PMO, functional consulting, Virtual CFO, FP&A, technical accounting advisory, IPO readiness, offshore accounting and AI-enabled automation services.",
-      email: "growth@contetra.com",
-      telephone: "+91 98338 18857",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress:
-          "225, 2nd floor, Swastik Disa Corporate Park, LBS Road, Opposite Rajhans Cinemas, Ghatkopar West",
-        addressLocality: "Mumbai",
-        addressRegion: "Maharashtra",
-        postalCode: "400086",
-        addressCountry: "IN",
-      },
-      areaServed: [
-        {
-          "@type": "Country",
-          name: "India",
-        },
-        {
-          "@type": "City",
-          name: "Mumbai",
-        },
-      ],
-      sameAs: ["https://www.linkedin.com/company/contetra-private-limited"],
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://contetra.com#website",
-      url: "https://contetra.com",
-      name: "Contetra",
-      publisher: {
-        "@id": "https://contetra.com#organization",
-      },
-      inLanguage: "en-IN",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://contetra.com/?s={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting#webpage",
-      url: "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting",
-      name: "ERP Implementation PMO and Functional Consulting Services | Contetra",
-      description:
-        "Manage ERP implementation with structured PMO, functional consulting, process design, BRD support, UAT planning, risk tracking and business-side governance.",
-      isPartOf: {
-        "@id": "https://contetra.com#website",
-      },
-      about: {
-        "@id": "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting#service",
-      },
-      publisher: {
-        "@id": "https://contetra.com#organization",
-      },
-      breadcrumb: {
-        "@id": "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting#breadcrumb",
-      },
-      mainEntity: {
-        "@id": "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting#service",
-      },
-      inLanguage: "en-IN",
+      url: "https://contetra.com/",
     },
     {
       "@type": "Service",
       "@id": "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting#service",
-      name: "ERP Implementation PMO and Functional Consulting Services",
-      alternateName: [
-        "ERP Implementation PMO",
-        "ERP Functional Consulting Services",
-        "ERP Functional Consultants",
-        "ERP Implementation Governance",
-        "ERP Business Process Consulting",
-        "ERP UAT Support",
-        "ERP BRD Support",
-        "ERP Implementation Advisory",
-      ],
-      serviceType: "ERP Implementation PMO and Functional Consulting",
-      provider: {
-        "@id": "https://contetra.com#organization",
-      },
+      name: "ERP Implementation PMO and Functional Consulting",
       url: "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting",
-      description:
-        "Contetra helps businesses manage ERP implementation through PMO support, functional consulting, business requirement documentation, process design, data readiness, UAT planning, stakeholder coordination, risk tracking and go-live readiness.",
-      audience: {
-        "@type": "BusinessAudience",
-        audienceType:
-          "Business owners, founders, CFOs, finance leaders, operations leaders, IT leaders and ERP transformation teams",
+      description: "Contetra provides independent ERP implementation PMO and functional consulting support to help businesses govern ERP programmes, define requirements, map processes, manage risks, coordinate stakeholders, support data migration and UAT, plan cutover and maintain business accountability throughout implementation.",
+      serviceType: [
+        "ERP Implementation PMO",
+        "ERP Functional Consulting",
+        "ERP Programme Governance",
+        "Business Requirements Documentation",
+        "AS IS and TO BE Process Mapping",
+        "ERP Functional Design Review",
+        "ERP Data Migration Governance",
+        "ERP UAT Planning and Governance",
+        "ERP Risk and Issue Management",
+        "ERP Change Management",
+        "ERP Cutover Planning",
+        "Post-Go-Live Stabilisation",
+      ],
+      category: "ERP Consulting and Digital Transformation",
+      provider: {
+        "@id": "https://contetra.com/#organization",
       },
-      areaServed: [
+      audience: [
         {
-          "@type": "Country",
-          name: "India",
+          "@type": "Audience",
+          audienceType: "Business Owners",
         },
         {
-          "@type": "City",
-          name: "Mumbai",
+          "@type": "Audience",
+          audienceType: "CFOs",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "Finance Heads",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "ERP Programme Sponsors",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "Process Owners",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "Project Management Teams",
         },
       ],
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        "@id": "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting#offercatalog",
-        name: "ERP Implementation PMO and Functional Consulting Scope",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            name: "ERP Implementation PMO",
-            itemOffered: {
-              "@type": "Service",
-              name: "ERP Implementation PMO",
-              description:
-                "Structured governance support for ERP implementation including project planning, milestone tracking, risk management, issue escalation, dependency tracking and management reporting.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "ERP Functional Consulting",
-            itemOffered: {
-              "@type": "Service",
-              name: "ERP Functional Consulting",
-              description:
-                "Business-side functional consulting to translate finance, procurement, inventory, sales, manufacturing and reporting requirements into ERP workflows and controls.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Business Requirement Documentation",
-            itemOffered: {
-              "@type": "Service",
-              name: "Business Requirement Documentation",
-              description:
-                "Preparation and review of BRDs, process notes, functional requirements, reporting needs, workflow requirements and business sign-off documentation.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Process Mapping and Solution Review",
-            itemOffered: {
-              "@type": "Service",
-              name: "Process Mapping and Solution Review",
-              description:
-                "AS-IS and TO-BE process mapping, solution walkthrough review, functional fit assessment, customization challenge and alignment of ERP design with business processes.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "ERP Data Readiness Review",
-            itemOffered: {
-              "@type": "Service",
-              name: "ERP Data Readiness Review",
-              description:
-                "Review of master data, chart of accounts, item masters, customer and vendor records, opening balances, migration templates and data validation responsibilities.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "ERP UAT Planning and Support",
-            itemOffered: {
-              "@type": "Service",
-              name: "ERP UAT Planning and Support",
-              description:
-                "Support for UAT scenario design, test scripts, issue tracking, business validation, user sign-off, defect prioritisation and go-live readiness assessment.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Stakeholder Coordination and Decision Tracking",
-            itemOffered: {
-              "@type": "Service",
-              name: "Stakeholder Coordination and Decision Tracking",
-              description:
-                "Coordination between management, process owners, implementation partner, IT team and finance users to ensure timely decisions, clear ownership and issue resolution.",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Go-Live Readiness and Hypercare Support",
-            itemOffered: {
-              "@type": "Service",
-              name: "Go-Live Readiness and Hypercare Support",
-              description:
-                "Assessment of readiness before go-live and support during hypercare to resolve issues, stabilise processes, improve adoption and track post-go-live fixes.",
-            },
-          },
-        ],
+      availableChannel: {
+        "@type": "ServiceChannel",
+        serviceUrl: "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting",
+      },
+      isRelatedTo: {
+        "@type": "Service",
+        name: "ERP Implementation and Diagnostic Review",
+        url: "https://contetra.com/services/digital-transformation",
       },
     },
     {
-      "@type": "FAQPage",
-      "@id": "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting#faq",
+      "@type": [
+        "WebPage",
+        "FAQPage",
+      ],
+      "@id": "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting#webpage",
+      url: "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting",
+      name: "ERP Implementation PMO and Functional Consulting | Contetra",
+      description: "ERP implementation PMO and functional consulting services covering business requirements, process design, programme governance, data migration, UAT, risk management, change management, cutover and post-go-live support.",
+      inLanguage: "en-IN",
+      about: {
+        "@id": "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting#service",
+      },
+      breadcrumb: {
+        "@id": "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting#breadcrumb",
+      },
       mainEntity: [
         {
           "@type": "Question",
           name: "What is ERP implementation PMO support?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "ERP implementation PMO support helps businesses manage ERP projects through structured governance, milestone tracking, risk management, issue escalation, stakeholder coordination, scope control and implementation accountability.",
+            text: "ERP implementation PMO support helps businesses manage ERP projects through structured governance, milestone tracking, risk management, issue escalation, stakeholder coordination, scope control and overall implementation accountability, so the project stays on track from the business side, not just the technical side.",
           },
         },
         {
@@ -235,15 +113,31 @@ const structuredData = {
           name: "What is ERP functional consulting?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "ERP functional consulting translates business processes into ERP workflows, roles, controls, reports and system requirements. It helps ensure that the ERP is configured around real business needs rather than only technical settings.",
+            text: "ERP functional consulting translates real business processes into ERP workflows, roles, controls and reports. It ensures the system gets configured around how the business actually operates, rather than being driven purely by technical or default settings.",
           },
         },
         {
           "@type": "Question",
-          name: "Why do businesses need ERP PMO during implementation?",
+          name: "What is the difference between an ERP implementation partner and an ERP PMO consultant?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Businesses need ERP PMO support because ERP projects involve multiple departments, vendors, decisions, dependencies and timelines. Without strong governance, projects can face delays, unclear ownership, scope creep, poor testing and weak user adoption.",
+            text: "An ERP implementation partner typically configures and deploys the system itself. An ERP PMO consultant sits on the business side, helping govern the project, define requirements, track ownership, manage timelines, review risks and make sure business objectives do not get lost in the technical rollout.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why do businesses need ERP PMO support during implementation?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "ERP projects involve multiple departments, vendors, decisions and dependencies running in parallel. Without strong governance, this usually shows up as delays, unclear ownership, scope creep, weak testing and poor user adoption once the system goes live.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What does ERP functional consulting typically include?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "AS IS and TO BE process mapping, BRD preparation, module requirement definition, approval workflow design, reporting requirement documentation, master data review, UAT scenario preparation and resolution of functional issues as they come up.",
           },
         },
         {
@@ -251,7 +145,15 @@ const structuredData = {
           name: "How does Contetra support ERP implementation projects?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Contetra supports ERP implementation through business requirement documentation, process mapping, functional design review, implementation PMO, stakeholder coordination, UAT planning, data readiness review, risk tracking, change management and post-go-live support.",
+            text: "Through business requirement documentation, process mapping, functional design review, implementation PMO, stakeholder coordination, UAT planning, data readiness review, risk tracking, change management and support after go live.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How does ERP PMO actually reduce implementation risk?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "By creating clarity where ambiguity usually causes problems, project scope, decision ownership, milestones, open issues, dependencies, change requests, testing responsibilities, escalation routes and go live readiness are all tracked and owned, rather than left informal.",
           },
         },
         {
@@ -259,39 +161,15 @@ const structuredData = {
           name: "Can Contetra work alongside our existing ERP implementation partner?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Contetra can work alongside your ERP implementation partner by representing the business side, reviewing functional requirements, coordinating decisions, tracking risks, supporting UAT, reviewing reporting needs and helping management ensure the implementation remains aligned with business outcomes.",
+            text: "Yes. Contetra represents the business side of the project, reviewing functional requirements, coordinating decisions, tracking risks, supporting UAT, reviewing reporting needs and helping management keep the implementation aligned with actual business outcomes rather than just technical milestones.",
           },
         },
         {
           "@type": "Question",
-          name: "What is the difference between ERP implementation partner and ERP PMO consultant?",
+          name: "When should a business bring in ERP PMO and functional consultants?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "An ERP implementation partner usually configures and deploys the ERP system, while an ERP PMO consultant helps the business govern the project, define requirements, track responsibilities, manage timelines, review risks and ensure that business objectives are not lost during implementation.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What does ERP functional consulting include?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "ERP functional consulting may include AS-IS and TO-BE process mapping, BRD preparation, module requirement definition, approval workflow design, reporting requirement documentation, master-data review, UAT scenario preparation and functional issue resolution.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How does ERP PMO reduce implementation risk?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "ERP PMO reduces implementation risk by creating clarity on project scope, decision ownership, milestones, open issues, dependencies, change requests, testing responsibilities, escalation routes and go-live readiness.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "When should a business involve ERP PMO and functional consultants?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "A business should involve ERP PMO and functional consultants before implementation begins or when the project has unclear requirements, multiple departments, delayed decisions, weak governance, UAT challenges, data migration concerns or poor coordination between business and implementation teams.",
+            text: "Ideally before implementation starts, or as soon as the project shows signs of unclear requirements, multiple departments pulling in different directions, delayed decisions, weak governance, UAT struggles, data migration concerns, or poor coordination between the business and the implementation team.",
           },
         },
         {
@@ -299,7 +177,15 @@ const structuredData = {
           name: "Which ERP systems can Contetra support?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Contetra can provide ERP-agnostic PMO and functional consulting support across platforms such as SAP, SAP Business One, SAP S/4HANA, Microsoft Dynamics 365, Business Central, Oracle, NetSuite, Odoo, ERPNext, Zoho and other mid-market or enterprise ERP systems.",
+            text: "Contetra provides ERP agnostic PMO and functional consulting support across platforms such as SAP, SAP Business One, SAP S/4HANA, Microsoft Dynamics 365, Business Central, Oracle, NetSuite, Odoo, ERPNext, Zoho and other mid market or enterprise ERP systems.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Contetra get involved in ERP vendor selection as well?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "This is typically scoped separately from PMO and functional consulting, but is worth confirming directly, since some businesses prefer to bring in support even earlier, at the stage of evaluating and selecting the right ERP system and implementation partner.",
           },
         },
       ],
@@ -312,24 +198,18 @@ const structuredData = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://contetra.com",
+          item: "https://contetra.com/",
         },
         {
           "@type": "ListItem",
           position: 2,
-          name: "Services",
-          item: "https://contetra.com/services",
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
           name: "Digital Transformation",
           item: "https://contetra.com/services/digital-transformation",
         },
         {
           "@type": "ListItem",
-          position: 4,
-          name: "ERP Implementation PMO and Functional Consulting",
+          position: 3,
+          name: "ERP Implementation PMO & Functional Consulting",
           item: "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting",
         },
       ],
