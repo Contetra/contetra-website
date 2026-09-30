@@ -6,7 +6,7 @@ export function WhatWeCover() {
     <section className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <IconCardGrid
-          heading="What our fractional CFO and FP&A services cover"
+          heading="What Our FP&A and Management Reporting Services Cover"
           items={cfoFpaService.whatWeCover}
           tint="green"
         />

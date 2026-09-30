@@ -4,8 +4,14 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
- alternates: {
+  title: `ERP Implementation & Diagnostic Review Services | Contetra`,
+  description: `Independent ERP implementation and diagnostic review services covering ERP selection, process design, PMO, data readiness, testing, change management and post-go-live optimisation.`,
+  alternates: {
     canonical: "https://contetra.com/services/digital-transformation",
+  },
+  openGraph: {
+    title: `ERP Implementation & Diagnostic Review Services | Contetra`,
+    description: `Improve ERP outcomes with independent support across ERP selection, process design, implementation PMO, diagnostics, testing and post-go-live optimisation.`,
   },
 };
 
@@ -13,64 +19,107 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Service",
+      "@id": "https://contetra.com/services/digital-transformation#service",
+      name: "ERP Implementation and Diagnostic Review Services",
+      url: "https://contetra.com/services/digital-transformation",
+      description:
+        "Independent ERP implementation and diagnostic review services covering ERP selection, process design, PMO, data readiness, testing, change management and post-go-live optimisation.",
+      serviceType: [
+        "ERP Implementation Consulting",
+        "ERP Diagnostic Review",
+        "ERP Selection and Evaluation",
+        "ERP Functional Consulting",
+        "ERP Programme Management Office",
+        "ERP Process and Solution Design",
+        "ERP Data Readiness and Migration Advisory",
+        "ERP Testing and UAT Support",
+        "ERP Change Management",
+        "ERP Project Rescue",
+        "ERP Post-Go-Live Optimisation",
+        "ERP Governance and Controls Advisory",
+      ],
+      category: "ERP Consulting and Digital Transformation",
+      provider: {
+        "@id": "https://contetra.com/#organization",
+      },
+      audience: [
+        {
+          "@type": "Audience",
+          audienceType: "Business Owners",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "CFOs and Finance Leaders",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "ERP Programme Sponsors",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "Operations Leaders",
+        },
+        {
+          "@type": "Audience",
+          audienceType: "Digital Transformation Teams",
+        },
+      ],
+      isRelatedTo: [
+        {
+          "@type": "Service",
+          name: "ERP Diagnostic Review and Health Check",
+          url: "https://contetra.com/services/digital-transformation/erp-diagnostic-review-and-health-check",
+        },
+        {
+          "@type": "Service",
+          name: "ERP Selection and Evaluation Advisory",
+          url: "https://contetra.com/services/digital-transformation/erp-selection-and-evaluation-advisory",
+        },
+        {
+          "@type": "Service",
+          name: "ERP Implementation PMO and Functional Consulting",
+          url: "https://contetra.com/services/digital-transformation/erp-implementation-pmo-and-functional-consulting",
+        },
+        {
+          "@type": "Service",
+          name: "ERP Project Rescue and Post-Go-Live Optimisation",
+          url: "https://contetra.com/services/digital-transformation/erp-project-rescue-and-post-go-live-optimisation",
+        },
+      ],
+    },
+    {
       "@type": "WebPage",
       "@id": "https://contetra.com/services/digital-transformation#webpage",
       url: "https://contetra.com/services/digital-transformation",
-      name: "Digital Transformation Services for Finance & Operations | Contetra",
+      name: "ERP Implementation & Diagnostic Review Services | Contetra",
       description:
-        "Transform finance, ERP, reporting and business workflows with Contetra’s digital transformation services across automation, systems and process improvement.",
-      isPartOf: {
-        "@id": "https://contetra.com#website",
-      },
+        "Independent ERP implementation and diagnostic review services covering ERP selection, process design, PMO, data readiness, testing, change management and post-go-live optimisation.",
+      inLanguage: "en-IN",
       about: {
         "@id": "https://contetra.com/services/digital-transformation#service",
       },
       breadcrumb: {
-        "@id":
-          "https://contetra.com/services/digital-transformation#breadcrumb",
+        "@id": "https://contetra.com/services/digital-transformation#breadcrumb",
       },
       publisher: {
-        "@id": "https://contetra.com#organization",
-      },
-      inLanguage: "en-IN",
-    },
-    {
-      "@type": "Service",
-      "@id": "https://contetra.com/services/digital-transformation#service",
-      name: "Digital Transformation Services",
-      serviceType: "Finance and Business Digital Transformation",
-      url: "https://contetra.com/services/digital-transformation",
-      description:
-        "Digital transformation services covering finance transformation, ERP optimisation, process redesign, workflow automation, reporting improvement and business systems integration.",
-      provider: {
-        "@id": "https://contetra.com#organization",
-      },
-      areaServed: {
-        "@type": "Country",
-        name: "India",
+        "@id": "https://contetra.com/#organization",
       },
     },
     {
       "@type": "BreadcrumbList",
-      "@id":
-        "https://contetra.com/services/digital-transformation#breadcrumb",
+      "@id": "https://contetra.com/services/digital-transformation#breadcrumb",
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://contetra.com",
+          item: "https://contetra.com/",
         },
         {
           "@type": "ListItem",
           position: 2,
-          name: "Services",
-          item: "https://contetra.com/services",
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Digital Transformation",
+          name: "ERP Implementation & Diagnostic Review",
           item: "https://contetra.com/services/digital-transformation",
         },
       ],

@@ -143,6 +143,126 @@ const nextConfig: NextConfig = {
         destination: "/services/agentic-ai-and-process-automation/automation-opportunity-assessment-and-roadmap",
         permanent: true,
       },
+      {
+        source: "/services/fractional-cfo-fpa/ipo-readiness",
+        destination: "/services/ipo-readiness",
+        permanent: true,
+      },
+      {
+        source: "/services/fractional-cfo-fpa/working-capital-cashflow-advisory",
+        destination: "/services/management-reporting/working-capital-and-cashflow-advisory-with-ai",
+        permanent: true,
+      },
+      {
+        source: "/services/fractional-cfo-fpa/fpa-services",
+        destination: "/services/management-reporting",
+        permanent: true,
+      },
+      {
+        source: "/services/fractional-cfo-fpa/mis-reporting-dashboards",
+        destination: "/services/management-reporting/mis-reporting-and-financial-dashboards-with-ai",
+        permanent: true,
+      },
+      {
+        source: "/services/fractional-cfo-fpa/fractional-cfo-services",
+        destination: "/services/management-reporting",
+        permanent: true,
+      },
+      {
+        source: "/services/fractional-cfo-fpa",
+        destination: "/services/management-reporting",
+        permanent: true,
+      },
+      {
+        source: "/services/agentic-ai-automation/ai-agent-development",
+        destination: "/services/agentic-ai-and-process-automation/agentic-ai-and-ai-agent-development",
+        permanent: true,
+      },
+      {
+        source: "/services/agentic-ai-automation/finance-reporting-automation",
+        destination: "/services/agentic-ai-and-process-automation/finance-and-reporting-automation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/finance-automation",
+        destination: "/services/agentic-ai-and-process-automation/finance-and-reporting-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/agentic-ai-automation/operations-project-automation",
+        destination: "/services/agentic-ai-and-process-automation/operations-and-project-workflow-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/agentic-ai-automation/sales-marketing-automation",
+        destination: "/services/agentic-ai-and-process-automation/sales-and-marketing-workflow-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/agentic-ai-automation/automation-opportunity-assessment",
+        destination: "/services/agentic-ai-and-process-automation/automation-opportunity-assessment-and-roadmap",
+        permanent: true,
+      },
+      {
+        source: "/services/agentic-ai-automation",
+        destination: "/services/agentic-ai-and-process-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/erp-implementation/erp-project-rescue",
+        destination: "/services/digital-transformation/erp-project-rescue-and-post-go-live-optimisation",
+        permanent: true,
+      },
+      {
+        source: "/services/erp-implementation/microsoft-dynamics-365-consulting",
+        destination: "/erp/microsoft-dynamics",
+        permanent: true,
+      },
+      {
+        source: "/services/erp-implementation/sap-s4hana-consulting",
+        destination: "/erp/sap",
+        permanent: true,
+      },
+      {
+        source: "/services/erp-implementation/odoo-implementation-consulting",
+        destination: "/erp/odoo",
+        permanent: true,
+      },
+      {
+        source: "/services/erp-implementation/erpnext-implementation-consulting",
+        destination: "/erp/erpnext",
+        permanent: true,
+      },
+      {
+        source: "/services/erp-implementation/erp-implementation-pmo",
+        destination: "/services/digital-transformation/erp-implementation-pmo-and-functional-consulting",
+        permanent: true,
+      },
+      {
+        source: "/services/erp-implementation/erp-selection-evaluation",
+        destination: "/services/digital-transformation/erp-selection-and-evaluation-advisory",
+        permanent: true,
+      },
+      {
+        source: "/services/erp-implementation/erp-diagnostic-review",
+        destination: "/services/digital-transformation/erp-diagnostic-review-and-health-check",
+        permanent: true,
+      },
+      {
+        source: "/services/erp-implementation/oracle-fusion-cloud-consulting",
+        destination: "/erp/oracle",
+        permanent: true,
+      },
+      {
+        source: "/services/erp-implementation",
+        destination: "/erp-implementation-solutions",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ipo-readiness",
+        destination: "/services/ipo-readiness",
+        permanent: true,
+      },
       // 301: strip trailing slash (except homepage "/"). Query string is preserved.
       {
         source: "/:path+/",
