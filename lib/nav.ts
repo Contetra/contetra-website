@@ -33,7 +33,7 @@ export const navGroups: NavGroup[] = [
         children: [
           {
             label: "ERP & Process Transformation",
-            href: "/services/digital-transformation",
+            href: "/services/digital-transformation/erp-and-process-transformation",
           },
           {
             label: "ERP Diagnostic Review & Health Check",
@@ -87,7 +87,7 @@ export const navGroups: NavGroup[] = [
         children: [
           {
             label: "Ind AS, IFRS & US GAAP Reporting",
-            href: "/services/accounting-reporting",
+            href: "/services/accounting-reporting/ind-as-ifrs-and-us-gaap-reporting",
           },
           {
             label: "Technical Accounting Advisory",

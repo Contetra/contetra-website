@@ -18,7 +18,7 @@ function paramsToSegmentArray(
 export default function Page() {
   const params = useParams();
 
-  const [trigger, { data: blogContent, isLoading, isError }] =
+  const [trigger, { data: blogContent, isLoading, isError, isUninitialized }] =
     useLazyGetBlogDataQuery();
 
   const blogData = blogContent?.response?.blog;
@@ -40,10 +40,13 @@ export default function Page() {
   }, [trigger, apiSlug]);
 
   useEffect(() => {
-    if (isError) {
+    if (isUninitialized || isLoading) return;
+    // The API returns 200 with a null body (not a 4xx) when the slug has no
+    // matching post, so isError alone never fires for a missing blog.
+    if (isError || !blogData) {
       notFound();
     }
-  }, [isError]);
+  }, [isUninitialized, isLoading, isError, blogData]);
 
   return (
     <div className="flex min-h-screen w-full rounded-xl relative gap-10 px-[10px] md:px-[50px] ">

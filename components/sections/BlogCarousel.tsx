@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useEffect, useMemo, useState } from "react";
+import { memo, useEffect, useMemo, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
@@ -38,10 +38,18 @@ interface Category {
 }
 
 interface BlogCarouselProps {
-  /** Category name or id to filter by. Omit to show the latest blogs across all categories. */
-  category?: string;
+  /** Category name(s) or id(s) to filter by. Omit to show the latest blogs across all categories. */
+  category?: string | string[];
   /** Sort by publish date. Defaults to "desc" (newest first). */
   sortOrder?: "asc" | "desc";
+  /** Small uppercase label above the heading. Defaults to "From the Blog". */
+  eyebrow?: string;
+  /** Sidebar heading. Defaults to the "Latest Insights" two-line heading. */
+  heading?: ReactNode;
+  /** Sidebar description paragraph. */
+  description?: string;
+  /** Label for the sidebar link to /blog. Defaults to "See all blogs". */
+  seeAllLabel?: string;
 }
 
 // Aligns the sidebar text with every other homepage section's left gutter
@@ -56,28 +64,51 @@ const SIDEBAR_LEFT_INSET =
 export function BlogCarousel({
   category,
   sortOrder = "desc",
+  eyebrow = "From the Blog",
+  heading = (
+    <>
+      Latest
+      <br />
+      Insights
+    </>
+  ),
+  description = "Straight-talking guidance on ERP, compliance, and finance operations, drawn from the transformations our team runs every day.",
+  seeAllLabel = "See all blogs",
 }: BlogCarouselProps) {
-  const { data: categoriesData } = useGetCategoriesQuery(
-    {},
-    { skip: !category },
+  const categoryList = useMemo(
+    () => (category ? (Array.isArray(category) ? category : [category]) : []),
+    [category],
   );
 
-  const resolvedCategoryId = useMemo(() => {
-    if (!category) return undefined;
-    const categories: Category[] = categoriesData?.response ?? [];
-    const match = categories.find(
-      (c) =>
-        c.category_id === category ||
-        c.name.toLowerCase() === category.toLowerCase(),
-    );
-    return match?.category_id ?? category;
-  }, [category, categoriesData]);
+  const { data: categoriesData, isLoading: isLoadingCategories } =
+    useGetCategoriesQuery({}, { skip: categoryList.length === 0 });
 
-  const { data: blogsData, isFetching } = useGetHomepageBlogsQuery({
-    limit: CAROUSEL_LIMIT,
-    categories: resolvedCategoryId ? [resolvedCategoryId] : undefined,
-    sortOrder,
-  });
+  // Wait for the category name -> id lookup to resolve before filtering by
+  // category, so a raw name is never sent to the backend as if it were an id
+  // (the categories endpoint expects category_id, a uuid).
+  const resolvedCategoryIds = useMemo(() => {
+    if (categoryList.length === 0) return undefined;
+    const categories: Category[] = categoriesData?.response ?? [];
+    return categoryList.map((value) => {
+      const match = categories.find(
+        (c) =>
+          c.category_id === value ||
+          c.name.toLowerCase() === value.toLowerCase(),
+      );
+      return match?.category_id ?? value;
+    });
+  }, [categoryList, categoriesData]);
+
+  const categoriesPending = categoryList.length > 0 && isLoadingCategories;
+
+  const { data: blogsData, isFetching } = useGetHomepageBlogsQuery(
+    {
+      limit: CAROUSEL_LIMIT,
+      categories: resolvedCategoryIds,
+      sortOrder,
+    },
+    { skip: categoriesPending },
+  );
 
   const blogs: HomepageBlog[] = useMemo(
     () => blogsData?.response ?? [],
@@ -85,8 +116,9 @@ export function BlogCarousel({
   );
 
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const loading = isFetching || categoriesPending;
 
-  if (!isFetching && blogs.length === 0) return null;
+  if (!loading && blogs.length === 0) return null;
 
   return (
     <section className="overflow-hidden  py-20 sm:py-20">
@@ -100,24 +132,20 @@ export function BlogCarousel({
           >
             <ScrollReveal>
               <span className="text-[12px] font-semibold tracking-[0.12em] uppercase text-contetra-blue">
-                From the Blog
+                {eyebrow}
               </span>
               <h2 className="mt-2 font-heading text-4xl font-bold text-brand-blue">
-                Latest
-                <br />
-                Insights
+                {heading}
               </h2>
               <p className="mt-4 text-[15px] leading-[1.5em] text-[#666666]">
-                Straight-talking guidance on ERP, compliance, and finance
-                operations, drawn from the transformations our team runs
-                every day.
+                {description}
               </p>
 
               <Link
                 href="/blog"
                 className="menularge-cursor mt-5 inline-flex items-center gap-2 text-[15px] font-semibold text-brand-blue underline-offset-4 hover:underline"
               >
-                See all blogs
+                {seeAllLabel}
                 <ArrowRight size={16} />
               </Link>
 
@@ -129,7 +157,7 @@ export function BlogCarousel({
 
           <div className="min-w-0 flex-1">
             <CarouselContent className="cursor-grab pr-4 py-3 pl-4 active:cursor-grabbing sm:pr-6 sm:pl-6 lg:pr-8">
-              <BlogCarouselItems blogs={blogs} isFetching={isFetching} />
+              <BlogCarouselItems blogs={blogs} isFetching={loading} />
             </CarouselContent>
           </div>
         </div>
