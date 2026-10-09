@@ -45,38 +45,25 @@ export default function LayoutServices({
         },
       },
       {
-        "@type": "WebPage",
-        "@id":
-          "https://contetra.com/strategic-business-financial-management-solutions#webpage",
-        url: "https://contetra.com/strategic-business-financial-management-solutions",
-        name: "Virtual CFO Services in India for Growing Businesses and Enterprises",
-        description:
-          "Contetra provides Virtual CFO services, Fractional CFO services, financial planning & analysis (FP&A), budgeting, forecasting, cash flow management, strategic financial management, and finance transformation solutions for SMEs and enterprises.",
-        isPartOf: {
-          "@id": "https://contetra.com#website",
-        },
-        about: {
-          "@id":
-            "https://contetra.com/strategic-business-financial-management-solutions#service",
-        },
-        breadcrumb: {
-          "@id":
-            "https://contetra.com/strategic-business-financial-management-solutions#breadcrumb",
-        },
-        publisher: {
-          "@id": "https://contetra.com#organization",
-        },
-        inLanguage: "en-IN",
-      },
-      {
         "@type": "Service",
         "@id":
           "https://contetra.com/strategic-business-financial-management-solutions#service",
-        name: "Virtual CFO and Strategic Financial Management Services",
+        name: "Virtual and Strategic CFO Services in Mumbai, India",
         url: "https://contetra.com/strategic-business-financial-management-solutions",
         description:
-          "Virtual CFO, Fractional CFO, FP&A, budgeting, forecasting, cash flow planning, profitability improvement, business finance, financial reporting, and strategic financial management services for growing businesses and enterprises.",
-        serviceType: "Virtual CFO Services",
+          "Virtual and fractional CFO services for growing businesses and enterprises covering strategic financial management, budgeting, forecasting, cash flow, working capital, profitability, management reporting and performance monitoring.",
+        serviceType: [
+          "Virtual CFO Services",
+          "Fractional CFO Services",
+          "Strategic CFO Services",
+          "Strategic Financial Management",
+          "Financial Planning and Analysis",
+          "Budgeting and Forecasting",
+          "Cash Flow Management",
+          "Working Capital Management",
+          "Management Reporting",
+          "Profitability Analysis",
+        ],
         provider: {
           "@id": "https://contetra.com#organization",
         },
@@ -86,8 +73,50 @@ export default function LayoutServices({
         },
         audience: {
           "@type": "BusinessAudience",
-          audienceType: "Business Owners, CFOs, SMEs and Enterprises",
+          audienceType: "Growing businesses, SMEs, corporates, founders and finance leaders",
         },
+        mainEntityOfPage: {
+          "@id":
+            "https://contetra.com/strategic-business-financial-management-solutions#webpage",
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id":
+          "https://contetra.com/strategic-business-financial-management-solutions#webpage",
+        url: "https://contetra.com/strategic-business-financial-management-solutions",
+        name: "Virtual and Strategic CFO Services in Mumbai, India | Contetra",
+        description:
+          "Strengthen cash flow, profitability, budgeting, forecasting and management reporting with Contetra's virtual, fractional and strategic CFO services.",
+        isPartOf: {
+          "@id": "https://contetra.com#website",
+        },
+        about: {
+          "@id":
+            "https://contetra.com/strategic-business-financial-management-solutions#service",
+        },
+        mainEntity: {
+          "@id":
+            "https://contetra.com/strategic-business-financial-management-solutions#service",
+        },
+        breadcrumb: {
+          "@id":
+            "https://contetra.com/strategic-business-financial-management-solutions#breadcrumb",
+        },
+        video: [
+          {
+            "@id":
+              "https://contetra.com/strategic-business-financial-management-solutions#video-1",
+          },
+          {
+            "@id":
+              "https://contetra.com/strategic-business-financial-management-solutions#video-2",
+          },
+          {
+            "@id":
+              "https://contetra.com/strategic-business-financial-management-solutions#video-3",
+          },
+        ],
       },
       {
         "@type": "BreadcrumbList",
@@ -103,28 +132,66 @@ export default function LayoutServices({
           {
             "@type": "ListItem",
             position: 2,
-            name: "Virtual CFO Services",
+            name: "Virtual and Strategic CFO Services",
             item: "https://contetra.com/strategic-business-financial-management-solutions",
           },
         ],
       },
       {
         "@type": "VideoObject",
-        name: "Virtual & Strategic CFO Services for Growing Businesses",
+        "@id":
+          "https://contetra.com/strategic-business-financial-management-solutions#video-1",
+        name: "Strategic Business and Financial Management - Overview Video",
         description:
-          "Discover how Contetra transforms financial data into business strategy, improves cash flow visibility, supports budgeting and forecasting, and provides virtual and fractional CFO services for growing businesses.",
-        thumbnailUrl: ["https://i.ytimg.com/vi/DJdvUMzg11g/hqdefault.jpg"],
-        uploadDate: "2024-08-16",
-        embedUrl: "https://www.youtube.com/embed/DJdvUMzg11g",
+          "An overview of Contetra's strategic business and financial management approach, including virtual and fractional CFO support for cash flow, profitability, budgeting, forecasting and business performance.",
+        thumbnailUrl: "https://i.ytimg.com/vi/DJdvUMzg11g/hqdefault.jpg",
+        embedUrl: "https://www.youtube-nocookie.com/embed/DJdvUMzg11g",
         contentUrl: "https://www.youtube.com/watch?v=DJdvUMzg11g",
+        uploadDate: "2024-08-16",
         publisher: {
-          "@type": "Organization",
-          name: "Contetra",
-          url: "https://contetra.com/",
+          "@id": "https://contetra.com#organization",
         },
-        mainEntityOfPage: {
-          "@type": "WebPage",
-          "@id": "https://contetra.com/strategic-business-financial-management-solutions",
+        isPartOf: {
+          "@id":
+            "https://contetra.com/strategic-business-financial-management-solutions#webpage",
+        },
+      },
+      {
+        "@type": "VideoObject",
+        "@id":
+          "https://contetra.com/strategic-business-financial-management-solutions#video-2",
+        name: "Unlock Your Business's True Potential",
+        description:
+          "A client-focused video highlighting how stronger strategic finance, financial visibility and management discipline can support better business performance and growth.",
+        thumbnailUrl: "https://i.ytimg.com/vi/jxydfL_b2ag/hqdefault.jpg",
+        embedUrl: "https://www.youtube.com/embed/jxydfL_b2ag",
+        contentUrl: "https://www.youtube.com/watch?v=jxydfL_b2ag",
+        uploadDate: "ADD-ACTUAL-UPLOAD-DATE",
+        publisher: {
+          "@id": "https://contetra.com#organization",
+        },
+        isPartOf: {
+          "@id":
+            "https://contetra.com/strategic-business-financial-management-solutions#webpage",
+        },
+      },
+      {
+        "@type": "VideoObject",
+        "@id":
+          "https://contetra.com/strategic-business-financial-management-solutions#video-3",
+        name: "How a Leading Industry Player Boosted Sales",
+        description:
+          "A client video highlighting the role of structured financial and performance management in improving sales visibility, accountability and business outcomes.",
+        thumbnailUrl: "https://i.ytimg.com/vi/--dbwiBZY0U/hqdefault.jpg",
+        embedUrl: "https://www.youtube.com/embed/--dbwiBZY0U",
+        contentUrl: "https://www.youtube.com/watch?v=--dbwiBZY0U",
+        uploadDate: "ADD-ACTUAL-UPLOAD-DATE",
+        publisher: {
+          "@id": "https://contetra.com#organization",
+        },
+        isPartOf: {
+          "@id":
+            "https://contetra.com/strategic-business-financial-management-solutions#webpage",
         },
       },
     ],
