@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Learn how to choose the right Zoho ERP implementation partner with this buyer's guide covering consulting, pricing, implementation and best practices.",
   alternates: {
-    canonical: "https://contetra.com/buyers-guide/erp/oracle",
+    canonical: "https://contetra.com/buyers-guide/erp/zoho",
   },
   openGraph: {
     title:
@@ -28,39 +28,67 @@ export default function ZohoBuyersGuideLayout({
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://contetra.com/buyers-guide/erp/oracle#article",
-        headline:
-          "Zoho ERP Implementation & Consulting Partners: A Buyer's Guide for Growing Businesses",
+        "@id": "https://contetra.com/buyers-guide/erp/zoho#article",
+        url: "https://contetra.com/buyers-guide/erp/zoho",
+        headline: "Zoho ERP Implementation Partners Guide for Growing Businesses",
         description:
-          "Learn how to choose the right Zoho ERP implementation partner with this buyer's guide covering consulting, pricing, implementation and best practices.",
+          "A buyer's guide for growing businesses evaluating Zoho ERP implementation partners and consulting services.",
         author: {
-          "@type": "Organization",
-          "@id": "https://contetra.com/#organization",
-          name: "Contetra Private Limited",
-          url: "https://contetra.com",
+          "@id": "https://contetra.com#organization",
         },
         publisher: {
-          "@type": "Organization",
-          "@id": "https://contetra.com/#organization",
-          name: "Contetra Private Limited",
-          url: "https://contetra.com",
+          "@id": "https://contetra.com#organization",
         },
+        mainEntityOfPage: {
+          "@id": "https://contetra.com/buyers-guide/erp/zoho#webpage",
+        },
+        about: [
+          {
+            "@type": "Thing",
+            name: "Zoho ERP",
+          },
+          {
+            "@type": "Thing",
+            name: "Zoho ERP Implementation Partners",
+          },
+          {
+            "@type": "Thing",
+            name: "Zoho ERP Consulting",
+          },
+        ],
+        inLanguage: "en-IN",
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://contetra.com/buyers-guide/erp/zoho#webpage",
+        url: "https://contetra.com/buyers-guide/erp/zoho",
+        name: "Zoho ERP Implementation Partners Guide for Growing Businesses | Contetra",
+        isPartOf: {
+          "@id": "https://contetra.com#website",
+        },
+        mainEntity: {
+          "@id": "https://contetra.com/buyers-guide/erp/zoho#article",
+        },
+        breadcrumb: {
+          "@id": "https://contetra.com/buyers-guide/erp/zoho#breadcrumb",
+        },
+        inLanguage: "en-IN",
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://contetra.com/buyers-guide/erp/oracle#breadcrumb",
+        "@id": "https://contetra.com/buyers-guide/erp/zoho#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://contetra.com/",
+            item: "https://contetra.com",
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: "Zoho ERP Implementation & Consulting Partners: A Buyer's Guide for Growing Businesses",
-            item: "https://contetra.com/buyers-guide/erp/oracle",
+            name: "Zoho ERP Buyer's Guide",
+            item: "https://contetra.com/buyers-guide/erp/zoho",
           },
         ],
       },
